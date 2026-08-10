@@ -159,6 +159,27 @@ async function commitToGitHub(items) {
 }
 
 export default async () => {
+  // --- TEMPORARY TEST: checking whether Elexon's demand endpoint is reachable ---
+  // This does not affect the news feed below. Safe to remove once tested.
+  try {
+    const today = new Date().toISOString().slice(0, 10);
+    const elexonUrl = `https://data.elexon.co.uk/bmrs/api/v1/demand/outturn/summary?settlementDate=${today}&settlementPeriod=1`;
+    const elexonRes = await fetch(elexonUrl, {
+      headers: { Accept: "application/json" },
+    });
+    if (elexonRes.ok) {
+      const elexonData = await elexonRes.json();
+      console.log("ELEXON TEST: success. Sample response:", JSON.stringify(elexonData).slice(0, 500));
+    } else {
+      console.log(`ELEXON TEST: failed with status ${elexonRes.status}`);
+      const errBody = await elexonRes.text();
+      console.log("ELEXON TEST: error body:", errBody.slice(0, 300));
+    }
+  } catch (err) {
+    console.log("ELEXON TEST: fetch error —", err.message);
+  }
+  // --- END TEMPORARY TEST ---
+
   try {
     const [govukEntries, elnEntries] = await Promise.all([
       fetchFeed(GOVUK_FEED, "Dept for Energy Security & Net Zero", parseAtomEntries),

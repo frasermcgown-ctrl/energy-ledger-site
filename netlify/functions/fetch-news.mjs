@@ -159,24 +159,28 @@ async function commitToGitHub(items) {
 }
 
 export default async () => {
-  // --- TEMPORARY TEST: checking whether Elexon's demand endpoint is reachable ---
+  // --- TEMPORARY TEST: checking whether ALSI's LNG terminal endpoint is reachable ---
   // This does not affect the news feed below. Safe to remove once tested.
   try {
-    const today = new Date().toISOString().slice(0, 10);
-    const elexonUrl = `https://data.elexon.co.uk/bmrs/api/v1/demand/outturn/summary?settlementDate=${today}&settlementPeriod=1`;
-    const elexonRes = await fetch(elexonUrl, {
-      headers: { Accept: "application/json" },
-    });
-    if (elexonRes.ok) {
-      const elexonData = await elexonRes.json();
-      console.log("ELEXON TEST: success. Sample response:", JSON.stringify(elexonData).slice(0, 500));
+    const alsiKey = process.env.GIE_API_KEY;
+    if (!alsiKey) {
+      console.log("ALSI TEST: GIE_API_KEY not set in environment.");
     } else {
-      console.log(`ELEXON TEST: failed with status ${elexonRes.status}`);
-      const errBody = await elexonRes.text();
-      console.log("ELEXON TEST: error body:", errBody.slice(0, 300));
+      const alsiUrl = "https://alsi.gie.eu/api/data/eu?limit=3";
+      const alsiRes = await fetch(alsiUrl, {
+        headers: { "x-key": alsiKey, Accept: "application/json" },
+      });
+      if (alsiRes.ok) {
+        const alsiData = await alsiRes.json();
+        console.log("ALSI TEST: success. Sample response:", JSON.stringify(alsiData).slice(0, 600));
+      } else {
+        console.log(`ALSI TEST: failed with status ${alsiRes.status}`);
+        const errBody = await alsiRes.text();
+        console.log("ALSI TEST: error body:", errBody.slice(0, 300));
+      }
     }
   } catch (err) {
-    console.log("ELEXON TEST: fetch error —", err.message);
+    console.log("ALSI TEST: fetch error —", err.message);
   }
   // --- END TEMPORARY TEST ---
 

@@ -1,0 +1,66 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "site"
+    label: "Website Text"
+    files:
+      - name: "content"
+        label: "Page Text"
+        file: "content/site-content.json"
+        fields:
+          - { label: "Hero — eyebrow line", name: "hero_eyebrow", widget: "string" }
+          - { label: "Hero — title line 1", name: "hero_title_line1", widget: "string" }
+          - { label: "Hero — title line 2", name: "hero_title_line2", widget: "string" }
+          - { label: "Hero — title line 3", name: "hero_title_line3", widget: "string" }
+          - { label: "Hero — subheading", name: "hero_subhead", widget: "text" }
+          - { label: "Hero — byline (HTML allowed)", name: "hero_byline", widget: "string" }
+
+          - { label: "Coverage — section tag", name: "coverage_tag", widget: "string" }
+          - { label: "Coverage — section title", name: "coverage_title", widget: "string" }
+          - { label: "Coverage — section description", name: "coverage_desc", widget: "text" }
+          - { label: "Coverage 1 — code", name: "coverage_1_code", widget: "string" }
+          - { label: "Coverage 1 — title", name: "coverage_1_title", widget: "string" }
+          - { label: "Coverage 1 — description", name: "coverage_1_desc", widget: "text" }
+          - { label: "Coverage 2 — code", name: "coverage_2_code", widget: "string" }
+          - { label: "Coverage 2 — title", name: "coverage_2_title", widget: "string" }
+          - { label: "Coverage 2 — description", name: "coverage_2_desc", widget: "text" }
+          - { label: "Coverage 3 — code", name: "coverage_3_code", widget: "string" }
+          - { label: "Coverage 3 — title", name: "coverage_3_title", widget: "string" }
+          - { label: "Coverage 3 — description", name: "coverage_3_desc", widget: "text" }
+          - { label: "Coverage 4 — code", name: "coverage_4_code", widget: "string" }
+          - { label: "Coverage 4 — title", name: "coverage_4_title", widget: "string" }
+          - { label: "Coverage 4 — description", name: "coverage_4_desc", widget: "text" }
+
+          - { label: "Readership — section tag", name: "who_tag", widget: "string" }
+          - { label: "Readership — section title", name: "who_title", widget: "string" }
+          - { label: "Readership — section description", name: "who_desc", widget: "text" }
+          - { label: "Readership 1 — role", name: "who_1_role", widget: "string" }
+          - { label: "Readership 1 — description", name: "who_1_desc", widget: "text" }
+          - { label: "Readership 2 — role", name: "who_2_role", widget: "string" }
+          - { label: "Readership 2 — description", name: "who_2_desc", widget: "text" }
+          - { label: "Readership 3 — role", name: "who_3_role", widget: "string" }
+          - { label: "Readership 3 — description", name: "who_3_desc", widget: "text" }
+          - { label: "Readership 4 — role", name: "who_4_role", widget: "string" }
+          - { label: "Readership 4 — description", name: "who_4_desc", widget: "text" }
+
+          - { label: "Latest Issues — section tag", name: "issue_tag", widget: "string" }
+          - { label: "Latest Issues — section title", name: "issue_title", widget: "string" }
+          - { label: "Latest Issues — section description", name: "issue_desc", widget: "text" }
+          - { label: "Latest Issues — card label", name: "issue_meta", widget: "string" }
+          - { label: "Latest Issues — card title", name: "issue_card_title", widget: "string" }
+          - { label: "Latest Issues — card description", name: "issue_card_desc", widget: "text" }
+
+          - { label: "About — pull quote", name: "about_quote", widget: "text" }
+          - { label: "About — heading", name: "about_heading", widget: "string" }
+          - { label: "About — paragraph 1", name: "about_p1", widget: "text" }
+          - { label: "About — paragraph 2", name: "about_p2", widget: "text" }
+
+          - { label: "Footer — heading", name: "footer_title", widget: "string" }
+          - { label: "Footer — subtext", name: "footer_sub", widget: "text" }
+          - { label: "Footer — tagline", name: "footer_tagline", widget: "string" }
+          - { label: "Footer — copyright line", name: "footer_copyright", widget: "string" }

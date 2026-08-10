@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live European LNG Terminal Data — The Energy Ledger</title>
+<meta name="description" content="Live European LNG terminal inventory, send-out and capacity data, updated automatically from Gas Infrastructure Europe's ALSI platform.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="icon-mark.svg">
+<style>
+  :root{
+    --bg: #0b0d0f;
+    --bg-panel: #131619;
+    --bg-panel-2: #171b1e;
+    --ink: #f2f0e9;
+    --ink-dim: #9a9d9f;
+    --ink-faint: #5e6265;
+    --rule: #26292c;
+    --accent: #c98a2c;
+    --accent-dim: #6e5527;
+    --up: #6a9a6d;
+    --down: #b3654f;
+    --max: 1100px;
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3, .display{
+    font-family:'Oswald', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.005em;
+    margin:0;
+  }
+  .mono{ font-family:'IBM Plex Mono', monospace; letter-spacing:0.04em; }
+  a{ color:inherit; }
+  .wrap{ max-width:var(--max); margin:0 auto; padding:0 24px; }
+
+  header.site{
+    position:sticky; top:0; z-index:50;
+    background:rgba(11,13,15,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--rule);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 24px;
+    max-width:var(--max); margin:0 auto;
+  }
+  .wordmark{
+    display:flex; align-items:center; gap:10px;
+    font-family:'Oswald', sans-serif; font-weight:700; font-size:15px;
+    letter-spacing:0.09em; text-transform:uppercase; text-decoration:none;
+  }
+  .wordmark span{ color:var(--accent); }
+  .wordmark svg{ width:26px; height:26px; flex-shrink:0; }
+  nav.links a{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.06em;
+    text-transform:uppercase; text-decoration:none; color:var(--ink-dim);
+    margin-left:26px;
+  }
+  nav.links a:hover{ color:var(--ink); }
+
+  .hero{ padding:64px 24px 40px; border-bottom:1px solid var(--rule); }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.14em;
+    text-transform:uppercase; color:var(--accent); margin-bottom:18px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{ content:""; width:22px; height:1px; background:var(--accent); display:inline-block; }
+  h1.hero-title{ font-size:clamp(36px, 6vw, 60px); line-height:1.02; font-weight:700; }
+  .hero-sub{ font-family:'Source Serif 4', serif; font-size:17px; color:var(--ink-dim); max-width:600px; margin-top:20px; line-height:1.6; }
+
+  section{ padding:56px 24px; border-bottom:1px solid var(--rule); }
+  .section-tag{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.12em;
+    text-transform:uppercase; color:var(--accent); margin-bottom:10px; display:block;
+  }
+  h2.section-title{ font-size:clamp(24px, 3vw, 32px); font-weight:600; margin-bottom:10px; }
+  .section-desc{ color:var(--ink-dim); font-size:15.5px; max-width:520px; line-height:1.6; }
+
+  /* stat cards */
+  .stat-row{ display:grid; grid-template-columns:repeat(3, 1fr); gap:1px; background:var(--rule); border:1px solid var(--rule); margin-top:36px; }
+  .stat-card{ background:var(--bg-panel); padding:28px 24px; }
+  .stat-label{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:14px; }
+  .stat-value{ font-family:'Oswald', sans-serif; font-size:clamp(30px, 4vw, 42px); font-weight:600; color:var(--ink); line-height:1; }
+  .stat-value .unit{ font-size:0.4em; color:var(--ink-dim); margin-left:6px; text-transform:none; letter-spacing:0; font-family:'IBM Plex Mono',monospace; }
+  .stat-badge{ display:inline-block; margin-top:12px; padding:4px 10px; border-radius:2px; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; }
+  .badge-low{ background:rgba(106,154,109,0.15); color:var(--up); }
+  .badge-moderate{ background:rgba(201,138,44,0.15); color:var(--accent); }
+  .badge-high{ background:rgba(179,101,79,0.15); color:var(--down); }
+
+  /* generation mix bars */
+  .mix-list{ margin-top:36px; }
+  .mix-row{ display:grid; grid-template-columns:140px 1fr 70px; align-items:center; gap:16px; padding:12px 0; border-bottom:1px solid var(--rule); }
+  .mix-label{ font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--ink-dim); text-transform:uppercase; letter-spacing:0.04em; }
+  .mix-bar-track{ height:10px; background:var(--bg-panel); border-radius:2px; overflow:hidden; }
+  .mix-bar-fill{ height:100%; background:var(--accent); border-radius:2px; transition:width 0.6s ease; }
+  .mix-pct{ font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--ink); text-align:right; }
+
+  .loading{ color:var(--ink-faint); font-family:'IBM Plex Mono',monospace; font-size:13px; margin-top:36px; }
+  .updated-note{ margin-top:28px; color:var(--ink-faint); font-family:'IBM Plex Mono',monospace; font-size:11.5px; }
+  .source-note{ color:var(--ink-faint); font-size:14px; line-height:1.6; margin-top:8px; }
+  .source-note a{ color:var(--accent); text-decoration:underline; }
+
+  footer.foot{ padding:40px 24px; text-align:center; }
+  footer.foot a{ color:var(--accent); text-decoration:none; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.04em; }
+
+  @media (max-width:760px){
+    .stat-row{ grid-template-columns:1fr; }
+    .mix-row{ grid-template-columns:100px 1fr 50px; gap:10px; }
+    nav.links{ display:none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav">
+    <a class="wordmark" href="/">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <rect x="0" y="0" width="120" height="120" rx="24" fill="#0b0d0f"/>
+        <line x1="21" y1="30" x2="21" y2="90" stroke="#4a4d50" stroke-width="2" stroke-linecap="round"/>
+        <line x1="34" y1="44" x2="80" y2="44" stroke="#f2f0e9" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="62" x2="92" y2="62" stroke="#f2f0e9" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="80" x2="66" y2="80" stroke="#f2f0e9" stroke-width="7" stroke-linecap="round"/>
+        <polyline points="80,44 96,27 103,32" fill="none" stroke="#c98a2c" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="103" cy="32" r="4.5" fill="#c98a2c"/>
+      </svg>
+      THE ENERGY <span>LEDGER</span>
+    </a>
+    <nav class="links">
+      <a href="/#coverage">Coverage</a>
+      <a href="/#news">News</a>
+      <a href="/generation.html">Live Generation</a>
+      <a href="/lng.html">LNG Data</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" style="border-bottom:none; padding-bottom:0;">
+    <span class="eyebrow">Live · European LNG Terminals</span>
+    <h1 class="hero-title">Live European LNG terminal data</h1>
+    <p class="hero-sub">A daily snapshot of aggregated European LNG terminal inventory, send-out and capacity, refreshed automatically from Gas Infrastructure Europe's official transparency platform.</p>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="section-tag">Latest gas day</span>
+      <h2 class="section-title">EU LNG terminal snapshot</h2>
+      <p class="section-desc" id="gas-day-desc">Aggregated across all reporting EU LNG terminals.</p>
+
+      <div class="stat-row" id="stat-row">
+        <div class="stat-card">
+          <div class="stat-label">LNG inventory</div>
+          <div class="stat-value" id="stat-inventory">—<span class="unit">'000 m³</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Send-out</div>
+          <div class="stat-value" id="stat-sendout">—<span class="unit">GWh/d</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Fill level</div>
+          <div class="stat-value" id="stat-fill">—<span class="unit">%</span></div>
+        </div>
+      </div>
+      <div class="updated-note" id="updated-note">Loading live data…</div>
+    </div>
+  </section>
+
+  <section style="border-bottom:none;">
+    <div class="wrap">
+      <span class="section-tag">Capacity context</span>
+      <h2 class="section-title">How today compares to full capacity</h2>
+      <p class="section-desc">Today's inventory and send-out against the declared maximum for all reporting terminals.</p>
+
+      <div class="mix-list" id="capacity-list">
+        <p class="loading">Loading capacity data…</p>
+      </div>
+
+      <p class="source-note">Data: <a href="https://alsi.gie.eu" target="_blank" rel="noopener">Gas Infrastructure Europe — ALSI (Aggregated LNG Storage Inventory)</a>. Figures are aggregated across all EU27 large-scale LNG terminals reporting to GIE, updated once per gas day. Provided for information only, not for trading.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <a href="/">&larr; Back to The Energy Ledger</a>
+</footer>
+
+<script>
+  fetch('/content/lng-data.json')
+    .then(r => r.json())
+    .then(data => {
+      if (!data.gasDay) throw new Error('no data yet');
+
+      document.getElementById('gas-day-desc').textContent =
+        `Aggregated across all reporting EU LNG terminals, for the gas day starting ${data.gasDay}.`;
+
+      document.getElementById('stat-inventory').innerHTML =
+        `${data.lngInventoryThousandM3.toLocaleString()}<span class="unit">'000 m³</span>`;
+
+      document.getElementById('stat-sendout').innerHTML =
+        `${data.sendOutGWhPerDay.toLocaleString()}<span class="unit">GWh/d</span>`;
+
+      document.getElementById('stat-fill').innerHTML =
+        data.fillPercent !== null
+          ? `${data.fillPercent}<span class="unit">%</span>`
+          : 'n/a';
+
+      const capacityList = document.getElementById('capacity-list');
+      const rows = [
+        { label: 'Inventory vs max capacity', val: data.lngInventoryThousandM3, max: data.maxInventoryThousandM3, unit: "'000 m³" },
+        { label: 'Send-out vs max capacity', val: data.sendOutGWhPerDay, max: data.maxSendOutGWhPerDay, unit: 'GWh/d' },
+      ];
+      capacityList.innerHTML = rows.map(r => {
+        const pct = r.max > 0 ? Math.min(Math.round((r.val / r.max) * 1000) / 10, 100) : 0;
+        return `
+          <div class="mix-row">
+            <span class="mix-label">${r.label}</span>
+            <div class="mix-bar-track"><div class="mix-bar-fill" style="width:${Math.max(pct, 0.5)}%;"></div></div>
+            <span class="mix-pct">${pct}%</span>
+          </div>`;
+      }).join('');
+
+      document.getElementById('updated-note').textContent =
+        'Data updated: ' + new Date(data.updated).toLocaleString('en-GB', { dateStyle: 'medium', timeStyle: 'short' });
+    })
+    .catch(() => {
+      document.getElementById('updated-note').textContent = 'Live data not available yet — check back shortly.';
+      document.getElementById('capacity-list').innerHTML = '<p class="loading">Unable to load capacity data right now.</p>';
+    });
+</script>
+
+</body>
+</html>

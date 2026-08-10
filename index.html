@@ -477,24 +477,24 @@
   </section>
 
   <div class="ticker-band" aria-hidden="true">
-    <div class="ticker-label">This week, illustrative</div>
-    <div class="ticker-track">
-      <span class="ticker-item"><b>NBP DA</b>62.40p/th <span class="up">▲0.8%</span></span>
-      <span class="ticker-item"><b>TTF FRONT MONTH</b>€31.20/MWh <span class="down">▼0.3%</span></span>
-      <span class="ticker-item"><b>UK POWER DA</b>£74.15/MWh <span class="up">▲1.2%</span></span>
-      <span class="ticker-item"><b>EUA DEC26</b>€68.90 <span class="down">▼0.5%</span></span>
-      <span class="ticker-item"><b>UK ETS DEC26</b>£41.10 <span class="up">▲0.2%</span></span>
-      <span class="ticker-item"><b>JKM LNG</b>$11.85/MMBtu <span class="up">▲0.6%</span></span>
+    <div class="ticker-label">Live &amp; weekly</div>
+    <div class="ticker-track" id="ticker-track">
+      <span class="ticker-item"><b>GB CARBON INTENSITY</b><span id="ti-carbon">loading…</span></span>
+      <span class="ticker-item"><b>GB GENERATION MIX</b><span id="ti-mix">loading…</span></span>
+      <span class="ticker-item"><b>NBP DA</b><span data-key="ticker_nbp">62.40p/th</span></span>
+      <span class="ticker-item"><b>TTF FRONT MONTH</b><span data-key="ticker_ttf">€31.20/MWh</span></span>
+      <span class="ticker-item"><b>UK POWER DA</b><span data-key="ticker_ukpower">£74.15/MWh</span></span>
+      <span class="ticker-item"><b>EUA</b><span data-key="ticker_eua">€68.90</span></span>
       <!-- duplicate set for seamless loop -->
-      <span class="ticker-item"><b>NBP DA</b>62.40p/th <span class="up">▲0.8%</span></span>
-      <span class="ticker-item"><b>TTF FRONT MONTH</b>€31.20/MWh <span class="down">▼0.3%</span></span>
-      <span class="ticker-item"><b>UK POWER DA</b>£74.15/MWh <span class="up">▲1.2%</span></span>
-      <span class="ticker-item"><b>EUA DEC26</b>€68.90 <span class="down">▼0.5%</span></span>
-      <span class="ticker-item"><b>UK ETS DEC26</b>£41.10 <span class="up">▲0.2%</span></span>
-      <span class="ticker-item"><b>JKM LNG</b>$11.85/MMBtu <span class="up">▲0.6%</span></span>
+      <span class="ticker-item"><b>GB CARBON INTENSITY</b><span class="ti-carbon-dup">loading…</span></span>
+      <span class="ticker-item"><b>GB GENERATION MIX</b><span class="ti-mix-dup">loading…</span></span>
+      <span class="ticker-item"><b>NBP DA</b><span data-key="ticker_nbp">62.40p/th</span></span>
+      <span class="ticker-item"><b>TTF FRONT MONTH</b><span data-key="ticker_ttf">€31.20/MWh</span></span>
+      <span class="ticker-item"><b>UK POWER DA</b><span data-key="ticker_ukpower">£74.15/MWh</span></span>
+      <span class="ticker-item"><b>EUA</b><span data-key="ticker_eua">€68.90</span></span>
     </div>
   </div>
-  <p class="ticker-note">Levels shown are illustrative layout only — see the current issue on Substack for verified pricing.</p>
+  <p class="ticker-note">GB carbon intensity and generation mix update live from the National Energy System Operator. NBP, TTF, UK power and EUA are updated weekly by hand from broker reports — illustrative, not for trading.</p>
 
   <section id="coverage">
     <div class="wrap">
@@ -634,6 +634,33 @@
   </div>
 </footer>
 
+<script>
+  // Live GB carbon intensity + generation mix — National Energy System Operator's
+  // free public Carbon Intensity API (CORS-enabled, no key required, CC BY 4.0).
+  fetch('https://api.carbonintensity.org.uk/intensity')
+    .then(r => r.json())
+    .then(data => {
+      const d = data.data[0].intensity;
+      const val = d.actual !== null ? d.actual : d.forecast;
+      const text = `${val} gCO₂/kWh · ${d.index}`;
+      document.querySelectorAll('#ti-carbon, .ti-carbon-dup').forEach(el => el.textContent = text);
+    })
+    .catch(() => {
+      document.querySelectorAll('#ti-carbon, .ti-carbon-dup').forEach(el => el.textContent = 'unavailable');
+    });
+
+  fetch('https://api.carbonintensity.org.uk/generation')
+    .then(r => r.json())
+    .then(data => {
+      const mix = data.data.generationmix.slice().sort((a, b) => b.perc - a.perc)[0];
+      const label = mix.fuel.charAt(0).toUpperCase() + mix.fuel.slice(1);
+      const text = `${label} ${mix.perc}%`;
+      document.querySelectorAll('#ti-mix, .ti-mix-dup').forEach(el => el.textContent = text);
+    })
+    .catch(() => {
+      document.querySelectorAll('#ti-mix, .ti-mix-dup').forEach(el => el.textContent = 'unavailable');
+    });
+</script>
 <script>
   // Load editable text from content/site-content.json and populate the page.
   fetch('/content/site-content.json')

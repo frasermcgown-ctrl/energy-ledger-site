@@ -1,6 +1,6 @@
 {
-  "updated": "2026-08-10T22:01:50.350Z",
-  "publishedTime": "2026-08-10T22:59:23+01:00",
+  "updated": "2026-08-10T23:00:48.036Z",
+  "publishedTime": "2026-08-10T23:59:23+01:00",
   "currentGasDay": "2026-08-10",
   "sites": [
     {
@@ -17,7 +17,7 @@
     },
     {
       "name": "STUBLACH",
-      "flowRate": 7.24158
+      "flowRate": 7.73736
     }
   ]
 }

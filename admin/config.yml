@@ -20,6 +20,11 @@ collections:
           - { label: "Hero — subheading", name: "hero_subhead", widget: "text" }
           - { label: "Hero — byline (HTML allowed)", name: "hero_byline", widget: "string" }
 
+          - { label: "Ticker — NBP day-ahead", name: "ticker_nbp", widget: "string", hint: "e.g. 62.40p/th — update weekly from broker reports" }
+          - { label: "Ticker — TTF front month", name: "ticker_ttf", widget: "string", hint: "e.g. €31.20/MWh" }
+          - { label: "Ticker — UK power day-ahead", name: "ticker_ukpower", widget: "string", hint: "e.g. £74.15/MWh" }
+          - { label: "Ticker — EUA carbon", name: "ticker_eua", widget: "string", hint: "e.g. €68.90" }
+
           - { label: "Coverage — section tag", name: "coverage_tag", widget: "string" }
           - { label: "Coverage — section title", name: "coverage_title", widget: "string" }
           - { label: "Coverage — section description", name: "coverage_desc", widget: "text" }

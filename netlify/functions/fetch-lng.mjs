@@ -56,6 +56,23 @@ async function commitToGitHub(payload) {
 }
 
 export default async () => {
+  // --- TEMPORARY TEST: checking National Gas Transmission's instantaneous flow API ---
+  try {
+    const ngUrl = "https://api.nationalgas.com/operationaldata/v1/instantaneousflow/sites";
+    const ngRes = await fetch(ngUrl, { headers: { Accept: "application/json" } });
+    if (ngRes.ok) {
+      const ngData = await ngRes.json();
+      console.log("NATIONALGAS TEST: success. Sample response:", JSON.stringify(ngData).slice(0, 600));
+    } else {
+      console.log(`NATIONALGAS TEST: failed with status ${ngRes.status}`);
+      const errBody = await ngRes.text();
+      console.log("NATIONALGAS TEST: error body:", errBody.slice(0, 300));
+    }
+  } catch (err) {
+    console.log("NATIONALGAS TEST: fetch error —", err.message);
+  }
+  // --- END TEMPORARY TEST ---
+
   try {
     const alsiKey = process.env.GIE_API_KEY;
     if (!alsiKey) {

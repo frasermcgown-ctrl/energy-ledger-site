@@ -1,6 +1,20 @@
 {
-  "updated": "2026-08-11T12:00:56.779Z",
+  "updated": "2026-08-12T11:30:57.649Z",
   "items": [
+    {
+      "title": "Households living near new pylons to save thousands on bills",
+      "link": "https://www.gov.uk/government/news/households-living-near-new-pylons-to-save-thousands-on-bills",
+      "summary": "Government reveals the communities in over 40 locations eligible for cheaper electricity bills.",
+      "source": "Dept for Energy Security & Net Zero",
+      "published": "2026-08-12T00:01:00+01:00"
+    },
+    {
+      "title": "Electricity bill discount scheme for transmission network infrastructure: expected eligible projects",
+      "link": "https://www.gov.uk/government/publications/electricity-bill-discount-scheme-for-transmission-network-infrastructure-expected-eligible-projects",
+      "summary": "A list of transmission projects expected to be eligible for the scheme.",
+      "source": "Dept for Energy Security & Net Zero",
+      "published": "2026-08-12T00:01:00+01:00"
+    },
     {
       "title": "Taking part in the UK Emissions Trading Scheme markets",
       "link": "https://www.gov.uk/government/publications/taking-part-in-the-uk-emissions-trading-scheme-markets",
@@ -35,13 +49,6 @@
       "summary": "We’re seeking views on proposed class exemptions from the requirement to hold a load control licence in respect of a new load control licensing framework being introduced as part of the SSES programme under the Electrici",
       "source": "Dept for Energy Security & Net Zero",
       "published": "2026-08-07T10:55:50+01:00"
-    },
-    {
-      "title": "Smart Secure Electricity Systems (SSES) Programme: draft load control licence regulations and conditions",
-      "link": "https://www.gov.uk/government/consultations/smart-secure-electricity-systems-sses-programme-draft-load-control-licence-regulations-and-conditions",
-      "summary": "We're seeking views on the proposed regulations, including the licence conditions designed to protect consumers and the electricity system.",
-      "source": "Dept for Energy Security & Net Zero",
-      "published": "2026-08-07T10:55:05+01:00"
     }
   ]
 }

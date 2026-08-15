@@ -1,6 +1,27 @@
 {
-  "updated": "2026-08-12T11:30:57.649Z",
+  "updated": "2026-08-15T08:54:10.406Z",
   "items": [
+    {
+      "title": "Capacity Market: Hydrogen to Power and interconnectors",
+      "link": "https://www.gov.uk/government/calls-for-evidence/capacity-market-hydrogen-to-power-and-interconnectors",
+      "summary": "We're seeking views on enabling the participation of Hydrogen to Power in the Capacity Market and technical changes to setting interconnector de-rating factors.",
+      "source": "Dept for Energy Security & Net Zero",
+      "published": "2026-08-13T11:53:28+01:00"
+    },
+    {
+      "title": "Energy Trends: UK renewables",
+      "link": "https://www.gov.uk/government/statistics/energy-trends-section-6-renewables",
+      "summary": "Data on the UK’s renewables sector, including capacity, electricity generation and liquid biofuels consumption.",
+      "source": "Dept for Energy Security & Net Zero",
+      "published": "2026-08-13T09:30:10+01:00"
+    },
+    {
+      "title": "British Sign Language (BSL) 5-year plan: Department for Energy Security and Net Zero",
+      "link": "https://www.gov.uk/government/publications/british-sign-language-5-year-plan-department-for-energy-security-and-net-zero",
+      "summary": "This plan sets out how the Department for Energy Security and Net Zero plans to improve the use of BSL in its communications in the next 5 years.",
+      "source": "Dept for Energy Security & Net Zero",
+      "published": "2026-08-13T00:01:05+01:00"
+    },
     {
       "title": "Households living near new pylons to save thousands on bills",
       "link": "https://www.gov.uk/government/news/households-living-near-new-pylons-to-save-thousands-on-bills",
@@ -14,41 +35,6 @@
       "summary": "A list of transmission projects expected to be eligible for the scheme.",
       "source": "Dept for Energy Security & Net Zero",
       "published": "2026-08-12T00:01:00+01:00"
-    },
-    {
-      "title": "Taking part in the UK Emissions Trading Scheme markets",
-      "link": "https://www.gov.uk/government/publications/taking-part-in-the-uk-emissions-trading-scheme-markets",
-      "summary": "This guidance explains the operation of the UK ETS markets and how to take part in auctions and in trading on the secondary market.",
-      "source": "Dept for Energy Security & Net Zero",
-      "published": "2026-08-10T17:15:03+01:00"
-    },
-    {
-      "title": "Carbon emissions limits in the Capacity Market",
-      "link": "https://www.gov.uk/government/publications/carbon-emissions-limits-in-the-capacity-market",
-      "summary": "Guidance on the reporting and verification mechanism for carbon emissions in the Capacity Market (CM).",
-      "source": "Dept for Energy Security & Net Zero",
-      "published": "2026-08-10T14:50:41+01:00"
-    },
-    {
-      "title": "Oil and gas: offshore environmental legislation",
-      "link": "https://www.gov.uk/guidance/oil-and-gas-offshore-environmental-legislation",
-      "summary": "Environmental regulations and guidance on offshore oil and gas exploration and production offshore gas unloading and storage and offshore carbon dioxide storage activities",
-      "source": "Dept for Energy Security & Net Zero",
-      "published": "2026-08-10T09:38:51+01:00"
-    },
-    {
-      "title": "UK ETS Allocation Table for operators of installations",
-      "link": "https://www.gov.uk/government/publications/uk-ets-allocation-table-for-operators-of-installations",
-      "summary": "This table contains a list of each installation’s free allocation for the 2021 to 2026 allocation period.",
-      "source": "Dept for Energy Security & Net Zero",
-      "published": "2026-08-07T17:15:04+01:00"
-    },
-    {
-      "title": "Smart Secure Electricity Systems: proposed class exemptions from the requirement to hold a load control licence",
-      "link": "https://www.gov.uk/government/publications/smart-secure-electricity-systems-proposed-class-exemptions-from-the-requirement-to-hold-a-load-control-licence",
-      "summary": "We’re seeking views on proposed class exemptions from the requirement to hold a load control licence in respect of a new load control licensing framework being introduced as part of the SSES programme under the Electrici",
-      "source": "Dept for Energy Security & Net Zero",
-      "published": "2026-08-07T10:55:50+01:00"
     }
   ]
 }

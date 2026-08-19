@@ -1,6 +1,13 @@
 {
-  "updated": "2026-08-18T00:00:43.893Z",
+  "updated": "2026-08-19T00:00:49.963Z",
   "items": [
+    {
+      "title": "Gas system in transition: security of supply",
+      "link": "https://www.gov.uk/government/consultations/gas-system-in-transition-security-of-supply",
+      "summary": "We are seeking views on our assessment of GB’s long-term supply of gas, and proposed policy actions to protect our gas and energy security during the transition.",
+      "source": "Dept for Energy Security & Net Zero",
+      "published": "2026-08-18T10:00:01+01:00"
+    },
     {
       "title": "Overhead electricity line applications: screening decisions 2026",
       "link": "https://www.gov.uk/government/collections/overhead-electricity-line-applications-screening-decisions-2026",
@@ -14,20 +21,6 @@
       "summary": "Environmental regulations and guidance on offshore oil and gas exploration and production offshore gas unloading and storage and offshore carbon dioxide storage activities",
       "source": "Dept for Energy Security & Net Zero",
       "published": "2026-08-17T14:46:17+01:00"
-    },
-    {
-      "title": "Capacity Market: Hydrogen to Power and interconnectors",
-      "link": "https://www.gov.uk/government/calls-for-evidence/capacity-market-hydrogen-to-power-and-interconnectors",
-      "summary": "We're seeking views on enabling the participation of Hydrogen to Power in the Capacity Market and technical changes to setting interconnector de-rating factors.",
-      "source": "Dept for Energy Security & Net Zero",
-      "published": "2026-08-13T11:53:28+01:00"
-    },
-    {
-      "title": "Energy Trends: UK renewables",
-      "link": "https://www.gov.uk/government/statistics/energy-trends-section-6-renewables",
-      "summary": "Data on the UK’s renewables sector, including capacity, electricity generation and liquid biofuels consumption.",
-      "source": "Dept for Energy Security & Net Zero",
-      "published": "2026-08-13T09:30:10+01:00"
     }
   ]
 }

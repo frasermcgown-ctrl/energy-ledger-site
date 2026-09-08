@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-07T00:00:45.119Z",
+  "updated": "2026-09-08T00:00:41.545Z",
   "status": "E",
   "lngInventoryThousandM3": null,
-  "sendOutGWhPerDay": 3484.9,
+  "sendOutGWhPerDay": 3454.4,
   "maxInventoryThousandM3": null,
-  "maxSendOutGWhPerDay": 7939.6,
+  "maxSendOutGWhPerDay": 7939.7,
   "fillPercent": null
 }

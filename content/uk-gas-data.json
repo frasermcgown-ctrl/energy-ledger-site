@@ -1,11 +1,11 @@
 {
-  "updated": "2026-09-29T00:00:52.779Z",
-  "publishedTime": "2026-09-29T00:59:24+01:00",
-  "currentGasDay": "2026-09-28",
+  "updated": "2026-10-01T00:00:53.728Z",
+  "publishedTime": "2026-10-01T00:59:24+01:00",
+  "currentGasDay": "2026-09-30",
   "sites": [
     {
       "name": "ALDBROUGH",
-      "flowRate": 19.20469
+      "flowRate": 0
     },
     {
       "name": "HOLFORD",
@@ -17,7 +17,7 @@
     },
     {
       "name": "STUBLACH",
-      "flowRate": 26.64128
+      "flowRate": 0
     }
   ]
 }

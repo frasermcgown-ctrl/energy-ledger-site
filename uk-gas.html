@@ -71,7 +71,7 @@
       <div class="stat-grid">
         <div class="card stat">
           <div class="stat-label">Net storage flow</div>
-          <div class="stat-value" id="stat-net">—<span class="unit">mcm/d</span></div>
+          <div class="stat-value" id="stat-net">—<span class="unit">mcm/day</span></div>
           <div class="stat-foot" id="stat-net-foot">Sum of all reporting sites.</div>
         </div>
         <div class="card stat">
@@ -186,7 +186,7 @@
 
       const rates = sites.map(s => s.flowRate).filter(v => v !== null && v !== undefined);
       const net = rates.reduce((a, b) => a + b, 0);
-      document.getElementById('stat-net').innerHTML = `${fmtNumber(Math.abs(net), 1)}<span class="unit">mcm/d</span>`;
+      document.getElementById('stat-net').innerHTML = `${fmtNumber(Math.abs(net), 1)}<span class="unit">mcm/day</span>`;
       document.getElementById('stat-net-foot').textContent = rates.length
         ? `Net ${net >= 0 ? 'injection' : 'withdrawal'} across ${rates.length} reporting sites.`
         : 'No sites reporting.';
@@ -213,7 +213,7 @@
           const pct = Math.abs(rate) / max * 100;
           const direction = injecting ? 'Injecting' : 'Withdrawing';
           return `
-            <div class="bar-row" title="${name}: ${direction.toLowerCase()} ${fmtNumber(Math.abs(rate), 2)} mcm/d">
+            <div class="bar-row" title="${name}: ${direction.toLowerCase()} ${fmtNumber(Math.abs(rate), 2)} mcm/day">
               <span class="bar-label">${name}</span>
               <div class="bar-track"><div class="bar-fill" style="width:${Math.max(pct, 0.8)}%; background:var(${injecting ? '--inject' : '--withdraw'});"></div></div>
               <span class="bar-value">${fmtNumber(Math.abs(rate), 1)}<small>${direction}</small></span>

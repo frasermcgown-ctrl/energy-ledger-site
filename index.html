@@ -28,710 +28,574 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="icon-mark.svg">
+<link rel="stylesheet" href="/assets/site.css">
 <style>
-  :root{
-    --bg: #0b0d0f;
-    --bg-panel: #131619;
-    --bg-panel-2: #171b1e;
-    --ink: #f2f0e9;
-    --ink-dim: #9a9d9f;
-    --ink-faint: #5e6265;
-    --rule: #26292c;
-    --accent: #c98a2c;
-    --accent-dim: #6e5527;
-    --up: #6a9a6d;
-    --down: #b3654f;
-    --max: 1100px;
-  }
-
-  *{ box-sizing:border-box; }
-  html{ scroll-behavior:smooth; }
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--ink);
-    font-family:'Source Serif 4', Georgia, serif;
-    -webkit-font-smoothing:antialiased;
-  }
-  h1,h2,h3, .display{
-    font-family:'Oswald', sans-serif;
-    text-transform:uppercase;
-    letter-spacing:0.005em;
-    margin:0;
-  }
-  .mono{
-    font-family:'IBM Plex Mono', monospace;
-    letter-spacing:0.04em;
-  }
-  a{ color:inherit; }
-  img{ max-width:100%; display:block; }
-
-  .wrap{
-    max-width:var(--max);
-    margin:0 auto;
-    padding:0 24px;
-  }
-
-  /* ---------- Nav ---------- */
-  header.site{
-    position:sticky; top:0; z-index:50;
-    background:rgba(11,13,15,0.88);
-    backdrop-filter:blur(6px);
-    border-bottom:1px solid var(--rule);
-  }
-  .nav{
-    display:flex; align-items:center; justify-content:space-between;
-    padding:16px 24px;
-    max-width:var(--max); margin:0 auto;
-  }
-  .wordmark{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    font-family:'Oswald', sans-serif;
-    font-weight:700;
-    font-size:15px;
-    letter-spacing:0.09em;
-    text-transform:uppercase;
-    text-decoration:none;
-  }
-  .wordmark span{ color:var(--accent); }
-  .wordmark svg{ width:28px; height:28px; flex-shrink:0; }
-  nav.links{ display:flex; gap:28px; align-items:center; }
-  nav.links a{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px;
-    letter-spacing:0.06em;
-    text-transform:uppercase;
-    text-decoration:none;
-    color:var(--ink-dim);
-    transition:color .15s ease;
-  }
-  nav.links a:hover, nav.links a:focus-visible{ color:var(--ink); }
-  .btn{
-    display:inline-block;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px;
-    letter-spacing:0.06em;
-    text-transform:uppercase;
-    text-decoration:none;
-    padding:10px 18px;
-    border:1px solid var(--accent);
-    color:var(--accent);
-    border-radius:2px;
-    transition:background .15s ease, color .15s ease;
-  }
-  .btn:hover, .btn:focus-visible{ background:var(--accent); color:#0b0d0f; }
-  .btn.solid{ background:var(--accent); color:#0b0d0f; }
-  .btn.solid:hover{ background:#e0a44a; border-color:#e0a44a; }
-  #nav-toggle{ display:none; }
-
   /* ---------- Hero ---------- */
   .hero{
-    padding:96px 24px 64px;
-    border-bottom:1px solid var(--rule);
     position:relative;
-  }
-  .hero-inner{
-    max-width:var(--max); margin:0 auto;
-  }
-  .eyebrow{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    color:var(--accent);
-    margin-bottom:22px;
-    display:flex; align-items:center; gap:10px;
-  }
-  .eyebrow::before{
-    content:"";
-    width:22px; height:1px;
-    background:var(--accent);
-    display:inline-block;
-  }
-  h1.hero-title{
-    font-size:clamp(44px, 9vw, 94px);
-    line-height:0.98;
-    font-weight:700;
-    max-width:820px;
-  }
-  .hero-sub{
-    font-family:'Source Serif 4', serif;
-    font-size:clamp(17px, 2vw, 21px);
-    line-height:1.55;
-    color:var(--ink-dim);
-    max-width:560px;
-    margin-top:28px;
-  }
-  .hero-byline{
-    margin-top:30px;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:13px;
-    color:var(--ink-faint);
-    letter-spacing:0.04em;
-  }
-  .hero-byline b{ color:var(--ink-dim); font-weight:500; }
-  .hero-cta{ margin-top:34px; display:flex; gap:14px; flex-wrap:wrap; }
-
-  /* ---------- Ticker (signature element) ---------- */
-  .ticker-band{
-    border-bottom:1px solid var(--rule);
-    background:var(--bg-panel);
+    padding:72px 0 88px;
     overflow:hidden;
-    position:relative;
+    background:
+      radial-gradient(900px 420px at 85% -10%, #fff1e6 0%, rgba(255,241,230,0) 70%),
+      radial-gradient(700px 380px at 0% 0%, #eef4ff 0%, rgba(238,244,255,0) 70%);
   }
-  .ticker-label{
-    position:absolute; left:0; top:0; bottom:0;
-    display:flex; align-items:center;
-    padding:0 16px;
-    background:var(--bg-panel);
-    border-right:1px solid var(--rule);
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px;
-    letter-spacing:0.12em;
-    color:var(--ink-faint);
-    z-index:2;
+  .hero::after{
+    content:""; position:absolute; inset:0; pointer-events:none;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:48px 48px;
+    mask-image:radial-gradient(ellipse at 50% 0%, #000 0%, transparent 70%);
+    -webkit-mask-image:radial-gradient(ellipse at 50% 0%, #000 0%, transparent 70%);
+    opacity:.5;
   }
-  .ticker-track{
-    display:flex;
-    width:max-content;
-    animation:scroll-ticker 46s linear infinite;
-    padding:14px 0 14px 130px;
+  .hero .wrap{ position:relative; z-index:1; display:grid; grid-template-columns:1.1fr .9fr; gap:56px; align-items:center; }
+  .hero h1{
+    margin-top:22px;
+    font-size:clamp(40px, 6vw, 68px);
+    font-weight:800;
+    letter-spacing:-0.04em;
+    line-height:1.02;
   }
-  .ticker-item{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:13px;
-    white-space:nowrap;
-    padding:0 26px;
-    border-right:1px solid var(--rule);
-    color:var(--ink-dim);
+  .hero h1 .hl{
+    background:linear-gradient(90deg, var(--brand) 0%, #f59e0b 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
   }
-  .ticker-item b{ color:var(--ink); font-weight:500; margin-right:8px; }
-  .ticker-item .up{ color:var(--up); }
-  .ticker-item .down{ color:var(--down); }
-  @keyframes scroll-ticker{
-    from{ transform:translateX(0); }
-    to{ transform:translateX(-50%); }
-  }
-  .ticker-note{
-    padding:8px 24px;
-    max-width:var(--max); margin:0 auto;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:10.5px;
-    color:var(--ink-faint);
-    letter-spacing:0.04em;
+  .hero-sub{ margin-top:22px; font-size:19px; color:var(--ink-3); max-width:560px; line-height:1.6; }
+  .hero-cta{ margin-top:32px; display:flex; gap:12px; flex-wrap:wrap; }
+  .hero-byline{ margin-top:28px; font-size:14.5px; color:var(--ink-3); display:flex; align-items:center; gap:12px; }
+  .hero-byline b{ color:var(--ink); font-weight:600; }
+  .avatar{
+    width:36px; height:36px; border-radius:50%;
+    background:linear-gradient(135deg, var(--brand), #f59e0b);
+    color:#fff; font-weight:700; font-size:14px;
+    display:inline-flex; align-items:center; justify-content:center; flex-shrink:0;
   }
 
-  /* ---------- Sections ---------- */
-  section{ padding:88px 24px; border-bottom:1px solid var(--rule); }
-  .section-head{
-    display:flex; justify-content:space-between; align-items:flex-end;
-    gap:24px; margin-bottom:52px; flex-wrap:wrap;
+  /* Market snapshot card */
+  .snapshot{ padding:8px; box-shadow:var(--shadow-lg); border-radius:var(--radius-lg); }
+  .snapshot-head{ display:flex; align-items:center; justify-content:space-between; padding:14px 16px 12px; }
+  .snapshot-head h2{ font-size:16px; letter-spacing:-0.01em; }
+  .snapshot-head .tag{ font-size:11.5px; }
+  .snap-grid{ display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  .snap{
+    background:var(--bg-soft); border:1px solid var(--line); border-radius:12px;
+    padding:14px 16px;
   }
-  .section-tag{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px; letter-spacing:0.12em; text-transform:uppercase;
-    color:var(--accent); margin-bottom:10px; display:block;
-  }
-  h2.section-title{
-    font-size:clamp(30px, 4vw, 44px);
-    font-weight:600;
-    max-width:600px;
-  }
-  .section-desc{
-    max-width:380px;
-    color:var(--ink-dim);
-    font-size:16px;
-    line-height:1.6;
-    padding-bottom:4px;
-  }
+  .snap-label{ font-size:12.5px; font-weight:600; color:var(--ink-3); display:flex; align-items:center; gap:7px; }
+  .snap-label i{ width:8px; height:8px; border-radius:2px; display:inline-block; }
+  .snap-value{ margin-top:6px; font-size:22px; font-weight:700; letter-spacing:-0.02em; font-variant-numeric:tabular-nums; }
+  .snap.live{ background:#fff; }
+  .snap.wide{ grid-column:1 / -1; display:flex; align-items:center; justify-content:space-between; gap:12px; }
+  .snap.wide .snap-value{ margin-top:4px; }
+  .snap-note{ padding:12px 16px 8px; font-size:12.5px; color:var(--ink-3); line-height:1.5; }
 
-  /* Coverage — ledger rows */
-  .ledger{ border-top:1px solid var(--rule); }
-  .ledger-row{
-    display:grid;
-    grid-template-columns:190px 1fr 130px;
-    gap:24px;
-    align-items:baseline;
-    padding:26px 0;
-    border-bottom:1px solid var(--rule);
-  }
-  .ledger-row .code{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:13px;
-    color:var(--accent);
-    letter-spacing:0.04em;
-  }
-  .ledger-row h3{
-    font-size:19px;
-    font-weight:600;
-    letter-spacing:0.01em;
-    margin-bottom:6px;
-  }
-  .ledger-row p{
-    color:var(--ink-dim);
-    font-size:15.5px;
-    line-height:1.6;
-    margin:0;
-    max-width:560px;
-  }
-  .ledger-row .figure{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px;
-    color:var(--ink-faint);
-    text-align:right;
-    letter-spacing:0.04em;
-  }
+  /* ---------- Coverage ---------- */
+  .coverage-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:16px; }
+  .cov{ padding:28px 24px; display:flex; flex-direction:column; gap:16px; }
+  .cov .code{ font-size:12.5px; font-weight:600; color:var(--ink-3); letter-spacing:0.02em; }
+  .cov h3{ font-size:19px; letter-spacing:-0.015em; line-height:1.3; }
+  .cov p{ color:var(--ink-3); font-size:15.5px; line-height:1.6; }
 
-  /* Who it's for — table */
-  table.roles{
-    width:100%;
-    border-collapse:collapse;
-    border-top:1px solid var(--rule);
-  }
-  table.roles td{
-    padding:22px 0;
-    border-bottom:1px solid var(--rule);
-    vertical-align:top;
-  }
-  table.roles td.role{
-    width:220px;
-    font-family:'Oswald', sans-serif;
-    text-transform:uppercase;
-    font-weight:600;
-    font-size:15px;
-    letter-spacing:0.04em;
-    color:var(--ink);
-  }
-  table.roles td.desc{
-    color:var(--ink-dim);
-    font-size:15.5px;
-    line-height:1.6;
-    padding-left:24px;
-  }
+  /* ---------- Readership ---------- */
+  .who-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:0; border:1px solid var(--line); border-radius:var(--radius); background:#fff; overflow:hidden; }
+  .who{ padding:28px 24px; border-right:1px solid var(--line); }
+  .who:last-child{ border-right:none; }
+  .who h3{ font-size:17px; display:flex; align-items:center; gap:10px; }
+  .who h3::before{ content:""; width:8px; height:8px; border-radius:50%; background:var(--brand); }
+  .who p{ margin-top:10px; color:var(--ink-3); font-size:15px; }
 
-  /* Latest issue */
-  .issue-card{
-    border:1px solid var(--rule);
-    background:var(--bg-panel);
-    border-radius:2px;
-    padding:40px;
-    display:flex;
-    justify-content:space-between;
-    gap:32px;
-    flex-wrap:wrap;
-  }
-  .issue-meta{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11.5px;
-    color:var(--accent);
-    letter-spacing:0.1em;
-    text-transform:uppercase;
-    margin-bottom:14px;
-  }
-  .issue-card h3{
-    font-size:26px;
-    font-weight:600;
-    max-width:460px;
-    margin-bottom:14px;
-  }
-  .issue-card p{
-    color:var(--ink-dim);
-    max-width:460px;
-    font-size:15.5px;
-    line-height:1.6;
-    margin:0;
-  }
-  .issue-cta{ align-self:center; }
+  /* ---------- Live data ---------- */
+  .data-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; }
+  .data-card{ padding:24px; display:flex; flex-direction:column; }
+  .data-card .top{ display:flex; align-items:center; justify-content:space-between; }
+  .data-card .live-tag{ font-size:12.5px; font-weight:600; color:#15803d; display:inline-flex; align-items:center; gap:8px; }
+  .data-card h3{ margin-top:20px; font-size:18px; }
+  .data-card .big{ margin-top:14px; font-size:34px; font-weight:700; letter-spacing:-0.03em; font-variant-numeric:tabular-nums; line-height:1.1; }
+  .data-card .big .unit{ font-size:14px; font-weight:500; color:var(--ink-3); margin-left:4px; letter-spacing:0; }
+  .data-card .sub{ margin-top:6px; font-size:14px; color:var(--ink-3); }
+  .data-card .go{ margin-top:auto; padding-top:22px; font-weight:600; font-size:14.5px; color:var(--brand); display:flex; align-items:center; gap:6px; }
 
-  /* About */
-  .about{
-    display:grid;
-    grid-template-columns:1fr 1.4fr;
-    gap:48px;
-    align-items:start;
+  /* ---------- News ---------- */
+  .news-layout{ display:grid; grid-template-columns:1fr 340px; gap:24px; align-items:start; }
+  .news-list{ display:flex; flex-direction:column; }
+  .news-item{
+    display:grid; grid-template-columns:1fr auto; gap:6px 20px;
+    padding:20px 4px;
+    border-bottom:1px solid var(--line);
+    text-decoration:none; color:inherit;
   }
+  .news-item:first-child{ padding-top:4px; }
+  .news-item .meta{ grid-column:1 / -1; font-size:13px; color:var(--ink-3); display:flex; gap:10px; align-items:center; }
+  .news-item .meta b{ font-weight:600; color:var(--ink-2); }
+  .news-item h3{ font-size:17.5px; line-height:1.4; letter-spacing:-0.01em; transition:color .15s ease; }
+  .news-item p{ grid-column:1; font-size:15px; color:var(--ink-3); display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+  .news-item .go{ grid-row:2 / span 2; grid-column:2; align-self:center; color:var(--ink-4); transition:color .15s ease, transform .15s ease; }
+  .news-item:hover h3{ color:var(--brand); }
+  .news-item:hover .go{ color:var(--brand); transform:translateX(2px); }
+  .news-more{ margin-top:20px; }
+
+  .archive-card{ padding:28px; position:sticky; top:92px; background:linear-gradient(160deg, #fff 0%, var(--brand-soft) 100%); }
+  .archive-card .issue-meta{ font-size:12.5px; font-weight:600; text-transform:uppercase; letter-spacing:0.06em; color:var(--brand); }
+  .archive-card h3{ margin-top:12px; font-size:22px; line-height:1.25; }
+  .archive-card p{ margin-top:12px; color:var(--ink-3); font-size:15px; }
+  .archive-card .btn{ margin-top:22px; width:100%; }
+  .archive-card .issue-desc{ margin-top:12px; font-size:13.5px; }
+
+  /* ---------- About ---------- */
+  .about{ display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
   .about blockquote{
     margin:0;
-    font-size:22px;
-    line-height:1.5;
-    font-style:italic;
+    font-size:clamp(24px, 2.8vw, 32px); font-weight:600; letter-spacing:-0.025em; line-height:1.35;
     color:var(--ink);
-    border-left:2px solid var(--accent);
-    padding-left:22px;
   }
-  .about .about-body{ color:var(--ink-dim); font-size:16px; line-height:1.7; }
-  .about .about-body p + p{ margin-top:16px; }
+  .about blockquote::before{
+    content:""; display:block; width:40px; height:4px; border-radius:2px; background:var(--brand); margin-bottom:24px;
+  }
+  .about-body{ padding:32px; }
+  .about-body .who-line{ display:flex; align-items:center; gap:14px; margin-bottom:18px; }
+  .about-body .who-line .avatar{ width:48px; height:48px; font-size:17px; }
+  .about-body h3{ font-size:19px; }
+  .about-body .role{ font-size:14px; color:var(--ink-3); }
+  .about-body p{ color:var(--ink-2); font-size:16px; line-height:1.7; }
+  .about-body p + p{ margin-top:14px; }
+  .about-body .pen{ color:var(--ink); font-weight:600; }
 
-  /* Subscribe / footer */
-  footer.subscribe{
-    padding:96px 24px 40px;
-    text-align:center;
+  /* ---------- Subscribe ---------- */
+  .subscribe{
+    position:relative; overflow:hidden;
+    background:var(--ink);
+    border-radius:28px;
+    padding:64px 48px;
+    display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;
+    color:#fff;
   }
-  footer.subscribe .section-tag{ display:block; margin:0 auto 14px; }
-  footer.subscribe h2{
-    font-size:clamp(32px, 5vw, 52px);
-    font-weight:700;
-    max-width:640px;
-    margin:0 auto 18px;
+  .subscribe::before{
+    content:""; position:absolute; width:520px; height:520px; right:-160px; top:-220px;
+    background:radial-gradient(circle, rgba(234,88,12,.45) 0%, rgba(234,88,12,0) 65%);
+    pointer-events:none;
   }
-  footer.subscribe .foot-sub{
-    color:var(--ink-dim);
-    max-width:460px;
-    margin:0 auto 36px;
-    font-size:16px;
-    line-height:1.6;
-  }
-  .embed-wrap{
-    max-width:480px; margin:0 auto 44px;
-    border:1px solid var(--rule);
-    background:var(--bg-panel);
-    padding:6px;
-  }
-  .embed-wrap iframe{ width:100%; height:150px; border:none; background:transparent; }
-  .foot-bottom{
-    border-top:1px solid var(--rule);
-    margin-top:20px;
-    padding-top:28px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:14px;
-    max-width:var(--max);
-    margin-left:auto; margin-right:auto;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11.5px;
-    color:var(--ink-faint);
-    letter-spacing:0.04em;
-  }
-  .foot-bottom .socials{ display:flex; gap:18px; }
-  .foot-bottom a{ text-decoration:none; color:var(--ink-faint); }
-  .foot-bottom a:hover{ color:var(--ink-dim); }
+  .subscribe > *{ position:relative; }
+  .subscribe .kicker{ color:#fdba74; }
+  .subscribe h2{ color:#fff; font-size:clamp(28px, 3.6vw, 42px); letter-spacing:-0.03em; }
+  .subscribe .foot-sub{ margin-top:16px; color:#cbd5e1; font-size:17px; }
+  .subscribe ul{ margin:24px 0 0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px; color:#e2e8f0; font-size:15px; }
+  .subscribe li{ display:flex; gap:10px; align-items:center; }
+  .subscribe li svg{ width:18px; height:18px; color:#fdba74; flex-shrink:0; }
+  .embed-wrap{ background:#fff; border-radius:16px; padding:8px; box-shadow:0 20px 40px -12px rgba(0,0,0,.5); }
+  .embed-wrap iframe{ width:100%; height:320px; border:0; border-radius:10px; display:block; background:#fff; }
 
-  /* ---------- Responsive ---------- */
-  @media (max-width: 760px){
-    nav.links{ display:none; }
-    .hero{ padding:64px 20px 48px; }
-    section{ padding:64px 20px; }
-    .ledger-row{ grid-template-columns:1fr; gap:8px; }
-    .ledger-row .figure{ text-align:left; }
-    table.roles td.role{ display:block; width:auto; padding-bottom:6px; }
-    table.roles td.desc{ display:block; padding-left:0; }
-    table.roles tr{ display:block; }
-    table.roles td{ display:block; border-bottom:none; padding:4px 0; }
-    table.roles tr{ border-bottom:1px solid var(--rule); padding-bottom:18px; margin-bottom:18px; }
-    .about{ grid-template-columns:1fr; }
-    .issue-card{ padding:28px; }
+  @media (max-width: 1000px){
+    .hero .wrap{ grid-template-columns:1fr; gap:48px; }
+    .coverage-grid{ grid-template-columns:1fr 1fr; }
+    .who-grid{ grid-template-columns:1fr 1fr; }
+    .who:nth-child(2){ border-right:none; }
+    .who:nth-child(-n+2){ border-bottom:1px solid var(--line); }
+    .news-layout{ grid-template-columns:1fr; }
+    .archive-card{ position:static; }
+    .about{ grid-template-columns:1fr; gap:32px; }
+    .subscribe{ grid-template-columns:1fr; padding:48px 32px; }
   }
-
-  @media (prefers-reduced-motion: reduce){
-    html{ scroll-behavior:auto; }
-    .ticker-track{ animation:none; }
+  @media (max-width: 720px){
+    .data-grid{ grid-template-columns:1fr; }
   }
-
-  :focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+  @media (max-width: 560px){
+    .hero{ padding:48px 0 64px; }
+    .coverage-grid, .who-grid{ grid-template-columns:1fr; }
+    .who{ border-right:none; border-bottom:1px solid var(--line); }
+    .who:last-child{ border-bottom:none; }
+    .snap-value{ font-size:19px; }
+    .subscribe{ padding:40px 20px; border-radius:20px; margin:0 -4px; }
+    .news-item .go{ display:none; }
+  }
 </style>
 </head>
 <body>
 
 <header class="site">
   <div class="nav">
-    <a class="wordmark" href="#top">
+    <a class="wordmark" href="/" aria-label="The Energy Ledger — home">
       <svg viewBox="0 0 120 120" aria-hidden="true">
-        <rect x="0" y="0" width="120" height="120" rx="24" fill="#0b0d0f"/>
-        <line x1="21" y1="30" x2="21" y2="90" stroke="#4a4d50" stroke-width="2" stroke-linecap="round"/>
-        <line x1="34" y1="44" x2="80" y2="44" stroke="#f2f0e9" stroke-width="7" stroke-linecap="round"/>
-        <line x1="34" y1="62" x2="92" y2="62" stroke="#f2f0e9" stroke-width="7" stroke-linecap="round"/>
-        <line x1="34" y1="80" x2="66" y2="80" stroke="#f2f0e9" stroke-width="7" stroke-linecap="round"/>
-        <polyline points="80,44 96,27 103,32" fill="none" stroke="#c98a2c" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="103" cy="32" r="4.5" fill="#c98a2c"/>
+        <rect x="0" y="0" width="120" height="120" rx="28" fill="#0f172a"/>
+        <line x1="21" y1="30" x2="21" y2="90" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+        <line x1="34" y1="44" x2="80" y2="44" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="62" x2="92" y2="62" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="80" x2="66" y2="80" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <polyline points="80,44 96,27 103,32" fill="none" stroke="#f97316" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="103" cy="32" r="4.5" fill="#f97316"/>
       </svg>
-      THE ENERGY <span>LEDGER</span>
+      <b style="font-weight:inherit">The Energy <span>Ledger</span></b>
     </a>
-    <nav class="links">
-      <a href="#coverage">Coverage</a>
-      <a href="#who">Who it's for</a>
-      <a href="#issue">Latest issues</a>
-      <a href="#news">News</a>
-      <a href="/generation.html">Live Generation</a>
-      <a href="/lng.html">LNG Data</a>
-      <a href="/uk-gas.html">UK Gas Storage</a>
-      <a class="btn" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-links">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="links" id="site-links">
+      <a href="/#coverage">Coverage</a>
+      <a href="/#data">Live data</a>
+      <a href="/#news">News</a>
+      <a href="/#about">About</a>
+      <a class="btn primary sm" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe free</a>
     </nav>
   </div>
 </header>
 
 <main id="top">
 
-  <section class="hero" style="border-bottom:none; padding-bottom:0;">
-    <div class="hero-inner">
-      <span class="eyebrow" data-key="hero_eyebrow">Weekly · Gas · Power · Carbon · LNG</span>
-      <h1 class="hero-title"><span data-key="hero_title_line1">Welcome to</span><br><span data-key="hero_title_line2">the Energy</span><br><span data-key="hero_title_line3">Ledger.</span></h1>
-      <p class="hero-sub" data-key="hero_subhead">An independent, weekly read on UK gas, power, carbon and LNG markets — written for the desks that have to act on it, not the ones that just watch it.</p>
-      <p class="hero-byline" data-key="hero_byline" data-html="true">Written by <b>Asher Kilbride</b> · home.theenergyledger.co.uk</p>
-      <div class="hero-cta">
-        <a class="btn solid" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe on Substack</a>
-        <a class="btn" href="#coverage">See what's inside</a>
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="pill"><span class="dot"></span><span data-key="hero_eyebrow">Weekly · Gas · Power · Carbon · LNG</span></span>
+        <h1><span data-key="hero_title_line1">Welcome to</span> <span data-key="hero_title_line2">the Energy</span> <span class="hl" data-key="hero_title_line3">Ledger.</span></h1>
+        <p class="hero-sub" data-key="hero_subhead">An independent, weekly read on UK gas, power, carbon and LNG markets — written for the desks that have to act on it, not the ones that just watch it.</p>
+        <div class="hero-cta">
+          <a class="btn brand" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe on Substack <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn" href="https://home.theenergyledger.co.uk/archive" target="_blank" rel="noopener">Read past issues</a>
+        </div>
+        <div class="hero-byline">
+          <span class="avatar" aria-hidden="true">AK</span>
+          <span data-key="hero_byline" data-html="true">Written by <b>Asher Kilbride</b> · home.theenergyledger.co.uk</span>
+        </div>
       </div>
+
+      <aside class="card snapshot" aria-labelledby="snap-title">
+        <div class="snapshot-head">
+          <h2 id="snap-title">Market snapshot</h2>
+          <span class="tag">Week to date</span>
+        </div>
+        <div class="snap-grid">
+          <div class="snap">
+            <div class="snap-label"><i style="background:var(--gas)"></i>NBP day-ahead</div>
+            <div class="snap-value" data-key="ticker_nbp">62.40p/th</div>
+          </div>
+          <div class="snap">
+            <div class="snap-label"><i style="background:var(--gas)"></i>TTF front month</div>
+            <div class="snap-value" data-key="ticker_ttf">€31.20/MWh</div>
+          </div>
+          <div class="snap">
+            <div class="snap-label"><i style="background:var(--power)"></i>UK power day-ahead</div>
+            <div class="snap-value" data-key="ticker_ukpower">£74.15/MWh</div>
+          </div>
+          <div class="snap">
+            <div class="snap-label"><i style="background:var(--carbon)"></i>EUA carbon</div>
+            <div class="snap-value" data-key="ticker_eua">€68.90</div>
+          </div>
+          <div class="snap live wide">
+            <div>
+              <div class="snap-label"><span class="live-dot"></span>GB carbon intensity · live</div>
+              <div class="snap-value" id="ti-carbon">—</div>
+            </div>
+            <div style="text-align:right;">
+              <div class="snap-label" style="justify-content:flex-end;">Largest source</div>
+              <div class="snap-value" id="ti-mix">—</div>
+            </div>
+          </div>
+        </div>
+        <p class="snap-note">Prices updated weekly by hand from broker reports — illustrative, not for trading. Carbon intensity and generation mix are live from the National Energy System Operator.</p>
+      </aside>
     </div>
   </section>
 
-  <div class="ticker-band" aria-hidden="true">
-    <div class="ticker-label">Live &amp; weekly</div>
-    <div class="ticker-track" id="ticker-track">
-      <span class="ticker-item"><b>GB CARBON INTENSITY</b><span id="ti-carbon">loading…</span></span>
-      <span class="ticker-item"><b>GB GENERATION MIX</b><span id="ti-mix">loading…</span></span>
-      <span class="ticker-item"><b>NBP DA</b><span data-key="ticker_nbp">62.40p/th</span></span>
-      <span class="ticker-item"><b>TTF FRONT MONTH</b><span data-key="ticker_ttf">€31.20/MWh</span></span>
-      <span class="ticker-item"><b>UK POWER DA</b><span data-key="ticker_ukpower">£74.15/MWh</span></span>
-      <span class="ticker-item"><b>EUA</b><span data-key="ticker_eua">€68.90</span></span>
-      <!-- duplicate set for seamless loop -->
-      <span class="ticker-item"><b>GB CARBON INTENSITY</b><span class="ti-carbon-dup">loading…</span></span>
-      <span class="ticker-item"><b>GB GENERATION MIX</b><span class="ti-mix-dup">loading…</span></span>
-      <span class="ticker-item"><b>NBP DA</b><span data-key="ticker_nbp">62.40p/th</span></span>
-      <span class="ticker-item"><b>TTF FRONT MONTH</b><span data-key="ticker_ttf">€31.20/MWh</span></span>
-      <span class="ticker-item"><b>UK POWER DA</b><span data-key="ticker_ukpower">£74.15/MWh</span></span>
-      <span class="ticker-item"><b>EUA</b><span data-key="ticker_eua">€68.90</span></span>
-    </div>
-  </div>
-  <p class="ticker-note">GB carbon intensity and generation mix update live from the National Energy System Operator. NBP, TTF, UK power and EUA are updated weekly by hand from broker reports — illustrative, not for trading.</p>
-
-  <section id="coverage">
+  <!-- ===== Coverage ===== -->
+  <section id="coverage" class="soft">
     <div class="wrap">
       <div class="section-head">
-        <div>
-          <span class="section-tag" data-key="coverage_tag">Coverage</span>
-          <h2 class="section-title" data-key="coverage_title">What's in every issue</h2>
-        </div>
+        <span class="kicker" data-key="coverage_tag">Coverage</span>
+        <h2 class="section-title" data-key="coverage_title">What's in every issue</h2>
         <p class="section-desc" data-key="coverage_desc">Four beats, covered every week, always tied back to what it means for procurement.</p>
       </div>
-
-      <div class="ledger">
-        <div class="ledger-row">
+      <div class="coverage-grid">
+        <article class="card cov">
+          <span class="icon-chip chip-gas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c1 3 5 5.5 5 10a5 5 0 0 1-10 0c0-2 1-3.5 2-4.5 0 2 1 3 2 3 0-3-1-5.5 1-8.5z"/></svg></span>
           <span class="code" data-key="coverage_1_code">GAS — NBP / TTF</span>
-          <div>
-            <h3 data-key="coverage_1_title">Day-ahead and the forward curve</h3>
-            <p data-key="coverage_1_desc">Storage levels, flow data, and what's actually moving the front month — not just that it moved.</p>
-          </div>
-          <span class="figure">01.NBP-TTF</span>
-        </div>
-        <div class="ledger-row">
+          <h3 data-key="coverage_1_title">Day-ahead and the forward curve</h3>
+          <p data-key="coverage_1_desc">Storage levels, flow data, and what's actually moving the front month — not just that it moved.</p>
+        </article>
+        <article class="card cov">
+          <span class="icon-chip chip-power"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></span>
           <span class="code" data-key="coverage_2_code">POWER — GB Day-Ahead</span>
-          <div>
-            <h3 data-key="coverage_2_title">Day-day power and the generation mix</h3>
-            <p data-key="coverage_2_desc">Baseload swings, wind and interconnector flows, and the read-through for fixed-price procurement.</p>
-          </div>
-          <span class="figure">02.GB-PWR</span>
-        </div>
-        <div class="ledger-row">
+          <h3 data-key="coverage_2_title">Day-ahead power and the generation mix</h3>
+          <p data-key="coverage_2_desc">Baseload swings, wind and interconnector flows, and the read-through for fixed-price procurement.</p>
+        </article>
+        <article class="card cov">
+          <span class="icon-chip chip-carbon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10z"/><path d="M2 21c0-3 1.9-5.4 5.1-6"/></svg></span>
           <span class="code" data-key="coverage_3_code">CARBON — EUA / UK ETS</span>
-          <div>
-            <h3 data-key="coverage_3_title">Where the two schemes diverge</h3>
-            <p data-key="coverage_3_desc">EUA and UK ETS pricing side by side, and what the gap means for compliance buying.</p>
-          </div>
-          <span class="figure">03.EUA-ETS</span>
-        </div>
-        <div class="ledger-row">
-          <span class="code" data-key="coverage_4_code">LNG — Cargoes & freight</span>
-          <div>
-            <h3 data-key="coverage_4_title">The supply chain behind the headline number</h3>
-            <p data-key="coverage_4_desc">Global cargo flows and freight rates — the detail that eventually shows up in NBP a few weeks later.</p>
-          </div>
-          <span class="figure">04.LNG-FRT</span>
-        </div>
+          <h3 data-key="coverage_3_title">Where the two schemes diverge</h3>
+          <p data-key="coverage_3_desc">EUA and UK ETS pricing side by side, and what the gap means for compliance buying.</p>
+        </article>
+        <article class="card cov">
+          <span class="icon-chip chip-lng"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20c2 1 4 1 6 0s4-1 6 0 4 1 6 0"/><path d="M4 17 3 12h18l-2 5"/><path d="M8 12V8h8v4"/><path d="M12 8V4"/></svg></span>
+          <span class="code" data-key="coverage_4_code">LNG — Cargoes &amp; freight</span>
+          <h3 data-key="coverage_4_title">The supply chain behind the headline number</h3>
+          <p data-key="coverage_4_desc">Global cargo flows and freight rates — the detail that eventually shows up in NBP a few weeks later.</p>
+        </article>
       </div>
     </div>
   </section>
 
+  <!-- ===== Readership ===== -->
   <section id="who">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head split">
         <div>
-          <span class="section-tag" data-key="who_tag">Readership</span>
+          <span class="kicker" data-key="who_tag">Readership</span>
           <h2 class="section-title" data-key="who_title">Built for the desk, not the general reader</h2>
         </div>
-        <p class="section-desc" data-key="who_desc">No terms are defined mid-sentence. If you trade or broker UK energy, you already speak the language.</p>
+        <p class="section-desc" style="max-width:420px; margin-top:0;" data-key="who_desc">No terms are defined mid-sentence. If you trade or broker UK energy, you already speak the language.</p>
       </div>
-
-      <table class="roles">
-        <tr>
-          <td class="role" data-key="who_1_role">Brokers</td>
-          <td class="desc" data-key="who_1_desc">A second read on the week's market notes before the desk opens — context, not repetition.</td>
-        </tr>
-        <tr>
-          <td class="role" data-key="who_2_role">Traders</td>
-          <td class="desc" data-key="who_2_desc">The geopolitical and structural story behind the numbers, alongside the numbers themselves.</td>
-        </tr>
-        <tr>
-          <td class="role" data-key="who_3_role">TPIs</td>
-          <td class="desc" data-key="who_3_desc">Procurement-implications framing you can hand straight to a client without rewriting it.</td>
-        </tr>
-        <tr>
-          <td class="role" data-key="who_4_role">Sector executives</td>
-          <td class="desc" data-key="who_4_desc">A concise, weekly view of where UK gas, power, carbon and LNG markets are heading next.</td>
-        </tr>
-      </table>
+      <div class="who-grid">
+        <div class="who">
+          <h3 data-key="who_1_role">Brokers</h3>
+          <p data-key="who_1_desc">A second read on the week's market notes before the desk opens — context, not repetition.</p>
+        </div>
+        <div class="who">
+          <h3 data-key="who_2_role">Traders</h3>
+          <p data-key="who_2_desc">The geopolitical and structural story behind the numbers, alongside the numbers themselves.</p>
+        </div>
+        <div class="who">
+          <h3 data-key="who_3_role">TPIs</h3>
+          <p data-key="who_3_desc">Procurement-implications framing you can hand straight to a client without rewriting it.</p>
+        </div>
+        <div class="who">
+          <h3 data-key="who_4_role">Sector executives</h3>
+          <p data-key="who_4_desc">A concise, weekly view of where UK gas, power, carbon and LNG markets are heading next.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="issue">
+  <!-- ===== Live data ===== -->
+  <section id="data" class="soft">
     <div class="wrap">
       <div class="section-head">
-        <div>
-          <span class="section-tag" data-key="issue_tag">Latest issues</span>
-          <h2 class="section-title" data-key="issue_title">Read the archive</h2>
-        </div>
-        <p class="section-desc" data-key="issue_desc">Every issue lives on Substack — free to read, easy to forward, and searchable by week.</p>
+        <span class="kicker">Live data</span>
+        <h2 class="section-title">The numbers behind the newsletter</h2>
+        <p class="section-desc">Free dashboards built on official public data — updated automatically, no login required.</p>
       </div>
-
-      <div class="issue-card">
-        <div>
-          <div class="issue-meta" data-key="issue_meta">Full archive</div>
-          <h3 data-key="issue_card_title">Every past issue of The Energy Ledger</h3>
-          <p data-key="issue_card_desc">Broker positioning, the week's central market theme, and a forward-looking what-to-watch, week after week. Browse the complete run on Substack.</p>
-        </div>
-        <div class="issue-cta">
-          <a class="btn solid" href="https://home.theenergyledger.co.uk/archive" target="_blank" rel="noopener">Browse the archive</a>
-        </div>
+      <div class="data-grid">
+        <a class="card data-card" href="/generation.html">
+          <div class="top">
+            <span class="icon-chip chip-power"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></span>
+            <span class="live-tag"><span class="live-dot"></span>Live</span>
+          </div>
+          <h3>GB generation &amp; carbon intensity</h3>
+          <div class="big" id="dc-carbon">—<span class="unit">gCO₂/kWh</span></div>
+          <div class="sub" id="dc-carbon-sub">Electricity generation mix, carbon intensity and national demand.</div>
+          <span class="go">Open dashboard <span aria-hidden="true">→</span></span>
+        </a>
+        <a class="card data-card" href="/lng.html">
+          <div class="top">
+            <span class="icon-chip chip-lng"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20c2 1 4 1 6 0s4-1 6 0 4 1 6 0"/><path d="M4 17 3 12h18l-2 5"/><path d="M8 12V8h8v4"/><path d="M12 8V4"/></svg></span>
+            <span class="live-tag"><span class="live-dot"></span>Daily</span>
+          </div>
+          <h3>European LNG terminals</h3>
+          <div class="big" id="dc-lng">—<span class="unit">GWh/d</span></div>
+          <div class="sub" id="dc-lng-sub">EU terminal send-out, inventory and capacity use.</div>
+          <span class="go">Open dashboard <span aria-hidden="true">→</span></span>
+        </a>
+        <a class="card data-card" href="/uk-gas.html">
+          <div class="top">
+            <span class="icon-chip chip-gas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></span>
+            <span class="live-tag"><span class="live-dot"></span>Daily</span>
+          </div>
+          <h3>UK gas storage flows</h3>
+          <div class="big" id="dc-gas">—<span class="unit">mcm/d</span></div>
+          <div class="sub" id="dc-gas-sub">Injection and withdrawal at NTS storage sites.</div>
+          <span class="go">Open dashboard <span aria-hidden="true">→</span></span>
+        </a>
       </div>
     </div>
   </section>
 
+  <!-- ===== News + archive ===== -->
   <section id="news">
     <div class="wrap">
       <div class="section-head">
-        <div>
-          <span class="section-tag">Regulatory watch</span>
-          <h2 class="section-title">Latest gas, power &amp; carbon news</h2>
-        </div>
-        <p class="section-desc">Pulled automatically from official UK government sources — filtered to gas, power, carbon and LNG, refreshed hourly.</p>
+        <span class="kicker">Regulatory watch</span>
+        <h2 class="section-title">Latest gas, power &amp; carbon news</h2>
+        <p class="section-desc">Pulled automatically from official UK government and trade sources — filtered to gas, power, carbon and LNG, refreshed daily.</p>
       </div>
-
-      <div id="news-list" class="ledger">
-        <p style="color:var(--ink-faint); font-family:'IBM Plex Mono',monospace; font-size:13px;">Loading latest items…</p>
-      </div>
-
-      <div class="issue-card" style="margin-top:36px;">
+      <div class="news-layout" id="issue">
         <div>
-          <div class="issue-meta">Live data</div>
-          <h3>See the live generation mix, carbon intensity &amp; demand</h3>
-          <p>A real-time snapshot of Great Britain's electricity system — updated automatically from official public data.</p>
+          <div class="news-list" id="news-list">
+            <p class="loading">Loading latest items…</p>
+          </div>
+          <button class="btn sm news-more" id="news-more" hidden>Show more news</button>
         </div>
-        <div class="issue-cta">
-          <a class="btn solid" href="/generation.html">View live dashboard</a>
-        </div>
+        <aside class="card archive-card">
+          <div class="issue-meta" data-key="issue_meta">Full archive</div>
+          <h3 data-key="issue_card_title">Every past issue of The Energy Ledger</h3>
+          <p data-key="issue_card_desc">Broker positioning, the week's central market theme, and a forward-looking what-to-watch, week after week. Browse the complete run on Substack.</p>
+          <a class="btn primary" href="https://home.theenergyledger.co.uk/archive" target="_blank" rel="noopener">Browse the archive <span class="arrow" aria-hidden="true">→</span></a>
+          <p class="issue-desc" data-key="issue_desc">Every issue lives on Substack — free to read, easy to forward, and searchable by week.</p>
+        </aside>
       </div>
     </div>
   </section>
 
-  <section style="border-bottom:none;">
+  <!-- ===== About ===== -->
+  <section id="about" class="soft">
     <div class="wrap about">
       <blockquote data-key="about_quote">&ldquo;An independent read on UK energy markets — written by someone who spends their week in them.&rdquo;</blockquote>
-      <div class="about-body">
-        <p><strong data-key="about_heading" style="color:var(--ink); font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:0.04em; font-weight:600;">About Asher Kilbride</strong></p>
+      <div class="card about-body">
+        <div class="who-line">
+          <span class="avatar" aria-hidden="true">AK</span>
+          <div>
+            <h3 data-key="about_heading">About Asher Kilbride</h3>
+            <div class="role">Author, The Energy Ledger</div>
+          </div>
+        </div>
         <p data-key="about_p1">Asher Kilbride writes The Energy Ledger from inside the UK energy industry — close enough to the desks, the broker notes and the procurement conversations to know what actually matters week to week, and to write about it without a house view to protect.</p>
-        <p data-key="about_p2">The name is a pen name. The markets aren't.</p>
+        <p class="pen" data-key="about_p2">The name is a pen name. The markets aren't.</p>
       </div>
     </div>
   </section>
 
+  <!-- ===== Subscribe ===== -->
+  <section id="subscribe">
+    <div class="wrap">
+      <div class="subscribe">
+        <div>
+          <span class="kicker">Subscribe</span>
+          <h2 data-key="footer_title">Get it in your inbox, every week.</h2>
+          <p class="foot-sub" data-key="footer_sub">Free to read. No spam, no noise — just the week's UK gas, power, carbon and LNG markets, and what to watch next.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>One email a week, before the desk opens</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Gas, power, carbon and LNG in one read</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Free, unsubscribe any time</li>
+          </ul>
+        </div>
+        <div class="embed-wrap">
+          <iframe src="https://asherkilbride.substack.com/embed" title="Subscribe to The Energy Ledger" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
-<footer class="subscribe">
+<footer class="site">
   <div class="wrap">
-    <span class="section-tag">Subscribe</span>
-    <h2 data-key="footer_title">Get it in your inbox, every week.</h2>
-    <p class="foot-sub" data-key="footer_sub">Free to read. No spam, no noise — just the week's UK gas, power, carbon and LNG markets, and what to watch next.</p>
-
-    <div class="embed-wrap">
-      <iframe src="https://asherkilbride.substack.com/embed" title="Subscribe to The Energy Ledger"></iframe>
-    </div>
-
-    <div class="foot-bottom">
-      <span data-key="footer_tagline">The Energy Ledger is an independent read on UK energy markets.</span>
-      <span class="socials">
+    <div class="foot-grid">
+      <div>
+        <a class="wordmark" href="/">
+          <svg viewBox="0 0 120 120" aria-hidden="true"><rect width="120" height="120" rx="28" fill="#0f172a"/><line x1="34" y1="44" x2="80" y2="44" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/><line x1="34" y1="62" x2="92" y2="62" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/><line x1="34" y1="80" x2="66" y2="80" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/><polyline points="80,44 96,27 103,32" fill="none" stroke="#f97316" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <b style="font-weight:inherit">The Energy <span>Ledger</span></b>
+        </a>
+        <p data-key="footer_tagline">The Energy Ledger is an independent read on UK energy markets.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Newsletter</h4>
+        <a href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe</a>
+        <a href="https://home.theenergyledger.co.uk/archive" target="_blank" rel="noopener">Archive</a>
+        <a href="/#coverage">Coverage</a>
+        <a href="/#about">About</a>
+      </div>
+      <div class="foot-col">
+        <h4>Live data</h4>
+        <a href="/generation.html">GB generation</a>
+        <a href="/lng.html">European LNG</a>
+        <a href="/uk-gas.html">UK gas storage</a>
+        <a href="/#news">News</a>
+      </div>
+      <div class="foot-col">
+        <h4>Follow</h4>
         <a href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Substack</a>
         <a href="#" target="_blank" rel="noopener">X</a>
         <a href="#" target="_blank" rel="noopener">LinkedIn</a>
-      </span>
+      </div>
     </div>
-    <div class="foot-bottom" style="margin-top:6px; border-top:none; padding-top:6px;">
+    <div class="foot-bottom">
       <span data-key="footer_copyright">© 2026 The Energy Ledger. All rights reserved.</span>
+      <span>Market data is illustrative and not for trading.</span>
     </div>
   </div>
 </footer>
 
+<script src="/assets/site.js"></script>
 <script>
   // Live GB carbon intensity + generation mix — National Energy System Operator's
   // free public Carbon Intensity API (CORS-enabled, no key required, CC BY 4.0).
+  const FUEL_LABEL = { gas: 'Gas', coal: 'Coal', biomass: 'Biomass', nuclear: 'Nuclear', hydro: 'Hydro', imports: 'Imports', other: 'Other', wind: 'Wind', solar: 'Solar' };
+
   fetch('https://api.carbonintensity.org.uk/intensity')
     .then(r => r.json())
     .then(data => {
       const d = data.data[0].intensity;
       const val = d.actual !== null ? d.actual : d.forecast;
-      const text = `${val} gCO₂/kWh · ${d.index}`;
-      document.querySelectorAll('#ti-carbon, .ti-carbon-dup').forEach(el => el.textContent = text);
+      document.getElementById('ti-carbon').innerHTML = `${val} <span style="font-size:13px;font-weight:500;color:var(--ink-3)">gCO₂/kWh</span>`;
+      document.getElementById('dc-carbon').innerHTML = `${val}<span class="unit">gCO₂/kWh</span>`;
+      document.getElementById('dc-carbon-sub').textContent = `Carbon intensity is ${d.index} right now.`;
     })
     .catch(() => {
-      document.querySelectorAll('#ti-carbon, .ti-carbon-dup').forEach(el => el.textContent = 'unavailable');
+      document.getElementById('ti-carbon').textContent = 'Unavailable';
+      document.getElementById('dc-carbon').innerHTML = '<span class="unit" style="margin:0">Live data unavailable</span>';
     });
 
   fetch('https://api.carbonintensity.org.uk/generation')
     .then(r => r.json())
     .then(data => {
-      const mix = data.data.generationmix.slice().sort((a, b) => b.perc - a.perc)[0];
-      const label = mix.fuel.charAt(0).toUpperCase() + mix.fuel.slice(1);
-      const text = `${label} ${mix.perc}%`;
-      document.querySelectorAll('#ti-mix, .ti-mix-dup').forEach(el => el.textContent = text);
+      const top = data.data.generationmix.slice().sort((a, b) => b.perc - a.perc)[0];
+      document.getElementById('ti-mix').textContent = `${FUEL_LABEL[top.fuel] || top.fuel} ${top.perc}%`;
     })
-    .catch(() => {
-      document.querySelectorAll('#ti-mix, .ti-mix-dup').forEach(el => el.textContent = 'unavailable');
-    });
-</script>
-<script>
-  // Load editable text from content/site-content.json and populate the page.
-  fetch('/content/site-content.json')
+    .catch(() => { document.getElementById('ti-mix').textContent = '—'; });
+
+  // Headline figures for the data cards (from the scheduled Netlify functions).
+  fetch('/content/lng-data.json')
     .then(r => r.json())
-    .then(data => {
-      document.querySelectorAll('[data-key]').forEach(el => {
-        const key = el.getAttribute('data-key');
-        if (data[key] === undefined) return;
-        if (el.getAttribute('data-html') === 'true') {
-          el.innerHTML = data[key];
-        } else {
-          el.textContent = data[key];
-        }
-      });
+    .then(d => {
+      if (d.sendOutGWhPerDay == null) throw new Error('no data');
+      document.getElementById('dc-lng').innerHTML = `${fmtNumber(d.sendOutGWhPerDay, 0)}<span class="unit">GWh/d send-out</span>`;
+      if (d.maxSendOutGWhPerDay) {
+        const pct = Math.round(d.sendOutGWhPerDay / d.maxSendOutGWhPerDay * 100);
+        document.getElementById('dc-lng-sub').textContent = `${pct}% of declared EU send-out capacity.`;
+      }
     })
-    .catch(() => { /* if the fetch fails, the hard-coded fallback text already in the page still shows */ });
-</script>
-<script>
+    .catch(() => {});
+
+  fetch('/content/uk-gas-data.json')
+    .then(r => r.json())
+    .then(d => {
+      const rates = (d.sites || []).map(s => s.flowRate).filter(v => v !== null && v !== undefined);
+      if (!rates.length) throw new Error('no data');
+      const net = rates.reduce((a, b) => a + b, 0);
+      document.getElementById('dc-gas').innerHTML = `${fmtNumber(Math.abs(net), 1)}<span class="unit">mcm/d net ${net >= 0 ? 'injection' : 'withdrawal'}</span>`;
+      document.getElementById('dc-gas-sub').textContent = `Across ${rates.length} storage sites, gas day ${d.currentGasDay}.`;
+    })
+    .catch(() => {});
+
   // Render the auto-fetched, filtered news feed (see netlify/functions/fetch-news.mjs).
+  const NEWS_PAGE = 6;
+  let newsItems = [], newsShown = 0;
+  function renderNews() {
+    const list = document.getElementById('news-list');
+    newsShown = Math.min(newsItems.length, newsShown + NEWS_PAGE);
+    list.innerHTML = newsItems.slice(0, newsShown).map(item => {
+      const date = item.published ? new Date(item.published).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' }) : '';
+      const link = /^https?:\/\//.test(item.link || '') ? item.link : '#';
+      return `
+        <a class="news-item" href="${escapeHtml(link)}" target="_blank" rel="noopener">
+          <span class="meta"><b>${escapeHtml(item.source || 'GOV.UK')}</b>${date ? `<span>·</span><span>${escapeHtml(date)}</span>` : ''}</span>
+          <h3>${escapeHtml(item.title)}</h3>
+          ${item.summary ? `<p>${escapeHtml(item.summary.trim())}</p>` : ''}
+          <span class="go" aria-hidden="true">→</span>
+        </a>`;
+    }).join('');
+    document.getElementById('news-more').hidden = newsShown >= newsItems.length;
+  }
+  document.getElementById('news-more').addEventListener('click', renderNews);
+
   fetch('/content/news-feed.json')
     .then(r => r.json())
     .then(data => {
-      const list = document.getElementById('news-list');
-      if (!data.items || data.items.length === 0) {
-        list.innerHTML = '<p style="color:var(--ink-faint); font-family:\'IBM Plex Mono\',monospace; font-size:13px;">No items yet — check back shortly.</p>';
+      newsItems = data.items || [];
+      if (!newsItems.length) {
+        document.getElementById('news-list').innerHTML = '<p class="loading">No items yet — check back shortly.</p>';
         return;
       }
-      list.innerHTML = data.items.map(item => `
-        <div class="ledger-row">
-          <span class="code">${item.source || 'GOV.UK'}</span>
-          <div>
-            <h3><a href="${item.link}" target="_blank" rel="noopener" style="color:inherit; text-decoration:none;">${item.title}</a></h3>
-            <p>${item.summary || ''}</p>
-          </div>
-          <span class="figure">${item.published ? new Date(item.published).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' }) : ''}</span>
-        </div>
-      `).join('');
+      renderNews();
     })
     .catch(() => {
-      document.getElementById('news-list').innerHTML = '<p style="color:var(--ink-faint); font-family:\'IBM Plex Mono\',monospace; font-size:13px;">Unable to load right now.</p>';
+      document.getElementById('news-list').innerHTML = '<p class="loading">Unable to load right now.</p>';
     });
 </script>
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>

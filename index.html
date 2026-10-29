@@ -408,7 +408,7 @@
             <span class="live-tag"><span class="live-dot"></span>Daily</span>
           </div>
           <h3>UK gas storage flows</h3>
-          <div class="big" id="dc-gas">—<span class="unit">mcm/d</span></div>
+          <div class="big" id="dc-gas">—<span class="unit">mcm/day</span></div>
           <div class="sub" id="dc-gas-sub">Injection and withdrawal at NTS storage sites.</div>
           <span class="go">Open dashboard <span aria-hidden="true">→</span></span>
         </a>
@@ -568,7 +568,7 @@
       const rates = (d.sites || []).map(s => s.flowRate).filter(v => v !== null && v !== undefined);
       if (!rates.length) throw new Error('no data');
       const net = rates.reduce((a, b) => a + b, 0);
-      document.getElementById('dc-gas').innerHTML = `${fmtNumber(Math.abs(net), 1)}<span class="unit">mcm/d net ${net >= 0 ? 'injection' : 'withdrawal'}</span>`;
+      document.getElementById('dc-gas').innerHTML = `${fmtNumber(Math.abs(net), 1)}<span class="unit">mcm/day net ${net >= 0 ? 'injection' : 'withdrawal'}</span>`;
       document.getElementById('dc-gas-sub').textContent = `Across ${rates.length} storage sites, gas day ${d.currentGasDay}.`;
     })
     .catch(() => {});

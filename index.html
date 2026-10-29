@@ -90,6 +90,40 @@
   .snap.wide .snap-value{ margin-top:4px; }
   .snap-note{ padding:12px 16px 8px; font-size:12.5px; color:var(--ink-3); line-height:1.5; }
 
+  /* ---------- Latest issues ---------- */
+  .issues-grid{ display:grid; grid-template-columns:1.4fr 1fr; gap:16px; }
+  .issues-side{ display:grid; gap:16px; }
+  .issue{ padding:26px; display:flex; flex-direction:column; gap:10px; }
+  .issue .meta{ font-size:13px; font-weight:600; color:var(--ink-3); display:flex; gap:8px; align-items:center; }
+  .issue .meta .no{ color:var(--brand); }
+  .issue h3{ font-size:19px; line-height:1.3; letter-spacing:-0.015em; transition:color .15s ease; }
+  .issue p{ color:var(--ink-3); font-size:15px; line-height:1.6; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+  .issue .go{ margin-top:auto; padding-top:8px; font-weight:600; font-size:14.5px; color:var(--brand); }
+  a.issue:hover h3{ color:var(--brand); }
+  .issue.featured{
+    padding:36px;
+    background:linear-gradient(150deg, #fff 0%, #fff 55%, var(--brand-soft) 100%);
+  }
+  .issue.featured .tag-new{
+    align-self:flex-start;
+    font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase;
+    color:#fff; background:var(--brand); padding:4px 10px; border-radius:999px;
+  }
+  .issue.featured h3{ font-size:clamp(24px, 2.6vw, 32px); letter-spacing:-0.025em; line-height:1.2; }
+  .issue.featured p{ font-size:17px; -webkit-line-clamp:4; }
+  .past-list{ margin-top:32px; border-top:1px solid var(--line); }
+  .past-item{
+    display:grid; grid-template-columns:120px 1fr auto; gap:20px; align-items:baseline;
+    padding:16px 4px; border-bottom:1px solid var(--line);
+    text-decoration:none; color:inherit;
+  }
+  .past-item .date{ font-size:14px; color:var(--ink-3); font-variant-numeric:tabular-nums; }
+  .past-item .title{ font-size:16px; font-weight:600; color:var(--ink); transition:color .15s ease; }
+  .past-item .go{ color:var(--ink-4); transition:color .15s ease, transform .15s ease; }
+  .past-item:hover .title, .past-item:hover .go{ color:var(--brand); }
+  .past-item:hover .go{ transform:translateX(2px); }
+  .issues-actions{ margin-top:24px; display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+
   /* ---------- Coverage ---------- */
   .coverage-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:16px; }
   .cov{ padding:28px 24px; display:flex; flex-direction:column; gap:16px; }
@@ -202,6 +236,7 @@
     .who:nth-child(-n+2){ border-bottom:1px solid var(--line); }
     .news-layout{ grid-template-columns:1fr; }
     .archive-card{ position:static; }
+    .issues-grid{ grid-template-columns:1fr; }
     .about{ grid-template-columns:1fr; gap:32px; }
     .subscribe{ grid-template-columns:1fr; padding:48px 32px; }
   }
@@ -216,6 +251,9 @@
     .snap-value{ font-size:19px; }
     .subscribe{ padding:40px 20px; border-radius:20px; margin:0 -4px; }
     .news-item .go{ display:none; }
+    .issue.featured{ padding:26px; }
+    .past-item{ grid-template-columns:1fr; gap:2px; }
+    .past-item .go{ display:none; }
   }
 </style>
 </head>
@@ -239,6 +277,7 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
     <nav class="links" id="site-links">
+      <a href="/#issues">Issues</a>
       <a href="/#coverage">Coverage</a>
       <a href="/#data">Live data</a>
       <a href="/#news">News</a>
@@ -259,7 +298,7 @@
         <p class="hero-sub" data-key="hero_subhead">An independent, weekly read on UK gas, power, carbon and LNG markets — written for the desks that have to act on it, not the ones that just watch it.</p>
         <div class="hero-cta">
           <a class="btn brand" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe on Substack <span class="arrow" aria-hidden="true">→</span></a>
-          <a class="btn" href="https://home.theenergyledger.co.uk/archive" target="_blank" rel="noopener">Read past issues</a>
+          <a class="btn" href="#issues">Read past issues</a>
         </div>
         <div class="hero-byline">
           <span class="avatar" aria-hidden="true"><svg viewBox="0 0 120 120" style="width:60%;height:60%"><line x1="24" y1="44" x2="74" y2="44" stroke="#fff" stroke-width="10" stroke-linecap="round"/><line x1="24" y1="62" x2="88" y2="62" stroke="#fff" stroke-width="10" stroke-linecap="round"/><line x1="24" y1="80" x2="58" y2="80" stroke="#fff" stroke-width="10" stroke-linecap="round"/><polyline points="74,44 92,26" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round"/></svg></span>
@@ -302,6 +341,22 @@
         </div>
         <p class="snap-note">Prices updated weekly by hand from broker reports — illustrative, not for trading. Carbon intensity and generation mix are live from the National Energy System Operator.</p>
       </aside>
+    </div>
+  </section>
+
+  <!-- ===== Latest issues (from content/substack-posts.json, see netlify/functions/fetch-substack.mjs) ===== -->
+  <section id="issues">
+    <div class="wrap">
+      <div class="section-head split">
+        <div>
+          <span class="kicker">Latest issues</span>
+          <h2 class="section-title">From the newsletter</h2>
+        </div>
+        <a class="link" href="https://home.theenergyledger.co.uk/archive" target="_blank" rel="noopener">Full archive on Substack <span aria-hidden="true">→</span></a>
+      </div>
+      <div id="issues-body">
+        <p class="loading">Loading latest issues…</p>
+      </div>
     </div>
   </section>
 
@@ -572,6 +627,57 @@
       document.getElementById('dc-gas-sub').textContent = `Across ${rates.length} storage sites, gas day ${d.currentGasDay}.`;
     })
     .catch(() => {});
+
+  // Latest issues from Substack (see netlify/functions/fetch-substack.mjs).
+  const PAST_PAGE = 6;
+  fetch('/content/substack-posts.json')
+    .then(r => r.json())
+    .then(data => {
+      const posts = (data.posts || []).filter(p => /^https:\/\/home\.theenergyledger\.co\.uk\/p\//.test(p.url));
+      if (!posts.length) throw new Error('no posts');
+      const total = posts.length;
+      const fmt = iso => new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+      const card = (p, i, featured) => `
+        <a class="card issue${featured ? ' featured' : ''}" href="${escapeHtml(p.url)}" target="_blank" rel="noopener">
+          ${featured ? '<span class="tag-new">Latest issue</span>' : ''}
+          <span class="meta"><span class="no">No. ${total - i}</span><span>·</span><span>${escapeHtml(fmt(p.published))}</span></span>
+          <h3>${escapeHtml(p.title)}</h3>
+          ${p.subtitle ? `<p>${escapeHtml(p.subtitle)}</p>` : ''}
+          <span class="go">Read issue <span aria-hidden="true">→</span></span>
+        </a>`;
+      const row = (p, i) => `
+        <a class="past-item" href="${escapeHtml(p.url)}" target="_blank" rel="noopener">
+          <span class="date">${escapeHtml(fmt(p.published))}</span>
+          <span class="title">${escapeHtml(p.title)}</span>
+          <span class="go" aria-hidden="true">→</span>
+        </a>`;
+
+      const top = posts.slice(0, 3), rest = posts.slice(3);
+      let shown = Math.min(PAST_PAGE, rest.length);
+      const body = document.getElementById('issues-body');
+      body.innerHTML = `
+        <div class="issues-grid">
+          ${card(top[0], 0, true)}
+          ${top.length > 1 ? `<div class="issues-side">${top.slice(1).map((p, i) => card(p, i + 1, false)).join('')}</div>` : ''}
+        </div>
+        ${rest.length ? `<div class="past-list" id="past-list"></div>
+        <div class="issues-actions">
+          <button class="btn sm" id="past-more">Show all ${total} issues</button>
+          <a class="link" href="https://home.theenergyledger.co.uk/archive" target="_blank" rel="noopener">Browse on Substack <span aria-hidden="true">→</span></a>
+        </div>` : ''}`;
+      if (!rest.length) return;
+      const list = document.getElementById('past-list'), more = document.getElementById('past-more');
+      const draw = () => {
+        list.innerHTML = rest.slice(0, shown).map((p, i) => row(p, i + 3)).join('');
+        more.hidden = shown >= rest.length;
+      };
+      more.addEventListener('click', () => { shown = rest.length; draw(); });
+      draw();
+    })
+    .catch(() => {
+      document.getElementById('issues-body').innerHTML =
+        '<p class="loading">Read every past issue on <a class="link" href="https://home.theenergyledger.co.uk/archive" target="_blank" rel="noopener">Substack →</a></p>';
+    });
 
   // Render the auto-fetched, filtered news feed (see netlify/functions/fetch-news.mjs).
   const NEWS_PAGE = 6;

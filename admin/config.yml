@@ -53,8 +53,6 @@ collections:
           - { label: "Readership 4 — role", name: "who_4_role", widget: "string" }
           - { label: "Readership 4 — description", name: "who_4_desc", widget: "text" }
 
-          - { label: "Latest Issues — section tag", name: "issue_tag", widget: "string" }
-          - { label: "Latest Issues — section title", name: "issue_title", widget: "string" }
           - { label: "Latest Issues — section description", name: "issue_desc", widget: "text" }
           - { label: "Latest Issues — card label", name: "issue_meta", widget: "string" }
           - { label: "Latest Issues — card title", name: "issue_card_title", widget: "string" }

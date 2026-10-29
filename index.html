@@ -182,8 +182,17 @@
   .subscribe ul{ margin:24px 0 0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px; color:#e2e8f0; font-size:15px; }
   .subscribe li{ display:flex; gap:10px; align-items:center; }
   .subscribe li svg{ width:18px; height:18px; color:#fdba74; flex-shrink:0; }
-  .embed-wrap{ background:#fff; border-radius:16px; padding:8px; box-shadow:0 20px 40px -12px rgba(0,0,0,.5); }
-  .embed-wrap iframe{ width:100%; height:320px; border:0; border-radius:10px; display:block; background:#fff; }
+  .sub-card{
+    background:#fff; color:var(--ink);
+    border-radius:16px; padding:32px;
+    box-shadow:0 20px 40px -12px rgba(0,0,0,.5);
+    text-align:center;
+  }
+  .sub-card h3{ font-size:22px; }
+  .sub-card p{ margin-top:8px; color:var(--ink-3); font-size:15px; }
+  .sub-card .btn{ margin-top:22px; width:100%; padding:16px 20px; font-size:16px; }
+  .sub-card .small{ margin-top:14px; font-size:13px; color:var(--ink-3); }
+  .sub-card .small a{ color:var(--ink-2); }
 
   @media (max-width: 1000px){
     .hero .wrap{ grid-template-columns:1fr; gap:48px; }
@@ -465,8 +474,11 @@
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Free, unsubscribe any time</li>
           </ul>
         </div>
-        <div class="embed-wrap">
-          <iframe src="https://home.theenergyledger.co.uk/embed" title="Subscribe to The Energy Ledger" loading="lazy"></iframe>
+        <div class="sub-card">
+          <h3>Subscribe on Substack</h3>
+          <p>Sign up in a few seconds — every issue lands in your inbox, and the full archive is free to read.</p>
+          <a class="btn brand" href="https://home.theenergyledger.co.uk/subscribe" target="_blank" rel="noopener">Subscribe free <span class="arrow" aria-hidden="true">→</span></a>
+          <p class="small">Already subscribed? <a href="https://home.theenergyledger.co.uk/archive" target="_blank" rel="noopener">Browse past issues</a></p>
         </div>
       </div>
     </div>

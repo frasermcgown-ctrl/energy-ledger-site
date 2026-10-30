@@ -67,3 +67,13 @@ collections:
           - { label: "Footer — subtext", name: "footer_sub", widget: "text" }
           - { label: "Footer — tagline", name: "footer_tagline", widget: "string" }
           - { label: "Footer — copyright line", name: "footer_copyright", widget: "string" }
+
+          - { label: "Social — LinkedIn link", name: "social_linkedin", widget: "string", required: false, hint: "Full link, e.g. https://www.linkedin.com/company/…. Leave blank to hide the icon." }
+          - { label: "Social — X link", name: "social_x", widget: "string", required: false, hint: "Full link, e.g. https://x.com/…. Leave blank to hide the icon." }
+          - { label: "Social — Bluesky link", name: "social_bluesky", widget: "string", required: false, hint: "Full link, e.g. https://bsky.app/profile/…. Leave blank to hide the icon." }
+          - { label: "Social — Threads link", name: "social_threads", widget: "string", required: false, hint: "Full link, e.g. https://www.threads.com/@…. Leave blank to hide the icon." }
+          - { label: "Social — Instagram link", name: "social_instagram", widget: "string", required: false, hint: "Full link, e.g. https://www.instagram.com/…. Leave blank to hide the icon." }
+          - { label: "Social — Facebook link", name: "social_facebook", widget: "string", required: false, hint: "Full link, e.g. https://www.facebook.com/…. Leave blank to hide the icon." }
+          - { label: "Social — TikTok link", name: "social_tiktok", widget: "string", required: false, hint: "Full link, e.g. https://www.tiktok.com/@…. Leave blank to hide the icon." }
+          - { label: "Social — YouTube link", name: "social_youtube", widget: "string", required: false, hint: "Full link, e.g. https://www.youtube.com/@…. Leave blank to hide the icon." }
+          - { label: "Social — Substack link", name: "social_substack", widget: "string", required: false, hint: "Full link, e.g. https://home.theenergyledger.co.uk. Leave blank to hide the icon." }

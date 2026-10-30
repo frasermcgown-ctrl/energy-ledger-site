@@ -290,6 +290,20 @@ a.card:hover{ border-color:var(--line-strong); box-shadow:var(--shadow); transfo
 .source-note{ margin-top:24px; font-size:14px; color:var(--ink-3); line-height:1.65; }
 .source-note a{ color:var(--ink-2); text-decoration:underline; text-underline-offset:2px; }
 
+/* ---------- Social icon buttons ---------- */
+.socials{ display:flex; flex-wrap:wrap; gap:8px; }
+.socials .social{
+  width:40px; padding:0; height:40px; border-radius:10px;
+  display:inline-flex; align-items:center; justify-content:center;
+  background:#fff; border:1px solid var(--line); color:var(--ink-2);
+  transition:background .15s ease, color .15s ease, border-color .15s ease, transform .15s ease;
+}
+.socials .social svg{ width:18px; height:18px; fill:currentColor; }
+.socials .social:hover{ background:var(--ink); border-color:var(--ink); color:#fff; transform:translateY(-1px); }
+.socials .social:focus-visible{ outline:3px solid #fdba74; outline-offset:2px; }
+.socials-dark .social{ background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.16); color:#e2e8f0; }
+.socials-dark .social:hover{ background:#fff; border-color:#fff; color:var(--ink); }
+
 /* ---------- Footer ---------- */
 footer.site{
   background:var(--bg-soft);

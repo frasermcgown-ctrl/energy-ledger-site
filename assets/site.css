@@ -380,3 +380,19 @@ footer.site{
   html{ scroll-behavior:auto; }
   *, *::before, *::after{ animation:none !important; transition:none !important; }
 }
+
+/* ---------- Data status page (status.html) ---------- */
+.status-row{ display:grid; grid-template-columns:1.4fr 1fr 1.6fr 120px; gap:16px; align-items:start; padding:14px 8px; border-top:1px solid var(--line); font-size:15px; }
+.status-row small{ display:block; margin-top:2px; font-size:12.5px; color:var(--ink-3); }
+.status-row a{ font-weight:600; color:var(--ink); }
+.status-headrow{ border-top:0; font-size:12.5px; font-weight:600; color:var(--ink-3); text-transform:uppercase; letter-spacing:.04em; padding-top:4px; }
+.status-pill{ display:inline-block; padding:3px 10px; border-radius:999px; font-size:12.5px; font-weight:600; white-space:nowrap; }
+.status-pill.green{ background:#dcfce7; color:#166534; }
+.status-pill.amber{ background:#fef3c7; color:#92400e; }
+.status-pill.red{ background:#fee2e2; color:#991b1b; }
+@media (max-width: 720px){
+  .status-row{ grid-template-columns:1fr auto; gap:4px 12px; }
+  .status-row > :nth-child(2), .status-row > :nth-child(3){ grid-column:1; font-size:13.5px; color:var(--ink-2); }
+  .status-row > :nth-child(4){ grid-column:2; grid-row:1; }
+  .status-headrow{ display:none; }
+}

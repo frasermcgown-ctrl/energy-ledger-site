@@ -1,0 +1,8 @@
+# Skip the build when a commit only changes data files in content/.
+# The scheduled functions commit updated data there many times a day; pages
+# read those files from the public GitHub repository (see assets/site.js), so
+# a rebuild isn't needed and each update costs no production-deploy credits.
+# Any change outside content/ (pages, styles, functions, images) still deploys.
+# Exit code 0 = skip the build; anything else (including git errors) = build.
+[build]
+  ignore = "git diff --quiet \"$CACHED_COMMIT_REF\" \"$COMMIT_REF\" -- . ':(exclude)content/'"

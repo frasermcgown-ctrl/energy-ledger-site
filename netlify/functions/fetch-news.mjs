@@ -5,8 +5,6 @@
 // Netlify's existing auto-deploy, so the homepage and News page pick it up.
 // Headlines, short summaries and links only.
 
-import { writeJsonIfChanged } from "../lib/github.mjs";
-
 const GOVUK_FEED =
   "https://www.gov.uk/search/all.atom?organisations%5B%5D=department-for-energy-security-and-net-zero&order=updated-newest&count=40";
 
@@ -261,14 +259,6 @@ async function fetchFeed(url, sourceName, parser) {
   }
 }
 
-// TEMPORARY: keep a copy of a response exactly as received here, so a parser
-// can be matched to it. Remove once RenewableUK is confirmed working.
-async function captureDebug(sourceName, url, status, body) {
-  const slug = sourceName.toLowerCase().replace(/[^a-z]+/g, "-");
-  await writeJsonIfChanged(`content/debug/news-${slug}.json`, { url, status, html: String(body).slice(0, 400000) }, `Debug capture of ${sourceName} listing page`)
-    .catch(e => console.log(`debug capture failed: ${e.message}`));
-}
-
 // RenewableUK's page holds only a featured story; the list arrives when the
 // page's own form posts back to the same address on load (an ASP.NET form with
 // an anti-forgery token and cookie). Do the same: load the page, then post its
@@ -300,8 +290,8 @@ async function fetchRenewableUK() {
       const body = await res.text();
       listed = res.ok ? parseRenewableUKListing(body) : [];
       if (!listed.length) {
-        console.log(`${source}: list post returned ${res.status}, ${body.length} bytes, 0 items (fields: ${[...fields.keys()].join(", ")}; cookie ${cookie ? "sent" : "missing"})`);
-        await captureDebug(source, RENEWABLEUK_PRESS + " [POST]", res.status, body);
+        const title = (body.match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [])[1] || "";
+        console.log(`${source}: list post returned ${res.status}, ${body.length} bytes, title "${title.trim().slice(0, 60)}", 0 items (fields: ${[...fields.keys()].join(", ")}; cookie ${cookie ? "sent" : "missing"})`);
       }
     } else {
       console.log(`${source}: list form not found on the page`);

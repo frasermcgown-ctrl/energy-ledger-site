@@ -6,3 +6,14 @@
 # Exit code 0 = skip the build; anything else (including git errors) = build.
 [build]
   ignore = "git diff --quiet \"$CACHED_COMMIT_REF\" \"$COMMIT_REF\" -- . ':(exclude)content/'"
+
+# Security headers for every page. The content security policy itself is a
+# <meta> tag on each public page (not /admin, whose editor needs more freedom).
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+    Strict-Transport-Security = "max-age=31536000"

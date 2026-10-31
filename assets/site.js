@@ -1,3 +1,21 @@
+// Data files (content/*.json) are updated by scheduled functions that commit
+// to GitHub. Netlify skips rebuilding for data-only commits (see netlify.toml),
+// so each update costs no deploy credits; pages read the latest copy straight
+// from the public GitHub repository instead, falling back to the copy deployed
+// with the site if GitHub can't be reached.
+(function () {
+  const DATA_BASE = 'https://raw.githubusercontent.com/frasermcgown-ctrl/energy-ledger-site/main/content/';
+  const localFetch = window.fetch.bind(window);
+  window.fetch = function (input, init) {
+    const url = typeof input === 'string' ? input : '';
+    const m = /^\/content\/([\w.-]+\.json)(\?.*)?$/.exec(url);
+    if (!m) return localFetch(input, init);
+    return localFetch(DATA_BASE + m[1], init)
+      .then(r => (r.ok ? r : Promise.reject(new Error('GitHub ' + r.status))))
+      .catch(() => localFetch(input, init));
+  };
+})();
+
 // The Energy Ledger — shared behaviour for every page.
 
 // Mobile nav toggle

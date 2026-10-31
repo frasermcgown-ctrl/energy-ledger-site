@@ -1,11 +1,12 @@
 {
-  "updated": "2026-10-31T00:01:06.588Z",
+  "updated": "2026-10-31T18:30:01.423Z",
   "items": [
     {
       "title": "Business electricity bills fall 17% as energy use plummets",
       "link": "https://www.energylivenews.com/2026/10/30/business-electricity-bills-fall-17-as-energy-use-plummets/",
       "summary": "The biggest decreases were seen in North East England and South Wales \nThe post Business electricity bills fall 17% as energy use plummets appeared first on Energy Live News.\n",
       "source": "Energy Live News",
+      "topic": "power",
       "published": "2026-10-30T18:00:00.000Z"
     },
     {
@@ -13,6 +14,7 @@
       "link": "https://www.gov.uk/government/publications/uk-ets-allocation-table-for-operators-of-installations",
       "summary": "This table contains a list of each installation’s free allocation for the 2021 to 2026 allocation period.",
       "source": "Dept for Energy Security & Net Zero",
+      "topic": "carbon",
       "published": "2026-10-30T17:05:01+00:00"
     },
     {
@@ -20,6 +22,7 @@
       "link": "https://www.gov.uk/government/news/major-undersea-power-cable-given-green-light",
       "summary": "Government approves Sea Link, a major undersea power connection between Suffolk and Kent.",
       "source": "Dept for Energy Security & Net Zero",
+      "topic": "power",
       "published": "2026-10-30T16:32:23+00:00"
     },
     {
@@ -27,6 +30,7 @@
       "link": "https://www.energylivenews.com/2026/10/30/cleaning-the-atmosphere-with-a-co%e2%82%82-conveyor-belt/",
       "summary": "Ultra-thin coatings could capture and release the gas in seconds and enable more flexible carbon removal systems\nThe post Cleaning the atmosphere with a CO₂ conveyor belt appeared first on Energy Live News.\n",
       "source": "Energy Live News",
+      "topic": "gas",
       "published": "2026-10-30T16:00:00.000Z"
     },
     {
@@ -34,13 +38,15 @@
       "link": "https://www.energylivenews.com/2026/10/30/halloween-leftovers-could-heat-thousands-of-homes-with-green-gas/",
       "summary": "The estimated 16 million pumpkins that will get binned this year could generate around 12.3GWh of energy\nThe post Halloween leftovers could heat thousands of homes with green gas appeared first on Energy Live News.\n",
       "source": "Energy Live News",
+      "topic": "gas",
       "published": "2026-10-30T13:00:00.000Z"
     },
     {
       "title": "TELCA shortlist – Most Trusted Consultancy (Large Customers) award",
       "link": "https://www.energylivenews.com/2026/10/30/telca-shortlist-most-trusted-consultancy-large-customers-award/",
-      "summary": "The shortlist for the Most Trusted Consultancy (Large Customers) award, sponsored by TotalEnergies Gas &#038; Power\nThe post TELCA shortlist – Most Trusted Consultancy (Large Customers) award appeared first on Energy Liv",
+      "summary": "The shortlist for the Most Trusted Consultancy (Large Customers) award, sponsored by TotalEnergies Gas & Power\nThe post TELCA shortlist – Most Trusted Consultancy (Large Customers) award appeared first on Energy Live New",
       "source": "Energy Live News",
+      "topic": "gas",
       "published": "2026-10-30T12:00:00.000Z"
     },
     {
@@ -48,14 +54,56 @@
       "link": "https://www.gov.uk/government/publications/smart-secure-electricity-systems-sses-tariff-interoperability-code-modifications-for-phase-1a",
       "summary": "The Secretary of State has made changes to the Retail Energy Code using his power under section 245(1)(e) of the Energy Act 2023.",
       "source": "Dept for Energy Security & Net Zero",
+      "topic": "power",
       "published": "2026-10-30T09:09:00+00:00"
     },
     {
-      "title": "Australia is fuelling the fossil fuel fire &#8211; even though it&#8217;s COP31 co-host",
+      "title": "Australia is fuelling the fossil fuel fire – even though it’s COP31 co-host",
       "link": "https://www.energylivenews.com/2026/10/30/australia-is-fueling-the-fossil-fuel-fire-even-though-its-cop31-co-host/",
-      "summary": "Australia’s coal, gas and oil exports outstrip the footprint of the 44 least developed countries combined\nThe post Australia is fuelling the fossil fuel fire &#8211; even though it&#8217;s COP31 co-host appeared first on",
+      "summary": "Australia’s coal, gas and oil exports outstrip the footprint of the 44 least developed countries combined\nThe post Australia is fuelling the fossil fuel fire – even though it’s COP31 co-host appeared first on Energy Live",
       "source": "Energy Live News",
+      "topic": "gas",
       "published": "2026-10-30T09:00:00.000Z"
+    },
+    {
+      "title": "UK budget 2026: Key climate and energy announcements",
+      "link": "https://www.carbonbrief.org/uk-budget-2026-key-climate-and-energy-announcements",
+      "summary": "Chancellor John Healey has announced a “new course on energy” for the UK, focused on keeping bills low amid the…\nThe post UK budget 2026: Key climate and energy announcements appeared first on Carbon Brief.\n",
+      "source": "Carbon Brief",
+      "topic": "policy",
+      "published": "2026-10-28T18:16:58.000Z"
+    },
+    {
+      "title": "Analysis: How the UK spent more than £11.6bn on climate aid since 2021",
+      "link": "https://www.carbonbrief.org/analysis-how-the-uk-spent-more-than-11-6bn-on-climate-aid-since-2021",
+      "summary": "The UK has spent £12.8bn on climate aid for developing countries since 2021, according to official figures obtained by Carbon…\nThe post Analysis: How the UK spent more than £11.6bn on climate aid since 2021 appeared firs",
+      "source": "Carbon Brief",
+      "topic": "policy",
+      "published": "2026-10-28T07:00:00.000Z"
+    },
+    {
+      "title": "Q&A: Why are UK energy bills so high – and how could they be lowered?",
+      "link": "https://www.carbonbrief.org/qa-why-are-uk-energy-bills-so-high-and-how-could-they-be-lowered",
+      "summary": "Energy bills in the UK have continued to soar in 2026, with intense debate raging about how to bring them…\nThe post Q&A: Why are UK energy bills so high – and how could they be lowered? appeared first on Carbon Brief.\n",
+      "source": "Carbon Brief",
+      "topic": "policy",
+      "published": "2026-10-27T16:47:54.000Z"
+    },
+    {
+      "title": "US govt seeks remand of New England Wind offshore wind project approval",
+      "link": "https://renewablesnow.com/news/us-govt-seeks-remand-of-new-england-wind-offshore-wind-project-approval-1303592?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss-source/",
+      "summary": "",
+      "source": "Renewables Now",
+      "topic": "renewables",
+      "published": "2026-10-23T13:23:43.000Z"
+    },
+    {
+      "title": "Revealed: Expensive gas behind ‘nearly 90%’ of rise in UK electricity bills",
+      "link": "https://www.carbonbrief.org/revealed-expensive-gas-behind-nearly-90-of-rise-in-uk-electricity-bills",
+      "summary": "A surge in wholesale costs driven by expensive gas is responsible for nearly 90% of the rise in UK household…\nThe post Revealed: Expensive gas behind ‘nearly 90%’ of rise in UK electricity bills appeared first on Carbon ",
+      "source": "Carbon Brief",
+      "topic": "gas",
+      "published": "2026-10-21T11:37:55.000Z"
     }
   ]
 }

@@ -45,6 +45,13 @@ function stripTags(html) {
   return decodeEntities(html.replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim();
 }
 
+// Listing pages may use relative links ("/press-release/...") in the HTML a
+// server receives, even though a browser shows full URLs. Resolve either form.
+function absolute(href, base) {
+  if (!href) return null;
+  try { return new URL(href.replace(/&amp;/g, "&"), base).href; } catch { return null; }
+}
+
 // "29 October 2026" / "14 Apr 2026" -> ISO date at midday UTC.
 function parseDayMonthYear(text) {
   const t = Date.parse(`${text} 12:00 UTC`);
@@ -54,7 +61,7 @@ function parseDayMonthYear(text) {
 // Ofgem press release listing: <article> cards with link, <h3> title, summary <p> and "Publication date".
 function parseOfgemListing(html) {
   return (html.match(/<article[\s\S]*?<\/article>/g) || []).map(card => {
-    const link = (card.match(/href="(https:\/\/www\.ofgem\.gov\.uk\/(?:press-release|news)\/[^"]+)"/) || [])[1];
+    const link = absolute((card.match(/href="((?:https:\/\/www\.ofgem\.gov\.uk)?\/(?:press-release|news)\/[^"]+)"/) || [])[1], "https://www.ofgem.gov.uk");
     const title = stripTags((card.match(/<h3[^>]*>([\s\S]*?)<\/h3>/) || [])[1] || "");
     const summary = stripTags((card.match(/<p>([\s\S]*?)<\/p>/) || [])[1] || "").slice(0, 220);
     const date = (stripTags(card).match(/Publication date:\s*(\d{1,2} [A-Za-z]+ \d{4})/) || [])[1];
@@ -66,7 +73,7 @@ function parseOfgemListing(html) {
 function parseNesoListing(html) {
   const seen = new Set();
   return (html.match(/<article class="[^"]*node--view-mode-teaser[\s\S]*?<\/article>/g) || []).map(card => {
-    const link = (card.match(/href="(https:\/\/www\.neso\.energy\/news\/[^"]+)"/) || [])[1];
+    const link = absolute((card.match(/href="((?:https:\/\/www\.neso\.energy)?\/news\/[^"]+)"/) || [])[1], "https://www.neso.energy");
     const title = stripTags((card.match(/<h3[^>]*>([\s\S]*?)<\/h3>/) || [])[1] || "");
     const summary = stripTags((card.match(/class="article-description">([\s\S]*?)<\/div>/) || [])[1] || "").slice(0, 220);
     const date = (stripTags((card.match(/class="published-read">([\s\S]*?)<\/p>/) || [])[1] || "").match(/\d{1,2} [A-Za-z]+ \d{4}/) || [])[0];
@@ -81,10 +88,11 @@ function parseNesoListing(html) {
 function parseRenewableUKListing(html) {
   const seen = new Set();
   const out = [];
-  const re = /<h5(?:\s+title="([^"]+)")?[^>]*>([^<]*)<\/h5>[\s\S]{0,400}?href="(https:\/\/www\.renewableuk\.com\/news-and-resources\/press-releases\/[^"#]+)"[\s\S]{0,200}?<h2[^>]*>([\s\S]*?)<\/h2>/g;
+  const re = /<h5(?:\s+title="([^"]+)")?[^>]*>([^<]*)<\/h5>[\s\S]{0,400}?href="((?:https:\/\/www\.renewableuk\.com)?\/news-and-resources\/press-releases\/[^"#]+)"[\s\S]{0,200}?<h2[^>]*>([\s\S]*?)<\/h2>/g;
   let m;
   while ((m = re.exec(html))) {
-    const [, longDate, shortDate, link, rawTitle] = m;
+    const [, longDate, shortDate, href, rawTitle] = m;
+    const link = absolute(href, "https://www.renewableuk.com");
     let updated = longDate ? parseDayMonthYear(longDate) : null;
     const dmy = /^(\d{2})\/(\d{2})\/(\d{2})$/.exec((shortDate || "").trim());
     if (!updated && dmy) updated = new Date(Date.UTC(2000 + Number(dmy[3]), Number(dmy[2]) - 1, Number(dmy[1]), 12)).toISOString();

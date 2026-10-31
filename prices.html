@@ -136,10 +136,46 @@
         </div>
       </div>
 
+      <div class="card panel" id="eu-panel" style="margin-top:16px;" hidden>
+        <div class="panel-head">
+          <div>
+            <h2>European power prices</h2>
+            <p>Monthly average day-ahead wholesale price in Britain's neighbouring markets, € per MWh.</p>
+          </div>
+        </div>
+        <div id="c-eu"></div>
+      </div>
+
+      <div class="two-col" style="margin-top:16px;">
+        <div class="card panel" id="cfd-panel">
+          <div class="panel-head">
+            <div>
+              <h2>Contracts for Difference payments</h2>
+              <p>Net monthly CfD payments to low-carbon generators. Blue = topped up through bills; green = generators paid money back. Paler bar = month in progress.</p>
+            </div>
+          </div>
+          <div id="c-cfd"><p class="loading">Loading CfD data…</p></div>
+          <p class="stat-foot" id="cfd-note" style="margin-top:10px;"></p>
+        </div>
+        <div class="card panel" id="uka-panel">
+          <div class="panel-head">
+            <div>
+              <h2>UK carbon auctions</h2>
+              <p>UK Allowance (UKA) auctions under the UK Emissions Trading Scheme, held fortnightly on Wednesdays.</p>
+            </div>
+          </div>
+          <div id="uka-next"><p class="loading">Loading auction calendar…</p></div>
+          <dl class="kv" id="uka-kv" style="margin-top:14px;"></dl>
+          <p class="stat-foot" id="uka-foot" style="margin-top:14px;"></p>
+        </div>
+      </div>
+
       <p class="source-note">Data: <a href="https://data.nationalgas.com" target="_blank" rel="noopener">National Gas Transmission</a> (SAP);
       Contains BMRS data © Elexon Limited copyright and database right 2026 (market index);
       <a href="https://www.neso.energy/data-portal" target="_blank" rel="noopener">NESO Data Portal</a> (balancing costs, NESO Open Data Licence);
-      <a href="https://www.ofgem.gov.uk/energy-price-cap" target="_blank" rel="noopener">Ofgem</a> (price cap).
+      <a href="https://www.ofgem.gov.uk/energy-price-cap" target="_blank" rel="noopener">Ofgem</a> (price cap);
+      <a href="https://dp.lowcarboncontracts.uk" target="_blank" rel="noopener">Low Carbon Contracts Company</a> (CfD, Open Government Licence);
+      <a href="https://www.ice.com/emissions/auctions/uk-emission-allowances" target="_blank" rel="noopener">ICE Futures Europe</a> and <a href="https://www.gov.uk/government/publications/taking-part-in-the-uk-emissions-trading-scheme-markets" target="_blank" rel="noopener">DESNZ</a> (UKA auction calendar and reserve price)<span id="eu-credit" hidden>; <a href="https://ember-energy.org/data/european-wholesale-electricity-price-data/" target="_blank" rel="noopener">Ember</a> European wholesale electricity price data (CC BY 4.0)</span>.
       Indicative only, not for trading. See all <a href="/sources.html">data sources</a>.</p>
     </div>
   </section>
@@ -303,6 +339,58 @@
       document.getElementById('cap-next').innerHTML = `Next cap (${escapeHtml(c.next_period || 'next period')}) announced <b>${escapeHtml(d)}</b>. <a class="link" href="${escapeHtml(cur.source_url || 'https://www.ofgem.gov.uk/energy-price-cap')}" target="_blank" rel="noopener">Ofgem →</a>`;
     }
   }).catch(() => { document.getElementById('cap-kv').innerHTML = '<dt>Price cap data unavailable.</dt><dd></dd>'; });
+
+
+  // Contracts for Difference (see netlify/functions/fetch-cfd.mjs).
+  fetch('/content/cfd.json').then(r => r.json()).then(d => {
+    const months = d.months || [];
+    const daysIn = m => new Date(Date.UTC(+m.slice(0, 4), +m.slice(5, 7), 0)).getUTCDate();
+    ELCharts.barChart(document.getElementById('c-cfd'), months.map(m => {
+      const partial = m.days < daysIn(m.month);
+      const techs = Object.entries(m.byTechnology || {}).slice(0, 4).map(([k, v]) => `<div>${escapeHtml(k)}: <b>£${fmtNumber(v.paymentsGBP / 1e6, 1)}m</b> · ${fmtNumber(v.generationTWh, 2)} TWh</div>`).join('');
+      return { label: monthName(m.month), value: m.paymentsGBP, faded: partial, color: m.paymentsGBP >= 0 ? '#2563eb' : '#0d9488',
+        tip: `<div class="chart-tip-date">${monthName(m.month)}${partial ? ` · ${m.days} days so far` : ''}</div><div><b>£${fmtNumber(m.paymentsGBP / 1e6, 1)}m</b> ${m.paymentsGBP >= 0 ? 'paid to' : 'paid back by'} generators</div><div>${fmtNumber(m.generationTWh, 2)} TWh CfD generation</div>${techs}` };
+    }), { yTick: v => `£${ELCharts.compact(v)}`, height: 240, label: 'Monthly net Contracts for Difference payments' });
+    const full = months.filter(m => m.days >= daysIn(m.month)), last = full[full.length - 1];
+    if (last) {
+      const perMwh = last.generationTWh > 0 ? last.paymentsGBP / (last.generationTWh * 1e6) : null;
+      document.getElementById('cfd-note').textContent = `${monthName(last.month)}: £${fmtNumber(Math.abs(last.paymentsGBP) / 1e6, 1)}m ${last.paymentsGBP >= 0 ? 'paid to' : 'paid back by'} CfD generators for ${fmtNumber(last.generationTWh, 2)} TWh${perMwh !== null ? ` (about £${fmtNumber(Math.abs(perMwh), 0)}/MWh)` : ''}. Data to ${fmtDay(d.dataTo)}.`;
+    }
+  }).catch(() => { document.getElementById('cfd-panel').hidden = true; });
+
+  // UK carbon auction calendar (edited in /admin).
+  fetch('/content/uka-auctions.json').then(r => r.json()).then(c => {
+    const today = new Date().toISOString().slice(0, 10);
+    const upcoming = (c.auctions || []).filter(a => a.date >= today).sort((a, b) => a.date.localeCompare(b.date));
+    const long = iso => new Date(iso + 'T12:00:00Z').toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
+    const vol = v => `${fmtNumber(v / 1e6, 2)}m UKAs`;
+    const next = upcoming[0];
+    document.getElementById('uka-next').innerHTML = next
+      ? `<div class="stat-value" style="font-size:28px;">${escapeHtml(long(next.date))}</div><p class="stat-foot">Next auction · ${escapeHtml(vol(next.volume))}</p>`
+      : '<p class="loading">No upcoming auctions listed. Add the next calendar in /admin.</p>';
+    const year = (next ? next.date : today).slice(0, 4);
+    const left = upcoming.filter(a => a.date.startsWith(year));
+    const rows = [
+      ...upcoming.slice(1, 4).map(a => [long(a.date), vol(a.volume)]),
+      [`Still to auction in ${year}`, `${left.length} auctions · ${fmtNumber(left.reduce((s, a) => s + a.volume, 0) / 1e6, 1)}m UKAs`],
+      ['Auction reserve price', `£${fmtNumber(c.reserve_price_gbp, 2)}${c.reserve_price_next_gbp && c.reserve_price_next_from > today ? ` (£${fmtNumber(c.reserve_price_next_gbp, 2)} from ${new Date(c.reserve_price_next_from + 'T12:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })})` : ''}`],
+    ];
+    document.getElementById('uka-kv').innerHTML = rows.map(([k, v]) => `<dt>${escapeHtml(k)}</dt><dd>${escapeHtml(v)}</dd>`).join('');
+    document.getElementById('uka-foot').innerHTML = (c.calendar_links || []).map(l => `<a class="link" href="${escapeHtml(l.url)}" target="_blank" rel="noopener">${escapeHtml(l.label)} →</a>`).join(' · ');
+  }).catch(() => { document.getElementById('uka-panel').hidden = true; });
+
+  // European day-ahead prices from Ember (appears once content/eu-power-prices.json exists).
+  fetch('/content/eu-power-prices.json').then(r => r.ok ? r.json() : Promise.reject()).then(e => {
+    const COLORS = ['#0d9488', '#2563eb', '#d97706', '#7c3aed'];
+    const NAMES = { GBR: 'Great Britain', DEU: 'Germany', FRA: 'France', NLD: 'Netherlands', IRL: 'Ireland', NOR: 'Norway', ESP: 'Spain' };
+    const markets = (e.markets || []).slice(0, 4);
+    if (!markets.length || !(e.months || []).length) return;
+    document.getElementById('eu-panel').hidden = false; document.getElementById('eu-credit').hidden = false;
+    ELCharts.lineChart(document.getElementById('c-eu'), markets.map((m, i) => ({
+      name: NAMES[m.iso] || m.country, color: COLORS[i],
+      points: e.months.map((mo, j) => ({ x: new Date(mo + '-15T12:00:00Z'), y: m.prices[j] })).filter(p => p.y !== null),
+    })), { area: false, height: 260, yFormat: v => `€${fmtNumber(v, 1)}/MWh`, yTick: v => `€${v}`, xFormat: d => d.toLocaleDateString('en-GB', { month: 'short' }), tipDate: d => d.toLocaleDateString('en-GB', { month: 'long', year: 'numeric' }), label: 'Monthly day-ahead power prices in European markets' });
+  }).catch(() => {});
 
 </script>
 

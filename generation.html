@@ -131,7 +131,19 @@
       </div>
       <p class="stat-foot" id="outlook-updated" style="margin-top:10px;"></p>
 
-      <div class="card panel" id="longrun" style="margin-top:40px;" hidden>
+      <div class="card panel" id="pipeline" style="margin-top:40px;" hidden>
+        <div class="panel-head">
+          <div>
+            <h2>The pipeline: renewables and storage projects</h2>
+            <p id="pipeline-desc">UK projects over 150 kW by planning stage, GW of capacity.</p>
+          </div>
+        </div>
+        <div class="legend" id="pipeline-legend" style="margin-bottom:8px;"></div>
+        <div class="bars" id="pipeline-bars"></div>
+        <p class="stat-foot" id="pipeline-note" style="margin-top:10px;"></p>
+      </div>
+
+      <div class="card panel" id="longrun" style="margin-top:16px;" hidden>
         <div class="panel-head">
           <div>
             <h2>The long view: UK electricity by source</h2>
@@ -141,7 +153,7 @@
         <div id="c-longrun"></div>
       </div>
 
-      <p class="source-note">Data: <a href="https://carbonintensity.org.uk" target="_blank" rel="noopener">National Energy System Operator Carbon Intensity API</a> (CC BY 4.0); Contains BMRS data © Elexon Limited copyright and database right 2026 (demand, wind forecast); <a href="https://www.neso.energy/data-portal/embedded-wind-and-solar-forecasts" target="_blank" rel="noopener">NESO embedded wind and solar forecasts</a> (NESO Open Data Licence)<span id="ember-credit" hidden>; <a href="https://ember-energy.org" target="_blank" rel="noopener">Ember</a> yearly electricity data (CC BY 4.0)</span>. Live figures are system data; outlook figures are forecasts. See all <a href="/sources.html">data sources</a>.</p>
+      <p class="source-note">Data: <a href="https://carbonintensity.org.uk" target="_blank" rel="noopener">National Energy System Operator Carbon Intensity API</a> (CC BY 4.0); Contains BMRS data © Elexon Limited copyright and database right 2026 (demand, wind forecast); <a href="https://www.neso.energy/data-portal/embedded-wind-and-solar-forecasts" target="_blank" rel="noopener">NESO embedded wind and solar forecasts</a> (NESO Open Data Licence)<span id="repd-credit" hidden>; <a href="https://www.gov.uk/government/publications/renewable-energy-planning-database-quarterly-extract" target="_blank" rel="noopener">DESNZ Renewable Energy Planning Database</a> (Open Government Licence)</span><span id="ember-credit" hidden>; <a href="https://ember-energy.org" target="_blank" rel="noopener">Ember</a> yearly electricity data (CC BY 4.0)</span>. Live figures are system data; outlook figures are forecasts. See all <a href="/sources.html">data sources</a>.</p>
     </div>
   </section>
 
@@ -247,6 +259,30 @@
     document.getElementById('longrun').hidden = false; document.getElementById('ember-credit').hidden = false;
     ELCharts.lineChart(document.getElementById('c-longrun'), SERIES.map(([name, keys, color]) => ({ name, color, points: years.map(y => ({ x: new Date(Date.UTC(y.year, 6, 1)), y: Math.round(share(y, keys) * 10) / 10 })) })),
       { zero: true, area: false, height: 280, yFormat: v => `${fmtNumber(v, 1)}%`, yTick: v => `${v}%`, xFormat: d => String(d.getUTCFullYear()), tipDate: d => String(d.getUTCFullYear()), label: 'UK electricity generation share by source, yearly' });
+  }).catch(() => {});
+
+  // Renewables pipeline from the REPD (see netlify/functions/fetch-repd.mjs).
+  fetch('/content/repd-pipeline.json').then(r => r.ok ? r.json() : Promise.reject()).then(p => {
+    const STAGES = [['operational', 'Operating', '#0d9488'], ['construction', 'Under construction', '#2563eb'], ['consented', 'Consented, not started', '#d97706'], ['planning', 'In planning', '#7c3aed']];
+    const rows = p.byTechnology || [];
+    if (!rows.length) return;
+    const total = r => STAGES.reduce((a, [k]) => a + (r[k] || 0), 0);
+    const max = Math.max(...rows.map(total));
+    document.getElementById('pipeline-legend').innerHTML = STAGES.map(([, l, c]) => `<span><i style="background:${c}"></i>${l}</span>`).join('');
+    document.getElementById('pipeline-bars').innerHTML = rows.map(r => {
+      const segs = STAGES.filter(([k]) => r[k] > 0).map(([k, l, c]) => `<span style="width:${r[k] / max * 100}%;background:${c}" title="${l}: ${fmtNumber(r[k], 1)} GW"></span>`).join('');
+      const unbuilt = total(r) - (r.operational || 0);
+      return `<div class="bar-row" title="${STAGES.map(([k, l]) => `${l}: ${fmtNumber(r[k] || 0, 1)} GW`).join('\n')}">
+        <span class="bar-label">${escapeHtml(r.technology)}</span>
+        <div class="bar-track stack">${segs}</div>
+        <span class="bar-value">${fmtNumber(r.operational || 0, 1)} GW<small>+${fmtNumber(unbuilt, 1)} GW pipeline</small></span>
+      </div>`;
+    }).join('');
+    const t = p.totals || {};
+    const asOf = (p.title || '').replace(/^.*\((?:REPD)\):?\s*/i, '').replace(/\s*\((CSV|Excel)\)\s*$/i, '');
+    document.getElementById('pipeline-desc').textContent = `UK projects over 150 kW by planning stage, GW of capacity${asOf ? `, ${asOf} edition` : ''}.`;
+    document.getElementById('pipeline-note').textContent = `${fmtNumber(t.operational || 0, 1)} GW operating, ${fmtNumber(t.construction || 0, 1)} GW under construction, ${fmtNumber(t.consented || 0, 1)} GW consented but not started and ${fmtNumber(t.planning || 0, 1)} GW in planning. Updated quarterly.`;
+    document.getElementById('pipeline').hidden = false; document.getElementById('repd-credit').hidden = false;
   }).catch(() => {});
 
   const FUEL_LABEL = {

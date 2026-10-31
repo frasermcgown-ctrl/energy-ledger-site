@@ -95,3 +95,29 @@ collections:
               - { label: "Ofgem announcement link", name: "source_url", widget: "string" }
           - { label: "Next announcement date", name: "next_announcement", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
           - { label: "Next cap period", name: "next_period", widget: "string" }
+
+  - name: "carbon"
+    label: "UK Carbon Auctions"
+    files:
+      - name: "uka-auctions"
+        label: "UKA auction calendar (Prices page)"
+        file: "content/uka-auctions.json"
+        fields:
+          - { label: "Note", name: "note", widget: "text" }
+          - { label: "Auction reserve price now (£ per allowance)", name: "reserve_price_gbp", widget: "number", value_type: "float" }
+          - { label: "Next reserve price (£)", name: "reserve_price_next_gbp", widget: "number", value_type: "float", required: false }
+          - { label: "Next reserve price applies from", name: "reserve_price_next_from", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, required: false }
+          - label: "Calendar links"
+            name: "calendar_links"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+          - label: "Auctions"
+            name: "auctions"
+            widget: "list"
+            summary: "{{fields.date}} · {{fields.volume}} UKAs"
+            hint: "Add each new year's dates when ICE publishes the calendar (usually in October). Past auctions are hidden on the site automatically."
+            fields:
+              - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+              - { label: "Volume (UKAs)", name: "volume", widget: "number", value_type: "int" }

@@ -67,5 +67,5 @@ export default async () => {
 
 // Every 3 hours: forecasts are republished through the day.
 export const config = {
-  schedule: "0 */3 * * *",
+  schedule: "28 */3 * * *",
 };

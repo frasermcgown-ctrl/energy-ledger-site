@@ -63,5 +63,5 @@ export default async () => {
 
 // Every 3 hours, so the page shows today's flows rather than a midnight snapshot.
 export const config = {
-  schedule: "0 */3 * * *",
+  schedule: "21 */3 * * *",
 };

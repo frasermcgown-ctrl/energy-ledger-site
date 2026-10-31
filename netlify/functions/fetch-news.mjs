@@ -333,5 +333,5 @@ export default async () => {
 
 // Every 6 hours, so the News page stays current through the day.
 export const config = {
-  schedule: "0 */6 * * *",
+  schedule: "35 */6 * * *",
 };

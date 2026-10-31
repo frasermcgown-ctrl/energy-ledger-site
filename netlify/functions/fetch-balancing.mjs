@@ -70,5 +70,5 @@ export default async () => {
 };
 
 export const config = {
-  schedule: "@daily",
+  schedule: "49 0 * * *",
 };

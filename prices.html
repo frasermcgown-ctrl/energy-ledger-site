@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UK Gas & Power Prices, Price Cap and Balancing Costs — The Energy Ledger</title>
+<meta name="description" content="Daily NBP gas (SAP) and GB power prices with history, the Ofgem price cap, and monthly grid balancing costs, updated automatically from official open data.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Energy Ledger">
+<meta property="og:title" content="UK Gas & Power Prices, Price Cap and Balancing Costs — The Energy Ledger">
+<meta property="og:description" content="Daily NBP gas (SAP) and GB power prices with history, the Ofgem price cap, and monthly grid balancing costs, updated automatically from official open data.">
+<meta property="og:url" content="https://www.theenergyledger.co.uk/prices.html">
+<meta property="og:image" content="https://www.theenergyledger.co.uk/og-image.png?v=2">
+<meta name="twitter:card" content="summary_large_image">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5XJN5KMJVN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5XJN5KMJVN');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="icon-mark.svg">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="nav">
+    <a class="wordmark" href="/" aria-label="The Energy Ledger — home">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <rect x="0" y="0" width="120" height="120" rx="28" fill="#0f172a"/>
+        <line x1="21" y1="30" x2="21" y2="90" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+        <line x1="34" y1="44" x2="80" y2="44" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="62" x2="92" y2="62" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="80" x2="66" y2="80" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <polyline points="80,44 96,27 103,32" fill="none" stroke="#f97316" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="103" cy="32" r="4.5" fill="#f97316"/>
+      </svg>
+      <b style="font-weight:inherit">The Energy <span>Ledger</span></b>
+    </a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-links">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="links" id="site-links">
+      <a href="/prices.html" aria-current="page">Prices</a>
+      <a href="/generation.html">GB generation</a>
+      <a href="/uk-gas.html">UK gas</a>
+      <a href="/lng.html">LNG</a>
+      <a href="/news.html">News</a>
+      <a class="btn primary sm" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe free</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="crumbs"><a href="/">Home</a><span aria-hidden="true">/</span><span>Live data</span><span aria-hidden="true">/</span><span>Prices &amp; costs</span></div>
+      <h1>UK gas &amp; power prices</h1>
+      <p class="lede">Daily NBP gas and GB power prices with up to a year of history, the Ofgem price cap, and what it costs to balance the grid, all from official open data.</p>
+    </div>
+  </div>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="stat-grid">
+        <div class="card stat">
+          <div class="stat-label"><i style="width:10px;height:10px;border-radius:3px;background:var(--gas);display:inline-block"></i>NBP gas (SAP)</div>
+          <div class="stat-value" id="s-gas">—</div>
+          <div class="stat-foot" id="s-gas-foot">National Gas · daily</div>
+        </div>
+        <div class="card stat">
+          <div class="stat-label"><i style="width:10px;height:10px;border-radius:3px;background:var(--power);display:inline-block"></i>GB power (market index)</div>
+          <div class="stat-value" id="s-power">—</div>
+          <div class="stat-foot" id="s-power-foot">Elexon · daily average</div>
+        </div>
+        <div class="card stat">
+          <div class="stat-label">Grid balancing costs</div>
+          <div class="stat-value" id="s-bal">—</div>
+          <div class="stat-foot" id="s-bal-foot">NESO · latest full month</div>
+        </div>
+      </div>
+
+      <div class="card panel" style="margin-top:16px;">
+        <div class="panel-head">
+          <div>
+            <h2>NBP gas price</h2>
+            <p>System Average Price (SAP) for each gas day, in pence per therm.</p>
+          </div>
+          <div class="seg" role="group" aria-label="Gas chart range" data-range="gas">
+            <button type="button" data-days="30">30D</button><button type="button" data-days="90" aria-pressed="true">90D</button><button type="button" data-days="365">1Y</button>
+          </div>
+        </div>
+        <div id="c-gas"><p class="loading">Loading price history…</p></div>
+      </div>
+
+      <div class="card panel">
+        <div class="panel-head">
+          <div>
+            <h2>GB power price</h2>
+            <p>Elexon market index (APX), volume-weighted daily average, in £ per MWh.</p>
+          </div>
+          <div class="seg" role="group" aria-label="Power chart range" data-range="power">
+            <button type="button" data-days="30">30D</button><button type="button" data-days="90" aria-pressed="true">90D</button><button type="button" data-days="365">1Y</button>
+          </div>
+        </div>
+        <div id="c-power"><p class="loading">Loading price history…</p></div>
+      </div>
+
+      <div class="two-col" style="margin-top:16px;">
+        <div class="card panel" id="cap-panel">
+          <div class="panel-head">
+            <div>
+              <h2>Ofgem price cap</h2>
+              <p id="cap-period">Default tariff, Direct Debit, Great Britain average.</p>
+            </div>
+            <span class="tag" id="cap-change" hidden></span>
+          </div>
+          <dl class="kv" id="cap-kv"><dt>Loading…</dt><dd></dd></dl>
+          <p class="stat-foot" id="cap-next" style="margin-top:14px;"></p>
+        </div>
+        <div class="card panel">
+          <div class="panel-head">
+            <div>
+              <h2>Grid balancing costs</h2>
+              <p>Monthly cost of balancing Britain's electricity system, all services. Paler bar = month in progress.</p>
+            </div>
+          </div>
+          <div id="c-bal"><p class="loading">Loading balancing costs…</p></div>
+          <p class="stat-foot" id="bal-note" style="margin-top:10px;"></p>
+        </div>
+      </div>
+
+      <p class="source-note">Data: <a href="https://data.nationalgas.com" target="_blank" rel="noopener">National Gas Transmission</a> (SAP);
+      Contains BMRS data © Elexon Limited copyright and database right 2026 (market index);
+      <a href="https://www.neso.energy/data-portal" target="_blank" rel="noopener">NESO Data Portal</a> (balancing costs, NESO Open Data Licence);
+      <a href="https://www.ofgem.gov.uk/energy-price-cap" target="_blank" rel="noopener">Ofgem</a> (price cap).
+      Indicative only, not for trading. See all <a href="/sources.html">data sources</a>.</p>
+    </div>
+  </section>
+
+  <section class="tight" style="padding-top:0;">
+    <div class="wrap">
+      <div class="card" style="padding:32px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; background:linear-gradient(120deg,#fff 0%, var(--brand-soft) 100%);">
+        <div style="max-width:600px;">
+          <h2 style="font-size:22px;">Want the read-through, not just the numbers?</h2>
+          <p style="margin-top:8px; color:var(--ink-3);">The Energy Ledger turns this data into a weekly view on UK gas, power, carbon and LNG — free on Substack.</p>
+        </div>
+        <a class="btn brand" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe free <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="wordmark" href="/">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+        <rect x="0" y="0" width="120" height="120" rx="28" fill="#0f172a"/>
+        <line x1="21" y1="30" x2="21" y2="90" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+        <line x1="34" y1="44" x2="80" y2="44" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="62" x2="92" y2="62" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="80" x2="66" y2="80" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <polyline points="80,44 96,27 103,32" fill="none" stroke="#f97316" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="103" cy="32" r="4.5" fill="#f97316"/>
+      </svg>
+          <b style="font-weight:inherit">The Energy <span>Ledger</span></b>
+        </a>
+        <p>The Energy Ledger is an independent read on UK energy markets.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Newsletter</h4>
+        <a href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe</a>
+        <a href="https://home.theenergyledger.co.uk/archive" target="_blank" rel="noopener">Archive</a>
+        <a href="/#coverage">Coverage</a>
+        <a href="/#about">About</a>
+      </div>
+      <div class="foot-col">
+        <h4>Live data</h4>
+        <a href="/prices.html">Prices &amp; costs</a>
+        <a href="/generation.html">GB generation</a>
+        <a href="/uk-gas.html">UK gas supply</a>
+        <a href="/lng.html">LNG</a>
+        <a href="/news.html">News</a>
+        <a href="/sources.html">Data sources</a>
+      </div>
+      <div class="foot-col">
+        <h4>Follow</h4>
+        <div class="socials" data-socials><a class="social" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener me" aria-label="The Energy Ledger on Substack" title="Substack"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a></div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span data-year>2026</span> The Energy Ledger. All rights reserved.</span>
+      <span>Data provided for information only, not for trading.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+<script src="/assets/charts.js"></script>
+<script>
+
+  const fmtDay = iso => new Date(iso + 'T12:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+  const monthName = m => new Date(m + '-15T12:00:00Z').toLocaleDateString('en-GB', { month: 'short', year: '2-digit' });
+
+  // Change of the latest value vs the value `days` earlier (nearest earlier date).
+  function change(series, days) {
+    if (!series || series.length < 2) return null;
+    const last = series[series.length - 1];
+    const target = new Date(last.d + 'T12:00:00Z'); target.setUTCDate(target.getUTCDate() - days);
+    const prev = [...series].reverse().find(p => new Date(p.d + 'T12:00:00Z') <= target);
+    return prev ? (last.v - prev.v) / prev.v * 100 : null;
+  }
+  const deltaHtml = (pct, label) => {
+    if (pct === null) return '';
+    const cls = Math.abs(pct) < 0.5 ? 'flat' : pct > 0 ? 'up' : 'down';
+    return `<span class="delta ${cls}">${pct > 0 ? '+' : ''}${pct.toFixed(1)}%</span> ${label}`;
+  };
+
+  let history = null;
+  const charts = {
+    gas: { el: 'c-gas', color: '#2563eb', fmt: v => `${fmtNumber(v, 2)}p/th`, tick: v => `${v}p` },
+    power: { el: 'c-power', color: '#d97706', fmt: v => `£${fmtNumber(v, 2)}/MWh`, tick: v => `£${v}` },
+  };
+  function drawPrice(key, days) {
+    const c = charts[key], el = document.getElementById(c.el);
+    const series = (history && history[key]) || [];
+    if (!series.length) { el.innerHTML = '<p class="loading">Price history is being collected and will appear within a few hours.</p>'; return; }
+    const cutoff = new Date(series[series.length - 1].d + 'T12:00:00Z'); cutoff.setUTCDate(cutoff.getUTCDate() - days);
+    const pts = series.filter(p => new Date(p.d + 'T12:00:00Z') >= cutoff).map(p => ({ x: new Date(p.d + 'T12:00:00Z'), y: p.v }));
+    ELCharts.lineChart(el, [{ name: key, color: c.color, points: pts }], {
+      yFormat: c.fmt, yTick: c.tick, height: 260,
+      label: `${key === 'gas' ? 'NBP gas' : 'GB power'} price, last ${days} days, latest ${c.fmt(pts[pts.length - 1].y)}`,
+    });
+  }
+  document.querySelectorAll('[data-range]').forEach(group => {
+    group.addEventListener('click', e => {
+      const b = e.target.closest('button'); if (!b) return;
+      group.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b ? 'true' : 'false'));
+      drawPrice(group.dataset.range, Number(b.dataset.days));
+    });
+  });
+
+  Promise.all([
+    fetch('/content/market-prices.json').then(r => r.json()).catch(() => ({})),
+    fetch('/content/price-history.json').then(r => r.ok ? r.json() : null).catch(() => null),
+  ]).then(([latest, hist]) => {
+    history = hist;
+    if (latest.gas) {
+      document.getElementById('s-gas').innerHTML = `${fmtNumber(latest.gas.pencePerTherm, 2)}<span class="unit">p/th</span>`;
+      document.getElementById('s-gas-foot').innerHTML = [deltaHtml(change(hist && hist.gas, 7), '7d'), deltaHtml(change(hist && hist.gas, 30), '30d'), `gas day ${fmtDay(latest.gas.gasDay)}`].filter(Boolean).join(' · ');
+    }
+    if (latest.power) {
+      document.getElementById('s-power').innerHTML = `£${fmtNumber(latest.power.poundsPerMwh, 2)}<span class="unit">/MWh</span>`;
+      document.getElementById('s-power-foot').innerHTML = [deltaHtml(change(hist && hist.power, 7), '7d'), deltaHtml(change(hist && hist.power, 30), '30d'), fmtDay(latest.power.settlementDate)].filter(Boolean).join(' · ');
+    }
+    drawPrice('gas', 90); drawPrice('power', 90);
+  });
+
+  fetch('/content/balancing-costs.json').then(r => r.json()).then(d => {
+    const months = d.months || [];
+    const daysIn = m => new Date(Date.UTC(+m.slice(0, 4), +m.slice(5, 7), 0)).getUTCDate();
+    const full = months.filter(m => m.days >= daysIn(m.month));
+    const last = full[full.length - 1], prev = full[full.length - 2];
+    if (last) {
+      document.getElementById('s-bal').innerHTML = `£${fmtNumber(last.total / 1e6, 0)}<span class="unit">m</span>`;
+      const pct = prev ? (last.total - prev.total) / prev.total * 100 : null;
+      document.getElementById('s-bal-foot').innerHTML = [deltaHtml(pct, `vs ${monthName(prev.month)}`), monthName(last.month)].filter(Boolean).join(' · ');
+      const top = Object.entries(last.categories).sort((a, b) => b[1] - a[1])[0];
+      const record = months.every(m => m.month === last.month || m.total <= last.total);
+      document.getElementById('bal-note').textContent = `${monthName(last.month)}: £${fmtNumber(last.total / 1e6, 1)}m${record ? ', the highest in this period' : ''}. ${top[0]} made up ${Math.round(top[1] / last.total * 100)}%.`;
+    }
+    ELCharts.barChart(document.getElementById('c-bal'), months.map(m => {
+      const partial = m.days < daysIn(m.month);
+      const cats = Object.entries(m.categories).sort((a, b) => b[1] - a[1]).map(([k, v]) => `<div>${escapeHtml(k)}: <b>£${fmtNumber(v / 1e6, 1)}m</b></div>`).join('');
+      return { label: monthName(m.month), value: m.total, faded: partial,
+        tip: `<div class="chart-tip-date">${monthName(m.month)}${partial ? ` · ${m.days} days so far` : ''}</div><div><b>£${fmtNumber(m.total / 1e6, 1)}m</b> total</div>${cats}` };
+    }), { color: '#0f172a', yTick: v => `£${ELCharts.compact(v)}`, height: 240, label: 'Monthly grid balancing costs' });
+  }).catch(() => { document.getElementById('c-bal').innerHTML = '<p class="loading">Unable to load balancing costs right now.</p>'; });
+
+  fetch('/content/price-cap.json').then(r => r.json()).then(c => {
+    const cur = c.current || {};
+    document.getElementById('cap-period').textContent = `${cur.period || ''} · default tariff, Direct Debit, GB average.`;
+    if (cur.change_pct !== undefined && cur.change_pct !== null && cur.change_pct !== '') {
+      const ch = document.getElementById('cap-change');
+      ch.textContent = `${Number(cur.change_pct) > 0 ? '+' : ''}${cur.change_pct}% vs previous cap`; ch.hidden = false;
+    }
+    const rows = [
+      ['Electricity unit rate', cur.elec_unit_p_kwh, 'p/kWh'], ['Electricity standing charge', cur.elec_standing_p_day, 'p/day'],
+      ['Gas unit rate', cur.gas_unit_p_kwh, 'p/kWh'], ['Gas standing charge', cur.gas_standing_p_day, 'p/day'],
+      ['Typical annual dual fuel bill', cur.typical_annual_gbp ? `£${fmtNumber(cur.typical_annual_gbp, 0)}` : null, ''],
+    ].filter(r => r[1] !== undefined && r[1] !== null && r[1] !== '');
+    document.getElementById('cap-kv').innerHTML = rows.map(([k, v, u]) => `<dt>${escapeHtml(k)}</dt><dd>${escapeHtml(String(v))}${u ? ' ' + u : ''}</dd>`).join('');
+    if (c.next_announcement) {
+      const d = new Date(c.next_announcement + 'T12:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+      document.getElementById('cap-next').innerHTML = `Next cap (${escapeHtml(c.next_period || 'next period')}) announced <b>${escapeHtml(d)}</b>. <a class="link" href="${escapeHtml(cur.source_url || 'https://www.ofgem.gov.uk/energy-price-cap')}" target="_blank" rel="noopener">Ofgem →</a>`;
+    }
+  }).catch(() => { document.getElementById('cap-kv').innerHTML = '<dt>Price cap data unavailable.</dt><dd></dd>'; });
+
+</script>
+
+</body>
+</html>

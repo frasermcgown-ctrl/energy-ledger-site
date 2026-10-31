@@ -47,10 +47,11 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
     <nav class="links" id="site-links">
+      <a href="/prices.html">Prices</a>
       <a href="/generation.html">GB generation</a>
-      <a href="/lng.html" aria-current="page">European LNG</a>
-      <a href="/uk-gas.html">UK gas storage</a>
-      <a href="/#news">News</a>
+      <a href="/uk-gas.html">UK gas</a>
+      <a href="/lng.html" aria-current="page">LNG</a>
+      <a href="/news.html">News</a>
       <a class="btn primary sm" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe free</a>
     </nav>
   </div>
@@ -59,15 +60,28 @@
 <main>
   <div class="page-hero">
     <div class="wrap">
-      <div class="crumbs"><a href="/">Home</a><span aria-hidden="true">/</span><span>Live data</span><span aria-hidden="true">/</span><span>European LNG</span></div>
-      <h1>Live European LNG terminal data</h1>
-      <p class="lede">A daily snapshot of aggregated European LNG terminal inventory, send-out and capacity, refreshed automatically from Gas Infrastructure Europe's official transparency platform.</p>
+      <div class="crumbs"><a href="/">Home</a><span aria-hidden="true">/</span><span>Live data</span><span aria-hidden="true">/</span><span>LNG</span></div>
+      <h1>Live LNG: UK terminals and Europe</h1>
+      <p class="lede">What Britain's LNG terminals are sending into the grid right now, alongside Europe-wide terminal inventory and send-out from Gas Infrastructure Europe.</p>
       <div class="status"><span class="live-dot"></span><span id="updated-note">Loading latest gas day…</span></div>
     </div>
   </div>
 
   <section class="tight">
     <div class="wrap">
+      <div class="card panel">
+        <div class="panel-head">
+          <div>
+            <h2>UK LNG terminals right now</h2>
+            <p id="uk-lng-desc">Regasified LNG flowing into the national grid, mcm/d.</p>
+          </div>
+          <a class="link" href="/uk-gas.html">All UK gas supply <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="bars" id="uk-lng-list"><p class="loading">Loading UK terminal data…</p></div>
+        <p class="stat-foot" id="uk-lng-note" style="margin-top:10px;"></p>
+      </div>
+
+      <h2 style="font-size:22px; margin:40px 0 16px;">Europe (EU27 terminals)</h2>
       <div class="stat-grid">
         <div class="card stat">
           <div class="stat-label">Send-out</div>
@@ -98,7 +112,7 @@
         </div>
       </div>
 
-      <p class="source-note">Data: <a href="https://alsi.gie.eu" target="_blank" rel="noopener">Gas Infrastructure Europe — ALSI (Aggregated LNG Storage Inventory)</a>. Figures are aggregated across all EU27 large-scale LNG terminals reporting to GIE, updated once per gas day. Provided for information only, not for trading.</p>
+      <p class="source-note">Data: <a href="https://alsi.gie.eu" target="_blank" rel="noopener">Gas Infrastructure Europe — ALSI (Aggregated LNG Storage Inventory)</a>. Figures are aggregated across all EU27 large-scale LNG terminals reporting to GIE, updated once per gas day. UK terminal flows: <a href="https://data.nationalgas.com" target="_blank" rel="noopener">National Gas Transmission Data Portal</a>, instantaneous rates. Provided for information only, not for trading.</p>
     </div>
   </section>
 
@@ -142,10 +156,12 @@
       </div>
       <div class="foot-col">
         <h4>Live data</h4>
+        <a href="/prices.html">Prices &amp; costs</a>
         <a href="/generation.html">GB generation</a>
-        <a href="/lng.html">European LNG</a>
-        <a href="/uk-gas.html">UK gas storage</a>
-        <a href="/#news">News</a>
+        <a href="/uk-gas.html">UK gas supply</a>
+        <a href="/lng.html">LNG</a>
+        <a href="/news.html">News</a>
+        <a href="/sources.html">Data sources</a>
       </div>
       <div class="foot-col">
         <h4>Follow</h4>
@@ -161,6 +177,27 @@
 
 <script src="/assets/site.js"></script>
 <script>
+  // UK LNG terminals, from the National Gas flow snapshot (see netlify/functions/fetch-uk-gas.mjs).
+  const UK_LNG = [['MILFORD HAVEN - SOUTH HOOK', 'South Hook', 'Milford Haven'], ['MILFORD HAVEN - DRAGON', 'Dragon', 'Milford Haven'],
+                  ['GRAIN NTS 1', 'Grain (NTS 1)', 'Isle of Grain'], ['GRAIN NTS 2', 'Grain (NTS 2)', 'Isle of Grain']];
+  fetch('/content/uk-gas-data.json').then(r => r.json()).then(d => {
+    const groups = d.groups || [];
+    const entry = (groups.find(g => /entry points/i.test(g.description)) || { sites: [] }).sites;
+    const total = ((groups.find(g => /^total supply$/i.test(g.description)) || { sites: [] }).sites[0] || {}).flow;
+    const rows = UK_LNG.map(([key, name, where]) => ({ name, where, v: Math.max(0, (entry.find(s => s.name === key) || {}).flow || 0) }));
+    if (!entry.length) throw new Error('no data');
+    const max = Math.max(1, ...rows.map(r => r.v));
+    document.getElementById('uk-lng-list').innerHTML = rows.map(r => `
+      <div class="bar-row" title="${escapeHtml(r.name)}: ${fmtNumber(r.v, 2)} mcm/d">
+        <span class="bar-label">${escapeHtml(r.name)}<small style="display:block;font-size:12px;color:var(--ink-3);font-weight:400">${escapeHtml(r.where)}</small></span>
+        <div class="bar-track"><div class="bar-fill" style="width:${Math.max(r.v / max * 100, 0.8)}%; background:var(--lng);"></div></div>
+        <span class="bar-value">${fmtNumber(r.v, 1)}<small>mcm/d</small></span>
+      </div>`).join('');
+    const sum = rows.reduce((a, r) => a + r.v, 0);
+    document.getElementById('uk-lng-desc').textContent = `Regasified LNG flowing into the national grid, mcm/d · published ${fmtDateTime(d.publishedTime)}.`;
+    if (Number.isFinite(total) && total > 0) document.getElementById('uk-lng-note').textContent = `${fmtNumber(sum, 1)} mcm/d in total, ${fmtNumber(sum / total * 100, 0)}% of UK gas supply right now.`;
+  }).catch(() => { document.getElementById('uk-lng-list').innerHTML = '<p class="loading">UK terminal data not available right now.</p>'; });
+
   function setStat(id, value, unit, digits) {
     const el = document.getElementById(id);
     const v = fmtNumber(value, digits);

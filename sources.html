@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Sources and Attribution — The Energy Ledger</title>
+<meta name="description" content="Every data and news source behind The Energy Ledger website, with what it is used for, how often it updates, its licence and the required attribution.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Energy Ledger">
+<meta property="og:title" content="Data Sources and Attribution — The Energy Ledger">
+<meta property="og:description" content="Every data and news source behind The Energy Ledger website, with what it is used for, how often it updates, its licence and the required attribution.">
+<meta property="og:url" content="https://www.theenergyledger.co.uk/sources.html">
+<meta property="og:image" content="https://www.theenergyledger.co.uk/og-image.png?v=2">
+<meta name="twitter:card" content="summary_large_image">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5XJN5KMJVN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5XJN5KMJVN');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="icon-mark.svg">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+  .src-grid{ display:grid; grid-template-columns:repeat(2, 1fr); gap:16px; margin-bottom:32px; }
+  .src{ padding:24px; display:flex; flex-direction:column; gap:10px; }
+  .src h3{ font-size:17px; }
+  .src h3 a{ text-decoration:none; color:var(--ink); }
+  .src h3 a:hover{ color:var(--brand); }
+  .src > p{ color:var(--ink-3); font-size:15px; }
+  .src .kv{ font-size:14px; margin-top:4px; }
+  .src .kv dd{ font-weight:500; text-align:right; }
+  .src .attr{ font-size:13px; color:var(--ink-2); background:var(--bg-soft); border-radius:8px; padding:8px 10px; }
+  @media (max-width: 760px){ .src-grid{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav">
+    <a class="wordmark" href="/" aria-label="The Energy Ledger — home">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <rect x="0" y="0" width="120" height="120" rx="28" fill="#0f172a"/>
+        <line x1="21" y1="30" x2="21" y2="90" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+        <line x1="34" y1="44" x2="80" y2="44" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="62" x2="92" y2="62" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="80" x2="66" y2="80" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <polyline points="80,44 96,27 103,32" fill="none" stroke="#f97316" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="103" cy="32" r="4.5" fill="#f97316"/>
+      </svg>
+      <b style="font-weight:inherit">The Energy <span>Ledger</span></b>
+    </a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-links">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="links" id="site-links">
+      <a href="/prices.html">Prices</a>
+      <a href="/generation.html">GB generation</a>
+      <a href="/uk-gas.html">UK gas</a>
+      <a href="/lng.html">LNG</a>
+      <a href="/news.html">News</a>
+      <a class="btn primary sm" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe free</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="crumbs"><a href="/">Home</a><span aria-hidden="true">/</span><span>About</span><span aria-hidden="true">/</span><span>Data sources</span></div>
+      <h1>Data sources</h1>
+      <p class="lede">Every figure and headline on this site comes from an official or openly licensed source. Here is what we use, how often it updates, and how it is licensed.</p>
+    </div>
+  </div>
+
+  <section class="tight">
+    <div class="wrap">
+      <h2 style="font-size:22px; margin:8px 0 16px;">Market data</h2>
+      <div class="src-grid">
+        <div class="card src">
+          <h3><a href="https://data.nationalgas.com" target="_blank" rel="noopener">National Gas Transmission Data Portal <span aria-hidden="true">↗</span></a></h3>
+          <p>NBP System Average Price (SAP), gas supply by terminal, demand, linepack, storage and UK LNG terminal flows</p>
+          <dl class="kv">
+            <dt>Updated</dt><dd>Hourly (prices), every 3 hours (flows)</dd>
+            <dt>Licence</dt><dd>Published under National Gas&#x27;s Gas System Operator licence obligation for open data</dd>
+          </dl>
+        </div>
+        <div class="card src">
+          <h3><a href="https://bmrs.elexon.co.uk" target="_blank" rel="noopener">Elexon Insights Solution (BMRS) <span aria-hidden="true">↗</span></a></h3>
+          <p>GB power market index price, national demand and its forecast, wind generation forecast</p>
+          <dl class="kv">
+            <dt>Updated</dt><dd>Hourly</dd>
+            <dt>Licence</dt><dd>BMRS Data Licence</dd>
+          </dl><p class="attr">Contains BMRS data © Elexon Limited copyright and database right 2026.</p>
+        </div>
+        <div class="card src">
+          <h3><a href="https://www.neso.energy/data-portal" target="_blank" rel="noopener">NESO Data Portal <span aria-hidden="true">↗</span></a></h3>
+          <p>Grid balancing costs (BSUoS cost data), embedded wind and solar forecasts</p>
+          <dl class="kv">
+            <dt>Updated</dt><dd>Daily (costs), every 3 hours (forecasts)</dd>
+            <dt>Licence</dt><dd>NESO Open Data Licence</dd>
+          </dl><p class="attr">Contains data from the National Energy System Operator (NESO).</p>
+        </div>
+        <div class="card src">
+          <h3><a href="https://carbonintensity.org.uk" target="_blank" rel="noopener">Carbon Intensity API (NESO) <span aria-hidden="true">↗</span></a></h3>
+          <p>Live carbon intensity, generation mix and 48-hour carbon intensity forecast</p>
+          <dl class="kv">
+            <dt>Updated</dt><dd>Live, on each page load</dd>
+            <dt>Licence</dt><dd>CC BY 4.0</dd>
+          </dl><p class="attr">Carbon Intensity API, National Energy System Operator.</p>
+        </div>
+        <div class="card src">
+          <h3><a href="https://alsi.gie.eu" target="_blank" rel="noopener">Gas Infrastructure Europe: ALSI <span aria-hidden="true">↗</span></a></h3>
+          <p>European LNG terminal send-out, inventory and capacity</p>
+          <dl class="kv">
+            <dt>Updated</dt><dd>Daily</dd>
+            <dt>Licence</dt><dd>GIE transparency platform terms</dd>
+          </dl>
+        </div>
+        <div class="card src">
+          <h3><a href="https://www.ofgem.gov.uk/energy-price-cap" target="_blank" rel="noopener">Ofgem <span aria-hidden="true">↗</span></a></h3>
+          <p>Energy price cap rates and announcement dates</p>
+          <dl class="kv">
+            <dt>Updated</dt><dd>Each quarter, entered in /admin</dd>
+            <dt>Licence</dt><dd>Ofgem publication terms</dd>
+          </dl>
+        </div>
+        <div class="card src">
+          <h3><a href="https://ember-energy.org" target="_blank" rel="noopener">Ember <span aria-hidden="true">↗</span></a></h3>
+          <p>Long-run UK electricity generation by source (shown once an Ember API key is added)</p>
+          <dl class="kv">
+            <dt>Updated</dt><dd>Weekly</dd>
+            <dt>Licence</dt><dd>CC BY 4.0</dd>
+          </dl><p class="attr">Ember yearly electricity data.</p>
+        </div>
+      </div>
+      <h2 style="font-size:22px; margin:8px 0 16px;">News and newsletter</h2>
+      <div class="src-grid">
+        <div class="card src">
+          <h3><a href="https://www.ofgem.gov.uk/news-and-insight" target="_blank" rel="noopener">Ofgem news and press releases <span aria-hidden="true">↗</span></a></h3>
+          <p>Regulatory news headlines</p>
+          <dl class="kv">
+            <dt>Updated</dt><dd>Every 6 hours</dd>
+            <dt>Licence</dt><dd>Headline and link to the original</dd>
+          </dl>
+        </div>
+        <div class="card src">
+          <h3><a href="https://www.neso.energy/news-and-events" target="_blank" rel="noopener">NESO news <span aria-hidden="true">↗</span></a></h3>
+          <p>System operator news headlines</p>
+          <dl class="kv">
+            <dt>Updated</dt><dd>Every 6 hours</dd>
+            <dt>Licence</dt><dd>Headline and link to the original</dd>
+          </dl>
+        </div>
+        <div class="card src">
+          <h3><a href="https://www.gov.uk/government/organisations/department-for-energy-security-and-net-zero" target="_blank" rel="noopener">GOV.UK: Department for Energy Security and Net Zero <span aria-hidden="true">↗</span></a></h3>
+          <p>Government energy publications</p>
+          <dl class="kv">
+            <dt>Updated</dt><dd>Every 6 hours</dd>
+            <dt>Licence</dt><dd>Open Government Licence v3.0</dd>
+          </dl><p class="attr">Contains public sector information licensed under the Open Government Licence v3.0.</p>
+        </div>
+        <div class="card src">
+          <h3><a href="https://www.energylivenews.com" target="_blank" rel="noopener">Energy Live News <span aria-hidden="true">↗</span></a></h3>
+          <p>UK business energy news headlines</p>
+          <dl class="kv">
+            <dt>Updated</dt><dd>Every 6 hours</dd>
+            <dt>Licence</dt><dd>Headline, short summary and link to the original</dd>
+          </dl>
+        </div>
+        <div class="card src">
+          <h3><a href="https://www.carbonbrief.org" target="_blank" rel="noopener">Carbon Brief <span aria-hidden="true">↗</span></a></h3>
+          <p>UK power, gas and climate policy headlines</p>
+          <dl class="kv">
+            <dt>Updated</dt><dd>Every 6 hours</dd>
+            <dt>Licence</dt><dd>Headline, short summary and link to the original</dd>
+          </dl>
+        </div>
+        <div class="card src">
+          <h3><a href="https://renewablesnow.com" target="_blank" rel="noopener">Renewables Now <span aria-hidden="true">↗</span></a></h3>
+          <p>UK renewables and offshore wind headlines</p>
+          <dl class="kv">
+            <dt>Updated</dt><dd>Every 6 hours</dd>
+            <dt>Licence</dt><dd>Headline, short summary and link to the original</dd>
+          </dl>
+        </div>
+        <div class="card src">
+          <h3><a href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">The Energy Ledger on Substack <span aria-hidden="true">↗</span></a></h3>
+          <p>Latest issues and archive</p>
+          <dl class="kv">
+            <dt>Updated</dt><dd>Hourly</dd>
+            <dt>Licence</dt><dd>Our own content</dd>
+          </dl>
+        </div>
+      </div>
+      <p class="source-note" style="margin-top:32px;">All market figures are indicative and published for information only. They are not for trading. Exchange prices such as TTF, EUA and NBP futures need a display licence from the exchange, so they are not shown. Spotted a problem? Tell us through any of our social channels.</p>
+    </div>
+  </section>
+
+  <section class="tight" style="padding-top:0;">
+    <div class="wrap">
+      <div class="card" style="padding:32px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; background:linear-gradient(120deg,#fff 0%, var(--brand-soft) 100%);">
+        <div style="max-width:600px;">
+          <h2 style="font-size:22px;">Want the read-through, not just the numbers?</h2>
+          <p style="margin-top:8px; color:var(--ink-3);">The Energy Ledger turns this data into a weekly view on UK gas, power, carbon and LNG — free on Substack.</p>
+        </div>
+        <a class="btn brand" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe free <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="wordmark" href="/">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+        <rect x="0" y="0" width="120" height="120" rx="28" fill="#0f172a"/>
+        <line x1="21" y1="30" x2="21" y2="90" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+        <line x1="34" y1="44" x2="80" y2="44" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="62" x2="92" y2="62" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="80" x2="66" y2="80" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <polyline points="80,44 96,27 103,32" fill="none" stroke="#f97316" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="103" cy="32" r="4.5" fill="#f97316"/>
+      </svg>
+          <b style="font-weight:inherit">The Energy <span>Ledger</span></b>
+        </a>
+        <p>The Energy Ledger is an independent read on UK energy markets.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Newsletter</h4>
+        <a href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe</a>
+        <a href="https://home.theenergyledger.co.uk/archive" target="_blank" rel="noopener">Archive</a>
+        <a href="/#coverage">Coverage</a>
+        <a href="/#about">About</a>
+      </div>
+      <div class="foot-col">
+        <h4>Live data</h4>
+        <a href="/prices.html">Prices &amp; costs</a>
+        <a href="/generation.html">GB generation</a>
+        <a href="/uk-gas.html">UK gas supply</a>
+        <a href="/lng.html">LNG</a>
+        <a href="/news.html">News</a>
+        <a href="/sources.html">Data sources</a>
+      </div>
+      <div class="foot-col">
+        <h4>Follow</h4>
+        <div class="socials" data-socials><a class="social" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener me" aria-label="The Energy Ledger on Substack" title="Substack"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a></div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span data-year>2026</span> The Energy Ledger. All rights reserved.</span>
+      <span>Data provided for information only, not for trading.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+<script>
+
+</script>
+
+</body>
+</html>

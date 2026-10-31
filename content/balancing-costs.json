@@ -1,0 +1,176 @@
+{
+  "updated": "2026-10-31T16:42:23.050Z",
+  "months": [
+    {
+      "month": "2025-10",
+      "days": 31,
+      "total": 264983645,
+      "categories": {
+        "Energy Imbalance": 742285,
+        "Frequency Control": 2028909,
+        "Positive Reserve": 13579424,
+        "Constraints": 240760143,
+        "Negative Reserve": 1632277,
+        "Other": 6240607
+      }
+    },
+    {
+      "month": "2025-11",
+      "days": 30,
+      "total": 209471152,
+      "categories": {
+        "Energy Imbalance": -4551231,
+        "Frequency Control": 1641824,
+        "Positive Reserve": 5876194,
+        "Constraints": 196380202,
+        "Negative Reserve": 1729173,
+        "Other": 8394990
+      }
+    },
+    {
+      "month": "2025-12",
+      "days": 31,
+      "total": 188391291,
+      "categories": {
+        "Energy Imbalance": 565182,
+        "Frequency Control": 1166699,
+        "Positive Reserve": 10676715,
+        "Constraints": 173088781,
+        "Negative Reserve": 1108741,
+        "Other": 1785173
+      }
+    },
+    {
+      "month": "2026-01",
+      "days": 31,
+      "total": 233196028,
+      "categories": {
+        "Energy Imbalance": -180267,
+        "Frequency Control": 1267165,
+        "Positive Reserve": 5744521,
+        "Constraints": 213344187,
+        "Negative Reserve": 2512305,
+        "Other": 10508117
+      }
+    },
+    {
+      "month": "2026-02",
+      "days": 28,
+      "total": 148317687,
+      "categories": {
+        "Energy Imbalance": -6263586,
+        "Frequency Control": 461129,
+        "Positive Reserve": 3515289,
+        "Constraints": 148831738,
+        "Negative Reserve": 518500,
+        "Other": 1254617
+      }
+    },
+    {
+      "month": "2026-03",
+      "days": 31,
+      "total": 309460037,
+      "categories": {
+        "Energy Imbalance": -1407635,
+        "Frequency Control": 856863,
+        "Positive Reserve": 4332190,
+        "Constraints": 304869191,
+        "Negative Reserve": 522934,
+        "Other": 286494
+      }
+    },
+    {
+      "month": "2026-04",
+      "days": 30,
+      "total": 249417336,
+      "categories": {
+        "Energy Imbalance": 6182516,
+        "Frequency Control": 740197,
+        "Positive Reserve": 16674829,
+        "Constraints": 221721824,
+        "Negative Reserve": 981729,
+        "Other": 3116241
+      }
+    },
+    {
+      "month": "2026-05",
+      "days": 31,
+      "total": 186151839,
+      "categories": {
+        "Energy Imbalance": 6896462,
+        "Frequency Control": 572961,
+        "Positive Reserve": 9860048,
+        "Constraints": 166819366,
+        "Negative Reserve": 810868,
+        "Other": 1192134
+      }
+    },
+    {
+      "month": "2026-06",
+      "days": 30,
+      "total": 253926768,
+      "categories": {
+        "Energy Imbalance": 4596873,
+        "Frequency Control": 795928,
+        "Positive Reserve": 19805989,
+        "Constraints": 223919039,
+        "Negative Reserve": 549078,
+        "Other": 4259861
+      }
+    },
+    {
+      "month": "2026-07",
+      "days": 31,
+      "total": 243511528,
+      "categories": {
+        "Energy Imbalance": 6201063,
+        "Frequency Control": 804565,
+        "Positive Reserve": 13855425,
+        "Constraints": 221618823,
+        "Negative Reserve": 187625,
+        "Other": 844027
+      }
+    },
+    {
+      "month": "2026-08",
+      "days": 31,
+      "total": 193321045,
+      "categories": {
+        "Energy Imbalance": 6466978,
+        "Frequency Control": 656535,
+        "Positive Reserve": 12758282,
+        "Constraints": 172509351,
+        "Negative Reserve": -21889,
+        "Other": 951788
+      }
+    },
+    {
+      "month": "2026-09",
+      "days": 30,
+      "total": 505347350,
+      "categories": {
+        "Energy Imbalance": -3178315,
+        "Frequency Control": 1150054,
+        "Positive Reserve": 18134105,
+        "Constraints": 483636720,
+        "Negative Reserve": 829487,
+        "Other": 4775299
+      }
+    },
+    {
+      "month": "2026-10",
+      "days": 27,
+      "total": 561603675,
+      "categories": {
+        "Energy Imbalance": 20292673,
+        "Frequency Control": 2028326,
+        "Positive Reserve": 14399202,
+        "Constraints": 519616397,
+        "Negative Reserve": 2131661,
+        "Other": 3135416
+      }
+    }
+  ],
+  "units": "£",
+  "source": "NESO (Daily Balancing Services Use of System cost data)"
+}

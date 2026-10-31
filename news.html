@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UK Energy News: Gas, Power, Carbon and LNG — The Energy Ledger</title>
+<meta name="description" content="The latest UK gas, power, carbon and LNG news from Ofgem, NESO, GOV.UK, Energy Live News, Carbon Brief and Renewables Now, filterable by topic.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Energy Ledger">
+<meta property="og:title" content="UK Energy News: Gas, Power, Carbon and LNG — The Energy Ledger">
+<meta property="og:description" content="The latest UK gas, power, carbon and LNG news from Ofgem, NESO, GOV.UK, Energy Live News, Carbon Brief and Renewables Now, filterable by topic.">
+<meta property="og:url" content="https://www.theenergyledger.co.uk/news.html">
+<meta property="og:image" content="https://www.theenergyledger.co.uk/og-image.png?v=2">
+<meta name="twitter:card" content="summary_large_image">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5XJN5KMJVN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5XJN5KMJVN');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="icon-mark.svg">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+  .filters{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-bottom:8px; }
+  .chip-btn{ border:1px solid var(--line); background:#fff; color:var(--ink-2); font:600 13.5px/1 'Inter',sans-serif; padding:9px 14px; border-radius:999px; cursor:pointer; }
+  .chip-btn[aria-pressed="true"]{ background:var(--ink); border-color:var(--ink); color:#fff; }
+  .chip-btn:focus-visible{ outline:3px solid #fdba74; outline-offset:2px; }
+  .filters select{ font:500 14px 'Inter',sans-serif; padding:8px 10px; border:1px solid var(--line); border-radius:10px; background:#fff; color:var(--ink-2); margin-left:auto; }
+  .count{ font-size:14px; color:var(--ink-3); margin:12px 0 4px; }
+  .news-item{ display:grid; grid-template-columns:1fr auto; gap:6px 20px; padding:20px 4px; border-bottom:1px solid var(--line); text-decoration:none; color:inherit; }
+  .news-item .meta{ grid-column:1 / -1; font-size:13px; color:var(--ink-3); display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+  .news-item .meta b{ font-weight:600; color:var(--ink-2); }
+  .news-item h3{ font-size:17.5px; line-height:1.4; letter-spacing:-0.01em; transition:color .15s ease; }
+  .news-item p{ grid-column:1; font-size:15px; color:var(--ink-3); display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+  .news-item .go{ grid-row:2 / span 2; grid-column:2; align-self:center; color:var(--ink-4); }
+  .news-item:hover h3, .news-item:hover .go{ color:var(--brand); }
+  @media (max-width: 560px){ .news-item .go{ display:none; } .filters select{ margin-left:0; width:100%; } }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav">
+    <a class="wordmark" href="/" aria-label="The Energy Ledger — home">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <rect x="0" y="0" width="120" height="120" rx="28" fill="#0f172a"/>
+        <line x1="21" y1="30" x2="21" y2="90" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+        <line x1="34" y1="44" x2="80" y2="44" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="62" x2="92" y2="62" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="80" x2="66" y2="80" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <polyline points="80,44 96,27 103,32" fill="none" stroke="#f97316" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="103" cy="32" r="4.5" fill="#f97316"/>
+      </svg>
+      <b style="font-weight:inherit">The Energy <span>Ledger</span></b>
+    </a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-links">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="links" id="site-links">
+      <a href="/prices.html">Prices</a>
+      <a href="/generation.html">GB generation</a>
+      <a href="/uk-gas.html">UK gas</a>
+      <a href="/lng.html">LNG</a>
+      <a href="/news.html" aria-current="page">News</a>
+      <a class="btn primary sm" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe free</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="crumbs"><a href="/">Home</a><span aria-hidden="true">/</span><span>News</span></div>
+      <h1>UK energy news</h1>
+      <p class="lede">The latest from the regulator, the system operator, government and the trade press, filtered to UK gas, power, carbon and LNG.</p>
+      <div class="status"><span class="live-dot"></span><span id="updated-note">Loading…</span></div>
+    </div>
+  </div>
+
+  <section class="tight">
+    <div class="wrap" style="max-width:880px;">
+      <div class="filters" role="group" aria-label="Filter by topic" id="topics"></div>
+      <div class="filters"><select id="source" aria-label="Filter by source"><option value="">All sources</option></select></div>
+      <p class="count" id="count" aria-live="polite"></p>
+      <div id="news-list"><p class="loading">Loading news…</p></div>
+      <p class="source-note">Headlines link to the original publishers: Ofgem, NESO, the Department for Energy Security and Net Zero (GOV.UK), Energy Live News, Carbon Brief and Renewables Now. Collected automatically every six hours and filtered to UK gas, power, carbon and LNG. See all <a href="/sources.html">data sources</a>.</p>
+    </div>
+  </section>
+
+  <section class="tight" style="padding-top:0;">
+    <div class="wrap">
+      <div class="card" style="padding:32px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; background:linear-gradient(120deg,#fff 0%, var(--brand-soft) 100%);">
+        <div style="max-width:600px;">
+          <h2 style="font-size:22px;">Want the read-through, not just the numbers?</h2>
+          <p style="margin-top:8px; color:var(--ink-3);">The Energy Ledger turns this data into a weekly view on UK gas, power, carbon and LNG — free on Substack.</p>
+        </div>
+        <a class="btn brand" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe free <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="wordmark" href="/">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+        <rect x="0" y="0" width="120" height="120" rx="28" fill="#0f172a"/>
+        <line x1="21" y1="30" x2="21" y2="90" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+        <line x1="34" y1="44" x2="80" y2="44" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="62" x2="92" y2="62" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="80" x2="66" y2="80" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <polyline points="80,44 96,27 103,32" fill="none" stroke="#f97316" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="103" cy="32" r="4.5" fill="#f97316"/>
+      </svg>
+          <b style="font-weight:inherit">The Energy <span>Ledger</span></b>
+        </a>
+        <p>The Energy Ledger is an independent read on UK energy markets.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Newsletter</h4>
+        <a href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe</a>
+        <a href="https://home.theenergyledger.co.uk/archive" target="_blank" rel="noopener">Archive</a>
+        <a href="/#coverage">Coverage</a>
+        <a href="/#about">About</a>
+      </div>
+      <div class="foot-col">
+        <h4>Live data</h4>
+        <a href="/prices.html">Prices &amp; costs</a>
+        <a href="/generation.html">GB generation</a>
+        <a href="/uk-gas.html">UK gas supply</a>
+        <a href="/lng.html">LNG</a>
+        <a href="/news.html">News</a>
+        <a href="/sources.html">Data sources</a>
+      </div>
+      <div class="foot-col">
+        <h4>Follow</h4>
+        <div class="socials" data-socials><a class="social" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener me" aria-label="The Energy Ledger on Substack" title="Substack"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a></div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span data-year>2026</span> The Energy Ledger. All rights reserved.</span>
+      <span>Data provided for information only, not for trading.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+<script>
+
+  const TOPICS = [['', 'All'], ['gas', 'Gas'], ['power', 'Power'], ['carbon', 'Carbon'], ['lng', 'LNG'], ['renewables', 'Renewables'], ['policy', 'Policy']];
+  const params = new URLSearchParams(location.search);
+  let state = { topic: params.get('topic') || '', source: params.get('source') || '' }, items = [];
+
+  function render() {
+    const list = items.filter(i => (!state.topic || i.topic === state.topic) && (!state.source || i.source === state.source));
+    document.getElementById('count').textContent = `${list.length} ${list.length === 1 ? 'story' : 'stories'}`;
+    document.getElementById('news-list').innerHTML = list.length ? list.map(item => {
+      const date = item.published ? new Date(item.published).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }) : '';
+      const link = /^https?:\/\//.test(item.link || '') ? item.link : '#';
+      const topic = (TOPICS.find(t => t[0] === item.topic) || [])[1];
+      return `<a class="news-item" href="${escapeHtml(link)}" target="_blank" rel="noopener">
+          <span class="meta"><b>${escapeHtml(item.source || '')}</b>${date ? `<span>·</span><span>${escapeHtml(date)}</span>` : ''}${topic ? `<span class="tag">${escapeHtml(topic)}</span>` : ''}</span>
+          <h3>${escapeHtml(item.title)}</h3>
+          ${item.summary ? `<p>${escapeHtml(item.summary.trim())}</p>` : ''}
+          <span class="go" aria-hidden="true">→</span>
+        </a>`;
+    }).join('') : '<p class="loading">No stories match these filters.</p>';
+    document.querySelectorAll('#topics button').forEach(b => b.setAttribute('aria-pressed', b.dataset.topic === state.topic ? 'true' : 'false'));
+    const q = new URLSearchParams(); if (state.topic) q.set('topic', state.topic); if (state.source) q.set('source', state.source);
+    history.replaceState(null, '', q.toString() ? `?${q}` : location.pathname);
+  }
+
+  document.getElementById('topics').innerHTML = TOPICS.map(([k, label]) => `<button type="button" class="chip-btn" data-topic="${k}">${label}</button>`).join('');
+  document.getElementById('topics').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { state.topic = b.dataset.topic; render(); } });
+  document.getElementById('source').addEventListener('change', e => { state.source = e.target.value; render(); });
+
+  fetch('/content/news-feed.json').then(r => r.json()).then(d => {
+    // Older feed files have no topic yet; tag them the same way the function does.
+    const TOPIC_WORDS = [
+      ['lng', ['lng', 'liquefied natural gas', 'regasification', 'cargo']],
+      ['carbon', ['carbon price', 'emissions trading', 'uk ets', 'eu ets', 'allowance', 'carbon capture', 'ccs', 'net zero', 'emissions']],
+      ['gas', ['gas', 'nbp', 'ttf', 'north sea', 'storage', 'pipeline']],
+      ['renewables', ['wind', 'solar', 'renewable', 'offshore', 'battery', 'hydrogen', 'nuclear', 'cfd', 'contracts for difference']],
+      ['power', ['electricity', 'power', 'grid', 'balancing', 'transmission', 'interconnector', 'capacity market', 'generation']],
+    ];
+    items = (d.items || []).map(i => i.topic ? i : { ...i, topic: ((TOPIC_WORDS.find(([, w]) => w.some(x => `${i.title} ${i.summary}`.toLowerCase().includes(x))) || ['policy'])[0]) });
+    const sources = [...new Set(items.map(i => i.source).filter(Boolean))].sort();
+    const sel = document.getElementById('source');
+    sel.innerHTML += sources.map(s => `<option value="${escapeHtml(s)}">${escapeHtml(s)}</option>`).join('');
+    sel.value = state.source;
+    if (d.updated) document.getElementById('updated-note').textContent = 'Updated ' + fmtDateTime(d.updated);
+    render();
+  }).catch(() => { document.getElementById('news-list').innerHTML = '<p class="loading">Unable to load news right now.</p>'; });
+
+</script>
+
+</body>
+</html>

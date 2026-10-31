@@ -204,21 +204,34 @@ async function expandTruncated(entry) {
   }
 }
 
+// Feeds are asked for as XML; the Ofgem, NESO and RenewableUK listings are
+// ordinary web pages, so they are asked for as HTML.
+const HTML_PARSERS = new Set([parseOfgemListing, parseNesoListing, parseRenewableUKListing]);
+
 async function fetchFeed(url, sourceName, parser) {
   try {
+    const html = HTML_PARSERS.has(parser);
     const res = await fetch(url, {
       headers: {
         "User-Agent":
           "Mozilla/5.0 (compatible; TheEnergyLedgerBot/1.0; +https://www.theenergyledger.co.uk)",
-        Accept: "application/rss+xml, application/atom+xml, application/xml, text/xml",
+        Accept: html
+          ? "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+          : "application/rss+xml, application/atom+xml, application/xml, text/xml",
+        "Accept-Language": "en-GB,en;q=0.9",
       },
     });
     if (!res.ok) {
       console.log(`${sourceName}: fetch failed with status ${res.status}`);
       return [];
     }
-    const xml = await res.text();
-    const entries = parser(xml);
+    const body = await res.text();
+    const entries = parser(body);
+    if (!entries.length) {
+      // Usually a changed page layout or a bot check: log enough to tell which.
+      const title = (body.match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [])[1] || "";
+      console.log(`${sourceName}: 0 items from ${res.status} ${res.headers.get("content-type") || ""}, ${body.length} bytes, title "${title.trim().slice(0, 80)}"`);
+    }
     return entries.map(e => ({ ...e, source: sourceName }));
   } catch (err) {
     console.log(`${sourceName}: fetch error — ${err.message}. Skipping this source for this run.`);

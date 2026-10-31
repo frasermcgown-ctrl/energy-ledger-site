@@ -279,7 +279,9 @@ async function fetchRenewableUK() {
     const page = await fetch(RENEWABLEUK_PRESS, { headers: { "User-Agent": UA, Accept: "text/html", "Accept-Language": "en-GB,en;q=0.9" } });
     const html = await page.text();
     const featured = parseRenewableUKListing(html);
-    const form = (html.match(/<form[^>]+action="\/news-and-resources\/press-releases\/"[^>]*>([\s\S]*?)<\/form>/) || [])[1] || "";
+    // The page has two forms posting here: a site search box and the list
+    // form that the page submits on load (class "js-submit-on-load").
+    const form = (html.match(/<form[^>]+js-submit-on-load[^>]*>([\s\S]*?)<\/form>/) || [])[1] || "";
     const fields = new URLSearchParams();
     for (const tag of form.match(/<input[^>]*>/g) || []) {
       const name = (tag.match(/name="([^"]*)"/) || [])[1];

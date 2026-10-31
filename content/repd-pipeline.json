@@ -1,0 +1,52 @@
+{
+  "updated": "2026-10-31T18:30:21.236Z",
+  "file": "REPD_Publication_Q2_2026.csv",
+  "title": "Renewable Energy Planning Database (REPD): July 2026 (CSV)",
+  "published": "2026-08-03T10:00:03+01:00",
+  "byTechnology": [
+    {
+      "technology": "Offshore wind",
+      "operational": 16,
+      "construction": 11.8,
+      "consented": 30.8,
+      "planning": 18.1
+    },
+    {
+      "technology": "Onshore wind",
+      "operational": 15.5,
+      "construction": 2,
+      "consented": 7.2,
+      "planning": 10.9
+    },
+    {
+      "technology": "Solar",
+      "operational": 11.1,
+      "construction": 3.2,
+      "consented": 26.8,
+      "planning": 17
+    },
+    {
+      "technology": "Storage",
+      "operational": 8.2,
+      "construction": 9.9,
+      "consented": 77,
+      "planning": 48.2
+    },
+    {
+      "technology": "Other renewables",
+      "operational": 7.7,
+      "construction": 1.1,
+      "consented": 5.1,
+      "planning": 1.3
+    }
+  ],
+  "totals": {
+    "operational": 58.6,
+    "construction": 28.1,
+    "consented": 147,
+    "planning": 95.5
+  },
+  "projects": 9969,
+  "units": "GW (installed capacity, MWelec / 1000)",
+  "source": "DESNZ Renewable Energy Planning Database, Open Government Licence"
+}

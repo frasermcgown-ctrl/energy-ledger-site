@@ -1,6 +1,6 @@
 // Runs on a schedule (see the `config` export below). Fetches gas/power/
 // carbon/LNG-relevant items from gov.uk (DESNZ), Energy Live News, Carbon
-// Brief, Renewables Now, Ofgem and NESO, tags each with a topic, then
+// Brief, Renewables Now, Ofgem, NESO and RenewableUK, tags each with a topic, then
 // commits the merged result to content/news-feed.json — which triggers
 // Netlify's existing auto-deploy, so the homepage and News page pick it up.
 // Headlines, short summaries and links only.
@@ -14,6 +14,7 @@ const RENEWABLES_NOW_FEEDS = ["https://renewablesnow.com/feeds/europe/", "https:
 // Ofgem's RSS feed is empty and NESO has none, so read their public listing pages.
 const OFGEM_PRESS = "https://www.ofgem.gov.uk/news-and-insight/press-releases";
 const NESO_NEWS = "https://www.neso.energy/news-and-events";
+const RENEWABLEUK_PRESS = "https://www.renewableuk.com/news-and-resources/press-releases/";
 const MAX_ITEMS = 40;
 
 // Wider sources (Carbon Brief, Renewables Now) are global, so keep only UK stories.
@@ -73,6 +74,26 @@ function parseNesoListing(html) {
     seen.add(link);
     return { title, link, summary, updated: date ? parseDayMonthYear(date) : null };
   }).filter(Boolean);
+}
+
+// RenewableUK press releases: a featured story (<h5 title="01 September 2026">) and
+// cards (<h5>29/09/26</h5>), each followed by a link to the release and an <h2> title.
+function parseRenewableUKListing(html) {
+  const seen = new Set();
+  const out = [];
+  const re = /<h5(?:\s+title="([^"]+)")?[^>]*>([^<]*)<\/h5>[\s\S]{0,400}?href="(https:\/\/www\.renewableuk\.com\/news-and-resources\/press-releases\/[^"#]+)"[\s\S]{0,200}?<h2[^>]*>([\s\S]*?)<\/h2>/g;
+  let m;
+  while ((m = re.exec(html))) {
+    const [, longDate, shortDate, link, rawTitle] = m;
+    let updated = longDate ? parseDayMonthYear(longDate) : null;
+    const dmy = /^(\d{2})\/(\d{2})\/(\d{2})$/.exec((shortDate || "").trim());
+    if (!updated && dmy) updated = new Date(Date.UTC(2000 + Number(dmy[3]), Number(dmy[2]) - 1, Number(dmy[1]), 12)).toISOString();
+    const title = stripTags(rawTitle);
+    if (!title || seen.has(link)) continue;
+    seen.add(link);
+    out.push({ title, link, summary: "", updated });
+  }
+  return out;
 }
 
 // Only keep items that look like they're actually about gas, power, carbon
@@ -285,7 +306,7 @@ export default async () => {
   // --- END TEMPORARY TEST ---
 
   try {
-    const [govukEntries, elnEntries, cbEntries, rnEurope, rnOffshore, ofgemEntries, nesoEntries] = await Promise.all([
+    const [govukEntries, elnEntries, cbEntries, rnEurope, rnOffshore, ofgemEntries, nesoEntries, rukEntries] = await Promise.all([
       fetchFeed(GOVUK_FEED, "Dept for Energy Security & Net Zero", parseAtomEntries),
       fetchFeed(ENERGY_LIVE_NEWS_FEED, "Energy Live News", parseRssItems),
       fetchFeed(CARBON_BRIEF_FEED, "Carbon Brief", parseRssItems),
@@ -293,17 +314,18 @@ export default async () => {
       fetchFeed(RENEWABLES_NOW_FEEDS[1], "Renewables Now", parseRssItems),
       fetchFeed(OFGEM_PRESS, "Ofgem", parseOfgemListing),
       fetchFeed(NESO_NEWS, "NESO", parseNesoListing),
+      fetchFeed(RENEWABLEUK_PRESS, "RenewableUK", parseRenewableUKListing),
     ]);
 
     console.log(`gov.uk: ${govukEntries.length}, Energy Live News: ${elnEntries.length}, Carbon Brief: ${cbEntries.length}, ` +
-      `Renewables Now: ${rnEurope.length + rnOffshore.length}, Ofgem: ${ofgemEntries.length}, NESO: ${nesoEntries.length} entries fetched.`);
+      `Renewables Now: ${rnEurope.length + rnOffshore.length}, Ofgem: ${ofgemEntries.length}, NESO: ${nesoEntries.length}, RenewableUK: ${rukEntries.length} entries fetched.`);
 
     const notExcluded = e => !EXCLUDE_KEYWORDS.some(k => `${e.title} ${e.summary}`.toLowerCase().includes(k));
     const allEntries = [
       ...[...govukEntries, ...elnEntries].filter(e => isRelevant(e.title, e.summary)),
       ...[...cbEntries, ...rnEurope, ...rnOffshore].filter(e => isRelevant(e.title, e.summary) && isUK(e.title, e.summary)),
-      // Official regulator and system operator news is always in scope.
-      ...[...ofgemEntries, ...nesoEntries].filter(notExcluded),
+      // Official regulator, system operator and trade body news is always in scope.
+      ...[...ofgemEntries, ...nesoEntries, ...rukEntries].filter(notExcluded),
     ];
     const seen = new Set();
     const latest = allEntries

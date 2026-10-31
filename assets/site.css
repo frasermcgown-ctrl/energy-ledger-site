@@ -288,6 +288,11 @@ a.card:hover{ border-color:var(--line-strong); box-shadow:var(--shadow); transfo
 .bar-fill{ height:100%; border-radius:999px; background:var(--ink); transition:width .6s cubic-bezier(.2,.8,.2,1); }
 .bar-value{ text-align:right; font-size:15px; font-weight:600; font-variant-numeric:tabular-nums; color:var(--ink); }
 .bar-value small{ display:block; font-size:12px; font-weight:500; color:var(--ink-3); }
+.bar-track.stack{ display:flex; gap:2px; background:transparent; }
+.bar-track.stack span{ height:100%; min-width:2px; }
+.bar-track.stack span:first-child{ border-radius:999px 0 0 999px; }
+.bar-track.stack span:last-child{ border-radius:0 999px 999px 0; }
+.bar-track.stack span:only-child{ border-radius:999px; }
 
 .loading{ color:var(--ink-3); font-size:15px; padding:8px; }
 .source-note{ margin-top:24px; font-size:14px; color:var(--ink-3); line-height:1.65; }

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-31T21:44:52.716Z",
+  "updated": "2026-10-31T21:50:16.161Z",
   "items": [
     {
       "title": "Business electricity bills fall 17% as energy use plummets",
@@ -66,6 +66,14 @@
       "published": "2026-10-30T09:00:00.000Z"
     },
     {
+      "title": "New 'circuit breaker' strategy launched to help households get out of energy debt",
+      "link": "https://www.ofgem.gov.uk/press-release/new-circuit-breaker-strategy-launched-help-households-get-out-energy-debt",
+      "summary": "Helping struggling households break the cycle of energy debt is at the heart of a new three-pronged strategy unveiled by Government and regulator Ofgem.",
+      "source": "Ofgem",
+      "topic": "policy",
+      "published": "2026-10-29T12:00:00.000Z"
+    },
+    {
       "title": "UK budget 2026: Key climate and energy announcements",
       "link": "https://www.carbonbrief.org/uk-budget-2026-key-climate-and-energy-announcements",
       "summary": "Chancellor John Healey has announced a “new course on energy” for the UK, focused on keeping bills low amid the…\nThe post UK budget 2026: Key climate and energy announcements appeared first on Carbon Brief.\n",
@@ -114,12 +122,36 @@
       "published": "2026-10-23T12:00:00.000Z"
     },
     {
+      "title": "Ofgem consults on proposals to reinforce gas import capability",
+      "link": "https://www.ofgem.gov.uk/press-release/ofgem-consults-proposals-reinforce-gas-import-capability",
+      "summary": "Today, Ofgem has approved Interconnector Limited entering into an agreement, under its licence, with National Gas Transmission plc to reinforce gas import capability through the Great Britain-Belgium interconnector.",
+      "source": "Ofgem",
+      "topic": "gas",
+      "published": "2026-10-22T12:00:00.000Z"
+    },
+    {
+      "title": "Ofgem launches biggest ever OFTO tender round for £3.5 billion Hornsea 3 offshore transmission link",
+      "link": "https://www.ofgem.gov.uk/press-release/ofgem-launches-biggest-ever-ofto-tender-round-ps35-billion-hornsea-3-offshore-transmission-link",
+      "summary": "Ofgem has launched what’s expected to be its largest ever tender round for the offshore transmission assets connecting Hornsea 3 - one of the world’s biggest windfarms - to Britain’s power grid.",
+      "source": "Ofgem",
+      "topic": "renewables",
+      "published": "2026-10-21T12:00:00.000Z"
+    },
+    {
       "title": "Revealed: Expensive gas behind ‘nearly 90%’ of rise in UK electricity bills",
       "link": "https://www.carbonbrief.org/revealed-expensive-gas-behind-nearly-90-of-rise-in-uk-electricity-bills",
       "summary": "A surge in wholesale costs driven by expensive gas is responsible for nearly 90% of the rise in UK household…\nThe post Revealed: Expensive gas behind ‘nearly 90%’ of rise in UK electricity bills appeared first on Carbon ",
       "source": "Carbon Brief",
       "topic": "gas",
       "published": "2026-10-21T11:37:55.000Z"
+    },
+    {
+      "title": "Ofgem unlocks funding for major electricity grid upgrade while delivering over £60 million of consumer savings",
+      "link": "https://www.ofgem.gov.uk/press-release/ofgem-unlocks-funding-major-electricity-grid-upgrade-while-delivering-over-ps60-million-consumer-savings",
+      "summary": "Ofgem has greenlit a £642.1 million funding package for National Grid Electricity Transmission’s Bramford to Twinstead project in East Anglia",
+      "source": "Ofgem",
+      "topic": "power",
+      "published": "2026-10-19T12:00:00.000Z"
     },
     {
       "title": "Independent investigation concludes allegations against NESO were unsubstantiated",
@@ -138,12 +170,60 @@
       "published": "2026-10-14T12:00:00.000Z"
     },
     {
+      "title": "Ofgem appoints Tim Jarvis as Chief Executive",
+      "link": "https://www.ofgem.gov.uk/press-release/ofgem-appoints-tim-jarvis-chief-executive",
+      "summary": "The Board of Ofgem has confirmed the appointment of Tim Jarvis as Chief Executive following a rigorous and competitive recruitment process.",
+      "source": "Ofgem",
+      "topic": "policy",
+      "published": "2026-10-05T12:00:00.000Z"
+    },
+    {
+      "title": "Ofgem moves to free up grid capacity by tackling excess battery projects",
+      "link": "https://www.ofgem.gov.uk/press-release/ofgem-moves-free-grid-capacity-tackling-excess-battery-projects",
+      "summary": "Ofgem proposes to approve a new commitment fee to help clear the battery connections queue and free up capacity for viable projects.",
+      "source": "Ofgem",
+      "topic": "renewables",
+      "published": "2026-09-17T12:00:00.000Z"
+    },
+    {
+      "title": "Energy price cap will rise by 4% from October 2026",
+      "link": "https://www.ofgem.gov.uk/press-release/energy-price-cap-will-rise-4-october-2026",
+      "summary": "Ofgem has announced a 4% increase of the energy price cap for the period covering 1 October to 31 December 2026.",
+      "source": "Ofgem",
+      "topic": "policy",
+      "published": "2026-08-26T12:00:00.000Z"
+    },
+    {
+      "title": "Ofgem Energy Redress Scheme supports one million customers with record £250 million funding",
+      "link": "https://www.ofgem.gov.uk/press-release/ofgem-energy-redress-scheme-supports-one-million-customers-record-ps250-million-funding",
+      "summary": "Ofgem's Energy Redress Scheme has received £250 million in funding, helping one million customers.",
+      "source": "Ofgem",
+      "topic": "policy",
+      "published": "2026-08-06T12:00:00.000Z"
+    },
+    {
+      "title": "Ofgem acts to free up grid capacity by tackling speculative data centre projects",
+      "link": "https://www.ofgem.gov.uk/press-release/ofgem-acts-free-grid-capacity-tackling-speculative-data-centre-projects",
+      "summary": "Our consultation on plans to tackle speculative data centre projects in Britain's electricity connections queue.",
+      "source": "Ofgem",
+      "topic": "power",
+      "published": "2026-07-29T12:00:00.000Z"
+    },
+    {
       "title": "Positive progress on skip rates and next steps",
       "link": "https://www.neso.energy/news/positive-progress-skip-rates-and-next-steps",
       "summary": "Skip rates have become one of the most talked about metrics in electricity system operation over the last couple of years and rightly so.",
       "source": "NESO",
       "topic": "power",
       "published": "2026-07-07T12:00:00.000Z"
+    },
+    {
+      "title": "Ofgem boosts long duration storage to secure more homegrown energy for customers",
+      "link": "https://www.ofgem.gov.uk/press-release/ofgem-boosts-long-duration-storage-secure-more-homegrown-energy-customers",
+      "summary": "Energy regulator Ofgem gives provisional green light to a new generation of energy storage to reduce Great Britain’s reliance on energy imports",
+      "source": "Ofgem",
+      "topic": "gas",
+      "published": "2026-06-26T12:00:00.000Z"
     },
     {
       "title": "Energy explained blog: Electricity Margin Notice 24.06.26",
@@ -240,22 +320,6 @@
       "source": "NESO",
       "topic": "power",
       "published": "2025-10-08T12:00:00.000Z"
-    },
-    {
-      "title": "Fintan Slye: Reflects on the first year of the National Energy System Operator",
-      "link": "https://www.neso.energy/news/fintan-slye-reflects-first-year-national-energy-system-operator",
-      "summary": "A year ago today, on 1 October 2025, with support from government, industry and customers, the National Energy System Operator (NESO) was born.",
-      "source": "NESO",
-      "topic": "policy",
-      "published": "2025-10-01T12:00:00.000Z"
-    },
-    {
-      "title": "Energy Explained: Future-Proofing GB’s Power System: Reflections on the April 2025 Iberian Event",
-      "link": "https://www.neso.energy/news/energy-explained-future-proofing-gbs-power-system-reflections-april-2025-iberian-event",
-      "summary": "NESO’s report reviews lessons from the April 2025 Iberian blackout to strengthen Great Britain’s grid resilience. It highlights NESO’s existing measures, urges continued improvements and details steps for ongoing robust ",
-      "source": "NESO",
-      "topic": "power",
-      "published": "2025-09-23T12:00:00.000Z"
     }
   ]
 }

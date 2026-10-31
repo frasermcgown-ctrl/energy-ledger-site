@@ -16,7 +16,12 @@ const HISTORY_DAYS = 400;
 const KWH_PER_THERM = 29.3071;
 const NG_API = "https://api.nationalgas.com/operationaldata/v1/publications";
 const ELEXON_MID = "https://data.elexon.co.uk/bmrs/api/v1/datasets/MID";
-const POWER_CHUNKS_PER_RUN = 12; // 12 x 7 days per run
+const POWER_CHUNKS_PER_RUN = 12; // 12 windows per run
+// Each window covers 5 settlement days, but is requested with a day either side
+// (7 days in all, Elexon's limit). Elexon's `to` is midnight at the start of
+// that date, and UK settlement days start at local midnight, so without the
+// padding the edge days come back incomplete and get dropped.
+const WINDOW_DAYS = 5;
 
 function catalogueEntries(node, out = []) {
   if (Array.isArray(node)) {
@@ -59,7 +64,9 @@ async function fetchGasHistory() {
 
 // Volume-weighted daily averages for complete settlement days in [from, to].
 async function fetchPowerRange(from, to) {
-  const json = await fetchJson(`${ELEXON_MID}?from=${from}&to=${to}&dataProviders=APXMIDP&format=json`);
+  const qFrom = isoDate(daysAgo(1, new Date(from)));
+  const qTo = isoDate(daysAgo(-1, new Date(to)));
+  const json = await fetchJson(`${ELEXON_MID}?from=${qFrom}&to=${qTo}&dataProviders=APXMIDP&format=json`);
   const byDay = {};
   (Array.isArray(json) ? json : json.data || []).forEach(r => {
     if (r.dataProvider !== "APXMIDP" || !Number.isFinite(r.price) || !Number.isFinite(r.volume) || r.volume <= 0) return;
@@ -67,11 +74,11 @@ async function fetchPowerRange(from, to) {
     day.pv += r.price * r.volume; day.v += r.volume; day.n += 1;
   });
   return Object.entries(byDay)
-    .filter(([, x]) => x.n >= 40)
+    .filter(([d, x]) => d >= from && d <= to && x.n >= 40)
     .map(([d, x]) => ({ d, v: Math.round((x.pv / x.v) * 100) / 100 }));
 }
 
-// Work out which 7-day windows are still missing, newest first, so the
+// Work out which windows are still missing, newest first, so the
 // latest days always arrive before the older backfill.
 function missingPowerWindows(existing) {
   const have = new Set(existing.map(p => p.d));
@@ -79,7 +86,7 @@ function missingPowerWindows(existing) {
   let end = daysAgo(1);
   const oldest = daysAgo(HISTORY_DAYS);
   while (end >= oldest) {
-    const start = daysAgo(6, end) < oldest ? oldest : daysAgo(6, end);
+    const start = daysAgo(WINDOW_DAYS - 1, end) < oldest ? oldest : daysAgo(WINDOW_DAYS - 1, end);
     let gap = false;
     for (let d = new Date(start); d <= end; d = daysAgo(-1, d)) if (!have.has(isoDate(d))) { gap = true; break; }
     if (gap) windows.push([isoDate(start), isoDate(end)]);

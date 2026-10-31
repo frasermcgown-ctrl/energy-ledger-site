@@ -14,7 +14,10 @@ const ENERGY_LIVE_NEWS_FEED = "https://www.energylivenews.com/feed";
 const CARBON_BRIEF_FEED = "https://www.carbonbrief.org/feed/";
 const RENEWABLES_NOW_FEEDS = ["https://renewablesnow.com/feeds/europe/", "https://renewablesnow.com/feeds/offshore-wind/"];
 // Ofgem's RSS feed is empty and NESO has none, so read their public listing pages.
-const OFGEM_PRESS = "https://www.ofgem.gov.uk/news-and-insight/press-releases";
+// Ofgem's press release page fills its list with JavaScript from this listing
+// API (listing 2054 = press releases), newest first. Each item carries the same
+// teaser HTML as the page, so parseOfgemListing reads it.
+const OFGEM_PRESS = "https://www.ofgem.gov.uk/api/listing/2054?sort%5Bfield_combined_date%5D%5Bpath%5D=field_combined_date&sort%5Bfield_combined_date%5D%5Bdirection%5D=desc";
 const NESO_NEWS = "https://www.neso.energy/news-and-events";
 const RENEWABLEUK_PRESS = "https://www.renewableuk.com/news-and-resources/press-releases/";
 const MAX_ITEMS = 40;
@@ -83,6 +86,11 @@ function parseNesoListing(html) {
     seen.add(link);
     return { title, link, summary, updated: date ? parseDayMonthYear(date) : null };
   }).filter(Boolean);
+}
+
+function parseOfgemApi(text) {
+  const items = (JSON.parse(text).items || []).map(i => i.markup || "");
+  return parseOfgemListing(items.join("\n"));
 }
 
 // RenewableUK press releases: a featured story (<h5 title="01 September 2026">) and
@@ -206,7 +214,9 @@ async function expandTruncated(entry) {
     const description = metaContent(html, "description") || metaContent(html, "og:description");
     return {
       ...entry,
-      title: TRUNCATED.test(entry.title) && pageTitle ? pageTitle : entry.title,
+      // Only trust the page title if it starts like the shortened one.
+      title: TRUNCATED.test(entry.title) && pageTitle && pageTitle.toLowerCase().startsWith(entry.title.replace(TRUNCATED, "").trim().toLowerCase().slice(0, 30))
+        ? pageTitle : entry.title,
       summary: TRUNCATED.test(entry.summary || "") && description ? description.slice(0, 220) : entry.summary,
     };
   } catch {
@@ -214,18 +224,20 @@ async function expandTruncated(entry) {
   }
 }
 
-// Feeds are asked for as XML; the Ofgem, NESO and RenewableUK listings are
-// ordinary web pages, so they are asked for as HTML.
-const HTML_PARSERS = new Set([parseOfgemListing, parseNesoListing, parseRenewableUKListing]);
+// Feeds are asked for as XML, listing pages as HTML and Ofgem's API as JSON.
+const HTML_PARSERS = new Set([parseNesoListing, parseRenewableUKListing]);
+const JSON_PARSERS = new Set([parseOfgemApi]);
+const UA = "Mozilla/5.0 (compatible; TheEnergyLedgerBot/1.0; +https://www.theenergyledger.co.uk)";
 
 async function fetchFeed(url, sourceName, parser) {
   try {
     const html = HTML_PARSERS.has(parser);
     const res = await fetch(url, {
       headers: {
-        "User-Agent":
-          "Mozilla/5.0 (compatible; TheEnergyLedgerBot/1.0; +https://www.theenergyledger.co.uk)",
-        Accept: html
+        "User-Agent": UA,
+        Accept: JSON_PARSERS.has(parser)
+          ? "application/json"
+          : html
           ? "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
           : "application/rss+xml, application/atom+xml, application/xml, text/xml",
         "Accept-Language": "en-GB,en;q=0.9",
@@ -241,16 +253,61 @@ async function fetchFeed(url, sourceName, parser) {
       // Usually a changed page layout or a bot check: log enough to tell which.
       const title = (body.match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [])[1] || "";
       console.log(`${sourceName}: 0 items from ${res.status} ${res.headers.get("content-type") || ""}, ${body.length} bytes, title "${title.trim().slice(0, 80)}"`);
-      // TEMPORARY: keep a copy of the page exactly as received here, so the
-      // parser can be matched to it. Remove once Ofgem and RenewableUK parse.
-      if (html) {
-        const slug = sourceName.toLowerCase().replace(/[^a-z]+/g, "-");
-        await writeJsonIfChanged(`content/debug/news-${slug}.json`, { url, status: res.status, html: body.slice(0, 400000) }, `Debug capture of ${sourceName} listing page`).catch(e => console.log(`debug capture failed: ${e.message}`));
-      }
     }
     return entries.map(e => ({ ...e, source: sourceName }));
   } catch (err) {
     console.log(`${sourceName}: fetch error — ${err.message}. Skipping this source for this run.`);
+    return [];
+  }
+}
+
+// TEMPORARY: keep a copy of a response exactly as received here, so a parser
+// can be matched to it. Remove once RenewableUK is confirmed working.
+async function captureDebug(sourceName, url, status, body) {
+  const slug = sourceName.toLowerCase().replace(/[^a-z]+/g, "-");
+  await writeJsonIfChanged(`content/debug/news-${slug}.json`, { url, status, html: String(body).slice(0, 400000) }, `Debug capture of ${sourceName} listing page`)
+    .catch(e => console.log(`debug capture failed: ${e.message}`));
+}
+
+// RenewableUK's page holds only a featured story; the list arrives when the
+// page's own form posts back to the same address on load (an ASP.NET form with
+// an anti-forgery token and cookie). Do the same: load the page, then post its
+// form with the token and cookie, and parse the returned list.
+async function fetchRenewableUK() {
+  const source = "RenewableUK";
+  try {
+    const page = await fetch(RENEWABLEUK_PRESS, { headers: { "User-Agent": UA, Accept: "text/html", "Accept-Language": "en-GB,en;q=0.9" } });
+    const html = await page.text();
+    const featured = parseRenewableUKListing(html);
+    const form = (html.match(/<form[^>]+action="\/news-and-resources\/press-releases\/"[^>]*>([\s\S]*?)<\/form>/) || [])[1] || "";
+    const fields = new URLSearchParams();
+    for (const tag of form.match(/<input[^>]*>/g) || []) {
+      const name = (tag.match(/name="([^"]*)"/) || [])[1];
+      if (name) fields.append(name, decodeEntities((tag.match(/value="([^"]*)"/) || [])[1] || ""));
+    }
+    const setCookies = page.headers && typeof page.headers.getSetCookie === "function" ? page.headers.getSetCookie() : [(page.headers && page.headers.get("set-cookie")) || ""];
+    const cookie = setCookies.flatMap(c => c.split(/,(?=\s*[^;,=\s]+=)/)).map(c => c.split(";")[0].trim()).filter(Boolean).join("; ");
+    let listed = [];
+    if ([...fields.keys()].length) {
+      const res = await fetch(RENEWABLEUK_PRESS, {
+        method: "POST",
+        headers: { "User-Agent": UA, Accept: "text/html, */*", "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+          "X-Requested-With": "XMLHttpRequest", Referer: RENEWABLEUK_PRESS, Origin: "https://www.renewableuk.com", ...(cookie ? { Cookie: cookie } : {}) },
+        body: fields.toString(),
+      });
+      const body = await res.text();
+      listed = res.ok ? parseRenewableUKListing(body) : [];
+      if (!listed.length) {
+        console.log(`${source}: list post returned ${res.status}, ${body.length} bytes, 0 items (fields: ${[...fields.keys()].join(", ")}; cookie ${cookie ? "sent" : "missing"})`);
+        await captureDebug(source, RENEWABLEUK_PRESS + " [POST]", res.status, body);
+      }
+    } else {
+      console.log(`${source}: list form not found on the page`);
+    }
+    const seen = new Set();
+    return [...listed, ...featured].filter(e => !seen.has(e.link) && seen.add(e.link)).map(e => ({ ...e, source }));
+  } catch (err) {
+    console.log(`${source}: fetch error — ${err.message}. Skipping this source for this run.`);
     return [];
   }
 }
@@ -341,9 +398,9 @@ export default async () => {
       fetchFeed(CARBON_BRIEF_FEED, "Carbon Brief", parseRssItems),
       fetchFeed(RENEWABLES_NOW_FEEDS[0], "Renewables Now", parseRssItems),
       fetchFeed(RENEWABLES_NOW_FEEDS[1], "Renewables Now", parseRssItems),
-      fetchFeed(OFGEM_PRESS, "Ofgem", parseOfgemListing),
+      fetchFeed(OFGEM_PRESS, "Ofgem", parseOfgemApi),
       fetchFeed(NESO_NEWS, "NESO", parseNesoListing),
-      fetchFeed(RENEWABLEUK_PRESS, "RenewableUK", parseRenewableUKListing),
+      fetchRenewableUK(),
     ]);
 
     console.log(`gov.uk: ${govukEntries.length}, Energy Live News: ${elnEntries.length}, Carbon Brief: ${cbEntries.length}, ` +

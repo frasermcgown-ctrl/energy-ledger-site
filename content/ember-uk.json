@@ -1,0 +1,247 @@
+{
+  "updated": "2026-10-31T17:31:02.234Z",
+  "years": [
+    {
+      "year": 2010,
+      "twh": {
+        "Bioenergy": 12.3,
+        "Coal": 107.6,
+        "Gas": 175.7,
+        "Hydro": 3.6,
+        "Net imports": 2.7,
+        "Nuclear": 62.1,
+        "Other fossil": 10.5,
+        "Other renewables": 0,
+        "Solar": 0,
+        "Wind": 10.3
+      }
+    },
+    {
+      "year": 2011,
+      "twh": {
+        "Bioenergy": 13.3,
+        "Coal": 108.4,
+        "Gas": 146.5,
+        "Hydro": 5.7,
+        "Net imports": 6.2,
+        "Nuclear": 69,
+        "Other fossil": 8.9,
+        "Other renewables": 0,
+        "Solar": 0.2,
+        "Wind": 16
+      }
+    },
+    {
+      "year": 2012,
+      "twh": {
+        "Bioenergy": 14.7,
+        "Coal": 142.8,
+        "Gas": 100.2,
+        "Hydro": 5.3,
+        "Net imports": 11.9,
+        "Nuclear": 70.4,
+        "Other fossil": 9.3,
+        "Other renewables": 0,
+        "Solar": 1.4,
+        "Wind": 19.8
+      }
+    },
+    {
+      "year": 2013,
+      "twh": {
+        "Bioenergy": 18.1,
+        "Coal": 130.3,
+        "Gas": 95.8,
+        "Hydro": 4.7,
+        "Net imports": 14.4,
+        "Nuclear": 70.6,
+        "Other fossil": 8.4,
+        "Other renewables": 0,
+        "Solar": 2,
+        "Wind": 28.4
+      }
+    },
+    {
+      "year": 2014,
+      "twh": {
+        "Bioenergy": 22.6,
+        "Coal": 100.2,
+        "Gas": 100.9,
+        "Hydro": 5.9,
+        "Net imports": 20.5,
+        "Nuclear": 63.8,
+        "Other fossil": 8.7,
+        "Other renewables": 0,
+        "Solar": 4.1,
+        "Wind": 32
+      }
+    },
+    {
+      "year": 2015,
+      "twh": {
+        "Bioenergy": 29.3,
+        "Coal": 75.9,
+        "Gas": 99.9,
+        "Hydro": 6.3,
+        "Net imports": 21.1,
+        "Nuclear": 70.3,
+        "Other fossil": 9.4,
+        "Other renewables": 0,
+        "Solar": 7.5,
+        "Wind": 40.3
+      }
+    },
+    {
+      "year": 2016,
+      "twh": {
+        "Bioenergy": 30.1,
+        "Coal": 30.7,
+        "Gas": 143.1,
+        "Hydro": 5.4,
+        "Net imports": 17.8,
+        "Nuclear": 71.7,
+        "Other fossil": 10.6,
+        "Other renewables": 0,
+        "Solar": 10.4,
+        "Wind": 37.2
+      }
+    },
+    {
+      "year": 2017,
+      "twh": {
+        "Bioenergy": 31.9,
+        "Coal": 22.5,
+        "Gas": 136.8,
+        "Hydro": 5.9,
+        "Net imports": 14.8,
+        "Nuclear": 70.3,
+        "Other fossil": 9.7,
+        "Other renewables": 0,
+        "Solar": 11.5,
+        "Wind": 49.7
+      }
+    },
+    {
+      "year": 2018,
+      "twh": {
+        "Bioenergy": 35.1,
+        "Coal": 16.8,
+        "Gas": 131.5,
+        "Hydro": 5.4,
+        "Net imports": 19.1,
+        "Nuclear": 65.1,
+        "Other fossil": 10.2,
+        "Other renewables": 0,
+        "Solar": 12.7,
+        "Wind": 56.9
+      }
+    },
+    {
+      "year": 2019,
+      "twh": {
+        "Bioenergy": 37.5,
+        "Coal": 6.9,
+        "Gas": 133.1,
+        "Hydro": 5.9,
+        "Net imports": 21.2,
+        "Nuclear": 56.2,
+        "Other fossil": 11.3,
+        "Other renewables": 0,
+        "Solar": 12.4,
+        "Wind": 63.8
+      }
+    },
+    {
+      "year": 2020,
+      "twh": {
+        "Bioenergy": 38.6,
+        "Coal": 5.7,
+        "Gas": 111.9,
+        "Hydro": 6.9,
+        "Net imports": 14.2,
+        "Nuclear": 50.2,
+        "Other fossil": 8.8,
+        "Other renewables": 0,
+        "Solar": 12.6,
+        "Wind": 75.6
+      }
+    },
+    {
+      "year": 2021,
+      "twh": {
+        "Bioenergy": 40,
+        "Coal": 6.8,
+        "Gas": 122.8,
+        "Hydro": 5.4,
+        "Net imports": 17.7,
+        "Nuclear": 46.1,
+        "Other fossil": 9.7,
+        "Other renewables": 0,
+        "Solar": 12.1,
+        "Wind": 64.9
+      }
+    },
+    {
+      "year": 2022,
+      "twh": {
+        "Bioenergy": 35.9,
+        "Coal": 5.9,
+        "Gas": 125.1,
+        "Hydro": 5.7,
+        "Net imports": 1.1,
+        "Nuclear": 47.4,
+        "Other fossil": 11.1,
+        "Other renewables": 0,
+        "Solar": 13.3,
+        "Wind": 80.2
+      }
+    },
+    {
+      "year": 2023,
+      "twh": {
+        "Bioenergy": 34.1,
+        "Coal": 3.8,
+        "Gas": 101.7,
+        "Hydro": 5.5,
+        "Net imports": 15.8,
+        "Nuclear": 40.6,
+        "Other fossil": 10.8,
+        "Other renewables": 0,
+        "Solar": 13.9,
+        "Wind": 82.8
+      }
+    },
+    {
+      "year": 2024,
+      "twh": {
+        "Bioenergy": 40.1,
+        "Coal": 1.9,
+        "Gas": 86.3,
+        "Hydro": 5.8,
+        "Net imports": 22.3,
+        "Nuclear": 40.6,
+        "Other fossil": 11.5,
+        "Other renewables": 0,
+        "Solar": 14.8,
+        "Wind": 83.6
+      }
+    },
+    {
+      "year": 2025,
+      "twh": {
+        "Bioenergy": 40.9,
+        "Coal": 0.3,
+        "Gas": 92,
+        "Hydro": 5.4,
+        "Net imports": 17.9,
+        "Nuclear": 36.4,
+        "Other fossil": 12.8,
+        "Other renewables": 0,
+        "Solar": 19.4,
+        "Wind": 86.4
+      }
+    }
+  ],
+  "units": "TWh",
+  "source": "Ember (CC BY 4.0)"
+}

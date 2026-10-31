@@ -5,6 +5,8 @@
 // Netlify's existing auto-deploy, so the homepage and News page pick it up.
 // Headlines, short summaries and links only.
 
+import { writeJsonIfChanged } from "../lib/github.mjs";
+
 const GOVUK_FEED =
   "https://www.gov.uk/search/all.atom?organisations%5B%5D=department-for-energy-security-and-net-zero&order=updated-newest&count=40";
 
@@ -239,6 +241,12 @@ async function fetchFeed(url, sourceName, parser) {
       // Usually a changed page layout or a bot check: log enough to tell which.
       const title = (body.match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [])[1] || "";
       console.log(`${sourceName}: 0 items from ${res.status} ${res.headers.get("content-type") || ""}, ${body.length} bytes, title "${title.trim().slice(0, 80)}"`);
+      // TEMPORARY: keep a copy of the page exactly as received here, so the
+      // parser can be matched to it. Remove once Ofgem and RenewableUK parse.
+      if (html) {
+        const slug = sourceName.toLowerCase().replace(/[^a-z]+/g, "-");
+        await writeJsonIfChanged(`content/debug/news-${slug}.json`, { url, status: res.status, html: body.slice(0, 400000) }, `Debug capture of ${sourceName} listing page`).catch(e => console.log(`debug capture failed: ${e.message}`));
+      }
     }
     return entries.map(e => ({ ...e, source: sourceName }));
   } catch (err) {

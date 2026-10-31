@@ -20,9 +20,6 @@ collections:
           - { label: "Hero — subheading", name: "hero_subhead", widget: "text" }
           - { label: "Hero — byline (HTML allowed)", name: "hero_byline", widget: "string" }
 
-          - { label: "Ticker — TTF front month", name: "ticker_ttf", widget: "string", hint: "e.g. €31.20/MWh" }
-          - { label: "Ticker — EUA carbon", name: "ticker_eua", widget: "string", hint: "e.g. €68.90" }
-          - { label: "Ticker — TTF/EUA as-of date", name: "ticker_asof", widget: "string", required: false, hint: "e.g. as of 31 Oct. NBP and UK power update automatically." }
 
           - { label: "Coverage — section tag", name: "coverage_tag", widget: "string" }
           - { label: "Coverage — section title", name: "coverage_title", widget: "string" }

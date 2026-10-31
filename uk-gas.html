@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Live UK Gas Storage Flows — The Energy Ledger</title>
-<meta name="description" content="Live gas flow rates at UK's National Transmission System storage facilities, updated automatically from National Gas Transmission's operational data API.">
+<title>Live UK Gas Supply, Demand and Storage — The Energy Ledger</title>
+<meta name="description" content="Live UK gas supply by terminal, including LNG from Milford Haven and Isle of Grain, demand by category, linepack and storage flows, from National Gas Transmission's open data.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="The Energy Ledger">
-<meta property="og:title" content="Live UK Gas Storage Flows — The Energy Ledger">
-<meta property="og:description" content="Live gas flow rates at UK's National Transmission System storage facilities, updated automatically from National Gas Transmission's operational data API.">
+<meta property="og:title" content="Live UK Gas Supply, Demand and Storage — The Energy Ledger">
+<meta property="og:description" content="Live UK gas supply by terminal, including LNG from Milford Haven and Isle of Grain, demand by category, linepack and storage flows, from National Gas Transmission's open data.">
 <meta property="og:url" content="https://www.theenergyledger.co.uk/uk-gas.html">
 <meta property="og:image" content="https://www.theenergyledger.co.uk/og-image.png?v=2">
 <meta name="twitter:card" content="summary_large_image">
@@ -47,10 +47,11 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
     <nav class="links" id="site-links">
+      <a href="/prices.html">Prices</a>
       <a href="/generation.html">GB generation</a>
-      <a href="/lng.html">European LNG</a>
-      <a href="/uk-gas.html" aria-current="page">UK gas storage</a>
-      <a href="/#news">News</a>
+      <a href="/uk-gas.html" aria-current="page">UK gas</a>
+      <a href="/lng.html">LNG</a>
+      <a href="/news.html">News</a>
       <a class="btn primary sm" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe free</a>
     </nav>
   </div>
@@ -59,50 +60,75 @@
 <main>
   <div class="page-hero">
     <div class="wrap">
-      <div class="crumbs"><a href="/">Home</a><span aria-hidden="true">/</span><span>Live data</span><span aria-hidden="true">/</span><span>UK gas storage</span></div>
-      <h1>Live UK gas storage flow rates</h1>
-      <p class="lede">Flow rates at UK gas storage facilities on the National Transmission System — showing which sites are injecting gas into storage and which are withdrawing it.</p>
+      <div class="crumbs"><a href="/">Home</a><span aria-hidden="true">/</span><span>Live data</span><span aria-hidden="true">/</span><span>UK gas supply</span></div>
+      <h1>Live UK gas supply &amp; storage</h1>
+      <p class="lede">Where Britain's gas is coming from right now, terminal by terminal, where it's going, and what storage is doing, from National Gas Transmission's live flow data.</p>
       <div class="status"><span class="live-dot"></span><span id="published-desc">Loading live data…</span></div>
     </div>
   </div>
 
   <section class="tight">
     <div class="wrap">
-      <div class="stat-grid">
+      <div class="stat-grid four">
         <div class="card stat">
-          <div class="stat-label">Net storage flow</div>
-          <div class="stat-value" id="stat-net">—<span class="unit">mcm/day</span></div>
-          <div class="stat-foot" id="stat-net-foot">Sum of all reporting sites.</div>
+          <div class="stat-label">Total supply</div>
+          <div class="stat-value" id="s-supply">—<span class="unit">mcm/d</span></div>
+          <div class="stat-foot" id="s-supply-foot">Gas entering the national grid.</div>
         </div>
         <div class="card stat">
-          <div class="stat-label"><i style="width:10px;height:10px;border-radius:3px;background:var(--inject);display:inline-block"></i>Sites injecting</div>
-          <div class="stat-value" id="stat-inject">—</div>
-          <div class="stat-foot">Putting gas into storage.</div>
+          <div class="stat-label">Total demand</div>
+          <div class="stat-value" id="s-demand">—<span class="unit">mcm/d</span></div>
+          <div class="stat-foot" id="s-demand-foot">Gas leaving the national grid.</div>
         </div>
         <div class="card stat">
-          <div class="stat-label"><i style="width:10px;height:10px;border-radius:3px;background:var(--withdraw);display:inline-block"></i>Sites withdrawing</div>
-          <div class="stat-value" id="stat-withdraw">—</div>
-          <div class="stat-foot">Sending gas from storage to the grid.</div>
+          <div class="stat-label"><i style="width:10px;height:10px;border-radius:3px;background:var(--lng);display:inline-block"></i>LNG share of supply</div>
+          <div class="stat-value" id="s-lng">—<span class="unit">%</span></div>
+          <div class="stat-foot" id="s-lng-foot">Milford Haven and Isle of Grain.</div>
+        </div>
+        <div class="card stat">
+          <div class="stat-label">Linepack</div>
+          <div class="stat-value" id="s-linepack">—<span class="unit">mcm</span></div>
+          <div class="stat-foot">Gas held in the pipes right now.</div>
         </div>
       </div>
 
       <div class="card panel" style="margin-top:16px;">
         <div class="panel-head">
           <div>
-            <h2>Storage facility flows</h2>
-            <p id="gas-day-tag">Instantaneous flow rate at each site.</p>
+            <h2>Where UK gas is coming from</h2>
+            <p id="supply-desc">Instantaneous flow into the national grid by terminal, mcm/d.</p>
           </div>
           <div class="legend">
-            <span><i style="background:var(--inject)"></i>Injecting</span>
-            <span><i style="background:var(--withdraw)"></i>Withdrawing</span>
+            <span><i style="background:var(--lng)"></i>LNG</span>
+            <span><i style="background:var(--gas)"></i>Pipeline and North Sea</span>
           </div>
         </div>
-        <div class="bars" id="storage-list">
-          <p class="loading">Loading storage facility data…</p>
+        <div class="bars" id="supply-list"><p class="loading">Loading supply data…</p></div>
+      </div>
+
+      <div class="two-col" style="margin-top:16px;">
+        <div class="card panel">
+          <div class="panel-head">
+            <div>
+              <h2>Where it's going</h2>
+              <p>Demand by category, mcm/d.</p>
+            </div>
+          </div>
+          <div class="bars" id="demand-list"><p class="loading">Loading demand data…</p></div>
+        </div>
+        <div class="card panel">
+          <div class="panel-head">
+            <div>
+              <h2>Storage</h2>
+              <p id="storage-desc">Withdrawals into the grid by site, mcm/d.</p>
+            </div>
+          </div>
+          <div class="bars" id="storage-list"><p class="loading">Loading storage data…</p></div>
+          <p class="stat-foot" id="storage-note" style="margin-top:10px;"></p>
         </div>
       </div>
 
-      <p class="source-note">Data: <a href="https://data.nationalgas.com" target="_blank" rel="noopener">National Gas Transmission Data Portal</a>, published under their Gas System Operator licence obligation for open data. Figures show instantaneous flow rate at each storage site — not total inventory or fill level. Provided for information only, not for trading.</p>
+      <p class="source-note">Data: <a href="https://data.nationalgas.com" target="_blank" rel="noopener">National Gas Transmission Data Portal</a>, published under their Gas System Operator licence obligation for open data. Figures are instantaneous flow rates, updated every few hours. They are not daily totals or storage stock levels. Storage withdrawals are reported per site, and injections only as a national total. Indicative only, not for trading.</p>
     </div>
   </section>
 
@@ -146,10 +172,12 @@
       </div>
       <div class="foot-col">
         <h4>Live data</h4>
+        <a href="/prices.html">Prices &amp; costs</a>
         <a href="/generation.html">GB generation</a>
-        <a href="/lng.html">European LNG</a>
-        <a href="/uk-gas.html">UK gas storage</a>
-        <a href="/#news">News</a>
+        <a href="/uk-gas.html">UK gas supply</a>
+        <a href="/lng.html">LNG</a>
+        <a href="/news.html">News</a>
+        <a href="/sources.html">Data sources</a>
       </div>
       <div class="foot-col">
         <h4>Follow</h4>
@@ -165,65 +193,94 @@
 
 <script src="/assets/site.js"></script>
 <script>
-  function titleCase(s) {
-    return String(s || '').toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
+
+  // What each terminal brings in; LNG terminals are drawn in the LNG colour.
+  const TERMINALS = {
+    'ST FERGUS TERMINAL': ['St Fergus', 'UK and Norwegian North Sea'],
+    'EASINGTON TERMINAL': ['Easington', 'Norway (Langeled) and UK North Sea'],
+    'MILFORD HAVEN TERMINAL': ['Milford Haven', 'LNG: South Hook and Dragon', true],
+    'ISLE OF GRAIN TERMINAL': ['Isle of Grain', 'LNG: Grain', true],
+    'BACTON UKCS Terminal': ['Bacton (UK fields)', 'UK North Sea'],
+    'BACTON IPs Terminal': ['Bacton (imports)', 'Continental Europe via BBL and IUK'],
+    'TEESSIDE TERMINAL': ['Teesside', 'UK North Sea (CATS)'],
+    'BARROW TERMINAL': ['Barrow', 'Irish Sea'],
+    'THEDDLETHORPE TERMINAL': ['Theddlethorpe', 'UK North Sea'],
+  };
+  const DEMAND = {
+    'LDZ Offtake Flow': 'Homes and businesses (local networks)',
+    'Power Station Demand Flow': 'Power stations',
+    'Interconnector Export Demand Flow': 'Exports',
+    'Industrial Demand Flow': 'Large industry',
+    'Storage Demand Flow': 'Storage injection',
+  };
+  const titleCase = s => String(s || '').toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
+  const one = (g, name) => ((g || { sites: [] }).sites.find(s => s.name === name) || {}).flow;
+
+  function bars(el, rows, unit = 'mcm/d') {
+    const max = Math.max(1, ...rows.map(r => r.value));
+    el.innerHTML = rows.map(r => `
+      <div class="bar-row" title="${escapeHtml(r.label)}: ${fmtNumber(r.value, 2)} ${unit}">
+        <span class="bar-label">${escapeHtml(r.label)}${r.sub ? `<small style="display:block;font-size:12px;color:var(--ink-3);font-weight:400">${escapeHtml(r.sub)}</small>` : ''}</span>
+        <div class="bar-track"><div class="bar-fill" style="width:${Math.max(r.value / max * 100, 0.8)}%; background:${r.color};"></div></div>
+        <span class="bar-value">${fmtNumber(r.value, 1)}${r.note ? `<small>${escapeHtml(r.note)}</small>` : ''}</span>
+      </div>`).join('');
   }
 
   fetch('/content/uk-gas-data.json')
     .then(r => r.json())
     .then(data => {
-      if (!data.currentGasDay) throw new Error('no data yet');
-
-      document.getElementById('gas-day-tag').textContent = `Instantaneous flow rate at each site, gas day ${data.currentGasDay}.`;
+      if (!data.currentGasDay || !data.groups) throw new Error('no data yet');
+      const G = d => data.groups.find(g => g.description.toLowerCase() === d.toLowerCase());
       document.getElementById('published-desc').textContent = 'Published ' + fmtDateTime(data.publishedTime);
 
-      const sites = data.sites || [];
-      const list = document.getElementById('storage-list');
-      if (sites.length === 0) {
-        list.innerHTML = '<p class="loading">No storage facility data available in this update.</p>';
-        return;
+      const supply = one(G('Total Supply'), 'TOTAL SUPPLY'), demand = one(G('Total Demand'), 'NTS Demand Flow');
+      const linepack = one(G('Actual linepack'), 'NTS Actual Linepack');
+      if (Number.isFinite(supply)) document.getElementById('s-supply').innerHTML = `${fmtNumber(supply, 0)}<span class="unit">mcm/d</span>`;
+      if (Number.isFinite(demand)) document.getElementById('s-demand').innerHTML = `${fmtNumber(demand, 0)}<span class="unit">mcm/d</span>`;
+      if (Number.isFinite(linepack)) document.getElementById('s-linepack').innerHTML = `${fmtNumber(linepack, 0)}<span class="unit">mcm</span>`;
+      if (Number.isFinite(supply) && Number.isFinite(demand)) {
+        const gap = supply - demand;
+        document.getElementById('s-demand-foot').textContent = Math.abs(gap) < 1 ? 'Supply and demand are balanced.'
+          : gap < 0 ? `${fmtNumber(-gap, 0)} mcm/d more than supply, met from linepack.` : `${fmtNumber(gap, 0)} mcm/d below supply, adding to linepack.`;
       }
 
-      const rates = sites.map(s => s.flowRate).filter(v => v !== null && v !== undefined);
-      const net = rates.reduce((a, b) => a + b, 0);
-      document.getElementById('stat-net').innerHTML = `${fmtNumber(Math.abs(net), 1)}<span class="unit">mcm/day</span>`;
-      document.getElementById('stat-net-foot').textContent = rates.length
-        ? `Net ${net >= 0 ? 'injection' : 'withdrawal'} across ${rates.length} reporting sites.`
-        : 'No sites reporting.';
-      document.getElementById('stat-inject').textContent = rates.filter(v => v > 0).length;
-      document.getElementById('stat-withdraw').textContent = rates.filter(v => v < 0).length;
+      const terminals = (G('Supply from terminals') || { sites: [] }).sites
+        .filter(s => Number.isFinite(s.flow))
+        .map(s => { const t = TERMINALS[s.name] || [titleCase(s.name), '']; return { label: t[0], sub: t[1], value: Math.max(0, s.flow), color: t[2] ? 'var(--lng)' : 'var(--gas)', lng: !!t[2] }; })
+        .sort((a, b) => b.value - a.value);
+      bars(document.getElementById('supply-list'), terminals);
+      document.getElementById('supply-desc').textContent = `Instantaneous flow into the national grid by terminal, mcm/d · gas day ${data.currentGasDay}.`;
+      const lng = terminals.filter(t => t.lng).reduce((a, t) => a + t.value, 0);
+      const termTotal = terminals.reduce((a, t) => a + t.value, 0);
+      if (termTotal > 0) {
+        document.getElementById('s-lng').innerHTML = `${fmtNumber(lng / termTotal * 100, 0)}<span class="unit">%</span>`;
+        document.getElementById('s-lng-foot').textContent = `${fmtNumber(lng, 1)} mcm/d from Milford Haven and Isle of Grain.`;
+      }
 
-      // Bars scale to the largest flow in this update so sites compare against each other.
-      const max = Math.max(...rates.map(Math.abs), 1);
-      list.innerHTML = sites
-        .slice()
-        .sort((a, b) => Math.abs(b.flowRate || 0) - Math.abs(a.flowRate || 0))
-        .map(site => {
-          const rate = site.flowRate;
-          const name = escapeHtml(titleCase(site.name));
-          if (rate === null || rate === undefined) {
-            return `
-              <div class="bar-row">
-                <span class="bar-label">${name}</span>
-                <div class="bar-track"></div>
-                <span class="bar-value" style="color:var(--ink-3); font-weight:500;">No data</span>
-              </div>`;
-          }
-          const injecting = rate >= 0;
-          const pct = Math.abs(rate) / max * 100;
-          const direction = injecting ? 'Injecting' : 'Withdrawing';
-          return `
-            <div class="bar-row" title="${name}: ${direction.toLowerCase()} ${fmtNumber(Math.abs(rate), 2)} mcm/day">
-              <span class="bar-label">${name}</span>
-              <div class="bar-track"><div class="bar-fill" style="width:${Math.max(pct, 0.8)}%; background:var(${injecting ? '--inject' : '--withdraw'});"></div></div>
-              <span class="bar-value">${fmtNumber(Math.abs(rate), 1)}<small>${direction}</small></span>
-            </div>`;
-        }).join('');
+      const dem = (G('Demand by category') || { sites: [] }).sites.filter(s => Number.isFinite(s.flow))
+        .map(s => ({ label: DEMAND[s.name] || s.name, value: Math.max(0, s.flow), color: 'var(--power)' }))
+        .sort((a, b) => b.value - a.value);
+      const exportsBy = (G('Demand from interconnectors') || { sites: [] }).sites.filter(s => s.flow > 0)
+        .map(s => `${s.name.replace(' Export', '')} ${fmtNumber(s.flow, 1)}`).join(', ');
+      dem.forEach(d => { if (d.label === 'Exports' && exportsBy) d.note = exportsBy; });
+      bars(document.getElementById('demand-list'), dem);
+
+      // Storage sites' entry flows are withdrawals; injection is only published as a total.
+      const injection = one(G('Demand by category'), 'Storage Demand Flow') || 0;
+      const sites = (data.sites || []).filter(s => Number.isFinite(s.flowRate))
+        .map(s => ({ label: titleCase(s.name).replace('Rough St', 'Rough'), value: Math.max(0, s.flowRate), color: 'var(--withdraw)' }))
+        .sort((a, b) => b.value - a.value);
+      bars(document.getElementById('storage-list'), sites);
+      const withdrawal = sites.reduce((a, s) => a + s.value, 0);
+      const net = withdrawal - injection;
+      document.getElementById('storage-note').textContent =
+        `Total withdrawal ${fmtNumber(withdrawal, 1)} mcm/d, injection ${fmtNumber(injection, 1)} mcm/d: storage is a net ${net >= 0 ? 'source of supply' : 'buyer'} right now (${fmtNumber(Math.abs(net), 1)} mcm/d).`;
     })
     .catch(() => {
       document.getElementById('published-desc').textContent = 'Live data not available yet — check back shortly.';
-      document.getElementById('storage-list').innerHTML = '<p class="loading">Unable to load storage data right now.</p>';
+      ['supply-list', 'demand-list', 'storage-list'].forEach(id => { document.getElementById(id).innerHTML = '<p class="loading">Unable to load data right now.</p>'; });
     });
+
 </script>
 
 </body>

@@ -141,7 +141,21 @@
   .who p{ margin-top:10px; color:var(--ink-3); font-size:15px; }
 
   /* ---------- Live data ---------- */
-  .data-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; }
+  .data-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:16px; }
+  .week{ padding:24px; margin-bottom:16px; }
+  .week-head{ display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:16px; }
+  .week-head h3{ font-size:18px; }
+  .week-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(170px, 1fr)); gap:12px; }
+  .wk{ background:var(--bg-soft); border:1px solid var(--line); border-radius:12px; padding:14px 16px; text-decoration:none; color:inherit; display:block; }
+  a.wk:hover{ border-color:var(--line-strong); }
+  .wk-label{ font-size:12.5px; font-weight:600; color:var(--ink-3); }
+  .wk-value{ margin-top:6px; font-size:22px; font-weight:700; letter-spacing:-0.02em; font-variant-numeric:tabular-nums; }
+  .wk-sub{ margin-top:4px; font-size:12.5px; color:var(--ink-3); }
+  .delta{ font-weight:600; font-variant-numeric:tabular-nums; }
+  .delta.up{ color:#b91c1c; } .delta.down{ color:#047857; } .delta.flat{ color:var(--ink-3); }
+  .week-head .tag{ white-space:nowrap; }
+  @media (max-width: 1100px){ .data-grid{ grid-template-columns:repeat(2, 1fr); } }
+  @media (max-width: 560px){ .week-grid{ grid-template-columns:repeat(2, 1fr); } }
   .data-card{ padding:24px; display:flex; flex-direction:column; }
   .data-card .top{ display:flex; align-items:center; justify-content:space-between; }
   .data-card .live-tag{ font-size:12.5px; font-weight:600; color:#15803d; display:inline-flex; align-items:center; gap:8px; }
@@ -281,9 +295,9 @@
     </button>
     <nav class="links" id="site-links">
       <a href="/#issues">Issues</a>
-      <a href="/#coverage">Coverage</a>
+      <a href="/prices.html">Prices</a>
       <a href="/#data">Live data</a>
-      <a href="/#news">News</a>
+      <a href="/news.html">News</a>
       <a href="/#about">About</a>
       <a class="btn primary sm" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe free</a>
     </nav>
@@ -432,7 +446,24 @@
         <h2 class="section-title">The numbers behind the newsletter</h2>
         <p class="section-desc">Free dashboards built on official public data — updated automatically, no login required.</p>
       </div>
+      <div class="card week" id="week" hidden>
+        <div class="week-head">
+          <h3>This week in numbers</h3>
+          <span class="tag" id="week-date"></span>
+        </div>
+        <div class="week-grid" id="week-grid"></div>
+      </div>
       <div class="data-grid">
+        <a class="card data-card" href="/prices.html">
+          <div class="top">
+            <span class="icon-chip chip-gas" style="background:var(--brand-soft);color:var(--brand)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-7"/></svg></span>
+            <span class="live-tag"><span class="live-dot"></span>Daily</span>
+          </div>
+          <h3>Prices &amp; costs</h3>
+          <div class="big" id="dc-price">—<span class="unit">p/th</span></div>
+          <div class="sub" id="dc-price-sub">NBP gas and GB power history, the price cap and grid balancing costs.</div>
+          <span class="go">Open dashboard <span aria-hidden="true">→</span></span>
+        </a>
         <a class="card data-card" href="/generation.html">
           <div class="top">
             <span class="icon-chip chip-power"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></span>
@@ -448,7 +479,7 @@
             <span class="icon-chip chip-lng"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20c2 1 4 1 6 0s4-1 6 0 4 1 6 0"/><path d="M4 17 3 12h18l-2 5"/><path d="M8 12V8h8v4"/><path d="M12 8V4"/></svg></span>
             <span class="live-tag"><span class="live-dot"></span>Daily</span>
           </div>
-          <h3>European LNG terminals</h3>
+          <h3>LNG: UK terminals and Europe</h3>
           <div class="big" id="dc-lng">—<span class="unit">GWh/d</span></div>
           <div class="sub" id="dc-lng-sub">EU terminal send-out, inventory and capacity use.</div>
           <span class="go">Open dashboard <span aria-hidden="true">→</span></span>
@@ -458,9 +489,9 @@
             <span class="icon-chip chip-gas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></span>
             <span class="live-tag"><span class="live-dot"></span>Daily</span>
           </div>
-          <h3>UK gas storage flows</h3>
+          <h3>UK gas supply &amp; storage</h3>
           <div class="big" id="dc-gas">—<span class="unit">mcm/day</span></div>
-          <div class="sub" id="dc-gas-sub">Injection and withdrawal at NTS storage sites.</div>
+          <div class="sub" id="dc-gas-sub">Supply by terminal, demand, linepack and storage.</div>
           <span class="go">Open dashboard <span aria-hidden="true">→</span></span>
         </a>
       </div>
@@ -473,14 +504,17 @@
       <div class="section-head">
         <span class="kicker">Regulatory watch</span>
         <h2 class="section-title">Latest gas, power &amp; carbon news</h2>
-        <p class="section-desc">Pulled automatically from official UK government and trade sources — filtered to gas, power, carbon and LNG, refreshed daily.</p>
+        <p class="section-desc">Pulled automatically from official UK government and trade sources — filtered to gas, power, carbon and LNG, refreshed every six hours.</p>
       </div>
       <div class="news-layout" id="issue">
         <div>
           <div class="news-list" id="news-list">
             <p class="loading">Loading latest items…</p>
           </div>
-          <button class="btn sm news-more" id="news-more" hidden>Show more news</button>
+          <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+            <button class="btn sm news-more" id="news-more" hidden>Show more news</button>
+            <a class="link news-more" href="/news.html">All news, filterable by topic <span aria-hidden="true">→</span></a>
+          </div>
         </div>
         <aside class="card archive-card">
           <div class="issue-meta" data-key="issue_meta">Full archive</div>
@@ -556,10 +590,12 @@
       </div>
       <div class="foot-col">
         <h4>Live data</h4>
+        <a href="/prices.html">Prices &amp; costs</a>
         <a href="/generation.html">GB generation</a>
-        <a href="/lng.html">European LNG</a>
-        <a href="/uk-gas.html">UK gas storage</a>
-        <a href="/#news">News</a>
+        <a href="/uk-gas.html">UK gas supply</a>
+        <a href="/lng.html">LNG</a>
+        <a href="/news.html">News</a>
+        <a href="/sources.html">Data sources</a>
       </div>
       <div class="foot-col">
         <h4>Follow</h4>
@@ -633,13 +669,62 @@
   fetch('/content/uk-gas-data.json')
     .then(r => r.json())
     .then(d => {
-      const rates = (d.sites || []).map(s => s.flowRate).filter(v => v !== null && v !== undefined);
-      if (!rates.length) throw new Error('no data');
-      const net = rates.reduce((a, b) => a + b, 0);
-      document.getElementById('dc-gas').innerHTML = `${fmtNumber(Math.abs(net), 1)}<span class="unit">mcm/day net ${net >= 0 ? 'injection' : 'withdrawal'}</span>`;
-      document.getElementById('dc-gas-sub').textContent = `Across ${rates.length} storage sites, gas day ${d.currentGasDay}.`;
+      const groups = d.groups || [];
+      const flow = (desc, name) => ((groups.find(g => g.description.toLowerCase() === desc) || { sites: [] }).sites.find(s => s.name === name) || {}).flow;
+      const supply = flow('total supply', 'TOTAL SUPPLY');
+      if (!Number.isFinite(supply)) throw new Error('no data');
+      document.getElementById('dc-gas').innerHTML = `${fmtNumber(supply, 0)}<span class="unit">mcm/day supply</span>`;
+      const terms = (groups.find(g => /terminals/i.test(g.description)) || { sites: [] }).sites;
+      const lng = terms.filter(t => /MILFORD HAVEN|ISLE OF GRAIN/.test(t.name)).reduce((a, t) => a + Math.max(0, t.flow || 0), 0);
+      document.getElementById('dc-gas-sub').textContent = `LNG ${fmtNumber(lng / supply * 100, 0)}% of supply right now · gas day ${d.currentGasDay}.`;
     })
     .catch(() => {});
+
+  // This week in numbers + Prices card, from the data the scheduled functions keep.
+  (function () {
+    const get = u => fetch(u).then(r => r.ok ? r.json() : null).catch(() => null);
+    const chg = (series, days) => {
+      if (!series || series.length < 2) return null;
+      const last = series[series.length - 1], t = new Date(last.d + 'T12:00:00Z'); t.setUTCDate(t.getUTCDate() - days);
+      const prev = [...series].reverse().find(p => new Date(p.d + 'T12:00:00Z') <= t);
+      return prev ? (last.v - prev.v) / prev.v * 100 : null;
+    };
+    const delta = (pct, label) => pct === null ? '' : `<span class="delta ${Math.abs(pct) < 0.5 ? 'flat' : pct > 0 ? 'up' : 'down'}">${pct > 0 ? '+' : ''}${pct.toFixed(1)}%</span> ${label}`;
+    Promise.all([get('/content/market-prices.json'), get('/content/price-history.json'), get('/content/outlook.json'),
+                 get('/content/uk-gas-data.json'), get('/content/balancing-costs.json')]).then(([px, hist, out, gas, bal]) => {
+      const cells = [];
+      if (px && px.gas) {
+        const c30 = chg(hist && hist.gas, 30);
+        document.getElementById('dc-price').innerHTML = `${fmtNumber(px.gas.pencePerTherm, 0)}<span class="unit">p/th NBP</span>`;
+        if (c30 !== null) document.getElementById('dc-price-sub').innerHTML = `${delta(c30, 'in 30 days')} · plus GB power, the price cap and balancing costs.`;
+        cells.push(['NBP gas', `${fmtNumber(px.gas.pencePerTherm, 1)}p/th`, delta(chg(hist && hist.gas, 7), 'on the week') || `gas day ${px.gas.gasDay}`, '/prices.html']);
+      }
+      if (px && px.power) cells.push(['GB power', `£${fmtNumber(px.power.poundsPerMwh, 1)}/MWh`, delta(chg(hist && hist.power, 7), 'on the week') || 'daily average', '/prices.html']);
+      if (out && out.wind && out.wind.length) {
+        const emb = new Map((out.embedded || []).map(e => [e.t.slice(0, 16), e.wind]));
+        const now = Date.now(), next = out.wind.filter(w => Date.parse(w.t) >= now);
+        if (next.length) {
+          const avg = next.reduce((a, w) => a + w.mw + (emb.get(new Date(w.t).toISOString().slice(0, 16)) || 0), 0) / next.length / 1000;
+          cells.push(['Wind, next 3 days', `${fmtNumber(avg, 1)} GW`, 'average forecast', '/generation.html']);
+        }
+      }
+      if (gas && gas.groups) {
+        const g = gas.groups, total = ((g.find(x => /^total supply$/i.test(x.description)) || { sites: [] }).sites[0] || {}).flow;
+        const lng = ((g.find(x => /terminals/i.test(x.description)) || { sites: [] }).sites).filter(t => /MILFORD HAVEN|ISLE OF GRAIN/.test(t.name)).reduce((a, t) => a + Math.max(0, t.flow || 0), 0);
+        if (total > 0) cells.push(['LNG share of UK gas', `${fmtNumber(lng / total * 100, 0)}%`, `${fmtNumber(lng, 1)} of ${fmtNumber(total, 0)} mcm/d`, '/uk-gas.html']);
+      }
+      if (bal && bal.months) {
+        const daysIn = m => new Date(Date.UTC(+m.slice(0, 4), +m.slice(5, 7), 0)).getUTCDate();
+        const full = bal.months.filter(m => m.days >= daysIn(m.month)), last = full[full.length - 1];
+        if (last) cells.push(['Grid balancing costs', `£${fmtNumber(last.total / 1e6, 0)}m`, new Date(last.month + '-15T12:00:00Z').toLocaleDateString('en-GB', { month: 'long', year: 'numeric' }), '/prices.html']);
+      }
+      if (cells.length < 2) return;
+      document.getElementById('week-grid').innerHTML = cells.map(([l, v, sub, href]) =>
+        `<a class="wk" href="${href}"><div class="wk-label">${escapeHtml(l)}</div><div class="wk-value">${escapeHtml(v)}</div><div class="wk-sub">${sub}</div></a>`).join('');
+      document.getElementById('week-date').textContent = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+      document.getElementById('week').hidden = false;
+    });
+  })();
 
   // Latest issues from Substack (see netlify/functions/fetch-substack.mjs).
   const PAST_PAGE = 6;

@@ -73,3 +73,25 @@ collections:
           - { label: "Social — TikTok link", name: "social_tiktok", widget: "string", required: false, hint: "Full link, e.g. https://www.tiktok.com/@…. Leave blank to hide the icon." }
           - { label: "Social — YouTube link", name: "social_youtube", widget: "string", required: false, hint: "Full link, e.g. https://www.youtube.com/@…. Leave blank to hide the icon." }
           - { label: "Social — Substack link", name: "social_substack", widget: "string", required: false, hint: "Full link, e.g. https://home.theenergyledger.co.uk. Leave blank to hide the icon." }
+
+  - name: "pricecap"
+    label: "Ofgem Price Cap"
+    files:
+      - name: "price-cap"
+        label: "Price cap (Prices page)"
+        file: "content/price-cap.json"
+        fields:
+          - label: "Current cap"
+            name: "current"
+            widget: "object"
+            fields:
+              - { label: "Period", name: "period", widget: "string", hint: "e.g. 1 Jan – 31 Mar 2027" }
+              - { label: "Electricity unit rate (p/kWh)", name: "elec_unit_p_kwh", widget: "number", value_type: "float" }
+              - { label: "Electricity standing charge (p/day)", name: "elec_standing_p_day", widget: "number", value_type: "float" }
+              - { label: "Gas unit rate (p/kWh)", name: "gas_unit_p_kwh", widget: "number", value_type: "float" }
+              - { label: "Gas standing charge (p/day)", name: "gas_standing_p_day", widget: "number", value_type: "float" }
+              - { label: "Change vs previous cap (%)", name: "change_pct", widget: "number", value_type: "float", required: false }
+              - { label: "Typical annual dual fuel bill (£)", name: "typical_annual_gbp", widget: "string", required: false, hint: "Optional. Leave blank to hide." }
+              - { label: "Ofgem announcement link", name: "source_url", widget: "string" }
+          - { label: "Next announcement date", name: "next_announcement", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+          - { label: "Next cap period", name: "next_period", widget: "string" }

@@ -1,0 +1,14 @@
+{
+  "current": {
+    "period": "1 Oct – 31 Dec 2026",
+    "elec_unit_p_kwh": 26.32,
+    "elec_standing_p_day": 54.83,
+    "gas_unit_p_kwh": 7.97,
+    "gas_standing_p_day": 29.68,
+    "change_pct": 4,
+    "typical_annual_gbp": "",
+    "source_url": "https://www.ofgem.gov.uk/news/changes-energy-price-cap-between-1-october-and-31-december-2026"
+  },
+  "next_announcement": "2026-11-25",
+  "next_period": "1 Jan – 31 Mar 2027"
+}

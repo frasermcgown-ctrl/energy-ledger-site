@@ -1,12 +1,79 @@
 // Runs on a schedule (see the `config` export below). Fetches gas/power/
-// carbon/LNG-relevant items from gov.uk (DESNZ) and Energy Live News, then
-// commits the merged, filtered result to content/news-feed.json — which
-// triggers Netlify's existing auto-deploy, so the homepage picks it up.
+// carbon/LNG-relevant items from gov.uk (DESNZ), Energy Live News, Carbon
+// Brief, Renewables Now, Ofgem and NESO, tags each with a topic, then
+// commits the merged result to content/news-feed.json — which triggers
+// Netlify's existing auto-deploy, so the homepage and News page pick it up.
+// Headlines, short summaries and links only.
 
 const GOVUK_FEED =
   "https://www.gov.uk/search/all.atom?organisations%5B%5D=department-for-energy-security-and-net-zero&order=updated-newest&count=40";
 
 const ENERGY_LIVE_NEWS_FEED = "https://www.energylivenews.com/feed";
+const CARBON_BRIEF_FEED = "https://www.carbonbrief.org/feed/";
+const RENEWABLES_NOW_FEEDS = ["https://renewablesnow.com/feeds/europe/", "https://renewablesnow.com/feeds/offshore-wind/"];
+// Ofgem's RSS feed is empty and NESO has none, so read their public listing pages.
+const OFGEM_PRESS = "https://www.ofgem.gov.uk/news-and-insight/press-releases";
+const NESO_NEWS = "https://www.neso.energy/news-and-events";
+const MAX_ITEMS = 40;
+
+// Wider sources (Carbon Brief, Renewables Now) are global, so keep only UK stories.
+const UK_KEYWORDS = ["uk", "u.k.", "britain", "british", "england", "scotland", "scottish", "wales", "welsh", "northern ireland", "ofgem", "neso", "north sea"];
+
+function isUK(title, summary) {
+  const text = ` ${title} ${summary} `.toLowerCase();
+  return UK_KEYWORDS.some(k => new RegExp(`[^a-z]${k.replace(/\./g, "\\.")}[^a-z]`).test(text));
+}
+
+// First matching topic wins; order runs from the most specific.
+const TOPICS = [
+  ["lng", ["lng", "liquefied natural gas", "regasification", "cargo"]],
+  ["carbon", ["carbon price", "emissions trading", "uk ets", "eu ets", "allowance", "carbon capture", "ccs", "net zero", "emissions"]],
+  ["gas", ["gas", "nbp", "ttf", "north sea", "storage", "pipeline"]],
+  ["renewables", ["wind", "solar", "renewable", "offshore", "battery", "hydrogen", "nuclear", "cfd", "contracts for difference"]],
+  ["power", ["electricity", "power", "grid", "balancing", "transmission", "interconnector", "capacity market", "generation"]],
+  ["policy", ["ofgem", "price cap", "consultation", "regulation", "government", "budget", "policy", "licence", "bill"]],
+];
+
+function topicOf(title, summary) {
+  const text = `${title} ${summary}`.toLowerCase();
+  const hit = TOPICS.find(([, words]) => words.some(w => text.includes(w)));
+  return hit ? hit[0] : "policy";
+}
+
+function stripTags(html) {
+  return decodeEntities(html.replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim();
+}
+
+// "29 October 2026" / "14 Apr 2026" -> ISO date at midday UTC.
+function parseDayMonthYear(text) {
+  const t = Date.parse(`${text} 12:00 UTC`);
+  return Number.isNaN(t) ? null : new Date(t).toISOString();
+}
+
+// Ofgem press release listing: <article> cards with link, <h3> title, summary <p> and "Publication date".
+function parseOfgemListing(html) {
+  return (html.match(/<article[\s\S]*?<\/article>/g) || []).map(card => {
+    const link = (card.match(/href="(https:\/\/www\.ofgem\.gov\.uk\/(?:press-release|news)\/[^"]+)"/) || [])[1];
+    const title = stripTags((card.match(/<h3[^>]*>([\s\S]*?)<\/h3>/) || [])[1] || "");
+    const summary = stripTags((card.match(/<p>([\s\S]*?)<\/p>/) || [])[1] || "").slice(0, 220);
+    const date = (stripTags(card).match(/Publication date:\s*(\d{1,2} [A-Za-z]+ \d{4})/) || [])[1];
+    return link && title ? { title, link, summary, updated: date ? parseDayMonthYear(date) : null } : null;
+  }).filter(Boolean);
+}
+
+// NESO news listing: <article class="... node--view-mode-teaser"> cards with title, "14 Apr 2026 - 3 minute read" and description.
+function parseNesoListing(html) {
+  const seen = new Set();
+  return (html.match(/<article class="[^"]*node--view-mode-teaser[\s\S]*?<\/article>/g) || []).map(card => {
+    const link = (card.match(/href="(https:\/\/www\.neso\.energy\/news\/[^"]+)"/) || [])[1];
+    const title = stripTags((card.match(/<h3[^>]*>([\s\S]*?)<\/h3>/) || [])[1] || "");
+    const summary = stripTags((card.match(/class="article-description">([\s\S]*?)<\/div>/) || [])[1] || "").slice(0, 220);
+    const date = (stripTags((card.match(/class="published-read">([\s\S]*?)<\/p>/) || [])[1] || "").match(/\d{1,2} [A-Za-z]+ \d{4}/) || [])[0];
+    if (!link || !title || seen.has(link)) return null;
+    seen.add(link);
+    return { title, link, summary, updated: date ? parseDayMonthYear(date) : null };
+  }).filter(Boolean);
+}
 
 // Only keep items that look like they're actually about gas, power, carbon
 // or LNG markets — not the wider consumer/EV/smart-meter/renewables-only beat.
@@ -37,6 +104,8 @@ function decodeEntities(str) {
     .replace(/&gt;/g, ">")
     .replace(/&quot;/g, '"')
     .replace(/&#39;/g, "'")
+    .replace(/&#(\d+);/g, (m, n) => String.fromCharCode(Number(n)))
+    .replace(/&#x([0-9a-f]+);/gi, (m, n) => String.fromCharCode(parseInt(n, 16)))
     .replace(/<!\[CDATA\[/g, "")
     .replace(/\]\]>/g, "");
 }
@@ -185,23 +254,37 @@ export default async () => {
   // --- END TEMPORARY TEST ---
 
   try {
-    const [govukEntries, elnEntries] = await Promise.all([
+    const [govukEntries, elnEntries, cbEntries, rnEurope, rnOffshore, ofgemEntries, nesoEntries] = await Promise.all([
       fetchFeed(GOVUK_FEED, "Dept for Energy Security & Net Zero", parseAtomEntries),
       fetchFeed(ENERGY_LIVE_NEWS_FEED, "Energy Live News", parseRssItems),
+      fetchFeed(CARBON_BRIEF_FEED, "Carbon Brief", parseRssItems),
+      fetchFeed(RENEWABLES_NOW_FEEDS[0], "Renewables Now", parseRssItems),
+      fetchFeed(RENEWABLES_NOW_FEEDS[1], "Renewables Now", parseRssItems),
+      fetchFeed(OFGEM_PRESS, "Ofgem", parseOfgemListing),
+      fetchFeed(NESO_NEWS, "NESO", parseNesoListing),
     ]);
 
-    console.log(`gov.uk: ${govukEntries.length} entries fetched. Energy Live News: ${elnEntries.length} entries fetched.`);
+    console.log(`gov.uk: ${govukEntries.length}, Energy Live News: ${elnEntries.length}, Carbon Brief: ${cbEntries.length}, ` +
+      `Renewables Now: ${rnEurope.length + rnOffshore.length}, Ofgem: ${ofgemEntries.length}, NESO: ${nesoEntries.length} entries fetched.`);
 
-    const allEntries = [...govukEntries, ...elnEntries];
+    const notExcluded = e => !EXCLUDE_KEYWORDS.some(k => `${e.title} ${e.summary}`.toLowerCase().includes(k));
+    const allEntries = [
+      ...[...govukEntries, ...elnEntries].filter(e => isRelevant(e.title, e.summary)),
+      ...[...cbEntries, ...rnEurope, ...rnOffshore].filter(e => isRelevant(e.title, e.summary) && isUK(e.title, e.summary)),
+      // Official regulator and system operator news is always in scope.
+      ...[...ofgemEntries, ...nesoEntries].filter(notExcluded),
+    ];
+    const seen = new Set();
     const relevant = allEntries
-      .filter(e => isRelevant(e.title, e.summary))
-      .sort((a, b) => new Date(b.updated || 0) - new Date(a.updated || 0))
-      .slice(0, 12)
+      .filter(e => e.updated && !seen.has(e.link) && seen.add(e.link))
+      .sort((a, b) => new Date(b.updated) - new Date(a.updated))
+      .slice(0, MAX_ITEMS)
       .map(e => ({
         title: e.title,
         link: e.link,
         summary: e.summary,
         source: e.source,
+        topic: topicOf(e.title, e.summary),
         published: e.updated,
       }));
 
@@ -216,6 +299,7 @@ export default async () => {
   }
 };
 
+// Every 6 hours, so the News page stays current through the day.
 export const config = {
-  schedule: "@daily",
+  schedule: "0 */6 * * *",
 };

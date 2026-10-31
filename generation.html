@@ -47,10 +47,11 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
     <nav class="links" id="site-links">
+      <a href="/prices.html">Prices</a>
       <a href="/generation.html" aria-current="page">GB generation</a>
-      <a href="/lng.html">European LNG</a>
-      <a href="/uk-gas.html">UK gas storage</a>
-      <a href="/#news">News</a>
+      <a href="/uk-gas.html">UK gas</a>
+      <a href="/lng.html">LNG</a>
+      <a href="/news.html">News</a>
       <a class="btn primary sm" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe free</a>
     </nav>
   </div>
@@ -98,7 +99,49 @@
         </div>
       </div>
 
-      <p class="source-note">Data: <a href="https://carbonintensity.org.uk" target="_blank" rel="noopener">National Energy System Operator Carbon Intensity API</a> (CC BY 4.0) and <a href="https://developer.data.elexon.co.uk" target="_blank" rel="noopener">Elexon Insights Solution</a>. Figures are live system data, not forecasts — refresh the page for the latest snapshot.</p>
+      <h2 style="font-size:22px; margin:40px 0 16px;">The outlook</h2>
+      <div class="card panel">
+        <div class="panel-head">
+          <div>
+            <h2>Wind and solar, next few days</h2>
+            <p>Forecast output in GW: wind is transmission-connected plus embedded wind, solar is embedded (rooftop and small-scale).</p>
+          </div>
+        </div>
+        <div id="c-renew"><p class="loading">Loading forecast…</p></div>
+      </div>
+      <div class="two-col" style="margin-top:16px;">
+        <div class="card panel">
+          <div class="panel-head">
+            <div>
+              <h2>Demand, next two weeks</h2>
+              <p>Forecast daily peak national demand, GW.</p>
+            </div>
+          </div>
+          <div id="c-demand"><p class="loading">Loading forecast…</p></div>
+        </div>
+        <div class="card panel">
+          <div class="panel-head">
+            <div>
+              <h2>Carbon intensity, next 48 hours</h2>
+              <p>Forecast gCO₂/kWh, half-hourly.</p>
+            </div>
+          </div>
+          <div id="c-ci"><p class="loading">Loading forecast…</p></div>
+        </div>
+      </div>
+      <p class="stat-foot" id="outlook-updated" style="margin-top:10px;"></p>
+
+      <div class="card panel" id="longrun" style="margin-top:40px;" hidden>
+        <div class="panel-head">
+          <div>
+            <h2>The long view: UK electricity by source</h2>
+            <p>Share of yearly generation, %.</p>
+          </div>
+        </div>
+        <div id="c-longrun"></div>
+      </div>
+
+      <p class="source-note">Data: <a href="https://carbonintensity.org.uk" target="_blank" rel="noopener">National Energy System Operator Carbon Intensity API</a> (CC BY 4.0); Contains BMRS data © Elexon Limited copyright and database right 2026 (demand, wind forecast); <a href="https://www.neso.energy/data-portal/embedded-wind-and-solar-forecasts" target="_blank" rel="noopener">NESO embedded wind and solar forecasts</a> (NESO Open Data Licence)<span id="ember-credit" hidden>; <a href="https://ember-energy.org" target="_blank" rel="noopener">Ember</a> yearly electricity data (CC BY 4.0)</span>. Live figures are system data; outlook figures are forecasts. See all <a href="/sources.html">data sources</a>.</p>
     </div>
   </section>
 
@@ -142,10 +185,12 @@
       </div>
       <div class="foot-col">
         <h4>Live data</h4>
+        <a href="/prices.html">Prices &amp; costs</a>
         <a href="/generation.html">GB generation</a>
-        <a href="/lng.html">European LNG</a>
-        <a href="/uk-gas.html">UK gas storage</a>
-        <a href="/#news">News</a>
+        <a href="/uk-gas.html">UK gas supply</a>
+        <a href="/lng.html">LNG</a>
+        <a href="/news.html">News</a>
+        <a href="/sources.html">Data sources</a>
       </div>
       <div class="foot-col">
         <h4>Follow</h4>
@@ -160,7 +205,49 @@
 </footer>
 
 <script src="/assets/site.js"></script>
+<script src="/assets/charts.js"></script>
 <script>
+  // Outlook (see netlify/functions/fetch-outlook.mjs) and 48h carbon forecast (live API).
+  const toGW = mw => Math.round(mw / 100) / 10;
+  const hourFmt = d => d.toLocaleString('en-GB', { weekday: 'short', hour: '2-digit', minute: '2-digit' });
+  fetch('/content/outlook.json').then(r => r.ok ? r.json() : Promise.reject()).then(o => {
+    const emb = new Map((o.embedded || []).map(e => [e.t.slice(0, 16), e]));
+    const now = Date.now() - 3600e3;
+    const wind = (o.wind || []).filter(w => Date.parse(w.t) >= now).map(w => {
+      const e = emb.get(new Date(w.t).toISOString().slice(0, 16));
+      return { x: new Date(w.t), y: toGW(w.mw + (e ? e.wind : 0)) };
+    });
+    const end = wind.length ? +wind[wind.length - 1].x : now + 3 * 864e5;
+    const solar = (o.embedded || []).filter(e => Date.parse(e.t) >= now && Date.parse(e.t) <= end).map(e => ({ x: new Date(e.t), y: toGW(e.solar) }));
+    ELCharts.lineChart(document.getElementById('c-renew'), [
+      { name: 'Wind', color: '#2563eb', points: wind }, { name: 'Solar', color: '#d97706', points: solar },
+    ], { zero: true, height: 260, yFormat: v => `${fmtNumber(v, 1)} GW`, yTick: v => `${v} GW`, xStep: 12 * 3600e3, xFormat: d => d.toLocaleString('en-GB', { weekday: 'short', hour: '2-digit', minute: '2-digit' }), tipDate: hourFmt, label: 'Wind and solar forecast' });
+    ELCharts.barChart(document.getElementById('c-demand'), (o.demand || []).map(d => ({
+      label: new Date(d.d + 'T12:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short' }), value: toGW(d.mw),
+      tip: `<div class="chart-tip-date">${new Date(d.d + 'T12:00:00Z').toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'short' })}</div><b>${fmtNumber(toGW(d.mw), 1)} GW</b> peak demand`,
+    })), { color: '#d97706', height: 220, yTick: v => `${v} GW`, label: 'Demand forecast, next two weeks' });
+    document.getElementById('outlook-updated').textContent = 'Forecasts updated ' + fmtDateTime(o.updated);
+  }).catch(() => {
+    ['c-renew', 'c-demand'].forEach(id => { document.getElementById(id).innerHTML = '<p class="loading">Forecast not available yet — check back shortly.</p>'; });
+  });
+
+  fetch(`https://api.carbonintensity.org.uk/intensity/${new Date().toISOString().slice(0, 16)}Z/fw48h`).then(r => r.json()).then(d => {
+    const pts = (d.data || []).filter(p => p.intensity && Number.isFinite(p.intensity.forecast)).map(p => ({ x: new Date(p.from), y: p.intensity.forecast }));
+    ELCharts.lineChart(document.getElementById('c-ci'), [{ name: 'Carbon intensity', color: '#059669', points: pts }], {
+      zero: true, height: 220, yFormat: v => `${Math.round(v)} gCO₂/kWh`, tipDate: hourFmt, xStep: 12 * 3600e3, xFormat: d => d.toLocaleString('en-GB', { weekday: 'short', hour: '2-digit', minute: '2-digit' }), label: 'Carbon intensity forecast, next 48 hours' });
+  }).catch(() => { document.getElementById('c-ci').innerHTML = '<p class="loading">Forecast not available right now.</p>'; });
+
+  // Long-run Ember data appears once content/ember-uk.json exists (needs an Ember API key).
+  fetch('/content/ember-uk.json').then(r => r.ok ? r.json() : Promise.reject()).then(e => {
+    const years = e.years || [];
+    if (years.length < 2) return;
+    const share = (y, keys) => { const tot = Object.values(y.twh).reduce((a, b) => a + b, 0); return tot ? keys.reduce((a, k) => a + (y.twh[k] || 0), 0) / tot * 100 : 0; };
+    const SERIES = [['Wind', ['Wind'], '#0d9488'], ['Gas', ['Gas'], '#2563eb'], ['Nuclear', ['Nuclear'], '#d97706'], ['Coal', ['Coal'], '#7c3aed']];
+    document.getElementById('longrun').hidden = false; document.getElementById('ember-credit').hidden = false;
+    ELCharts.lineChart(document.getElementById('c-longrun'), SERIES.map(([name, keys, color]) => ({ name, color, points: years.map(y => ({ x: new Date(Date.UTC(y.year, 6, 1)), y: Math.round(share(y, keys) * 10) / 10 })) })),
+      { zero: true, area: false, height: 280, yFormat: v => `${fmtNumber(v, 1)}%`, yTick: v => `${v}%`, xFormat: d => String(d.getUTCFullYear()), tipDate: d => String(d.getUTCFullYear()), label: 'UK electricity generation share by source, yearly' });
+  }).catch(() => {});
+
   const FUEL_LABEL = {
     gas: 'Gas', coal: 'Coal', biomass: 'Biomass', nuclear: 'Nuclear',
     hydro: 'Hydro', imports: 'Imports', other: 'Other', wind: 'Wind', solar: 'Solar'

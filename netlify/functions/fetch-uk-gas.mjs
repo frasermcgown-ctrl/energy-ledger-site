@@ -2,53 +2,21 @@
 // fully open (no key needed), but calling it directly from the browser risks
 // being blocked by CORS since it's not a public-facing consumer API. Fetching
 // it server-side here and committing a snapshot avoids that entirely.
+//
+// The API returns flows in groups: supply from entry points, supply from
+// terminals, total supply, demand by category, demand from interconnectors
+// (exports), total demand and linepack. All flows are mcm/d; linepack is mcm.
+// Entry-point flows are gas going INTO the grid, so for a storage site a
+// positive flow is a withdrawal; injection shows up as "Storage Demand Flow".
 
-const STORAGE_SITES = ['ALDBROUGH', 'HOLE HOUSE', 'HORNSEA', 'HUMBLY GROVE', 'STUBLACH', 'HILL TOP FARM', 'HOLFORD', 'ATWICK'];
+import { writeJsonIfChanged } from "../lib/github.mjs";
 
-async function commitToGitHub(payload) {
-  const owner = "frasermcgown-ctrl";
-  const repo = "energy-ledger-site";
-  const path = "content/uk-gas-data.json";
-  const token = process.env.GITHUB_TOKEN;
+const STORAGE_SITES = ['ALDBROUGH', 'EASINGTON ROUGH ST', 'HILLTOP', 'HOLE HOUSE FARM', 'HOLFORD', 'HORNSEA', 'HUMBLY GROVE', 'STUBLACH'];
 
-  if (!token) {
-    console.error("GITHUB_TOKEN not set — skipping commit.");
-    return;
-  }
-
-  const apiBase = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
-  const headers = {
-    Authorization: `Bearer ${token}`,
-    Accept: "application/vnd.github+json",
-    "User-Agent": "energy-ledger-uk-gas-fetch",
-  };
-
-  let sha;
-  try {
-    const getRes = await fetch(apiBase, { headers });
-    if (getRes.ok) {
-      const getData = await getRes.json();
-      sha = getData.sha;
-    }
-  } catch (e) {
-    console.log("No existing uk-gas-data.json found, will create new.");
-  }
-
-  const content = Buffer.from(JSON.stringify(payload, null, 2)).toString("base64");
-  const body = { message: "Automated UK gas storage data update", content, ...(sha ? { sha } : {}) };
-
-  const putRes = await fetch(apiBase, {
-    method: "PUT",
-    headers: { ...headers, "Content-Type": "application/json" },
-    body: JSON.stringify(body),
-  });
-
-  if (!putRes.ok) {
-    const errText = await putRes.text();
-    console.error("GitHub commit failed:", putRes.status, errText);
-  } else {
-    console.log("Committed UK gas storage data to GitHub.");
-  }
+function latestFlow(site) {
+  const detail = site.siteGasDetail || [];
+  const latest = detail[detail.length - 1] || {};
+  return Number.isFinite(latest.flowRate) ? Math.round(latest.flowRate * 1000) / 1000 : null;
 }
 
 export default async () => {
@@ -63,25 +31,26 @@ export default async () => {
     }
 
     const data = await res.json();
-    const allSites = (data.instantaneousFlow && data.instantaneousFlow[0] && data.instantaneousFlow[0].sites) || [];
-    const storageSites = allSites.filter(s => STORAGE_SITES.includes((s.siteName || "").toUpperCase()));
+    const groups = (data.instantaneousFlow || []).map(g => ({
+      description: g.description || "",
+      sites: (g.sites || []).map(s => ({ name: s.siteName, flow: latestFlow(s) })),
+    }));
 
-    const sites = storageSites.map(site => {
-      const latest = (site.siteGasDetail && site.siteGasDetail[site.siteGasDetail.length - 1]) || {};
-      return {
-        name: site.siteName,
-        flowRate: latest.flowRate !== undefined ? latest.flowRate : null,
-      };
-    });
+    const entryPoints = (groups.find(g => /entry points/i.test(g.description)) || { sites: [] }).sites;
+    // Storage withdrawals: storage sites' supply into the grid.
+    const sites = entryPoints
+      .filter(s => STORAGE_SITES.includes((s.name || "").toUpperCase()))
+      .map(s => ({ name: s.name, flowRate: s.flow }));
 
     const payload = {
-      updated: new Date().toISOString(),
       publishedTime: data.publishedTime,
       currentGasDay: data.currentGasDay,
       sites,
+      groups,
     };
 
-    await commitToGitHub(payload);
+    console.log(`Gas day ${data.currentGasDay}: ${groups.map(g => `${g.description} (${g.sites.length})`).join(", ")}`);
+    await writeJsonIfChanged("content/uk-gas-data.json", payload, "Automated UK gas storage data update");
 
     return new Response(JSON.stringify(payload), {
       headers: { "Content-Type": "application/json" },
@@ -92,6 +61,7 @@ export default async () => {
   }
 };
 
+// Every 3 hours, so the page shows today's flows rather than a midnight snapshot.
 export const config = {
-  schedule: "@daily",
+  schedule: "0 */3 * * *",
 };

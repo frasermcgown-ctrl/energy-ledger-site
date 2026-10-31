@@ -152,6 +152,37 @@ function parseRssItems(xml) {
   return entries;
 }
 
+// NESO's listing cuts long titles and summaries short with "…". For those,
+// read the full headline from the article's <title> ("Headline | National
+// Energy System Operator") and the full summary from its meta description.
+const TRUNCATED = /(…|\.\.\.)\s*$/;
+
+function metaContent(html, name) {
+  const tag = (html.match(new RegExp(`<meta[^>]+(?:name|property)="${name}"[^>]*>`, "i")) || [])[0] || "";
+  return decodeEntities((tag.match(/content="([^"]*)"/) || [])[1] || "").trim();
+}
+
+async function expandTruncated(entry) {
+  if (!TRUNCATED.test(entry.title) && !TRUNCATED.test(entry.summary || "")) return entry;
+  try {
+    const res = await fetch(entry.link, {
+      headers: { "User-Agent": "Mozilla/5.0 (compatible; TheEnergyLedgerBot/1.0; +https://www.theenergyledger.co.uk)" },
+      signal: AbortSignal.timeout(8000),
+    });
+    if (!res.ok) return entry;
+    const html = await res.text();
+    const pageTitle = stripTags((html.match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [])[1] || "").replace(/\s*\|[^|]*$/, "").trim();
+    const description = metaContent(html, "description") || metaContent(html, "og:description");
+    return {
+      ...entry,
+      title: TRUNCATED.test(entry.title) && pageTitle ? pageTitle : entry.title,
+      summary: TRUNCATED.test(entry.summary || "") && description ? description.slice(0, 220) : entry.summary,
+    };
+  } catch {
+    return entry; // keep the shortened version rather than drop the item
+  }
+}
+
 async function fetchFeed(url, sourceName, parser) {
   try {
     const res = await fetch(url, {
@@ -275,10 +306,11 @@ export default async () => {
       ...[...ofgemEntries, ...nesoEntries].filter(notExcluded),
     ];
     const seen = new Set();
-    const relevant = allEntries
+    const latest = allEntries
       .filter(e => e.updated && !seen.has(e.link) && seen.add(e.link))
       .sort((a, b) => new Date(b.updated) - new Date(a.updated))
-      .slice(0, MAX_ITEMS)
+      .slice(0, MAX_ITEMS);
+    const relevant = (await Promise.all(latest.map(e => (e.source === "NESO" ? expandTruncated(e) : e))))
       .map(e => ({
         title: e.title,
         link: e.link,

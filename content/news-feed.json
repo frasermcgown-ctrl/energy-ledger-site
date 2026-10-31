@@ -1,89 +1,61 @@
 {
-  "updated": "2026-10-29T00:01:06.875Z",
+  "updated": "2026-10-31T00:01:06.588Z",
   "items": [
     {
-      "title": "Government remains “unshakably committed” to clean power target",
-      "link": "https://www.energylivenews.com/2026/10/28/government-remains-unshakably-committed-to-clean-power-targets/",
-      "summary": "John Healey has doubled down on Labour’s 2030 goals in his Autumn Budget speech \nThe post Government remains “unshakably committed” to clean power target appeared first on Energy Live News.\n",
+      "title": "Business electricity bills fall 17% as energy use plummets",
+      "link": "https://www.energylivenews.com/2026/10/30/business-electricity-bills-fall-17-as-energy-use-plummets/",
+      "summary": "The biggest decreases were seen in North East England and South Wales \nThe post Business electricity bills fall 17% as energy use plummets appeared first on Energy Live News.\n",
       "source": "Energy Live News",
-      "published": "2026-10-28T17:00:00.000Z"
+      "published": "2026-10-30T18:00:00.000Z"
     },
     {
-      "title": "Flagship Energy’s Mike Stafford Energy Markets Update – 28th October",
-      "link": "https://www.energylivenews.com/2026/10/28/flagship-energys-mike-stafford-energy-markets-update-28th-october/",
-      "summary": "Mike Stafford, Senior Risk Trader at Flagship Energy provides a market update\nThe post Flagship Energy’s Mike Stafford Energy Markets Update – 28th October appeared first on Energy Live News.\n",
+      "title": "UK ETS Allocation Table for operators of installations",
+      "link": "https://www.gov.uk/government/publications/uk-ets-allocation-table-for-operators-of-installations",
+      "summary": "This table contains a list of each installation’s free allocation for the 2021 to 2026 allocation period.",
+      "source": "Dept for Energy Security & Net Zero",
+      "published": "2026-10-30T17:05:01+00:00"
+    },
+    {
+      "title": "Major undersea power cable given green light",
+      "link": "https://www.gov.uk/government/news/major-undersea-power-cable-given-green-light",
+      "summary": "Government approves Sea Link, a major undersea power connection between Suffolk and Kent.",
+      "source": "Dept for Energy Security & Net Zero",
+      "published": "2026-10-30T16:32:23+00:00"
+    },
+    {
+      "title": "Cleaning the atmosphere with a CO₂ conveyor belt",
+      "link": "https://www.energylivenews.com/2026/10/30/cleaning-the-atmosphere-with-a-co%e2%82%82-conveyor-belt/",
+      "summary": "Ultra-thin coatings could capture and release the gas in seconds and enable more flexible carbon removal systems\nThe post Cleaning the atmosphere with a CO₂ conveyor belt appeared first on Energy Live News.\n",
       "source": "Energy Live News",
-      "published": "2026-10-28T16:49:01.000Z"
+      "published": "2026-10-30T16:00:00.000Z"
     },
     {
-      "title": "Subnational estimates of properties not connected to the gas network 2015-2025",
-      "link": "https://www.gov.uk/government/statistics/announcements/sub-national-estimates-of-properties-not-connected-to-the-gas-network-2015-2025",
-      "summary": "Estimates of the number of domestic properties not connected to the gas grid, at region and local authority levels from 2015 to 2025",
-      "source": "Dept for Energy Security & Net Zero",
-      "published": "2026-10-28T16:36:37+00:00"
-    },
-    {
-      "title": "Subnational gas consumption in Northern Ireland: 2015-2025",
-      "link": "https://www.gov.uk/government/statistics/announcements/sub-national-gas-consumption-in-northern-ireland-2015-2025",
-      "summary": "Consumption of gas in Northern Ireland at local council level from 2015 to 2025",
-      "source": "Dept for Energy Security & Net Zero",
-      "published": "2026-10-28T16:36:33+00:00"
-    },
-    {
-      "title": "Subnational electricity consumption in Northern Ireland: 2009-2025",
-      "link": "https://www.gov.uk/government/statistics/announcements/sub-national-electricity-consumption-in-northern-ireland-2009-2025",
-      "summary": "Consumption of electricity in Northern Ireland at local council level from 2009 to 2025",
-      "source": "Dept for Energy Security & Net Zero",
-      "published": "2026-10-28T16:36:29+00:00"
-    },
-    {
-      "title": "Subnational gas consumption at postcode level in 2025",
-      "link": "https://www.gov.uk/government/statistics/announcements/sub-national-gas-consumption-at-postcode-level-in-2025",
-      "summary": "Postcode level gas 2025 data",
-      "source": "Dept for Energy Security & Net Zero",
-      "published": "2026-10-28T16:36:23+00:00"
-    },
-    {
-      "title": "Subnational gas consumption at LSOA, MSOA and IGZ level in 2025",
-      "link": "https://www.gov.uk/government/statistics/announcements/sub-national-gas-consumption-at-lsoa-msoa-and-igz-level-in-2025",
-      "summary": "Lower Super Output Area (LSOA), Middle Super Output Area (MSOA) and Intermediate Geography Zone (IGZ) level gas 2025 data",
-      "source": "Dept for Energy Security & Net Zero",
-      "published": "2026-10-28T16:36:19+00:00"
-    },
-    {
-      "title": "Subnational gas consumption in 2025",
-      "link": "https://www.gov.uk/government/statistics/announcements/sub-national-gas-consumption-in-2025",
-      "summary": "Consumption of gas broken down by local authority in Great Britain in 2025",
-      "source": "Dept for Energy Security & Net Zero",
-      "published": "2026-10-28T16:36:15+00:00"
-    },
-    {
-      "title": "Subnational electricity consumption at postcode level in 2025",
-      "link": "https://www.gov.uk/government/statistics/announcements/sub-national-electricity-consumption-at-postcode-level-in-2025",
-      "summary": "Postcode level electricity 2025 data",
-      "source": "Dept for Energy Security & Net Zero",
-      "published": "2026-10-28T16:36:09+00:00"
-    },
-    {
-      "title": "Subnational electricity consumption at LSOA, MSOA and IGZ level in 2025",
-      "link": "https://www.gov.uk/government/statistics/announcements/sub-national-electricity-consumption-at-lsoa-msoa-and-igz-level-in-2025",
-      "summary": "Lower Super Output Area (LSOA), Middle Super Output Area (MSOA) and Intermediate Geography Zone (IGZ) level electricity 2025 data",
-      "source": "Dept for Energy Security & Net Zero",
-      "published": "2026-10-28T16:36:04+00:00"
-    },
-    {
-      "title": "Subnational electricity consumption in 2025",
-      "link": "https://www.gov.uk/government/statistics/announcements/sub-national-electricity-consumption-in-2025",
-      "summary": "Consumption of electricity broken down by local authority in Great Britain in 2025",
-      "source": "Dept for Energy Security & Net Zero",
-      "published": "2026-10-28T16:35:11+00:00"
-    },
-    {
-      "title": "Electricity bill VAT cut will be extended until July",
-      "link": "https://www.energylivenews.com/2026/10/28/electricity-vat-cut-will-be-extended-until-july/",
-      "summary": "Chancellor John Healey announced the extension in his Autumn Budget speech\nThe post Electricity bill VAT cut will be extended until July appeared first on Energy Live News.\n",
+      "title": "Halloween leftovers could heat thousands of homes with green gas",
+      "link": "https://www.energylivenews.com/2026/10/30/halloween-leftovers-could-heat-thousands-of-homes-with-green-gas/",
+      "summary": "The estimated 16 million pumpkins that will get binned this year could generate around 12.3GWh of energy\nThe post Halloween leftovers could heat thousands of homes with green gas appeared first on Energy Live News.\n",
       "source": "Energy Live News",
-      "published": "2026-10-28T15:00:00.000Z"
+      "published": "2026-10-30T13:00:00.000Z"
+    },
+    {
+      "title": "TELCA shortlist – Most Trusted Consultancy (Large Customers) award",
+      "link": "https://www.energylivenews.com/2026/10/30/telca-shortlist-most-trusted-consultancy-large-customers-award/",
+      "summary": "The shortlist for the Most Trusted Consultancy (Large Customers) award, sponsored by TotalEnergies Gas &#038; Power\nThe post TELCA shortlist – Most Trusted Consultancy (Large Customers) award appeared first on Energy Liv",
+      "source": "Energy Live News",
+      "published": "2026-10-30T12:00:00.000Z"
+    },
+    {
+      "title": "Smart Secure Electricity Systems (SSES) tariff interoperability: code modifications for Phase 1a",
+      "link": "https://www.gov.uk/government/publications/smart-secure-electricity-systems-sses-tariff-interoperability-code-modifications-for-phase-1a",
+      "summary": "The Secretary of State has made changes to the Retail Energy Code using his power under section 245(1)(e) of the Energy Act 2023.",
+      "source": "Dept for Energy Security & Net Zero",
+      "published": "2026-10-30T09:09:00+00:00"
+    },
+    {
+      "title": "Australia is fuelling the fossil fuel fire &#8211; even though it&#8217;s COP31 co-host",
+      "link": "https://www.energylivenews.com/2026/10/30/australia-is-fueling-the-fossil-fuel-fire-even-though-its-cop31-co-host/",
+      "summary": "Australia’s coal, gas and oil exports outstrip the footprint of the 44 least developed countries combined\nThe post Australia is fuelling the fossil fuel fire &#8211; even though it&#8217;s COP31 co-host appeared first on",
+      "source": "Energy Live News",
+      "published": "2026-10-30T09:00:00.000Z"
     }
   ]
 }

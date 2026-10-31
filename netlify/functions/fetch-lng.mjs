@@ -1,140 +1,69 @@
-// Runs on a schedule. ALSI (Aggregated LNG Storage Inventory, run by Gas
-// Infrastructure Europe) updates once per gas day, so hourly is more than
-// enough. Fetches EU-aggregate LNG terminal data and commits it to
-// content/lng-data.json — Netlify then auto-deploys, and lng.html reads
-// this static file client-side (the API key never reaches the browser).
+// Runs on a schedule (see the `config` export below). ALSI (Aggregated LNG
+// Storage Inventory, run by Gas Infrastructure Europe) publishes EU-aggregate
+// LNG terminal data once per gas day. This fetches the latest reported day and
+// commits it to content/lng-data.json; lng.html reads that static file, so the
+// API key never reaches the browser.
+//
+// ALSI fields (GIE API documentation, section 2.4): gasDayStart, status
+// (E estimated / C confirmed / N no data), sendOut and dtrs in GWh/d, and
+// inventory / dtmi as objects with `lng` (thousand m3 LNG) and `gwh`.
 
-async function commitToGitHub(payload) {
-  const owner = "frasermcgown-ctrl";
-  const repo = "energy-ledger-site";
-  const path = "content/lng-data.json";
-  const token = process.env.GITHUB_TOKEN;
+import { writeJsonIfChanged, fetchJson, isoDate, daysAgo } from "../lib/github.mjs";
 
-  if (!token) {
-    console.error("GITHUB_TOKEN not set — skipping commit.");
-    return;
-  }
+const PATH = "content/lng-data.json";
 
-  const apiBase = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
-  const headers = {
-    Authorization: `Bearer ${token}`,
-    Accept: "application/vnd.github+json",
-    "User-Agent": "energy-ledger-lng-fetch",
+const num = v => {
+  const n = parseFloat(v && typeof v === "object" ? v.lng : v);
+  return Number.isFinite(n) ? n : null;
+};
+
+function latestRow(rows) {
+  return rows
+    .filter(r => r.gasDayStart && r.status !== "N" && num(r.sendOut) !== null)
+    .sort((a, b) => String(b.gasDayStart).localeCompare(String(a.gasDayStart)))[0] || null;
+}
+
+function toPayload(row) {
+  const inventory = num(row.inventory);
+  const maxInventory = num(row.dtmi);
+  return {
+    gasDay: row.gasDayStart,
+    status: row.status,
+    lngInventoryThousandM3: inventory,
+    sendOutGWhPerDay: num(row.sendOut),
+    maxInventoryThousandM3: maxInventory,
+    maxSendOutGWhPerDay: num(row.dtrs),
+    fillPercent: inventory !== null && maxInventory > 0 ? Math.round((inventory / maxInventory) * 1000) / 10 : null,
   };
-
-  let sha;
-  try {
-    const getRes = await fetch(apiBase, { headers });
-    if (getRes.ok) {
-      const getData = await getRes.json();
-      sha = getData.sha;
-    }
-  } catch (e) {
-    console.log("No existing lng-data.json found, will create new.");
-  }
-
-  const content = Buffer.from(JSON.stringify(payload, null, 2)).toString("base64");
-
-  const body = {
-    message: "Automated LNG data update",
-    content,
-    ...(sha ? { sha } : {}),
-  };
-
-  const putRes = await fetch(apiBase, {
-    method: "PUT",
-    headers: { ...headers, "Content-Type": "application/json" },
-    body: JSON.stringify(body),
-  });
-
-  if (!putRes.ok) {
-    const errText = await putRes.text();
-    console.error("GitHub commit failed:", putRes.status, errText);
-  } else {
-    console.log("Committed LNG data to GitHub.");
-  }
 }
 
 export default async () => {
-  // --- TEMPORARY TEST: checking National Gas Transmission's instantaneous flow API ---
-  try {
-    const ngUrl = "https://api.nationalgas.com/operationaldata/v1/instantaneousflow/sites";
-    const ngRes = await fetch(ngUrl, { headers: { Accept: "application/json" } });
-    if (ngRes.ok) {
-      const ngData = await ngRes.json();
-      console.log("NATIONALGAS TEST: success. Sample response:", JSON.stringify(ngData).slice(0, 600));
-    } else {
-      console.log(`NATIONALGAS TEST: failed with status ${ngRes.status}`);
-      const errBody = await ngRes.text();
-      console.log("NATIONALGAS TEST: error body:", errBody.slice(0, 300));
-    }
-  } catch (err) {
-    console.log("NATIONALGAS TEST: fetch error —", err.message);
+  const key = process.env.GIE_API_KEY;
+  if (!key) {
+    console.error("GIE_API_KEY not set — skipping this run.");
+    return new Response("No API key", { status: 500 });
   }
-  // --- END TEMPORARY TEST ---
-
   try {
-    const alsiKey = process.env.GIE_API_KEY;
-    if (!alsiKey) {
-      console.error("GIE_API_KEY not set — skipping this run.");
-      return new Response("No API key", { status: 500 });
-    }
-
-    // Last 7 days of EU-aggregate data, so we can pick out the most recent entry.
-    const till = new Date().toISOString().slice(0, 10);
-    const fromDate = new Date();
-    fromDate.setDate(fromDate.getDate() - 7);
-    const from = fromDate.toISOString().slice(0, 10);
-
-    const url = `https://alsi.gie.eu/api/data/eu?from=${from}&till=${till}`;
-    const res = await fetch(url, {
-      headers: { "x-key": alsiKey, Accept: "application/json" },
-    });
-
-    if (!res.ok) {
-      console.error(`ALSI fetch failed: ${res.status}`);
-      return new Response("ALSI fetch failed", { status: 500 });
-    }
-
-    const json = await res.json();
-    const rows = json.data || [];
-    if (rows.length === 0) {
-      console.error("ALSI returned no rows.");
+    // Last 7 days of EU-aggregate data, so a late or missing day doesn't blank the page.
+    const url = `https://alsi.gie.eu/api/data/eu?from=${isoDate(daysAgo(7))}&till=${isoDate(new Date())}`;
+    const json = await fetchJson(url, { headers: { "x-key": key } });
+    const row = latestRow(json.data || []);
+    if (!row) {
+      console.error("ALSI returned no usable rows.");
       return new Response("No data", { status: 500 });
     }
-
-    // Most recent gas day first.
-    rows.sort((a, b) => new Date(b.gasDayStartedOn) - new Date(a.gasDayStartedOn));
-    const latest = rows[0];
-
-    const inventory = parseFloat(latest.lngInventory);   // thousand m3 LNG
-    const sendOut = parseFloat(latest.sendOut);           // GWh/d
-    const dtmi = parseFloat(latest.dtmi);                 // thousand m3 LNG, max capacity
-    const dtrs = parseFloat(latest.dtrs);                 // GWh/d, max send-out capacity
-    const fillPct = dtmi > 0 ? Math.round((inventory / dtmi) * 1000) / 10 : null;
-
-    const payload = {
-      updated: new Date().toISOString(),
-      gasDay: latest.gasDayStartedOn,
-      status: latest.status,
-      lngInventoryThousandM3: inventory,
-      sendOutGWhPerDay: sendOut,
-      maxInventoryThousandM3: dtmi,
-      maxSendOutGWhPerDay: dtrs,
-      fillPercent: fillPct,
-    };
-
-    await commitToGitHub(payload);
-
-    return new Response(JSON.stringify(payload), {
-      headers: { "Content-Type": "application/json" },
-    });
+    const payload = toPayload(row);
+    console.log(`ALSI gas day ${payload.gasDay} (${payload.status}): send-out ${payload.sendOutGWhPerDay} GWh/d, inventory ${payload.lngInventoryThousandM3} k m3, fill ${payload.fillPercent}%`);
+    await writeJsonIfChanged(PATH, payload, "Automated LNG data update");
+    return new Response(JSON.stringify(payload), { headers: { "Content-Type": "application/json" } });
   } catch (err) {
-    console.error("fetch-lng function error:", err);
+    console.error("fetch-lng error:", err.message);
     return new Response("Error", { status: 500 });
   }
 };
 
+// ALSI publishes once a gas day; checking four times a day picks it up promptly.
+// Minutes are staggered across functions so their GitHub commits don't collide.
 export const config = {
-  schedule: "@daily",
+  schedule: "42 */6 * * *",
 };

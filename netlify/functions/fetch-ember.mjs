@@ -44,5 +44,5 @@ export default async () => {
 
 // Ember updates its yearly data a few times a year.
 export const config = {
-  schedule: "@weekly",
+  schedule: "56 1 * * 0",
 };

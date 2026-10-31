@@ -12,7 +12,8 @@ const PATH = "content/ember-uk.json";
 const START_YEAR = 2010;
 
 export default async () => {
-  const key = process.env.EMBER_API_KEY;
+  // Trim stray spaces, line breaks and quote marks picked up when pasting the key.
+  const key = (process.env.EMBER_API_KEY || "").trim().replace(/^["']+|["']+$/g, "").trim();
   if (!key) {
     console.log("EMBER_API_KEY not set — skipping. Add a free Ember API key in Netlify to enable the long-run chart.");
     return new Response("No key", { status: 200 });
@@ -34,6 +35,9 @@ export default async () => {
     return new Response(JSON.stringify({ years: list.length }), { headers: { "Content-Type": "application/json" } });
   } catch (err) {
     console.error("fetch-ember error:", err.message);
+    if (/status (401|403)/.test(err.message)) {
+      console.error(`Ember rejected the API key (length ${key.length}). Re-copy it from your Ember account into EMBER_API_KEY, then redeploy.`);
+    }
     return new Response("Error", { status: 500 });
   }
 };

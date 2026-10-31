@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Status — The Energy Ledger</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="When each automated data feed on The Energy Ledger last updated, and whether any are late.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Energy Ledger">
+<meta property="og:title" content="Data Status — The Energy Ledger">
+<meta property="og:description" content="When each automated data feed on The Energy Ledger last updated, and whether any are late.">
+<meta property="og:url" content="https://www.theenergyledger.co.uk/status.html">
+<meta property="og:image" content="https://www.theenergyledger.co.uk/og-image.png?v=2">
+<meta name="twitter:card" content="summary_large_image">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5XJN5KMJVN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5XJN5KMJVN');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="icon-mark.svg">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+  .src-grid{ display:grid; grid-template-columns:repeat(2, 1fr); gap:16px; margin-bottom:32px; }
+  .src{ padding:24px; display:flex; flex-direction:column; gap:10px; }
+  .src h3{ font-size:17px; }
+  .src h3 a{ text-decoration:none; color:var(--ink); }
+  .src h3 a:hover{ color:var(--brand); }
+  .src > p{ color:var(--ink-3); font-size:15px; }
+  .src .kv{ font-size:14px; margin-top:4px; }
+  .src .kv dd{ font-weight:500; text-align:right; }
+  .src .attr{ font-size:13px; color:var(--ink-2); background:var(--bg-soft); border-radius:8px; padding:8px 10px; }
+  @media (max-width: 760px){ .src-grid{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav">
+    <a class="wordmark" href="/" aria-label="The Energy Ledger — home">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <rect x="0" y="0" width="120" height="120" rx="28" fill="#0f172a"/>
+        <line x1="21" y1="30" x2="21" y2="90" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+        <line x1="34" y1="44" x2="80" y2="44" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="62" x2="92" y2="62" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="80" x2="66" y2="80" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <polyline points="80,44 96,27 103,32" fill="none" stroke="#f97316" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="103" cy="32" r="4.5" fill="#f97316"/>
+      </svg>
+      <b style="font-weight:inherit">The Energy <span>Ledger</span></b>
+    </a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-links">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="links" id="site-links">
+      <a href="/prices.html">Prices</a>
+      <a href="/generation.html">GB generation</a>
+      <a href="/uk-gas.html">UK gas</a>
+      <a href="/lng.html">LNG</a>
+      <a href="/news.html">News</a>
+      <a class="btn primary sm" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe free</a>
+    </nav>
+  </div>
+</header>
+
+
+<main>
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="crumbs"><a href="/">Home</a><span aria-hidden="true">/</span><span>Data status</span></div>
+      <h1>Data status</h1>
+      <p class="lede" id="status-summary">Checking every data feed…</p>
+    </div>
+  </div>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="card panel">
+        <div class="panel-head">
+          <div>
+            <h2>Automated feeds</h2>
+            <p id="status-checked">Times are UK local time.</p>
+          </div>
+          <button class="btn sm" type="button" id="status-refresh">Check again</button>
+        </div>
+        <div class="status-table" role="table" aria-label="Data feed status">
+          <div class="status-row status-headrow" role="row">
+            <span role="columnheader">Feed</span><span role="columnheader">Last updated</span><span role="columnheader">Latest data</span><span role="columnheader">Status</span>
+          </div>
+          <div id="status-rows"></div>
+        </div>
+      </div>
+      <p class="source-note">OK: on schedule. Check: late or partly missing, often fixed by the next run. Problem: overdue, empty or missing. To re-run a feed, open it in Netlify under Cloud compute &rarr; Functions and click Run now. Manual items (price cap, carbon auctions) are edited in <a href="/admin/">/admin</a>. This page is not linked from the site menu.</p>
+    </div>
+  </section>
+</main>
+
+<script>
+  const H = 3600e3, D = 24 * H;
+  const now = () => Date.now();
+  const ageOf = iso => iso ? now() - Date.parse(iso) : Infinity;
+  const ago = iso => {
+    if (!iso) return 'unknown';
+    const a = ageOf(iso);
+    if (a < H) return `${Math.max(1, Math.round(a / 60000))} min ago`;
+    if (a < 2 * D) return `${Math.round(a / H)} h ago`;
+    return `${Math.round(a / D)} days ago`;
+  };
+  const day = iso => new Date(String(iso).slice(0, 10) + 'T12:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+  const month = m => new Date(m + '-15T12:00:00Z').toLocaleDateString('en-GB', { month: 'short', year: 'numeric' });
+  // Grade an age (ms) against amber/red limits.
+  const grade = (age, amber, red) => age > red ? 'red' : age > amber ? 'amber' : 'green';
+  const dataAge = dateStr => now() - Date.parse(String(dateStr).slice(0, 10) + 'T23:59:59Z');
+
+  // Each check: file, page it feeds, schedule text, and a test returning { status, data, note }.
+  const CHECKS = [
+    { name: 'NBP and power prices', file: 'market-prices.json', page: '/prices.html', every: 'Hourly', test: d => {
+      const g = d.gas && d.gas.gasDay, p = d.power && d.power.settlementDate;
+      const worst = Math.max(g ? dataAge(g) : Infinity, p ? dataAge(p) : Infinity);
+      return { status: grade(worst, 2 * D, 4 * D), data: `Gas ${g ? day(g) : '—'} · power ${p ? day(p) : '—'}` }; } },
+    { name: 'Price history', file: 'price-history.json', page: '/prices.html', every: 'Hourly', test: d => {
+      const last = k => (d[k] || []).map(x => x.d).sort().pop();
+      const g = last('gas'), p = last('power');
+      const worst = Math.max(g ? dataAge(g) : Infinity, p ? dataAge(p) : Infinity);
+      const short = (d.power || []).length < 360 ? `power history ${(d.power || []).length} days (filling)` : '';
+      return { status: grade(worst, 2 * D, 4 * D), data: `${(d.gas || []).length} gas / ${(d.power || []).length} power days, to ${p ? day(p) : '—'}`, note: short }; } },
+    { name: 'UK gas flows', file: 'uk-gas-data.json', page: '/uk-gas.html', every: 'Every 3 hours', test: d => ({
+      status: grade(ageOf(d.updated), 4 * H, 8 * H), data: d.publishedTime ? `Published ${fmtDateTime(d.publishedTime)}` : '—' }) },
+    { name: 'Wind, solar and demand forecasts', file: 'outlook.json', page: '/generation.html', every: 'Every 3 hours', test: d => ({
+      status: (d.wind || []).length ? grade(ageOf(d.updated), 4 * H, 8 * H) : 'red',
+      data: `${(d.wind || []).length} wind hours · ${(d.demand || []).length} demand days` }) },
+    { name: 'News feed', file: 'news-feed.json', page: '/news.html', every: 'Every 6 hours', test: d => {
+      const items = d.items || [];
+      const sources = [...new Set(items.map(i => i.source))];
+      const missing = ['Ofgem', 'NESO', 'RenewableUK'].filter(s => !sources.includes(s));
+      let status = items.length ? grade(ageOf(d.updated), 7 * H, 13 * H) : 'red';
+      if (status === 'green' && missing.length) status = 'amber';
+      return { status, data: `${items.length} headlines from ${sources.length} sources`, note: missing.length ? `No items from ${missing.join(', ')}` : '' }; } },
+    { name: 'European LNG (ALSI)', file: 'lng-data.json', page: '/lng.html', every: 'Every 6 hours', test: d => ({
+      status: d.gasDay && d.fillPercent !== null && d.fillPercent !== undefined ? grade(dataAge(d.gasDay), 2 * D, 4 * D) : 'red',
+      data: d.gasDay ? `Gas day ${day(d.gasDay)} · ${d.fillPercent}% full` : 'No gas day', note: d.gasDay ? '' : 'Inventory or gas day missing' }) },
+    { name: 'Grid balancing costs', file: 'balancing-costs.json', page: '/prices.html', every: 'Daily', test: d => {
+      const last = (d.months || []).slice(-1)[0];
+      const to = last ? `${last.month}-${String(last.days).padStart(2, '0')}` : null;
+      return { status: to ? grade(dataAge(to), 8 * D, 15 * D) : 'red', data: to ? `To ${day(to)}` : '—' }; } },
+    { name: 'CfD payments (LCCC)', file: 'cfd.json', page: '/prices.html', every: 'Daily', test: d => ({
+      status: d.dataTo ? grade(dataAge(d.dataTo), 21 * D, 35 * D) : 'red', data: d.dataTo ? `To ${day(d.dataTo)}` : '—' }) },
+    { name: 'European power prices (Ember)', file: 'eu-power-prices.json', page: '/prices.html', every: 'Weekly', test: d => {
+      const m = (d.months || []).slice(-1)[0];
+      return { status: m ? grade(dataAge(m + '-28'), 45 * D, 75 * D) : 'red', data: m ? `To ${month(m)} · ${(d.markets || []).length} markets` : '—' }; } },
+    { name: 'Long-run generation (Ember)', file: 'ember-uk.json', page: '/generation.html', every: 'Weekly', test: d => {
+      const y = (d.years || []).slice(-1)[0];
+      return { status: y ? (y.year >= new Date().getFullYear() - 2 ? 'green' : 'amber') : 'red', data: y ? `To ${y.year}` : '—' }; } },
+    { name: 'Renewables pipeline (REPD)', file: 'repd-pipeline.json', page: '/generation.html', every: 'Weekly check', test: d => ({
+      status: d.published ? grade(ageOf(d.published), 120 * D, 200 * D) : 'red', data: d.title ? d.title.replace(/^.*\(REPD\):?\s*/i, '').replace(/\s*\((CSV|Excel)\)$/i, '') + ' edition' : '—' }) },
+    { name: 'Substack issues', file: 'substack-posts.json', page: '/', every: 'Hourly', test: d => {
+      const p = (d.posts || [])[0];
+      return { status: (d.posts || []).length ? 'green' : 'red', data: p ? `Latest ${day(p.published)}` : 'No posts' }; } },
+    { name: 'Ofgem price cap', file: 'price-cap.json', page: '/prices.html', every: 'Manual, in /admin', manual: true, test: d => {
+      const due = d.next_announcement && Date.parse(d.next_announcement + 'T23:59:59Z') < now();
+      return { status: due ? 'amber' : 'green', data: (d.current && d.current.period) || '—', note: due ? `New cap was due ${day(d.next_announcement)}: update in /admin` : '' }; } },
+    { name: 'UK carbon auctions', file: 'uka-auctions.json', page: '/prices.html', every: 'Manual, in /admin', manual: true, test: d => {
+      const today = new Date().toISOString().slice(0, 10);
+      const left = (d.auctions || []).filter(a => a.date >= today).sort((a, b) => a.date.localeCompare(b.date));
+      return { status: left.length >= 3 ? 'green' : left.length ? 'amber' : 'red', data: left.length ? `Next ${day(left[0].date)} · ${left.length} listed` : 'None listed',
+        note: left.length < 3 ? 'Add the next calendar in /admin' : '' }; } },
+  ];
+
+  const LABEL = { green: 'OK', amber: 'Check', red: 'Problem' };
+  async function run() {
+    const rows = await Promise.all(CHECKS.map(async c => {
+      try {
+        const r = await fetch(`/content/${c.file}`, { cache: 'no-store' });
+        if (!r.ok) return { c, status: 'red', data: 'File missing', note: `HTTP ${r.status}` };
+        const d = await r.json();
+        return { c, updated: d.updated, ...c.test(d) };
+      } catch (e) {
+        return { c, status: 'red', data: 'Could not read', note: e.message };
+      }
+    }));
+    document.getElementById('status-rows').innerHTML = rows.map(r => `
+      <div class="status-row" role="row">
+        <span role="cell"><a href="${r.c.page}">${escapeHtml(r.c.name)}</a><small>${escapeHtml(r.c.every)}</small></span>
+        <span role="cell">${r.c.manual ? '—' : escapeHtml(ago(r.updated))}${r.updated && !r.c.manual ? `<small>${escapeHtml(fmtDateTime(r.updated))}</small>` : ''}</span>
+        <span role="cell">${escapeHtml(r.data || '')}${r.note ? `<small>${escapeHtml(r.note)}</small>` : ''}</span>
+        <span role="cell"><span class="status-pill ${r.status}">${LABEL[r.status]}</span></span>
+      </div>`).join('');
+    const bad = rows.filter(r => r.status !== 'green');
+    document.getElementById('status-summary').textContent = bad.length
+      ? `${bad.length} of ${rows.length} feeds need attention: ${bad.map(r => r.c.name).join(', ')}.`
+      : `All ${rows.length} feeds are on schedule.`;
+    document.getElementById('status-checked').textContent = `Checked ${new Date().toLocaleString('en-GB', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}. Times are UK local time.`;
+  }
+  document.getElementById('status-refresh').addEventListener('click', run);
+  run();
+</script>
+
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="wordmark" href="/">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+        <rect x="0" y="0" width="120" height="120" rx="28" fill="#0f172a"/>
+        <line x1="21" y1="30" x2="21" y2="90" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+        <line x1="34" y1="44" x2="80" y2="44" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="62" x2="92" y2="62" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="80" x2="66" y2="80" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <polyline points="80,44 96,27 103,32" fill="none" stroke="#f97316" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="103" cy="32" r="4.5" fill="#f97316"/>
+      </svg>
+          <b style="font-weight:inherit">The Energy <span>Ledger</span></b>
+        </a>
+        <p>The Energy Ledger is an independent read on UK energy markets.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Newsletter</h4>
+        <a href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe</a>
+        <a href="https://home.theenergyledger.co.uk/archive" target="_blank" rel="noopener">Archive</a>
+        <a href="/#coverage">Coverage</a>
+        <a href="/#about">About</a>
+      </div>
+      <div class="foot-col">
+        <h4>Live data</h4>
+        <a href="/prices.html">Prices &amp; costs</a>
+        <a href="/generation.html">GB generation</a>
+        <a href="/uk-gas.html">UK gas supply</a>
+        <a href="/lng.html">LNG</a>
+        <a href="/news.html">News</a>
+        <a href="/sources.html">Data sources</a>
+      </div>
+      <div class="foot-col">
+        <h4>Follow</h4>
+        <div class="socials" data-socials><a class="social" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener me" aria-label="The Energy Ledger on Substack" title="Substack"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a></div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span data-year>2026</span> The Energy Ledger. All rights reserved.</span>
+      <span>Data provided for information only, not for trading.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+
+<script>
+
+</script>
+
+</body>
+</html>

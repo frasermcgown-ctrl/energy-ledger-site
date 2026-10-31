@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-31T21:50:16.161Z",
+  "updated": "2026-10-31T21:53:00.248Z",
   "items": [
     {
       "title": "Business electricity bills fall 17% as energy use plummets",
@@ -82,6 +82,14 @@
       "published": "2026-10-28T18:16:58.000Z"
     },
     {
+      "title": "RenewableUK welcomes key measures announced in Chancellor’s Autumn Budget to cut energy bills",
+      "link": "https://www.renewableuk.com/news-and-resources/press-releases/renewableuk-welcomes-key-measures-announced-in-chancellor-s-autumn-budget-to-cut-energy-bills/",
+      "summary": "",
+      "source": "RenewableUK",
+      "topic": "renewables",
+      "published": "2026-10-28T12:00:00.000Z"
+    },
+    {
       "title": "Analysis: How the UK spent more than £11.6bn on climate aid since 2021",
       "link": "https://www.carbonbrief.org/analysis-how-the-uk-spent-more-than-11-6bn-on-climate-aid-since-2021",
       "summary": "The UK has spent £12.8bn on climate aid for developing countries since 2021, according to official figures obtained by Carbon…\nThe post Analysis: How the UK spent more than £11.6bn on climate aid since 2021 appeared firs",
@@ -138,12 +146,28 @@
       "published": "2026-10-21T12:00:00.000Z"
     },
     {
+      "title": "RenewableUK statement on Jackdaw gas field approval",
+      "link": "https://www.renewableuk.com/news-and-resources/press-releases/renewableuk-statement-on-jackdaw-gas-field-approval/",
+      "summary": "",
+      "source": "RenewableUK",
+      "topic": "gas",
+      "published": "2026-10-21T12:00:00.000Z"
+    },
+    {
       "title": "Revealed: Expensive gas behind ‘nearly 90%’ of rise in UK electricity bills",
       "link": "https://www.carbonbrief.org/revealed-expensive-gas-behind-nearly-90-of-rise-in-uk-electricity-bills",
       "summary": "A surge in wholesale costs driven by expensive gas is responsible for nearly 90% of the rise in UK household…\nThe post Revealed: Expensive gas behind ‘nearly 90%’ of rise in UK electricity bills appeared first on Carbon ",
       "source": "Carbon Brief",
       "topic": "gas",
       "published": "2026-10-21T11:37:55.000Z"
+    },
+    {
+      "title": "Electricity Networks Sector Growth Plan shows how building new UK grid will attract billions in investment and support hundreds of thousands of jobs",
+      "link": "https://www.renewableuk.com/news-and-resources/press-releases/electricity-networks-sector-growth-plan-shows-how-building-new-uk-grid-will-attract-billions-in-investment-and-support-hundreds-of-thousands-of-jobs/",
+      "summary": "",
+      "source": "RenewableUK",
+      "topic": "power",
+      "published": "2026-10-20T12:00:00.000Z"
     },
     {
       "title": "Ofgem unlocks funding for major electricity grid upgrade while delivering over £60 million of consumer savings",
@@ -170,12 +194,52 @@
       "published": "2026-10-14T12:00:00.000Z"
     },
     {
+      "title": "Winners announced for the Global Offshore Wind Awards 2026",
+      "link": "https://www.renewableuk.com/news-and-resources/press-releases/winners-announced-for-the-global-offshore-wind-awards-2026/",
+      "summary": "",
+      "source": "RenewableUK",
+      "topic": "renewables",
+      "published": "2026-10-14T12:00:00.000Z"
+    },
+    {
+      "title": "RenewableUK welcomes Conservative leader’s support for more clean power",
+      "link": "https://www.renewableuk.com/news-and-resources/press-releases/renewableuk-welcomes-conservative-leader-s-support-for-more-clean-power/",
+      "summary": "",
+      "source": "RenewableUK",
+      "topic": "renewables",
+      "published": "2026-10-07T12:00:00.000Z"
+    },
+    {
+      "title": "New report shows 38% increase in operational floating offshore wind capacity worldwide over past 12 months",
+      "link": "https://www.renewableuk.com/news-and-resources/press-releases/new-report-shows-38-increase-in-operational-floating-offshore-wind-capacity-worldwide-over-past-12-months/",
+      "summary": "",
+      "source": "RenewableUK",
+      "topic": "renewables",
+      "published": "2026-10-06T12:00:00.000Z"
+    },
+    {
       "title": "Ofgem appoints Tim Jarvis as Chief Executive",
       "link": "https://www.ofgem.gov.uk/press-release/ofgem-appoints-tim-jarvis-chief-executive",
       "summary": "The Board of Ofgem has confirmed the appointment of Tim Jarvis as Chief Executive following a rigorous and competitive recruitment process.",
       "source": "Ofgem",
       "topic": "policy",
       "published": "2026-10-05T12:00:00.000Z"
+    },
+    {
+      "title": "RenewableUK CEO’s comment on Shadow Energy Secretary Andrew Bowie’s speech at Conservative Party Conference",
+      "link": "https://www.renewableuk.com/news-and-resources/press-releases/renewableuk-ceo-s-comment-on-shadow-energy-secretary-andrew-bowie-s-speech-at-conservative-party-conference/",
+      "summary": "",
+      "source": "RenewableUK",
+      "topic": "renewables",
+      "published": "2026-10-05T12:00:00.000Z"
+    },
+    {
+      "title": "Delivering grid connections faster is essential to cut electricity bills",
+      "link": "https://www.renewableuk.com/news-and-resources/press-releases/delivering-grid-connections-faster-is-essential-to-cut-electricity-bills/",
+      "summary": "",
+      "source": "RenewableUK",
+      "topic": "power",
+      "published": "2026-09-29T12:00:00.000Z"
     },
     {
       "title": "Ofgem moves to free up grid capacity by tackling excess battery projects",
@@ -256,70 +320,6 @@
       "source": "NESO",
       "topic": "carbon",
       "published": "2026-02-13T12:00:00.000Z"
-    },
-    {
-      "title": "Britain's Energy Explained: 2025 Review",
-      "link": "https://www.neso.energy/news/britains-energy-explained-2025-review",
-      "summary": "In 2025, Great Britain achieved some major milestones on our journey to ensuring a secure, affordable and clean energy system. Take a look back at where our electricity came from in 2025 and some of the notable events th",
-      "source": "NESO",
-      "topic": "power",
-      "published": "2026-01-14T12:00:00.000Z"
-    },
-    {
-      "title": "NESO’s 2026 priorities: a more secure, affordable, sustainable energy future",
-      "link": "https://www.neso.energy/news/nesos-2026-priorities-more-secure-affordable-sustainable-energy-future",
-      "summary": "2026 will bring new challenges – but our focus at NESO is unchanged. Building an energy system in Great Britain (GB) that works for people, society and our economy.",
-      "source": "NESO",
-      "topic": "policy",
-      "published": "2026-01-05T12:00:00.000Z"
-    },
-    {
-      "title": "Forget a white Christmas – 2025 could be the greenest ever",
-      "link": "https://www.neso.energy/news/forget-white-christmas-2025-could-be-greenest-ever",
-      "summary": "While many of us will be hoping for snow across Great Britain on Christmas Day to complete the pe",
-      "source": "NESO",
-      "topic": "policy",
-      "published": "2025-12-20T12:00:00.000Z"
-    },
-    {
-      "title": "Energy Explained: How inertia keeps the lights on",
-      "link": "https://www.neso.energy/news/energy-explained-how-inertia-keeps-lights",
-      "summary": "Resisting change isn’t always considered a good thing in life. But in the world of physics, it’s vital.",
-      "source": "NESO",
-      "topic": "policy",
-      "published": "2025-12-18T12:00:00.000Z"
-    },
-    {
-      "title": "Taking an economic lens to our Future Energy Scenarios",
-      "link": "https://www.neso.energy/news/taking-economic-lens-our-future-energy-scenarios",
-      "summary": "Great Britain’s energy system is in the middle of a major energy transformation.",
-      "source": "NESO",
-      "topic": "policy",
-      "published": "2025-12-11T12:00:00.000Z"
-    },
-    {
-      "title": "Energy Explained: What happens when the clocks go back?",
-      "link": "https://www.neso.energy/news/energy-explained-what-happens-when-clocks-go-back",
-      "summary": "Craig Dyke, Director of System Operations at the National Energy System Operator, sets out how managing the impact of the autumn clock change is all in a (25 hour) day’s work for his team of engineers.",
-      "source": "NESO",
-      "topic": "policy",
-      "published": "2025-10-23T12:00:00.000Z"
-    },
-    {
-      "title": "Connections Reform: The key to unlocking GB growth",
-      "link": "https://www.neso.energy/news/connections-reform-key-unlocking-gb-growth",
-      "summary": "Connections reform underpins a once-in-a-generation opportunity to modernise Great Britain’s (GB’s) energy grid, creating a fairer, more efficient system that boosts economic growth, strengthens energy security, and acce",
-      "source": "NESO",
-      "topic": "power",
-      "published": "2025-10-16T12:00:00.000Z"
-    },
-    {
-      "title": "Winter Outlook: Complacency isn't an option",
-      "link": "https://www.neso.energy/news/winter-outlook-complacency-isnt-option",
-      "summary": "Whilst the Winter Outlook gives the best margins on the electricity system in six years, Director of Resilience and Emergency Management, Dr Deborah Petterson warns of importance of maintaining vigilance.",
-      "source": "NESO",
-      "topic": "power",
-      "published": "2025-10-08T12:00:00.000Z"
     }
   ]
 }

@@ -89,6 +89,8 @@
   .snap.wide{ grid-column:1 / -1; display:flex; align-items:center; justify-content:space-between; gap:12px; }
   .snap.wide .snap-value{ margin-top:4px; }
   .snap-note{ padding:12px 16px 8px; font-size:12.5px; color:var(--ink-3); line-height:1.5; }
+  .snap-src{ margin-top:4px; font-size:11.5px; color:var(--ink-3); line-height:1.35; }
+  .snap-src .auto{ color:#15803d; font-weight:600; }
 
   /* ---------- Latest issues ---------- */
   .issues-grid{ display:grid; grid-template-columns:1.4fr 1fr; gap:16px; }
@@ -311,24 +313,28 @@
       <aside class="card snapshot" aria-labelledby="snap-title">
         <div class="snapshot-head">
           <h2 id="snap-title">Market snapshot</h2>
-          <span class="tag">Week to date</span>
+          <span class="tag">Latest</span>
         </div>
         <div class="snap-grid">
           <div class="snap">
-            <div class="snap-label"><i style="background:var(--gas)"></i>NBP day-ahead</div>
-            <div class="snap-value" data-key="ticker_nbp">62.40p/th</div>
+            <div class="snap-label"><i style="background:var(--gas)"></i>NBP gas (SAP)</div>
+            <div class="snap-value" id="px-gas">—</div>
+            <div class="snap-src" id="px-gas-src">National Gas</div>
           </div>
           <div class="snap">
             <div class="snap-label"><i style="background:var(--gas)"></i>TTF front month</div>
-            <div class="snap-value" data-key="ticker_ttf">€31.20/MWh</div>
+            <div class="snap-value" data-key="ticker_ttf">—</div>
+            <div class="snap-src">Hand-entered · <span data-key="ticker_asof">awaiting update</span></div>
           </div>
           <div class="snap">
-            <div class="snap-label"><i style="background:var(--power)"></i>UK power day-ahead</div>
-            <div class="snap-value" data-key="ticker_ukpower">£74.15/MWh</div>
+            <div class="snap-label"><i style="background:var(--power)"></i>GB power (market index)</div>
+            <div class="snap-value" id="px-power">—</div>
+            <div class="snap-src" id="px-power-src">Elexon</div>
           </div>
           <div class="snap">
             <div class="snap-label"><i style="background:var(--carbon)"></i>EUA carbon</div>
-            <div class="snap-value" data-key="ticker_eua">€68.90</div>
+            <div class="snap-value" data-key="ticker_eua">—</div>
+            <div class="snap-src">Hand-entered · <span data-key="ticker_asof">awaiting update</span></div>
           </div>
           <div class="snap live wide">
             <div>
@@ -341,7 +347,7 @@
             </div>
           </div>
         </div>
-        <p class="snap-note">Prices updated weekly by hand from broker reports — illustrative, not for trading. Carbon intensity and generation mix are live from the National Energy System Operator.</p>
+        <p class="snap-note">NBP gas and GB power update automatically from National Gas and Elexon open data. TTF and EUA are entered by hand from broker reports. Carbon intensity and generation mix are live from the National Energy System Operator. Indicative only, not for trading.</p>
       </aside>
     </div>
   </section>
@@ -584,6 +590,22 @@
   // Live GB carbon intensity + generation mix — National Energy System Operator's
   // free public Carbon Intensity API (CORS-enabled, no key required, CC BY 4.0).
   const FUEL_LABEL = { gas: 'Gas', coal: 'Coal', biomass: 'Biomass', nuclear: 'Nuclear', hydro: 'Hydro', imports: 'Imports', other: 'Other', wind: 'Wind', solar: 'Solar' };
+
+  // Automated NBP SAP and GB power index (see netlify/functions/fetch-prices.mjs).
+  fetch('/content/market-prices.json')
+    .then(r => r.json())
+    .then(d => {
+      const day = iso => new Date(iso + 'T12:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+      if (d.gas && Number.isFinite(d.gas.pencePerTherm)) {
+        document.getElementById('px-gas').textContent = `${fmtNumber(d.gas.pencePerTherm, 2)}p/th`;
+        document.getElementById('px-gas-src').innerHTML = `<span class="auto">Auto</span> · gas day ${escapeHtml(day(d.gas.gasDay))} · National Gas`;
+      }
+      if (d.power && Number.isFinite(d.power.poundsPerMwh)) {
+        document.getElementById('px-power').textContent = `£${fmtNumber(d.power.poundsPerMwh, 2)}/MWh`;
+        document.getElementById('px-power-src').innerHTML = `<span class="auto">Auto</span> · ${escapeHtml(day(d.power.settlementDate))} daily avg · Elexon`;
+      }
+    })
+    .catch(() => {});
 
   fetch('https://api.carbonintensity.org.uk/intensity')
     .then(r => r.json())

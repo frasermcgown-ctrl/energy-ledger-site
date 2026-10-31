@@ -241,7 +241,8 @@
   fetch('/content/ember-uk.json').then(r => r.ok ? r.json() : Promise.reject()).then(e => {
     const years = e.years || [];
     if (years.length < 2) return;
-    const share = (y, keys) => { const tot = Object.values(y.twh).reduce((a, b) => a + b, 0); return tot ? keys.reduce((a, k) => a + (y.twh[k] || 0), 0) / tot * 100 : 0; };
+    // Share of UK generation, as Ember publishes it: net imports are not generation, so leave them out of the total.
+    const share = (y, keys) => { const tot = Object.entries(y.twh).filter(([k]) => k !== 'Net imports').reduce((a, [, v]) => a + v, 0); return tot ? keys.reduce((a, k) => a + (y.twh[k] || 0), 0) / tot * 100 : 0; };
     const SERIES = [['Wind', ['Wind'], '#0d9488'], ['Gas', ['Gas'], '#2563eb'], ['Nuclear', ['Nuclear'], '#d97706'], ['Coal', ['Coal'], '#7c3aed']];
     document.getElementById('longrun').hidden = false; document.getElementById('ember-credit').hidden = false;
     ELCharts.lineChart(document.getElementById('c-longrun'), SERIES.map(([name, keys, color]) => ({ name, color, points: years.map(y => ({ x: new Date(Date.UTC(y.year, 6, 1)), y: Math.round(share(y, keys) * 10) / 10 })) })),

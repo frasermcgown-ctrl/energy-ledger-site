@@ -11,6 +11,7 @@
 <meta property="og:title" content="UK Gas & Power Prices, Price Cap and Balancing Costs — The Energy Ledger">
 <meta property="og:description" content="Daily NBP gas (SAP) and GB power prices with history, the Ofgem price cap, and monthly grid balancing costs, updated automatically from official open data.">
 <meta property="og:url" content="https://www.theenergyledger.co.uk/prices.html">
+<link rel="canonical" href="https://www.theenergyledger.co.uk/prices.html">
 <meta property="og:image" content="https://www.theenergyledger.co.uk/og-image.png?v=2">
 <meta name="twitter:card" content="summary_large_image">
 <!-- Google tag (gtag.js) -->
@@ -27,6 +28,30 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="icon-mark.svg">
 <link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Dataset",
+ "name": "UK gas and power prices, price cap and balancing costs",
+ "description": "Daily NBP gas System Average Price (pence per therm) and GB power market index (£/MWh) with up to a year of history, the Ofgem default tariff price cap, monthly grid balancing costs, Contracts for Difference payments, European day-ahead power prices and the UK carbon auction calendar, compiled from official open data.",
+ "url": "https://www.theenergyledger.co.uk/prices.html",
+ "creator": {
+  "@type": "Organization",
+  "name": "The Energy Ledger",
+  "url": "https://www.theenergyledger.co.uk/"
+ },
+ "isAccessibleForFree": true,
+ "spatialCoverage": "United Kingdom",
+ "keywords": [
+  "NBP gas price",
+  "UK power price",
+  "Ofgem price cap",
+  "balancing costs",
+  "Contracts for Difference",
+  "UK ETS"
+ ]
+}
+</script>
 </head>
 <body>
 
@@ -168,6 +193,36 @@
           <div id="uka-next"><p class="loading">Loading auction calendar…</p></div>
           <dl class="kv" id="uka-kv" style="margin-top:14px;"></dl>
           <p class="stat-foot" id="uka-foot" style="margin-top:14px;"></p>
+        </div>
+      </div>
+
+      <div class="explainer">
+        <h2>Understanding UK energy prices</h2>
+        <div class="explainer-grid">
+          <div>
+            <h3>What is the NBP gas price?</h3>
+            <p>The National Balancing Point (NBP) is the virtual trading hub for gas in Great Britain. The System Average Price (SAP) shown here is the average price of gas traded for each gas day on the on-the-day market, quoted in pence per therm. One therm is about 29.3 kWh.</p>
+          </div>
+          <div>
+            <h3>Why does the gas price drive electricity prices?</h3>
+            <p>Gas power stations are usually the last plant needed to meet demand, so they often set the wholesale electricity price. When gas gets dearer, power usually follows. On windy, sunny days with low demand, renewables can push power prices down sharply.</p>
+          </div>
+          <div>
+            <h3>What does £ per MWh mean for my bill?</h3>
+            <p>A megawatt hour is 1,000 kWh, so a wholesale price of £100/MWh works out at 10p per kWh. Household unit rates are higher because they also cover network charges, policy costs, balancing, VAT and supplier costs.</p>
+          </div>
+          <div>
+            <h3>How does the Ofgem price cap work?</h3>
+            <p>Ofgem sets the maximum unit rates and standing charges suppliers can charge on default (standard variable) tariffs, and updates them every quarter based on wholesale and other costs. It caps prices, not total bills: the more energy you use, the more you pay.</p>
+          </div>
+          <div>
+            <h3>What are balancing costs?</h3>
+            <p>The National Energy System Operator pays generators and others to turn up or down second by second, keeping supply matched to demand and the grid within its limits. Much of it comes from managing constraints when the network can't carry all the wind power to where it's needed. These costs are passed on to bills.</p>
+          </div>
+          <div>
+            <h3>What are Contracts for Difference?</h3>
+            <p>CfDs give low-carbon generators a fixed strike price. When the market price is below it, they are topped up, funded through bills; when the market is above it, they pay the difference back. That's why payments can swing from positive to negative.</p>
+          </div>
         </div>
       </div>
 

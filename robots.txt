@@ -1,0 +1,6 @@
+# The Energy Ledger
+User-agent: *
+Allow: /
+Disallow: /admin/
+
+Sitemap: https://www.theenergyledger.co.uk/sitemap.xml

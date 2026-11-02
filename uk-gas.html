@@ -11,6 +11,7 @@
 <meta property="og:title" content="Live UK Gas Supply, Demand and Storage — The Energy Ledger">
 <meta property="og:description" content="Live UK gas supply by terminal, including LNG from Milford Haven and Isle of Grain, demand by category, linepack and storage flows, from National Gas Transmission's open data.">
 <meta property="og:url" content="https://www.theenergyledger.co.uk/uk-gas.html">
+<link rel="canonical" href="https://www.theenergyledger.co.uk/uk-gas.html">
 <meta property="og:image" content="https://www.theenergyledger.co.uk/og-image.png?v=2">
 <meta name="twitter:card" content="summary_large_image">
 <!-- Google tag (gtag.js) -->
@@ -27,6 +28,30 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="icon-mark.svg">
 <link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Dataset",
+ "name": "Live UK gas supply, demand and storage",
+ "description": "Live UK gas supply by terminal, including Norwegian pipeline imports, North Sea production and LNG from Milford Haven and Isle of Grain, gas demand by category, linepack and storage flows, from National Gas Transmission's open data.",
+ "url": "https://www.theenergyledger.co.uk/uk-gas.html",
+ "creator": {
+  "@type": "Organization",
+  "name": "The Energy Ledger",
+  "url": "https://www.theenergyledger.co.uk/"
+ },
+ "isAccessibleForFree": true,
+ "spatialCoverage": "United Kingdom",
+ "keywords": [
+  "UK gas supply",
+  "gas demand",
+  "gas storage",
+  "LNG imports",
+  "Norway gas",
+  "linepack"
+ ]
+}
+</script>
 </head>
 <body>
 
@@ -126,6 +151,28 @@
           </div>
           <div class="bars" id="storage-list"><p class="loading">Loading storage data…</p></div>
           <p class="stat-foot" id="storage-note" style="margin-top:10px;"></p>
+        </div>
+      </div>
+
+      <div class="explainer">
+        <h2>Understanding UK gas</h2>
+        <div class="explainer-grid">
+          <div>
+            <h3>Where does Britain's gas come from?</h3>
+            <p>Mainly from three places: the UK's own North Sea fields, pipelines from Norway, and liquefied natural gas (LNG) shipped in from countries such as the United States and Qatar. Interconnectors with Belgium and the Netherlands can bring gas in or send it out.</p>
+          </div>
+          <div>
+            <h3>Where does it go?</h3>
+            <p>Homes and businesses on local networks use the most, especially in winter for heating. Gas power stations are the next biggest user, and their demand rises when the wind is low. Some is used directly by industry or exported to Europe and Ireland.</p>
+          </div>
+          <div>
+            <h3>What is linepack?</h3>
+            <p>Linepack is the gas held in the high-pressure pipelines themselves. The system operator lets it rise and fall through the day as a short-term buffer between supply and demand.</p>
+          </div>
+          <div>
+            <h3>Why does storage matter?</h3>
+            <p>Britain has much less gas storage than many European countries, so it relies on flexible imports, especially LNG, to cover cold snaps. Storage sites inject gas when it's cheap and withdraw it when demand is high.</p>
+          </div>
         </div>
       </div>
 

@@ -1,6 +1,62 @@
 {
-  "updated": "2026-11-02T12:35:14.992Z",
+  "updated": "2026-11-02T18:35:13.472Z",
   "items": [
+    {
+      "title": "Improved power for data centres could save £163 billion",
+      "link": "https://www.energylivenews.com/2026/11/02/improved-power-for-data-centres-could-save-163-billion/",
+      "summary": "Onsite power is becoming popular amongst data centre developers as it helps avoid grid connection queues\nThe post Improved power for data centres could save £163 billion appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "power",
+      "published": "2026-11-02T18:00:00.000Z"
+    },
+    {
+      "title": "Energy Act 2013 (Part 3): annual reports",
+      "link": "https://www.gov.uk/government/collections/energy-act-2013-part-3-annual-reports",
+      "summary": "Annual report on the exercise of powers under Part 3 of the Energy Act 2013, covering the Office for Nuclear Regulation (ONR).",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "renewables",
+      "published": "2026-11-02T15:55:47+00:00"
+    },
+    {
+      "title": "Energy Act 2013 (Part 3): annual report, 2025 to 2026",
+      "link": "https://www.gov.uk/government/publications/energy-act-2013-part-3-annual-report-2025-to-2026",
+      "summary": "Annual report on the exercise of powers under Part 3 of the Energy Act 2013, for the year ended 31 March 2026, covering the Office for Nuclear Regulation (ONR).",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "renewables",
+      "published": "2026-11-02T15:54:16+00:00"
+    },
+    {
+      "title": "Grid readiness is among biggest barriers for energy infrastructure",
+      "link": "https://www.energylivenews.com/2026/11/02/grid-readiness-is-among-biggest-barriers-for-energy-infrastructure/",
+      "summary": "Over half of UK energy leaders say it ranks in their top three issues\nThe post Grid readiness is among biggest barriers for energy infrastructure appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "power",
+      "published": "2026-11-02T15:00:00.000Z"
+    },
+    {
+      "title": "The Smarta Weekly Market Update – 2nd November 2026",
+      "link": "https://www.energylivenews.com/2026/11/02/the-smarta-weekly-market-update-2nd-november-2026/",
+      "summary": "Stay ahead of UK energy markets with Smarta Energy’s weekly update, covering key price movements, market drivers, risks and what they mean for businesses\nThe post The Smarta Weekly Market Update – 2nd November 2026 appea",
+      "source": "Energy Live News",
+      "topic": "policy",
+      "published": "2026-11-02T13:02:24.000Z"
+    },
+    {
+      "title": "National Grid buys land at Teesworks for 1.44-GW UK substation",
+      "link": "https://renewablesnow.com/news/national-grid-buys-land-at-teesworks-for-1-44-gw-uk-substation-1304152?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss-source/",
+      "summary": "",
+      "source": "Renewables Now",
+      "topic": "power",
+      "published": "2026-11-02T13:00:13.000Z"
+    },
+    {
+      "title": "Government approves major undersea power connection",
+      "link": "https://www.energylivenews.com/2026/11/02/government-approves-major-undersea-power-connection/",
+      "summary": "The 2GW link is expected to carry enough electricity to power the equivalent of two million homes\nThe post Government approves major undersea power connection appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "power",
+      "published": "2026-11-02T13:00:00.000Z"
+    },
     {
       "title": "Green Gas Support Scheme: budget management",
       "link": "https://www.gov.uk/government/publications/green-gas-support-scheme-budget-management",
@@ -50,22 +106,6 @@
       "published": "2026-11-02T09:30:06+00:00"
     },
     {
-      "title": "National Grid to invest £400 million into UK-France electricity link",
-      "link": "https://www.energylivenews.com/2026/11/02/national-grid-to-invest-400-million-into-uk-france-electricity-link/",
-      "summary": "The financing will help extend operation until at least 2050\nThe post National Grid to invest £400 million into UK-France electricity link appeared first on Energy Live News.\n",
-      "source": "Energy Live News",
-      "topic": "power",
-      "published": "2026-11-02T07:00:00.000Z"
-    },
-    {
-      "title": "Business electricity bills fall 17% as energy use plummets",
-      "link": "https://www.energylivenews.com/2026/10/30/business-electricity-bills-fall-17-as-energy-use-plummets/",
-      "summary": "The biggest decreases were seen in North East England and South Wales \nThe post Business electricity bills fall 17% as energy use plummets appeared first on Energy Live News.\n",
-      "source": "Energy Live News",
-      "topic": "power",
-      "published": "2026-10-30T18:00:00.000Z"
-    },
-    {
       "title": "UK ETS Allocation Table for operators of installations",
       "link": "https://www.gov.uk/government/publications/uk-ets-allocation-table-for-operators-of-installations",
       "summary": "This table contains a list of each installation’s free allocation for the 2021 to 2026 allocation period.",
@@ -80,14 +120,6 @@
       "source": "Dept for Energy Security & Net Zero",
       "topic": "power",
       "published": "2026-10-30T16:32:23+00:00"
-    },
-    {
-      "title": "Cleaning the atmosphere with a CO₂ conveyor belt",
-      "link": "https://www.energylivenews.com/2026/10/30/cleaning-the-atmosphere-with-a-co%e2%82%82-conveyor-belt/",
-      "summary": "Ultra-thin coatings could capture and release the gas in seconds and enable more flexible carbon removal systems\nThe post Cleaning the atmosphere with a CO₂ conveyor belt appeared first on Energy Live News.\n",
-      "source": "Energy Live News",
-      "topic": "gas",
-      "published": "2026-10-30T16:00:00.000Z"
     },
     {
       "title": "Smart Secure Electricity Systems (SSES) tariff interoperability: code modifications for Phase 1a",
@@ -288,38 +320,6 @@
       "source": "Ofgem",
       "topic": "policy",
       "published": "2026-08-06T12:00:00.000Z"
-    },
-    {
-      "title": "Ofgem acts to free up grid capacity by tackling speculative data centre projects",
-      "link": "https://www.ofgem.gov.uk/press-release/ofgem-acts-free-grid-capacity-tackling-speculative-data-centre-projects",
-      "summary": "Our consultation on plans to tackle speculative data centre projects in Britain's electricity connections queue.",
-      "source": "Ofgem",
-      "topic": "power",
-      "published": "2026-07-29T12:00:00.000Z"
-    },
-    {
-      "title": "Positive progress on skip rates and next steps",
-      "link": "https://www.neso.energy/news/positive-progress-skip-rates-and-next-steps",
-      "summary": "Skip rates have become one of the most talked about metrics in electricity system operation over the last couple of years and rightly so.",
-      "source": "NESO",
-      "topic": "power",
-      "published": "2026-07-07T12:00:00.000Z"
-    },
-    {
-      "title": "Ofgem boosts long duration storage to secure more homegrown energy for customers",
-      "link": "https://www.ofgem.gov.uk/press-release/ofgem-boosts-long-duration-storage-secure-more-homegrown-energy-customers",
-      "summary": "Energy regulator Ofgem gives provisional green light to a new generation of energy storage to reduce Great Britain’s reliance on energy imports",
-      "source": "Ofgem",
-      "topic": "gas",
-      "published": "2026-06-26T12:00:00.000Z"
-    },
-    {
-      "title": "Energy explained blog: Electricity Margin Notice 24.06.26",
-      "link": "https://www.neso.energy/news/energy-explained-blog-electricity-margin-notice-240626",
-      "summary": "Yesterday, NESO issued an Electricity Margin Notice (EMN) to the electricity market.",
-      "source": "NESO",
-      "topic": "power",
-      "published": "2026-06-24T12:00:00.000Z"
     }
   ]
 }

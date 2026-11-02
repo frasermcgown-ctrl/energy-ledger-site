@@ -1,7 +1,7 @@
 // Runs on a schedule (see the `config` export below). Pulls every published
 // post from The Energy Ledger on Substack and commits the list to
-// content/substack-posts.json — which triggers Netlify's existing
-// auto-deploy, so the homepage's "Latest issues" section stays current.
+// content/substack-posts.json, which the homepage's "Latest issues" section
+// reads (from GitHub, so no deploy is needed).
 //
 // Substack's archive API returns every post; the RSS feed only carries the
 // latest 20, so it is used as a fallback if the archive API fails.
@@ -79,6 +79,33 @@ async function fetchFromRss() {
   return posts;
 }
 
+// Substack's archive can keep listing a post for a while after it has been
+// deleted or unpublished, so check each post's page and drop any that now
+// return "not found". A network error keeps the post. If most posts look
+// missing at once, assume a Substack outage and keep the list unchanged.
+async function removeDeletedPosts(posts) {
+  const gone = new Set();
+  const queue = [...posts];
+  const worker = async () => {
+    while (queue.length) {
+      const p = queue.shift();
+      try {
+        const res = await fetch(p.url, { headers: HEADERS, redirect: "follow", signal: AbortSignal.timeout(8000) });
+        if (res.status === 404 || res.status === 410) gone.add(p.url);
+      } catch {
+        // Unreachable right now: keep it.
+      }
+    }
+  };
+  await Promise.all(Array.from({ length: 6 }, worker));
+  if (gone.size > posts.length / 2) {
+    console.log(`${gone.size} of ${posts.length} posts look missing — probably a Substack outage, keeping them all.`);
+    return posts;
+  }
+  if (gone.size) console.log(`Dropping ${gone.size} deleted post(s): ${[...gone].join(", ")}`);
+  return posts.filter(p => !gone.has(p.url));
+}
+
 // mergeWithExisting: the RSS fallback only carries the latest 20 posts, so add
 // them to the stored list rather than replacing it.
 async function commitToGitHub(posts, mergeWithExisting) {
@@ -112,6 +139,7 @@ async function commitToGitHub(posts, mergeWithExisting) {
         posts = [...posts, ...existing.posts.filter(p => !fresh.has(p.url))]
           .sort((a, b) => new Date(b.published) - new Date(a.published));
       }
+      posts = await removeDeletedPosts(posts);
       if (JSON.stringify(existing.posts) === JSON.stringify(posts)) {
         console.log(`No change in ${posts.length} posts — skipping commit.`);
         return;

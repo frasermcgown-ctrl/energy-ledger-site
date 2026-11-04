@@ -1,6 +1,70 @@
 {
-  "updated": "2026-11-04T06:35:15.407Z",
+  "updated": "2026-11-04T12:35:17.062Z",
   "items": [
+    {
+      "title": "What 30 years in engineering has taught me about planning for the future",
+      "link": "https://www.neso.energy/news/what-30-years-engineering-has-taught-me-about-planning-future",
+      "summary": "Being elected a Fellow of the Royal Academy of Engineering is a great honour.",
+      "source": "NESO",
+      "topic": "policy",
+      "published": "2026-11-04T12:00:00.000Z"
+    },
+    {
+      "title": "Pensioners to get more energy support through £1.7m partnership",
+      "link": "https://www.energylivenews.com/2026/11/04/pensioners-to-get-more-energy-support-through-1-7m-partnership/",
+      "summary": "Age charities and gas networks are expanding energy support for older people\nThe post Pensioners to get more energy support through £1.7m partnership appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "gas",
+      "published": "2026-11-04T11:00:00.000Z"
+    },
+    {
+      "title": "Flagship Energy’s Mike Stafford Energy Markets Update – 4th November",
+      "link": "https://www.energylivenews.com/2026/11/04/flagship-energys-mike-stafford-energy-markets-update-4th-november/",
+      "summary": "Mike Stafford, Senior Risk Trader at Flagship Energy provides a market update\nThe post Flagship Energy’s Mike Stafford Energy Markets Update – 4th November appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "policy",
+      "published": "2026-11-04T10:50:36.000Z"
+    },
+    {
+      "title": "Functioning of the UK carbon market",
+      "link": "https://www.gov.uk/government/collections/functioning-of-the-uk-carbon-market",
+      "summary": "A summary of the operational performance of the UK Emissions Trading Scheme for each scheme year.",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "carbon",
+      "published": "2026-11-04T09:46:24+00:00"
+    },
+    {
+      "title": "Functioning of the UK carbon market, 2025",
+      "link": "https://www.gov.uk/government/publications/functioning-of-the-uk-carbon-market-2025",
+      "summary": "A high-level summary of the performance of the UK Emissions Trading Scheme during the fourth scheme year of its operation.",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "carbon",
+      "published": "2026-11-04T09:45:55+00:00"
+    },
+    {
+      "title": "Bringing clean solar power to communities in Bangladesh",
+      "link": "https://www.gov.uk/government/case-studies/bringing-clean-solar-power-to-communities-in-bangladesh",
+      "summary": "The UK’s International Climate Finance is helping Bangladesh sustain clean, affordable electricity for millions of people in rural and off-grid communities.",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "renewables",
+      "published": "2026-11-04T09:30:06+00:00"
+    },
+    {
+      "title": "Growing LNG supply eases the Hormuz squeeze on gas",
+      "link": "https://www.energylivenews.com/2026/11/04/growing-lng-supply-eases-the-hormuz-squeeze-on-gas/",
+      "summary": "Europe is entering the winter with its lowest natural gas storage levels in more than a decade\nThe post Growing LNG supply eases the Hormuz squeeze on gas appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "lng",
+      "published": "2026-11-04T09:00:00.000Z"
+    },
+    {
+      "title": "MPs call for national targets to cut water pollution",
+      "link": "https://www.energylivenews.com/2026/11/04/mps-call-for-national-targets-to-cut-water-pollution/",
+      "summary": "A cross-party committee wants a new system to close loopholes that allow low-level pollution to go unpunished\nThe post MPs call for national targets to cut water pollution appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "policy",
+      "published": "2026-11-04T07:00:00.000Z"
+    },
     {
       "title": "Oil and gas: offshore environmental legislation",
       "link": "https://www.gov.uk/guidance/oil-and-gas-offshore-environmental-legislation",
@@ -26,68 +90,12 @@
       "published": "2026-11-03T15:53:22+00:00"
     },
     {
-      "title": "UK ETS technical guidance: Free Allocation Regulation (FAR)",
-      "link": "https://www.gov.uk/government/publications/uk-ets-technical-guidance-free-allocation-regulation-far",
-      "summary": "Technical guidance to assist UK ETS installation operators in complying with the requirements that relate to the Free Allocation Regulation (FAR).",
-      "source": "Dept for Energy Security & Net Zero",
-      "topic": "carbon",
-      "published": "2026-11-03T15:43:10+00:00"
-    },
-    {
-      "title": "UK ETS technical guidance: Monitoring and Reporting Regulation (MRR) 2018",
-      "link": "https://www.gov.uk/government/publications/uk-ets-technical-guidance-monitoring-and-reporting-regulation-mrr-2018",
-      "summary": "Technical guidance to assist UK ETS installation operators in complying with the requirements that relate to the Monitoring and Reporting Regulation (MRR) 2018.",
-      "source": "Dept for Energy Security & Net Zero",
-      "topic": "carbon",
-      "published": "2026-11-03T15:42:36+00:00"
-    },
-    {
-      "title": "Europe’s airports are cleaning up their act – and it’s not just about carbon",
-      "link": "https://www.energylivenews.com/2026/11/03/europes-airports-are-cleaning-up-their-act-and-its-not-just-about-carbon/",
-      "summary": "New European airport strategy looks beyond carbon to resilience, nature and communities\nThe post Europe’s airports are cleaning up their act – and it’s not just about carbon appeared first on Energy Live News.\n",
-      "source": "Energy Live News",
-      "topic": "policy",
-      "published": "2026-11-03T13:00:00.000Z"
-    },
-    {
-      "title": "Chancellor’s approach to renewables “puts Scottish jobs in jeopardy”",
-      "link": "https://www.energylivenews.com/2026/11/03/chancellors-approach-to-renewables-puts-scottish-jobs-in-jeopardy/",
-      "summary": "Labour will only procure new clean projects where they lower electricity bills and can connect to the grid\nThe post Chancellor’s approach to renewables “puts Scottish jobs in jeopardy” appeared first on Energy Live News.",
-      "source": "Energy Live News",
-      "topic": "renewables",
-      "published": "2026-11-03T11:00:00.000Z"
-    },
-    {
-      "title": "Independent regulatory skills and capability review of the Office of Gas and Electricity Markets (Ofgem)",
-      "link": "https://www.gov.uk/government/publications/independent-regulatory-skills-and-capability-review-of-the-office-of-gas-and-electricity-markets-ofgem",
-      "summary": "Review of the future skills and capabilities of the Office of Gas and Electricity Markets (Ofgem), with recommendations from an independent expert panel",
-      "source": "Dept for Energy Security & Net Zero",
-      "topic": "gas",
-      "published": "2026-11-03T09:30:03+00:00"
-    },
-    {
-      "title": "Downing wins planning approval for 42-MW UK solar, storage project",
-      "link": "https://renewablesnow.com/news/downing-wins-planning-approval-for-42-mw-uk-solar-storage-project-1304205?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss-source/",
-      "summary": "",
-      "source": "Renewables Now",
-      "topic": "gas",
-      "published": "2026-11-03T09:26:23.000Z"
-    },
-    {
-      "title": "Giant 12-tonne box lowered into place for fusion upgrade",
-      "link": "https://www.gov.uk/government/news/giant-12-tonne-box-lowered-into-place-for-fusion-upgrade",
-      "summary": "12-tonne ‘double beam box’ vessel will double MAST Upgrade’s heating power, allowing scientists to investigate plasma conditions needed for future power plants.",
-      "source": "Dept for Energy Security & Net Zero",
+      "title": "The balancing act",
+      "link": "https://www.neso.energy/news/balancing-act",
+      "summary": "Let’s talk balancing costs.",
+      "source": "NESO",
       "topic": "power",
-      "published": "2026-11-03T09:24:00+00:00"
-    },
-    {
-      "title": "Sodium-ion batteries are taking on lithium in Europe",
-      "link": "https://www.energylivenews.com/2026/11/03/sodium-ion-batteries-are-taking-on-lithium-in-europe/",
-      "summary": "Sodium-ion battery storage is set to expand across Europe by 2031\nThe post Sodium-ion batteries are taking on lithium in Europe appeared first on Energy Live News.\n",
-      "source": "Energy Live News",
-      "topic": "gas",
-      "published": "2026-11-03T09:00:00.000Z"
+      "published": "2026-11-03T12:00:00.000Z"
     },
     {
       "title": "Chancellor is right to focus on value for money for billpayers when deciding which clean energy projects should go ahead",
@@ -146,22 +154,6 @@
       "published": "2026-10-26T12:00:00.000Z"
     },
     {
-      "title": "US govt seeks remand of New England Wind offshore wind project approval",
-      "link": "https://renewablesnow.com/news/us-govt-seeks-remand-of-new-england-wind-offshore-wind-project-approval-1303592?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss-source/",
-      "summary": "",
-      "source": "Renewables Now",
-      "topic": "renewables",
-      "published": "2026-10-23T13:23:43.000Z"
-    },
-    {
-      "title": "Britain’s electricity supplies expected to remain secure this winter",
-      "link": "https://www.neso.energy/news/britains-electricity-supplies-expected-remain-secure-winter",
-      "summary": "Britain is expected to have sufficient electricity supplies this winter, with new analysis from Winter Outlook 2026/27 forecasting adequate electricity margins throughout the colder months.",
-      "source": "NESO",
-      "topic": "power",
-      "published": "2026-10-23T12:00:00.000Z"
-    },
-    {
       "title": "Ofgem consults on proposals to reinforce gas import capability",
       "link": "https://www.ofgem.gov.uk/press-release/ofgem-consults-proposals-reinforce-gas-import-capability",
       "summary": "Today, Ofgem has approved Interconnector Limited entering into an agreement, under its licence, with National Gas Transmission plc to reinforce gas import capability through the Great Britain-Belgium interconnector.",
@@ -199,14 +191,6 @@
       "summary": "Ofgem has greenlit a £642.1 million funding package for National Grid Electricity Transmission’s Bramford to Twinstead project in East Anglia",
       "source": "Ofgem",
       "topic": "power",
-      "published": "2026-10-19T12:00:00.000Z"
-    },
-    {
-      "title": "Independent investigation concludes allegations against NESO were unsubstantiated",
-      "link": "https://www.neso.energy/news/independent-investigation-concludes-allegations-against-neso-were-unsubstantiated",
-      "summary": "An independent investigation into allegations raised about operational decision-making and record",
-      "source": "NESO",
-      "topic": "policy",
       "published": "2026-10-19T12:00:00.000Z"
     },
     {
@@ -320,6 +304,22 @@
       "source": "NESO",
       "topic": "power",
       "published": "2026-04-30T12:00:00.000Z"
+    },
+    {
+      "title": "NESO publishes Summer Outlook",
+      "link": "https://www.neso.energy/news/neso-publishes-summer-outlook",
+      "summary": "NESO has published its annual Summer Outlook today, setting out how Great Britain’s electricity system is expected to operate over the warmer months this year.",
+      "source": "NESO",
+      "topic": "power",
+      "published": "2026-04-14T12:00:00.000Z"
+    },
+    {
+      "title": "Strategic Energy Planning changes: a first for Great Britain",
+      "link": "https://www.neso.energy/news/strategic-energy-planning-changes-first-great-britain",
+      "summary": "Great Britain’s energy system is going through its biggest transformation in a century. The UK Government wants clean power for GB by 2030, and net zero carbon emissions by 2050.",
+      "source": "NESO",
+      "topic": "carbon",
+      "published": "2026-02-13T12:00:00.000Z"
     }
   ]
 }

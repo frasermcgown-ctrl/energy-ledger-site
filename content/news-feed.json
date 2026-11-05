@@ -1,6 +1,14 @@
 {
-  "updated": "2026-11-05T12:35:14.340Z",
+  "updated": "2026-11-05T18:35:16.565Z",
   "items": [
+    {
+      "title": "Air con is set to overtake AI in swallowing electricity",
+      "link": "https://www.energylivenews.com/2026/11/05/air-con-is-set-to-overtake-ai-in-swallowing-electricity/",
+      "summary": "Cooling will account for 13% of global electricity demand by 2035 as emissions cuts lag behind the Global Cooling Pledge\nThe post Air con is set to overtake AI in swallowing electricity appeared first on Energy Live News",
+      "source": "Energy Live News",
+      "topic": "carbon",
+      "published": "2026-11-05T17:30:00.000Z"
+    },
     {
       "title": "UK offshore wind software firm Kinewell secures funds for growth",
       "link": "https://renewablesnow.com/news/uk-offshore-wind-software-firm-kinewell-secures-funds-for-growth-1304405?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss-source/",
@@ -40,22 +48,6 @@
       "source": "Energy Live News",
       "topic": "policy",
       "published": "2026-11-05T09:00:00.000Z"
-    },
-    {
-      "title": "Sizewell C joins industry pledge to decarbonise construction",
-      "link": "https://www.energylivenews.com/2026/11/05/sizewell-c-joins-industry-pledge-to-decarbonise-construction/",
-      "summary": "The nuclear facility has signed up to the Construction Leadership Council's Five Client Carbon Commitments\nThe post Sizewell C joins industry pledge to decarbonise construction appeared first on Energy Live News.\n",
-      "source": "Energy Live News",
-      "topic": "renewables",
-      "published": "2026-11-05T08:00:00.000Z"
-    },
-    {
-      "title": "India is important for renewable energy markets – report says",
-      "link": "https://www.energylivenews.com/2026/11/04/india-is-important-for-renewable-energy-markets-report-says/",
-      "summary": "Its rapid expansion of clean electricity has helped reduce reliance on imported fuels\nThe post India is important for renewable energy markets – report says appeared first on Energy Live News.\n",
-      "source": "Energy Live News",
-      "topic": "renewables",
-      "published": "2026-11-04T18:00:00.000Z"
     },
     {
       "title": "Energy Independence Bill: factsheets",
@@ -144,14 +136,6 @@
       "source": "RenewableUK",
       "topic": "renewables",
       "published": "2026-10-28T12:00:00.000Z"
-    },
-    {
-      "title": "Analysis: How the UK spent more than £11.6bn on climate aid since 2021",
-      "link": "https://www.carbonbrief.org/analysis-how-the-uk-spent-more-than-11-6bn-on-climate-aid-since-2021",
-      "summary": "The UK has spent £12.8bn on climate aid for developing countries since 2021, according to official figures obtained by Carbon…\nThe post Analysis: How the UK spent more than £11.6bn on climate aid since 2021 appeared firs",
-      "source": "Carbon Brief",
-      "topic": "policy",
-      "published": "2026-10-28T07:00:00.000Z"
     },
     {
       "title": "Storms Austen and Boelo: Working Together to Keep Great Britain Powered",
@@ -320,6 +304,22 @@
       "source": "NESO",
       "topic": "carbon",
       "published": "2026-02-13T12:00:00.000Z"
+    },
+    {
+      "title": "Britain's Energy Explained: 2025 Review",
+      "link": "https://www.neso.energy/news/britains-energy-explained-2025-review",
+      "summary": "In 2025, Great Britain achieved some major milestones on our journey to ensuring a secure, affordable and clean energy system. Take a look back at where our electricity came from in 2025 and some of the notable events th",
+      "source": "NESO",
+      "topic": "power",
+      "published": "2026-01-14T12:00:00.000Z"
+    },
+    {
+      "title": "NESO’s 2026 priorities: a more secure, affordable, sustainable energy future",
+      "link": "https://www.neso.energy/news/nesos-2026-priorities-more-secure-affordable-sustainable-energy-future",
+      "summary": "2026 will bring new challenges – but our focus at NESO is unchanged. Building an energy system in Great Britain (GB) that works for people, society and our economy.",
+      "source": "NESO",
+      "topic": "policy",
+      "published": "2026-01-05T12:00:00.000Z"
     }
   ]
 }

@@ -1,69 +1,117 @@
 {
-  "updated": "2026-11-02T06:35:14.925Z",
+  "updated": "2026-11-06T12:35:15.359Z",
   "items": [
     {
-      "title": "Business electricity bills fall 17% as energy use plummets",
-      "link": "https://www.energylivenews.com/2026/10/30/business-electricity-bills-fall-17-as-energy-use-plummets/",
-      "summary": "The biggest decreases were seen in North East England and South Wales \nThe post Business electricity bills fall 17% as energy use plummets appeared first on Energy Live News.\n",
+      "title": "Public support for UK oil and gas production “higher than ever”",
+      "link": "https://www.energylivenews.com/2026/11/06/public-support-for-uk-oil-and-gas-production-higher-than-ever/",
+      "summary": "More than 70% of 2024 Labour voters agree oil and gas is essential for the future\nThe post Public support for UK oil and gas production “higher than ever” appeared first on Energy Live News.\n",
       "source": "Energy Live News",
-      "topic": "power",
-      "published": "2026-10-30T18:00:00.000Z"
+      "topic": "gas",
+      "published": "2026-11-06T12:00:00.000Z"
     },
     {
-      "title": "UK ETS Allocation Table for operators of installations",
-      "link": "https://www.gov.uk/government/publications/uk-ets-allocation-table-for-operators-of-installations",
-      "summary": "This table contains a list of each installation’s free allocation for the 2021 to 2026 allocation period.",
+      "title": "Abu Dhabi’s clean energy has grown over 1000% in five years",
+      "link": "https://www.energylivenews.com/2026/11/06/abu-dhabis-clean-energy-has-grown-over-1000-in-five-years/",
+      "summary": "Nuclear, solar and wind power have helped transform Abu Dhabi’s electricity mix\nThe post Abu Dhabi’s clean energy has grown over 1000% in five years appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "renewables",
+      "published": "2026-11-06T10:00:00.000Z"
+    },
+    {
+      "title": "Ofgem told to publish the whole connections queue",
+      "link": "https://www.energylivenews.com/2026/11/06/ofgem-told-to-publish-the-whole-connections-queue/",
+      "summary": "A coaliation threatens that the grid is holding back significant progress in the UK\nThe post Ofgem told to publish the whole connections queue appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "power",
+      "published": "2026-11-06T08:00:00.000Z"
+    },
+    {
+      "title": "Air con is set to overtake AI in swallowing electricity",
+      "link": "https://www.energylivenews.com/2026/11/05/air-con-is-set-to-overtake-ai-in-swallowing-electricity/",
+      "summary": "Cooling will account for 13% of global electricity demand by 2035 as emissions cuts lag behind the Global Cooling Pledge\nThe post Air con is set to overtake AI in swallowing electricity appeared first on Energy Live News",
+      "source": "Energy Live News",
+      "topic": "carbon",
+      "published": "2026-11-05T17:30:00.000Z"
+    },
+    {
+      "title": "UK offshore wind software firm Kinewell secures funds for growth",
+      "link": "https://renewablesnow.com/news/uk-offshore-wind-software-firm-kinewell-secures-funds-for-growth-1304405?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss-source/",
+      "summary": "",
+      "source": "Renewables Now",
+      "topic": "renewables",
+      "published": "2026-11-05T11:56:50.000Z"
+    },
+    {
+      "title": "Capacity Market: new technologies 2026",
+      "link": "https://www.gov.uk/government/consultations/capacity-market-new-technologies-2026",
+      "summary": "We are seeking views on whether technologies capable of contributing to electricity security of supply could enter future Capacity Market auctions.",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "power",
+      "published": "2026-11-05T11:45:15+00:00"
+    },
+    {
+      "title": "Energy Independence Bill: factsheets",
+      "link": "https://www.gov.uk/government/publications/energy-independence-bill-factsheets",
+      "summary": "Factsheets relating to the Energy Independence Bill.",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "policy",
+      "published": "2026-11-04T13:03:00+00:00"
+    },
+    {
+      "title": "Energy reforms to cut bills and put power back in people's hands",
+      "link": "https://www.gov.uk/government/news/energy-reforms-to-cut-bills-and-put-power-back-in-peoples-hands",
+      "summary": "The Energy Independence Bill will cut bills for households and put power back in people's hands with a fairer energy system.",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "power",
+      "published": "2026-11-04T13:00:00+00:00"
+    },
+    {
+      "title": "What 30 years in engineering has taught me about planning for the future",
+      "link": "https://www.neso.energy/news/what-30-years-engineering-has-taught-me-about-planning-future",
+      "summary": "Being elected a Fellow of the Royal Academy of Engineering is a great honour.",
+      "source": "NESO",
+      "topic": "policy",
+      "published": "2026-11-04T12:00:00.000Z"
+    },
+    {
+      "title": "Energy Independence Bill is an opportunity to cut bills and boost energy security",
+      "link": "https://www.renewableuk.com/news-and-resources/press-releases/energy-independence-bill-is-an-opportunity-to-cut-bills-and-boost-energy-security/",
+      "summary": "",
+      "source": "RenewableUK",
+      "topic": "policy",
+      "published": "2026-11-04T12:00:00.000Z"
+    },
+    {
+      "title": "Functioning of the UK carbon market",
+      "link": "https://www.gov.uk/government/collections/functioning-of-the-uk-carbon-market",
+      "summary": "A summary of the operational performance of the UK Emissions Trading Scheme for each scheme year.",
       "source": "Dept for Energy Security & Net Zero",
       "topic": "carbon",
-      "published": "2026-10-30T17:05:01+00:00"
+      "published": "2026-11-04T09:46:24+00:00"
     },
     {
-      "title": "Major undersea power cable given green light",
-      "link": "https://www.gov.uk/government/news/major-undersea-power-cable-given-green-light",
-      "summary": "Government approves Sea Link, a major undersea power connection between Suffolk and Kent.",
+      "title": "Functioning of the UK carbon market, 2025",
+      "link": "https://www.gov.uk/government/publications/functioning-of-the-uk-carbon-market-2025",
+      "summary": "A high-level summary of the performance of the UK Emissions Trading Scheme during the fourth scheme year of its operation.",
       "source": "Dept for Energy Security & Net Zero",
+      "topic": "carbon",
+      "published": "2026-11-04T09:45:55+00:00"
+    },
+    {
+      "title": "The balancing act",
+      "link": "https://www.neso.energy/news/balancing-act",
+      "summary": "Let’s talk balancing costs.",
+      "source": "NESO",
       "topic": "power",
-      "published": "2026-10-30T16:32:23+00:00"
+      "published": "2026-11-03T12:00:00.000Z"
     },
     {
-      "title": "Cleaning the atmosphere with a CO₂ conveyor belt",
-      "link": "https://www.energylivenews.com/2026/10/30/cleaning-the-atmosphere-with-a-co%e2%82%82-conveyor-belt/",
-      "summary": "Ultra-thin coatings could capture and release the gas in seconds and enable more flexible carbon removal systems\nThe post Cleaning the atmosphere with a CO₂ conveyor belt appeared first on Energy Live News.\n",
-      "source": "Energy Live News",
-      "topic": "gas",
-      "published": "2026-10-30T16:00:00.000Z"
-    },
-    {
-      "title": "Halloween leftovers could heat thousands of homes with green gas",
-      "link": "https://www.energylivenews.com/2026/10/30/halloween-leftovers-could-heat-thousands-of-homes-with-green-gas/",
-      "summary": "The estimated 16 million pumpkins that will get binned this year could generate around 12.3GWh of energy\nThe post Halloween leftovers could heat thousands of homes with green gas appeared first on Energy Live News.\n",
-      "source": "Energy Live News",
-      "topic": "gas",
-      "published": "2026-10-30T13:00:00.000Z"
-    },
-    {
-      "title": "TELCA shortlist – Most Trusted Consultancy (Large Customers) award",
-      "link": "https://www.energylivenews.com/2026/10/30/telca-shortlist-most-trusted-consultancy-large-customers-award/",
-      "summary": "The shortlist for the Most Trusted Consultancy (Large Customers) award, sponsored by TotalEnergies Gas & Power\nThe post TELCA shortlist – Most Trusted Consultancy (Large Customers) award appeared first on Energy Live New",
-      "source": "Energy Live News",
-      "topic": "gas",
-      "published": "2026-10-30T12:00:00.000Z"
-    },
-    {
-      "title": "Smart Secure Electricity Systems (SSES) tariff interoperability: code modifications for Phase 1a",
-      "link": "https://www.gov.uk/government/publications/smart-secure-electricity-systems-sses-tariff-interoperability-code-modifications-for-phase-1a",
-      "summary": "The Secretary of State has made changes to the Retail Energy Code using his power under section 245(1)(e) of the Energy Act 2023.",
-      "source": "Dept for Energy Security & Net Zero",
-      "topic": "power",
-      "published": "2026-10-30T09:09:00+00:00"
-    },
-    {
-      "title": "Australia is fuelling the fossil fuel fire – even though it’s COP31 co-host",
-      "link": "https://www.energylivenews.com/2026/10/30/australia-is-fueling-the-fossil-fuel-fire-even-though-its-cop31-co-host/",
-      "summary": "Australia’s coal, gas and oil exports outstrip the footprint of the 44 least developed countries combined\nThe post Australia is fuelling the fossil fuel fire – even though it’s COP31 co-host appeared first on Energy Live",
-      "source": "Energy Live News",
-      "topic": "gas",
-      "published": "2026-10-30T09:00:00.000Z"
+      "title": "Chancellor is right to focus on value for money for billpayers when deciding which clean energy projects should go ahead",
+      "link": "https://www.renewableuk.com/news-and-resources/press-releases/chancellor-is-right-to-focus-on-value-for-money-for-billpayers-when-deciding-which-clean-energy-projects-should-go-ahead/",
+      "summary": "",
+      "source": "RenewableUK",
+      "topic": "policy",
+      "published": "2026-11-02T12:00:00.000Z"
     },
     {
       "title": "New 'circuit breaker' strategy launched to help households get out of energy debt",
@@ -74,14 +122,6 @@
       "published": "2026-10-29T12:00:00.000Z"
     },
     {
-      "title": "UK budget 2026: Key climate and energy announcements",
-      "link": "https://www.carbonbrief.org/uk-budget-2026-key-climate-and-energy-announcements",
-      "summary": "Chancellor John Healey has announced a “new course on energy” for the UK, focused on keeping bills low amid the…\nThe post UK budget 2026: Key climate and energy announcements appeared first on Carbon Brief.\n",
-      "source": "Carbon Brief",
-      "topic": "policy",
-      "published": "2026-10-28T18:16:58.000Z"
-    },
-    {
       "title": "RenewableUK welcomes key measures announced in Chancellor’s Autumn Budget to cut energy bills",
       "link": "https://www.renewableuk.com/news-and-resources/press-releases/renewableuk-welcomes-key-measures-announced-in-chancellor-s-autumn-budget-to-cut-energy-bills/",
       "summary": "",
@@ -90,44 +130,12 @@
       "published": "2026-10-28T12:00:00.000Z"
     },
     {
-      "title": "Analysis: How the UK spent more than £11.6bn on climate aid since 2021",
-      "link": "https://www.carbonbrief.org/analysis-how-the-uk-spent-more-than-11-6bn-on-climate-aid-since-2021",
-      "summary": "The UK has spent £12.8bn on climate aid for developing countries since 2021, according to official figures obtained by Carbon…\nThe post Analysis: How the UK spent more than £11.6bn on climate aid since 2021 appeared firs",
-      "source": "Carbon Brief",
-      "topic": "policy",
-      "published": "2026-10-28T07:00:00.000Z"
-    },
-    {
-      "title": "Q&A: Why are UK energy bills so high – and how could they be lowered?",
-      "link": "https://www.carbonbrief.org/qa-why-are-uk-energy-bills-so-high-and-how-could-they-be-lowered",
-      "summary": "Energy bills in the UK have continued to soar in 2026, with intense debate raging about how to bring them…\nThe post Q&A: Why are UK energy bills so high – and how could they be lowered? appeared first on Carbon Brief.\n",
-      "source": "Carbon Brief",
-      "topic": "policy",
-      "published": "2026-10-27T16:47:54.000Z"
-    },
-    {
       "title": "Storms Austen and Boelo: Working Together to Keep Great Britain Powered",
       "link": "https://www.neso.energy/news/storms-austen-and-boelo-working-together-keep-great-britain-powered",
       "summary": "Over the weekend, Storms Austen and Boelo brought severe weather across Great Britain, causing power cuts, flooding, travel disruption and damage to homes and infrastructure.",
       "source": "NESO",
       "topic": "power",
       "published": "2026-10-26T12:00:00.000Z"
-    },
-    {
-      "title": "US govt seeks remand of New England Wind offshore wind project approval",
-      "link": "https://renewablesnow.com/news/us-govt-seeks-remand-of-new-england-wind-offshore-wind-project-approval-1303592?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss-source/",
-      "summary": "",
-      "source": "Renewables Now",
-      "topic": "renewables",
-      "published": "2026-10-23T13:23:43.000Z"
-    },
-    {
-      "title": "Britain’s electricity supplies expected to remain secure this winter",
-      "link": "https://www.neso.energy/news/britains-electricity-supplies-expected-remain-secure-winter",
-      "summary": "Britain is expected to have sufficient electricity supplies this winter, with new analysis from Winter Outlook 2026/27 forecasting adequate electricity margins throughout the colder months.",
-      "source": "NESO",
-      "topic": "power",
-      "published": "2026-10-23T12:00:00.000Z"
     },
     {
       "title": "Ofgem consults on proposals to reinforce gas import capability",
@@ -154,14 +162,6 @@
       "published": "2026-10-21T12:00:00.000Z"
     },
     {
-      "title": "Revealed: Expensive gas behind ‘nearly 90%’ of rise in UK electricity bills",
-      "link": "https://www.carbonbrief.org/revealed-expensive-gas-behind-nearly-90-of-rise-in-uk-electricity-bills",
-      "summary": "A surge in wholesale costs driven by expensive gas is responsible for nearly 90% of the rise in UK household…\nThe post Revealed: Expensive gas behind ‘nearly 90%’ of rise in UK electricity bills appeared first on Carbon ",
-      "source": "Carbon Brief",
-      "topic": "gas",
-      "published": "2026-10-21T11:37:55.000Z"
-    },
-    {
       "title": "Electricity Networks Sector Growth Plan shows how building new UK grid will attract billions in investment and support hundreds of thousands of jobs",
       "link": "https://www.renewableuk.com/news-and-resources/press-releases/electricity-networks-sector-growth-plan-shows-how-building-new-uk-grid-will-attract-billions-in-investment-and-support-hundreds-of-thousands-of-jobs/",
       "summary": "",
@@ -175,14 +175,6 @@
       "summary": "Ofgem has greenlit a £642.1 million funding package for National Grid Electricity Transmission’s Bramford to Twinstead project in East Anglia",
       "source": "Ofgem",
       "topic": "power",
-      "published": "2026-10-19T12:00:00.000Z"
-    },
-    {
-      "title": "Independent investigation concludes allegations against NESO were unsubstantiated",
-      "link": "https://www.neso.energy/news/independent-investigation-concludes-allegations-against-neso-were-unsubstantiated",
-      "summary": "An independent investigation into allegations raised about operational decision-making and record",
-      "source": "NESO",
-      "topic": "policy",
       "published": "2026-10-19T12:00:00.000Z"
     },
     {
@@ -224,22 +216,6 @@
       "source": "Ofgem",
       "topic": "policy",
       "published": "2026-10-05T12:00:00.000Z"
-    },
-    {
-      "title": "RenewableUK CEO’s comment on Shadow Energy Secretary Andrew Bowie’s speech at Conservative Party Conference",
-      "link": "https://www.renewableuk.com/news-and-resources/press-releases/renewableuk-ceo-s-comment-on-shadow-energy-secretary-andrew-bowie-s-speech-at-conservative-party-conference/",
-      "summary": "",
-      "source": "RenewableUK",
-      "topic": "renewables",
-      "published": "2026-10-05T12:00:00.000Z"
-    },
-    {
-      "title": "Delivering grid connections faster is essential to cut electricity bills",
-      "link": "https://www.renewableuk.com/news-and-resources/press-releases/delivering-grid-connections-faster-is-essential-to-cut-electricity-bills/",
-      "summary": "",
-      "source": "RenewableUK",
-      "topic": "power",
-      "published": "2026-09-29T12:00:00.000Z"
     },
     {
       "title": "Ofgem moves to free up grid capacity by tackling excess battery projects",
@@ -320,6 +296,30 @@
       "source": "NESO",
       "topic": "carbon",
       "published": "2026-02-13T12:00:00.000Z"
+    },
+    {
+      "title": "Britain's Energy Explained: 2025 Review",
+      "link": "https://www.neso.energy/news/britains-energy-explained-2025-review",
+      "summary": "In 2025, Great Britain achieved some major milestones on our journey to ensuring a secure, affordable and clean energy system. Take a look back at where our electricity came from in 2025 and some of the notable events th",
+      "source": "NESO",
+      "topic": "power",
+      "published": "2026-01-14T12:00:00.000Z"
+    },
+    {
+      "title": "NESO’s 2026 priorities: a more secure, affordable, sustainable energy future",
+      "link": "https://www.neso.energy/news/nesos-2026-priorities-more-secure-affordable-sustainable-energy-future",
+      "summary": "2026 will bring new challenges – but our focus at NESO is unchanged. Building an energy system in Great Britain (GB) that works for people, society and our economy.",
+      "source": "NESO",
+      "topic": "policy",
+      "published": "2026-01-05T12:00:00.000Z"
+    },
+    {
+      "title": "Forget a white Christmas – 2025 could be the greenest ever",
+      "link": "https://www.neso.energy/news/forget-white-christmas-2025-could-be-greenest-ever",
+      "summary": "While many of us will be hoping for snow across Great Britain on Christmas Day to complete the pe",
+      "source": "NESO",
+      "topic": "policy",
+      "published": "2025-12-20T12:00:00.000Z"
     }
   ]
 }

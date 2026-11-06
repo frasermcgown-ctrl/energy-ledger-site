@@ -1,6 +1,30 @@
 {
-  "updated": "2026-11-06T06:35:14.525Z",
+  "updated": "2026-11-06T12:35:15.359Z",
   "items": [
+    {
+      "title": "Public support for UK oil and gas production “higher than ever”",
+      "link": "https://www.energylivenews.com/2026/11/06/public-support-for-uk-oil-and-gas-production-higher-than-ever/",
+      "summary": "More than 70% of 2024 Labour voters agree oil and gas is essential for the future\nThe post Public support for UK oil and gas production “higher than ever” appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "gas",
+      "published": "2026-11-06T12:00:00.000Z"
+    },
+    {
+      "title": "Abu Dhabi’s clean energy has grown over 1000% in five years",
+      "link": "https://www.energylivenews.com/2026/11/06/abu-dhabis-clean-energy-has-grown-over-1000-in-five-years/",
+      "summary": "Nuclear, solar and wind power have helped transform Abu Dhabi’s electricity mix\nThe post Abu Dhabi’s clean energy has grown over 1000% in five years appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "renewables",
+      "published": "2026-11-06T10:00:00.000Z"
+    },
+    {
+      "title": "Ofgem told to publish the whole connections queue",
+      "link": "https://www.energylivenews.com/2026/11/06/ofgem-told-to-publish-the-whole-connections-queue/",
+      "summary": "A coaliation threatens that the grid is holding back significant progress in the UK\nThe post Ofgem told to publish the whole connections queue appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "power",
+      "published": "2026-11-06T08:00:00.000Z"
+    },
     {
       "title": "Air con is set to overtake AI in swallowing electricity",
       "link": "https://www.energylivenews.com/2026/11/05/air-con-is-set-to-overtake-ai-in-swallowing-electricity/",
@@ -24,30 +48,6 @@
       "source": "Dept for Energy Security & Net Zero",
       "topic": "power",
       "published": "2026-11-05T11:45:15+00:00"
-    },
-    {
-      "title": "Decades old power station in UK gets new lease of life",
-      "link": "https://www.energylivenews.com/2026/11/05/decades-old-power-station-in-uk-gets-new-lease-of-life/",
-      "summary": "The 1.2GW station's gas turbines will be upgraded to cut emissions and extend operational life\nThe post Decades old power station in UK gets new lease of life appeared first on Energy Live News.\n",
-      "source": "Energy Live News",
-      "topic": "carbon",
-      "published": "2026-11-05T11:00:00.000Z"
-    },
-    {
-      "title": "Europe’s largest BESS project completes grid connection",
-      "link": "https://www.energylivenews.com/2026/11/05/europes-largest-bess-project-completes-grid-connection/",
-      "summary": "The West Midlands facility will help balance electricity supply and demand in the UK\nThe post Europe’s largest BESS project completes grid connection appeared first on Energy Live News.\n",
-      "source": "Energy Live News",
-      "topic": "power",
-      "published": "2026-11-05T10:00:00.000Z"
-    },
-    {
-      "title": "Roadmap to reverse deforestation by 2030 is here – is it quick enough?",
-      "link": "https://www.energylivenews.com/2026/11/05/roadmap-to-reverse-deforestation-by-2030-is-here-is-it-quick-enough/",
-      "summary": "The COP30 Presidency roadmap sets out how to halt deforestation by 2030 - but speed is now the challenge\nThe post Roadmap to reverse deforestation by 2030 is here – is it quick enough? appeared first on Energy Live News.",
-      "source": "Energy Live News",
-      "topic": "policy",
-      "published": "2026-11-05T09:00:00.000Z"
     },
     {
       "title": "Energy Independence Bill: factsheets",
@@ -120,14 +120,6 @@
       "source": "Ofgem",
       "topic": "policy",
       "published": "2026-10-29T12:00:00.000Z"
-    },
-    {
-      "title": "UK budget 2026: Key climate and energy announcements",
-      "link": "https://www.carbonbrief.org/uk-budget-2026-key-climate-and-energy-announcements",
-      "summary": "Chancellor John Healey has announced a “new course on energy” for the UK, focused on keeping bills low amid the…\nThe post UK budget 2026: Key climate and energy announcements appeared first on Carbon Brief.\n",
-      "source": "Carbon Brief",
-      "topic": "policy",
-      "published": "2026-10-28T18:16:58.000Z"
     },
     {
       "title": "RenewableUK welcomes key measures announced in Chancellor’s Autumn Budget to cut energy bills",
@@ -320,6 +312,14 @@
       "source": "NESO",
       "topic": "policy",
       "published": "2026-01-05T12:00:00.000Z"
+    },
+    {
+      "title": "Forget a white Christmas – 2025 could be the greenest ever",
+      "link": "https://www.neso.energy/news/forget-white-christmas-2025-could-be-greenest-ever",
+      "summary": "While many of us will be hoping for snow across Great Britain on Christmas Day to complete the pe",
+      "source": "NESO",
+      "topic": "policy",
+      "published": "2025-12-20T12:00:00.000Z"
     }
   ]
 }

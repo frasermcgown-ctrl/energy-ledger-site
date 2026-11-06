@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://identity.netlify.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com; connect-src 'self' https://raw.githubusercontent.com https://api.carbonintensity.org.uk https://data.elexon.co.uk https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://identity.netlify.com; frame-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page not found — The Energy Ledger</title>
+<meta name="robots" content="noindex">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5XJN5KMJVN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5XJN5KMJVN');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="/icon-mark.svg">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+  .nf-actions{ display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+  .nf-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; }
+  .nf-link{ padding:22px 24px; text-decoration:none; color:var(--ink); display:flex; flex-direction:column; gap:6px; }
+  .nf-link b{ font-size:17px; font-weight:600; }
+  .nf-link span{ color:var(--ink-3); font-size:15px; }
+  .nf-link:hover b{ color:var(--brand); }
+  @media (max-width: 860px){ .nf-grid{ grid-template-columns:repeat(2, 1fr); } }
+  @media (max-width: 560px){ .nf-grid{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav">
+    <a class="wordmark" href="/" aria-label="The Energy Ledger — home">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <rect x="0" y="0" width="120" height="120" rx="28" fill="#0f172a"/>
+        <line x1="21" y1="30" x2="21" y2="90" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+        <line x1="34" y1="44" x2="80" y2="44" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="62" x2="92" y2="62" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="80" x2="66" y2="80" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <polyline points="80,44 96,27 103,32" fill="none" stroke="#f97316" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="103" cy="32" r="4.5" fill="#f97316"/>
+      </svg>
+      <b style="font-weight:inherit">The Energy <span>Ledger</span></b>
+    </a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-links">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="links" id="site-links">
+      <a href="/prices.html">Prices</a>
+      <a href="/generation.html">GB generation</a>
+      <a href="/uk-gas.html">UK gas</a>
+      <a href="/lng.html">LNG</a>
+      <a href="/news.html">News</a>
+      <a class="btn primary sm" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe free</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="crumbs"><a href="/">Home</a><span aria-hidden="true">/</span><span>Page not found</span></div>
+      <h1>We couldn’t find that page</h1>
+      <p class="lede">The link may be out of date, or the address may have a typo. Everything on the site is still here: try one of the dashboards below, or head back to the homepage.</p>
+      <div class="nf-actions">
+        <a class="btn primary" href="/">Back to the homepage <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn" href="https://home.theenergyledger.co.uk/archive" target="_blank" rel="noopener">Browse past issues</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="tight">
+    <div class="wrap">
+      <h2 style="font-size:22px; margin:8px 0 16px;">Live data</h2>
+      <div class="nf-grid">
+        <a class="card nf-link" href="/prices.html"><b>Prices &amp; costs</b><span>NBP gas, GB power, the price cap and balancing costs</span></a>
+        <a class="card nf-link" href="/generation.html"><b>GB generation</b><span>Live generation mix, carbon intensity and the wind outlook</span></a>
+        <a class="card nf-link" href="/uk-gas.html"><b>UK gas supply</b><span>Supply by source, demand and storage</span></a>
+        <a class="card nf-link" href="/lng.html"><b>LNG</b><span>UK terminal send-out and European LNG</span></a>
+        <a class="card nf-link" href="/news.html"><b>News</b><span>Gas, power, carbon and LNG headlines from official sources</span></a>
+        <a class="card nf-link" href="/sources.html"><b>Data sources</b><span>Where every figure comes from, and how it is licensed</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="wordmark" href="/">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+        <rect x="0" y="0" width="120" height="120" rx="28" fill="#0f172a"/>
+        <line x1="21" y1="30" x2="21" y2="90" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+        <line x1="34" y1="44" x2="80" y2="44" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="62" x2="92" y2="62" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="80" x2="66" y2="80" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <polyline points="80,44 96,27 103,32" fill="none" stroke="#f97316" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="103" cy="32" r="4.5" fill="#f97316"/>
+      </svg>
+          <b style="font-weight:inherit">The Energy <span>Ledger</span></b>
+        </a>
+        <p>The Energy Ledger is an independent read on UK energy markets.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Newsletter</h4>
+        <a href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe</a>
+        <a href="https://home.theenergyledger.co.uk/archive" target="_blank" rel="noopener">Archive</a>
+        <a href="/#coverage">Coverage</a>
+        <a href="/#about">About</a>
+      </div>
+      <div class="foot-col">
+        <h4>Live data</h4>
+        <a href="/prices.html">Prices &amp; costs</a>
+        <a href="/generation.html">GB generation</a>
+        <a href="/uk-gas.html">UK gas supply</a>
+        <a href="/lng.html">LNG</a>
+        <a href="/news.html">News</a>
+        <a href="/sources.html">Data sources</a>
+      </div>
+      <div class="foot-col">
+        <h4>Follow</h4>
+        <div class="socials" data-socials><a class="social" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener me" aria-label="The Energy Ledger on Substack" title="Substack"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a></div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span data-year>2026</span> The Energy Ledger. All rights reserved.</span>
+      <span>Data provided for information only, not for trading.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+
+</body>
+</html>

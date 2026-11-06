@@ -1,6 +1,14 @@
 {
-  "updated": "2026-11-06T12:35:15.359Z",
+  "updated": "2026-11-06T18:35:17.491Z",
   "items": [
+    {
+      "title": "Ofgem probes ScottishPower over vulnerable customer support",
+      "link": "https://www.energylivenews.com/2026/11/06/ofgem-probes-scottishpower-over-vulnerable-customer-support/",
+      "summary": "The investigation will examine whether the company provided adequate support\nThe post Ofgem probes ScottishPower over vulnerable customer support appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "power",
+      "published": "2026-11-06T13:00:00.000Z"
+    },
     {
       "title": "Public support for UK oil and gas production “higher than ever”",
       "link": "https://www.energylivenews.com/2026/11/06/public-support-for-uk-oil-and-gas-production-higher-than-ever/",
@@ -26,14 +34,6 @@
       "published": "2026-11-06T08:00:00.000Z"
     },
     {
-      "title": "Air con is set to overtake AI in swallowing electricity",
-      "link": "https://www.energylivenews.com/2026/11/05/air-con-is-set-to-overtake-ai-in-swallowing-electricity/",
-      "summary": "Cooling will account for 13% of global electricity demand by 2035 as emissions cuts lag behind the Global Cooling Pledge\nThe post Air con is set to overtake AI in swallowing electricity appeared first on Energy Live News",
-      "source": "Energy Live News",
-      "topic": "carbon",
-      "published": "2026-11-05T17:30:00.000Z"
-    },
-    {
       "title": "UK offshore wind software firm Kinewell secures funds for growth",
       "link": "https://renewablesnow.com/news/uk-offshore-wind-software-firm-kinewell-secures-funds-for-growth-1304405?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss-source/",
       "summary": "",
@@ -48,6 +48,14 @@
       "source": "Dept for Energy Security & Net Zero",
       "topic": "power",
       "published": "2026-11-05T11:45:15+00:00"
+    },
+    {
+      "title": "Hornsea Three Offshore Wind Farm: post-consent condition compliance, Planning Act 2008",
+      "link": "https://www.gov.uk/government/publications/hornsea-three-offshore-wind-farm-post-consent-condition-compliance-planning-act-2008",
+      "summary": "Decision by the Secretary of State on an application for post-consent condition compliance.",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "renewables",
+      "published": "2026-11-05T00:00:00+00:00"
     },
     {
       "title": "Energy Independence Bill: factsheets",
@@ -80,22 +88,6 @@
       "source": "RenewableUK",
       "topic": "policy",
       "published": "2026-11-04T12:00:00.000Z"
-    },
-    {
-      "title": "Functioning of the UK carbon market",
-      "link": "https://www.gov.uk/government/collections/functioning-of-the-uk-carbon-market",
-      "summary": "A summary of the operational performance of the UK Emissions Trading Scheme for each scheme year.",
-      "source": "Dept for Energy Security & Net Zero",
-      "topic": "carbon",
-      "published": "2026-11-04T09:46:24+00:00"
-    },
-    {
-      "title": "Functioning of the UK carbon market, 2025",
-      "link": "https://www.gov.uk/government/publications/functioning-of-the-uk-carbon-market-2025",
-      "summary": "A high-level summary of the performance of the UK Emissions Trading Scheme during the fourth scheme year of its operation.",
-      "source": "Dept for Energy Security & Net Zero",
-      "topic": "carbon",
-      "published": "2026-11-04T09:45:55+00:00"
     },
     {
       "title": "The balancing act",
@@ -320,6 +312,14 @@
       "source": "NESO",
       "topic": "policy",
       "published": "2025-12-20T12:00:00.000Z"
+    },
+    {
+      "title": "Energy Explained: How inertia keeps the lights on",
+      "link": "https://www.neso.energy/news/energy-explained-how-inertia-keeps-lights",
+      "summary": "Resisting change isn’t always considered a good thing in life. But in the world of physics, it’s vital.",
+      "source": "NESO",
+      "topic": "policy",
+      "published": "2025-12-18T12:00:00.000Z"
     }
   ]
 }

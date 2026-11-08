@@ -391,7 +391,10 @@
       document.getElementById('lv-peak').innerHTML = `${fmtNumber(d.stockGWh / peak.gwh * 100, 0)}<span class="unit">%</span>`;
       document.getElementById('lv-peak-foot').textContent = `Peak ${fmtNumber(peak.gwh, 0)} GWh on ${fmtDay(peak.d)}.`;
     }
-    const sites = (d.sites || []).filter(x => Number.isFinite(x.gwh));
+    // Older files stored per-site stocks in kWh (National Gas's unit for these
+    // items); convert anything implausibly large for GWh.
+    const sites = (d.sites || []).filter(x => Number.isFinite(x.gwh))
+      .map(x => ({ ...x, gwh: x.gwh > 1e6 ? Math.round(x.gwh / 1e6) : x.gwh }));
     if (sites.length) {
       const max = Math.max(1, ...sites.map(x => x.gwh));
       document.getElementById('lv-sites').innerHTML = sites.map(x => `

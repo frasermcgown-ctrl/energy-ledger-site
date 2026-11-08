@@ -108,10 +108,20 @@ export default async () => {
           const m = r.item.name.trim().match(SITE_NAME);
           const ds = Object.keys(r.byDay).sort();
           const d = ds[ds.length - 1];
-          return d ? { site: m[1], range: m[2].toLowerCase(), gasDay: d, gwh: Math.round(r.byDay[d]) } : null;
-        }).filter(Boolean).sort((a, b) => b.gwh - a.gwh);
+          return d ? { site: m[1], range: m[2].toLowerCase(), gasDay: d, value: r.byDay[d] } : null;
+        }).filter(Boolean).sort((a, b) => b.value - a.value);
       }
     }
+
+    // The per-site items are published in kWh while the total is in GWh
+    // (8 Nov 2026: sites summed to 11,210,691,464 against a total of 11,211).
+    // Work out the factor from the data rather than assuming it, so the
+    // breakdown stays right if National Gas changes the unit.
+    const siteSum = sites.reduce((a, x) => a + x.value, 0);
+    const ratio = totals[last] > 0 ? siteSum / totals[last] : 0;
+    const factor = ratio > 3e5 ? 1e6 : ratio > 300 ? 1e3 : 1;
+    sites = sites.map(({ value, ...x }) => ({ ...x, gwh: Math.round(value / factor) }));
+    if (factor !== 1) console.log(`Per-site stocks converted to GWh (divided by ${factor}).`);
 
     const payload = {
       gasDay: last,

@@ -78,3 +78,24 @@ Read through the Netlify connector after the main work:
 - **`/favicon.ico`:** returned 404 (12 times). Added `favicon.ico` (16/32/48 px) and `apple-touch-icon.png` (180 px), made from the brand mark.
 - **`/blog`:** returned 404 (4 times). Now 301-redirects to the Substack archive (`netlify.toml`).
 - Other 404s were bots probing for `.env`, `.git/config` and `phpinfo.php` (nothing exposed), and crawlers guessing `/news_sitemap.xml`.
+
+## Production baseline: PageSpeed Insights (8 Nov 2026, 17:49 GMT)
+
+First measurement of the live site, home page. Mobile figures are from an emulated Moto G Power on slow 4G (Lighthouse 13.6). This is the production reference for future comparisons; there is no production "before" run.
+
+| Performance | Accessibility | Best practices | SEO |
+|---|---|---|---|
+| 88 | 100 | 100 | 100 |
+
+| FCP | LCP | TBT | CLS | Speed Index |
+|---|---|---|---|---|
+| 2.7 s | 2.7 s | 100 ms | 0 | 4.8 s |
+
+Desktop, same run: Performance 99, Accessibility 100, Best practices 100, SEO 100. The mobile performance gap comes from the slow 4G / mid-range phone emulation, not a layout or content problem.
+
+Accessibility and SEO match the local after-run. Best practices is 100 live, against 96 locally, where Analytics was blocked. Performance is lower than the local 100 because PageSpeed throttles to slow 4G.
+
+Flagged opportunities:
+- Reduce unused JavaScript (~74 KiB): almost certainly Google Analytics (gtag.js) loading in the head. It could be loaded after first paint.
+- Render-blocking requests (~150 ms estimated savings).
+- 2 long main-thread tasks, a forced reflow, and 5 non-composited animations (likely the pulsing "live" dots and chart measuring).

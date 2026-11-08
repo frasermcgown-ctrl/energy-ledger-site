@@ -207,6 +207,16 @@
           <div id="c-levels"></div>
         </div>
 
+        <div class="card panel" id="lv-sites-panel" style="margin-top:16px;" hidden>
+          <div class="panel-head">
+            <div>
+              <h2>Stock by site</h2>
+              <p id="lv-sites-desc">Opening stock at each storage site, GWh.</p>
+            </div>
+          </div>
+          <div class="bars" id="lv-sites"></div>
+        </div>
+
         <h2 style="font-size:22px; margin:40px 0 16px;">Storage flows right now</h2>
       </div>
 
@@ -380,6 +390,18 @@
     if (peak.gwh > 0) {
       document.getElementById('lv-peak').innerHTML = `${fmtNumber(d.stockGWh / peak.gwh * 100, 0)}<span class="unit">%</span>`;
       document.getElementById('lv-peak-foot').textContent = `Peak ${fmtNumber(peak.gwh, 0)} GWh on ${fmtDay(peak.d)}.`;
+    }
+    const sites = (d.sites || []).filter(x => Number.isFinite(x.gwh));
+    if (sites.length) {
+      const max = Math.max(1, ...sites.map(x => x.gwh));
+      document.getElementById('lv-sites').innerHTML = sites.map(x => `
+        <div class="bar-row" title="${escapeHtml(x.site)}: ${fmtNumber(x.gwh, 0)} GWh">
+          <span class="bar-label">${escapeHtml(x.site)}<small style="display:block;font-size:12px;color:var(--ink-3);font-weight:400">${x.range === 'long' ? 'Long range' : x.range === 'short' ? 'Short range' : 'Medium range'}</small></span>
+          <div class="bar-track"><div class="bar-fill" style="width:${Math.max(x.gwh / max * 100, 0.8)}%; background:#0f766e;"></div></div>
+          <span class="bar-value">${fmtNumber(x.gwh, 0)}</span>
+        </div>`).join('');
+      if (sites[0].gasDay) document.getElementById('lv-sites-desc').textContent = `Opening stock at each storage site on gas day ${fmtDay(sites[0].gasDay)}, GWh.`;
+      document.getElementById('lv-sites-panel').hidden = false;
     }
     if (hist.length > 1) {
       ELCharts.lineChart(document.getElementById('c-levels'), [{ name: 'UK gas in storage', color: '#0f766e', points: hist.map(p => ({ x: new Date(p.d + 'T12:00:00Z'), y: p.gwh })) }], {

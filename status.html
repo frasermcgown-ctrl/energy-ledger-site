@@ -209,6 +209,9 @@
     { name: 'European LNG (ALSI)', file: 'lng-data.json', page: '/lng', every: 'Every 6 hours', test: d => ({
       status: d.gasDay && d.fillPercent !== null && d.fillPercent !== undefined ? grade(dataAge(d.gasDay), 2 * D, 4 * D) : 'red',
       data: d.gasDay ? `Gas day ${day(d.gasDay)} · ${d.fillPercent}% full` : 'No gas day', note: d.gasDay ? '' : 'Inventory or gas day missing' }) },
+    { name: 'UK gas storage levels (AGSI)', file: 'uk-storage-levels.json', page: '/uk-gas-storage', every: 'Twice daily (evening)', test: d => ({
+      status: d.gasDay && d.fullPercent !== null && d.fullPercent !== undefined ? grade(dataAge(d.gasDay), 2 * D, 4 * D) : 'red',
+      data: d.gasDay ? `Gas day ${day(d.gasDay)} · ${d.fullPercent}% full` : 'No gas day', note: d.gasDay ? '' : 'Stock level or gas day missing' }) },
     { name: 'Grid balancing costs', file: 'balancing-costs.json', page: '/prices', every: 'Daily', test: d => {
       const last = (d.months || []).slice(-1)[0];
       const to = last ? `${last.month}-${String(last.days).padStart(2, '0')}` : null;

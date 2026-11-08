@@ -11,7 +11,7 @@
 <meta property="og:locale" content="en_GB">
 <meta property="og:title" content="Data Status — The Energy Ledger">
 <meta property="og:description" content="When each automated data feed on The Energy Ledger last updated, and whether any are late.">
-<meta property="og:url" content="https://www.theenergyledger.co.uk/status.html">
+<meta property="og:url" content="https://www.theenergyledger.co.uk/status">
 <meta property="og:image" content="https://www.theenergyledger.co.uk/og-image.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -32,7 +32,9 @@
 </script>
 <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="alternate" type="application/rss+xml" title="The Energy Ledger newsletter" href="https://home.theenergyledger.co.uk/feed">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/svg+xml" href="/icon-mark.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/assets/site.css">
 <style>
   .src-grid{ display:grid; grid-template-columns:repeat(2, 1fr); gap:16px; margin-bottom:32px; }
@@ -67,11 +69,11 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
     <nav class="links" id="site-links">
-      <a href="/prices.html">Prices</a>
-      <a href="/generation.html">GB generation</a>
-      <a href="/uk-gas.html">UK gas</a>
-      <a href="/lng.html">LNG</a>
-      <a href="/news.html">News</a>
+      <a href="/prices">Prices</a>
+      <a href="/generation">GB generation</a>
+      <a href="/uk-gas">UK gas</a>
+      <a href="/lng">LNG</a>
+      <a href="/news">News</a>
       <a class="btn primary sm" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe free</a>
     </nav>
   </div>
@@ -139,16 +141,16 @@
       </div>
       <div class="foot-col">
         <h2 class="foot-h">Live data</h2>
-        <a href="/prices.html">Prices &amp; costs</a>
-        <a href="/generation.html">GB generation</a>
-        <a href="/uk-gas.html">UK gas supply</a>
-        <a href="/lng.html">LNG</a>
-        <a href="/news.html">News</a>
-        <a href="/nbp-gas-price.html">NBP gas price</a>
-        <a href="/uk-power-prices.html">UK power price</a>
-        <a href="/uk-gas-storage.html">UK gas storage</a>
-        <a href="/uk-carbon-intensity.html">Carbon intensity</a>
-        <a href="/sources.html">Data sources</a>
+        <a href="/prices">Prices &amp; costs</a>
+        <a href="/generation">GB generation</a>
+        <a href="/uk-gas">UK gas supply</a>
+        <a href="/lng">LNG</a>
+        <a href="/news">News</a>
+        <a href="/nbp-gas-price">NBP gas price</a>
+        <a href="/uk-power-prices">UK power price</a>
+        <a href="/uk-gas-storage">UK gas storage</a>
+        <a href="/uk-carbon-intensity">Carbon intensity</a>
+        <a href="/sources">Data sources</a>
       </div>
       <div class="foot-col">
         <h2 class="foot-h">Follow</h2>
@@ -182,52 +184,52 @@
 
   // Each check: file, page it feeds, schedule text, and a test returning { status, data, note }.
   const CHECKS = [
-    { name: 'NBP and power prices', file: 'market-prices.json', page: '/prices.html', every: 'Hourly', test: d => {
+    { name: 'NBP and power prices', file: 'market-prices.json', page: '/prices', every: 'Hourly', test: d => {
       const g = d.gas && d.gas.gasDay, p = d.power && d.power.settlementDate;
       const worst = Math.max(g ? dataAge(g) : Infinity, p ? dataAge(p) : Infinity);
       return { status: grade(worst, 2 * D, 4 * D), data: `Gas ${g ? day(g) : '—'} · power ${p ? day(p) : '—'}` }; } },
-    { name: 'Price history', file: 'price-history.json', page: '/prices.html', every: 'Hourly', test: d => {
+    { name: 'Price history', file: 'price-history.json', page: '/prices', every: 'Hourly', test: d => {
       const last = k => (d[k] || []).map(x => x.d).sort().pop();
       const g = last('gas'), p = last('power');
       const worst = Math.max(g ? dataAge(g) : Infinity, p ? dataAge(p) : Infinity);
       const short = (d.power || []).length < 360 ? `power history ${(d.power || []).length} days (filling)` : '';
       return { status: grade(worst, 2 * D, 4 * D), data: `${(d.gas || []).length} gas / ${(d.power || []).length} power days, to ${p ? day(p) : '—'}`, note: short }; } },
-    { name: 'UK gas flows', file: 'uk-gas-data.json', page: '/uk-gas.html', every: 'Every 3 hours', test: d => ({
+    { name: 'UK gas flows', file: 'uk-gas-data.json', page: '/uk-gas', every: 'Every 3 hours', test: d => ({
       status: grade(ageOf(d.updated), 4 * H, 8 * H), data: d.publishedTime ? `Published ${fmtDateTime(d.publishedTime)}` : '—' }) },
-    { name: 'Wind, solar and demand forecasts', file: 'outlook.json', page: '/generation.html', every: 'Every 3 hours', test: d => ({
+    { name: 'Wind, solar and demand forecasts', file: 'outlook.json', page: '/generation', every: 'Every 3 hours', test: d => ({
       status: (d.wind || []).length ? grade(ageOf(d.updated), 4 * H, 8 * H) : 'red',
       data: `${(d.wind || []).length} wind hours · ${(d.demand || []).length} demand days` }) },
-    { name: 'News feed', file: 'news-feed.json', page: '/news.html', every: 'Every 6 hours', test: d => {
+    { name: 'News feed', file: 'news-feed.json', page: '/news', every: 'Every 6 hours', test: d => {
       const items = d.items || [];
       const sources = [...new Set(items.map(i => i.source))];
       const missing = ['Ofgem', 'NESO', 'RenewableUK'].filter(s => !sources.includes(s));
       let status = items.length ? grade(ageOf(d.updated), 7 * H, 13 * H) : 'red';
       if (status === 'green' && missing.length) status = 'amber';
       return { status, data: `${items.length} headlines from ${sources.length} sources`, note: missing.length ? `No items from ${missing.join(', ')}` : '' }; } },
-    { name: 'European LNG (ALSI)', file: 'lng-data.json', page: '/lng.html', every: 'Every 6 hours', test: d => ({
+    { name: 'European LNG (ALSI)', file: 'lng-data.json', page: '/lng', every: 'Every 6 hours', test: d => ({
       status: d.gasDay && d.fillPercent !== null && d.fillPercent !== undefined ? grade(dataAge(d.gasDay), 2 * D, 4 * D) : 'red',
       data: d.gasDay ? `Gas day ${day(d.gasDay)} · ${d.fillPercent}% full` : 'No gas day', note: d.gasDay ? '' : 'Inventory or gas day missing' }) },
-    { name: 'Grid balancing costs', file: 'balancing-costs.json', page: '/prices.html', every: 'Daily', test: d => {
+    { name: 'Grid balancing costs', file: 'balancing-costs.json', page: '/prices', every: 'Daily', test: d => {
       const last = (d.months || []).slice(-1)[0];
       const to = last ? `${last.month}-${String(last.days).padStart(2, '0')}` : null;
       return { status: to ? grade(dataAge(to), 8 * D, 15 * D) : 'red', data: to ? `To ${day(to)}` : '—' }; } },
-    { name: 'CfD payments (LCCC)', file: 'cfd.json', page: '/prices.html', every: 'Daily', test: d => ({
+    { name: 'CfD payments (LCCC)', file: 'cfd.json', page: '/prices', every: 'Daily', test: d => ({
       status: d.dataTo ? grade(dataAge(d.dataTo), 21 * D, 35 * D) : 'red', data: d.dataTo ? `To ${day(d.dataTo)}` : '—' }) },
-    { name: 'European power prices (Ember)', file: 'eu-power-prices.json', page: '/prices.html', every: 'Weekly', test: d => {
+    { name: 'European power prices (Ember)', file: 'eu-power-prices.json', page: '/prices', every: 'Weekly', test: d => {
       const m = (d.months || []).slice(-1)[0];
       return { status: m ? grade(dataAge(m + '-28'), 45 * D, 75 * D) : 'red', data: m ? `To ${month(m)} · ${(d.markets || []).length} markets` : '—' }; } },
-    { name: 'Long-run generation (Ember)', file: 'ember-uk.json', page: '/generation.html', every: 'Weekly', test: d => {
+    { name: 'Long-run generation (Ember)', file: 'ember-uk.json', page: '/generation', every: 'Weekly', test: d => {
       const y = (d.years || []).slice(-1)[0];
       return { status: y ? (y.year >= new Date().getFullYear() - 2 ? 'green' : 'amber') : 'red', data: y ? `To ${y.year}` : '—' }; } },
-    { name: 'Renewables pipeline (REPD)', file: 'repd-pipeline.json', page: '/generation.html', every: 'Weekly check', test: d => ({
+    { name: 'Renewables pipeline (REPD)', file: 'repd-pipeline.json', page: '/generation', every: 'Weekly check', test: d => ({
       status: d.published ? grade(ageOf(d.published), 120 * D, 200 * D) : 'red', data: d.title ? d.title.replace(/^.*\(REPD\):?\s*/i, '').replace(/\s*\((CSV|Excel)\)$/i, '') + ' edition' : '—' }) },
     { name: 'Substack issues', file: 'substack-posts.json', page: '/', every: 'Hourly', test: d => {
       const p = (d.posts || [])[0];
       return { status: (d.posts || []).length ? 'green' : 'red', data: p ? `Latest ${day(p.published)}` : 'No posts' }; } },
-    { name: 'Ofgem price cap', file: 'price-cap.json', page: '/prices.html', every: 'Manual, in /admin', manual: true, test: d => {
+    { name: 'Ofgem price cap', file: 'price-cap.json', page: '/prices', every: 'Manual, in /admin', manual: true, test: d => {
       const due = d.next_announcement && Date.parse(d.next_announcement + 'T23:59:59Z') < now();
       return { status: due ? 'amber' : 'green', data: (d.current && d.current.period) || '—', note: due ? `New cap was due ${day(d.next_announcement)}: update in /admin` : '' }; } },
-    { name: 'UK carbon auctions', file: 'uka-auctions.json', page: '/prices.html', every: 'Manual, in /admin', manual: true, test: d => {
+    { name: 'UK carbon auctions', file: 'uka-auctions.json', page: '/prices', every: 'Manual, in /admin', manual: true, test: d => {
       const today = new Date().toISOString().slice(0, 10);
       const left = (d.auctions || []).filter(a => a.date >= today).sort((a, b) => a.date.localeCompare(b.date));
       return { status: left.length >= 3 ? 'green' : left.length ? 'amber' : 'red', data: left.length ? `Next ${day(left[0].date)} · ${left.length} listed` : 'None listed',

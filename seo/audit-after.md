@@ -68,3 +68,13 @@ No change needed. `netlify.toml` already skips the build when a commit only touc
 1. **Load the Netlify Identity widget only when needed.** The home page loads `netlify-identity-widget.js` for every visitor so that CMS invite and password-reset links landing on `/` work. It could load only when the URL carries an identity token. I left it alone because a mistake here would break CMS invites, and it can't be tested without a real invite link.
 2. **Long cache for the font file.** A `Cache-Control: public, max-age=31536000, immutable` header for `/assets/fonts/*` in `netlify.toml` would save a revalidation request on repeat visits. It's safe as long as a changed font gets a new filename.
 3. **UK gas storage stock levels.** The storage page shows flow rates only, because no current feed has stock levels ("how full"). A new scheduled function would be needed, for example from GIE AGSI+, which uses the same GIE API key, if it covers the GB sites. This means touching the scheduled functions, so it's out of scope here.
+
+## Follow-up from Netlify traffic logs (7 days to 8 Nov)
+
+Read through the Netlify connector after the main work:
+
+- **Hourly data commits:** confirmed in the deploy list. Each automated commit shows "Canceled build due to no content change".
+- **URL forms:** visitors reached pages more often without `.html` (e.g. `/uk-gas` 24 vs `/uk-gas.html` 13). Canonicals, `og:url`, JSON-LD, the sitemap and all internal links now use the short form (`/prices`, `/topics/hormuz`). The `.html` addresses still work and carry the short canonical.
+- **`/favicon.ico`:** returned 404 (12 times). Added `favicon.ico` (16/32/48 px) and `apple-touch-icon.png` (180 px), made from the brand mark.
+- **`/blog`:** returned 404 (4 times). Now 301-redirects to the Substack archive (`netlify.toml`).
+- Other 404s were bots probing for `.env`, `.git/config` and `phpinfo.php` (nothing exposed), and crawlers guessing `/news_sitemap.xml`.

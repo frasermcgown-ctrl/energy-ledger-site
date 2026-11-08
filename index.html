@@ -32,7 +32,9 @@
 </script>
 <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="alternate" type="application/rss+xml" title="The Energy Ledger newsletter" href="https://home.theenergyledger.co.uk/feed">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/svg+xml" href="/icon-mark.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/assets/site.css">
 <style>
   /* ---------- Hero ---------- */
@@ -340,9 +342,9 @@
     </button>
     <nav class="links" id="site-links">
       <a href="/#issues">Issues</a>
-      <a href="/prices.html">Prices</a>
+      <a href="/prices">Prices</a>
       <a href="/#data">Live data</a>
-      <a href="/news.html">News</a>
+      <a href="/news">News</a>
       <a href="/#about">About</a>
       <a class="btn primary sm" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe free</a>
     </nav>
@@ -499,7 +501,7 @@
         <div class="week-grid" id="week-grid"></div>
       </div>
       <div class="data-grid">
-        <a class="card data-card" href="/prices.html">
+        <a class="card data-card" href="/prices">
           <div class="top">
             <span class="icon-chip chip-gas" style="background:var(--brand-soft);color:var(--brand)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-7"/></svg></span>
             <span class="live-tag"><span class="live-dot"></span>Daily</span>
@@ -509,7 +511,7 @@
           <div class="sub" id="dc-price-sub">NBP gas and GB power history, the price cap and grid balancing costs.</div>
           <span class="go">Open dashboard <span aria-hidden="true">→</span></span>
         </a>
-        <a class="card data-card" href="/generation.html">
+        <a class="card data-card" href="/generation">
           <div class="top">
             <span class="icon-chip chip-power"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></span>
             <span class="live-tag"><span class="live-dot"></span>Live</span>
@@ -519,7 +521,7 @@
           <div class="sub" id="dc-carbon-sub">Electricity generation mix, carbon intensity and national demand.</div>
           <span class="go">Open dashboard <span aria-hidden="true">→</span></span>
         </a>
-        <a class="card data-card" href="/lng.html">
+        <a class="card data-card" href="/lng">
           <div class="top">
             <span class="icon-chip chip-lng"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20c2 1 4 1 6 0s4-1 6 0 4 1 6 0"/><path d="M4 17 3 12h18l-2 5"/><path d="M8 12V8h8v4"/><path d="M12 8V4"/></svg></span>
             <span class="live-tag"><span class="live-dot"></span>Daily</span>
@@ -529,7 +531,7 @@
           <div class="sub" id="dc-lng-sub">EU terminal send-out, inventory and capacity use.</div>
           <span class="go">Open dashboard <span aria-hidden="true">→</span></span>
         </a>
-        <a class="card data-card" href="/uk-gas.html">
+        <a class="card data-card" href="/uk-gas">
           <div class="top">
             <span class="icon-chip chip-gas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></span>
             <span class="live-tag"><span class="live-dot"></span>Daily</span>
@@ -558,7 +560,7 @@
           </div>
           <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
             <button class="btn sm news-more" id="news-more" hidden>Show more news</button>
-            <a class="link news-more" href="/news.html">All news, filterable by topic <span aria-hidden="true">→</span></a>
+            <a class="link news-more" href="/news">All news, filterable by topic <span aria-hidden="true">→</span></a>
           </div>
         </div>
         <aside class="card archive-card">
@@ -636,16 +638,16 @@
       </div>
       <div class="foot-col">
         <h2 class="foot-h">Live data</h2>
-        <a href="/prices.html">Prices &amp; costs</a>
-        <a href="/generation.html">GB generation</a>
-        <a href="/uk-gas.html">UK gas supply</a>
-        <a href="/lng.html">LNG</a>
-        <a href="/news.html">News</a>
-        <a href="/nbp-gas-price.html">NBP gas price</a>
-        <a href="/uk-power-prices.html">UK power price</a>
-        <a href="/uk-gas-storage.html">UK gas storage</a>
-        <a href="/uk-carbon-intensity.html">Carbon intensity</a>
-        <a href="/sources.html">Data sources</a>
+        <a href="/prices">Prices &amp; costs</a>
+        <a href="/generation">GB generation</a>
+        <a href="/uk-gas">UK gas supply</a>
+        <a href="/lng">LNG</a>
+        <a href="/news">News</a>
+        <a href="/nbp-gas-price">NBP gas price</a>
+        <a href="/uk-power-prices">UK power price</a>
+        <a href="/uk-gas-storage">UK gas storage</a>
+        <a href="/uk-carbon-intensity">Carbon intensity</a>
+        <a href="/sources">Data sources</a>
       </div>
       <div class="foot-col">
         <h2 class="foot-h">Follow</h2>
@@ -747,26 +749,26 @@
         const c30 = chg(hist && hist.gas, 30);
         document.getElementById('dc-price').innerHTML = `${fmtNumber(px.gas.pencePerTherm, 0)}<span class="unit">p/th NBP</span>`;
         if (c30 !== null) document.getElementById('dc-price-sub').innerHTML = `${delta(c30, 'in 30 days')} · plus GB power, the price cap and balancing costs.`;
-        cells.push(['NBP gas', `${fmtNumber(px.gas.pencePerTherm, 1)}p/th`, delta(chg(hist && hist.gas, 7), 'on the week') || `gas day ${px.gas.gasDay}`, '/prices.html']);
+        cells.push(['NBP gas', `${fmtNumber(px.gas.pencePerTherm, 1)}p/th`, delta(chg(hist && hist.gas, 7), 'on the week') || `gas day ${px.gas.gasDay}`, '/prices']);
       }
-      if (px && px.power) cells.push(['GB power', `£${fmtNumber(px.power.poundsPerMwh, 1)}/MWh`, delta(chg(hist && hist.power, 7), 'on the week') || 'daily average', '/prices.html']);
+      if (px && px.power) cells.push(['GB power', `£${fmtNumber(px.power.poundsPerMwh, 1)}/MWh`, delta(chg(hist && hist.power, 7), 'on the week') || 'daily average', '/prices']);
       if (out && out.wind && out.wind.length) {
         const emb = new Map((out.embedded || []).map(e => [e.t.slice(0, 16), e.wind]));
         const now = Date.now(), next = out.wind.filter(w => Date.parse(w.t) >= now);
         if (next.length) {
           const avg = next.reduce((a, w) => a + w.mw + (emb.get(new Date(w.t).toISOString().slice(0, 16)) || 0), 0) / next.length / 1000;
-          cells.push(['Wind, next 3 days', `${fmtNumber(avg, 1)} GW`, 'average forecast', '/generation.html']);
+          cells.push(['Wind, next 3 days', `${fmtNumber(avg, 1)} GW`, 'average forecast', '/generation']);
         }
       }
       if (gas && gas.groups) {
         const g = gas.groups, total = ((g.find(x => /^total supply$/i.test(x.description)) || { sites: [] }).sites[0] || {}).flow;
         const lng = ((g.find(x => /terminals/i.test(x.description)) || { sites: [] }).sites).filter(t => /MILFORD HAVEN|ISLE OF GRAIN/.test(t.name)).reduce((a, t) => a + Math.max(0, t.flow || 0), 0);
-        if (total > 0) cells.push(['LNG share of UK gas', `${fmtNumber(lng / total * 100, 0)}%`, `${fmtNumber(lng, 1)} of ${fmtNumber(total, 0)} mcm/d`, '/uk-gas.html']);
+        if (total > 0) cells.push(['LNG share of UK gas', `${fmtNumber(lng / total * 100, 0)}%`, `${fmtNumber(lng, 1)} of ${fmtNumber(total, 0)} mcm/d`, '/uk-gas']);
       }
       if (bal && bal.months) {
         const daysIn = m => new Date(Date.UTC(+m.slice(0, 4), +m.slice(5, 7), 0)).getUTCDate();
         const full = bal.months.filter(m => m.days >= daysIn(m.month)), last = full[full.length - 1];
-        if (last) cells.push(['Grid balancing costs', `£${fmtNumber(last.total / 1e6, 0)}m`, new Date(last.month + '-15T12:00:00Z').toLocaleDateString('en-GB', { month: 'long', year: 'numeric' }), '/prices.html']);
+        if (last) cells.push(['Grid balancing costs', `£${fmtNumber(last.total / 1e6, 0)}m`, new Date(last.month + '-15T12:00:00Z').toLocaleDateString('en-GB', { month: 'long', year: 'numeric' }), '/prices']);
       }
       if (cells.length < 2) return;
       document.getElementById('week-grid').innerHTML = cells.map(([l, v, sub, href]) =>

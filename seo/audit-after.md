@@ -99,3 +99,23 @@ Flagged opportunities:
 - Reduce unused JavaScript (~74 KiB): almost certainly Google Analytics (gtag.js) loading in the head. It could be loaded after first paint.
 - Render-blocking requests (~150 ms estimated savings).
 - 2 long main-thread tasks, a forced reflow, and 5 non-composited animations (likely the pulsing "live" dots and chart measuring).
+
+## After the mobile performance changes: PageSpeed Insights (8 Nov 2026, evening)
+
+Re-run of the home page (mobile) after frasermcgown-ctrl/energy-ledger-site#48, which loads Google Analytics after the page and recomposes the live-dot animation. Single run.
+
+| Mobile | Baseline | After #48 |
+|---|---|---|
+| Performance | 88 | 98 |
+| Accessibility | 100 | 100 |
+| Best practices | 100 | 100 |
+| SEO | 100 | 100 |
+| First contentful paint | 2.7 s | 1.0 s |
+| Largest contentful paint | 2.7 s | 1.0 s |
+| Total blocking time | 100 ms | 10 ms |
+| Cumulative layout shift | 0 | 0 |
+| Speed Index | 4.8 s | 4.0 s |
+
+- No longer flagged: non-composited animations and forced reflow.
+- Still listed: "Reduce unused JavaScript (74 KiB)". This is Analytics, which still loads, just after the page draws; it's now a diagnostic rather than a failing audit.
+- Still listed: render-blocking requests (site.css and site.js). The estimate varied between runs (150 ms, then 760 ms). site.js must run before the page scripts, so it stays.

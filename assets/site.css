@@ -159,16 +159,22 @@ nav.links .btn{ margin-left:10px; }
 }
 .pill .dot{ width:7px; height:7px; border-radius:50%; background:var(--brand); }
 .live-dot{
+  position:relative;
   width:8px; height:8px; border-radius:50%;
   background:#16a34a;
-  box-shadow:0 0 0 0 rgba(22,163,74,.5);
-  animation:pulse 2s infinite;
   flex-shrink:0;
 }
+/* Expanding ring drawn with transform and opacity, which the browser can
+   animate on the GPU (animating box-shadow repaints every frame). */
+.live-dot::after{
+  content:""; position:absolute; inset:0; border-radius:50%;
+  background:rgba(22,163,74,.45);
+  animation:pulse 2s infinite;
+}
 @keyframes pulse{
-  0%{ box-shadow:0 0 0 0 rgba(22,163,74,.45); }
-  70%{ box-shadow:0 0 0 7px rgba(22,163,74,0); }
-  100%{ box-shadow:0 0 0 0 rgba(22,163,74,0); }
+  0%{ transform:scale(1); opacity:1; }
+  70%{ transform:scale(2.75); opacity:0; }
+  100%{ transform:scale(2.75); opacity:0; }
 }
 
 section{ padding:96px 0; }

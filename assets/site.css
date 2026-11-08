@@ -6,7 +6,7 @@
   --bg-muted: #f1f3f6;
   --ink: #0f172a;
   --ink-2: #334155;
-  --ink-3: #64748b;
+  --ink-3: #5b6779;
   --ink-4: #94a3b8;
   --line: #e5e7eb;
   --line-strong: #d6dae1;
@@ -353,7 +353,7 @@ footer.site{
 }
 .foot-grid{ display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:40px; }
 .foot-grid p{ color:var(--ink-3); margin-top:14px; max-width:340px; }
-.foot-col h4{ font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:0.06em; color:var(--ink-3); margin-bottom:14px; }
+.foot-col .foot-h{ font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:0.06em; color:var(--ink-3); margin-bottom:14px; }
 .foot-col a{ display:block; color:var(--ink-2); text-decoration:none; padding:5px 0; }
 .foot-col a:hover{ color:var(--ink); }
 .foot-note{ max-width:520px; text-align:right; }

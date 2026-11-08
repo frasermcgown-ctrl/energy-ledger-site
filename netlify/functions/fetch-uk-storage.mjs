@@ -1,9 +1,9 @@
 // Runs on a schedule (see the `config` export below). AGSI (Aggregated Gas
 // Storage Inventory, run by Gas Infrastructure Europe) publishes how much gas
 // is held in each country's underground storage once per gas day. This fetches
-// the United Kingdom (country code GB, listed by GIE as "Non-EU – United
-// Kingdom" from 2020-12-31) and commits the latest day plus about a year of
-// history to content/uk-storage-levels.json. uk-gas-storage.html reads that
+// the United Kingdom (listed by GIE as "Non-EU – United Kingdom" from
+// 2020-12-31; see ATTEMPTS below for how it is requested) and commits the
+// latest day plus about a year of history to content/uk-storage-levels.json. uk-gas-storage.html reads that
 // file, so the API key never reaches the browser. Uses the same GIE_API_KEY as
 // fetch-lng.mjs.
 //
@@ -25,25 +25,77 @@ const num = v => {
 };
 const round = (v, dp) => (v === null ? null : Math.round(v * 10 ** dp) / 10 ** dp);
 
-async function fetchRows(key) {
+// GIE splits the UK into a pre-Brexit series (EU, until 2020-12-30) and a
+// post-Brexit one (Non-EU, from 2020-12-31), but the documentation doesn't say
+// which query returns which. Try the likely requests in order and use the first
+// that returns recent usable rows. Each attempt is logged so a failed run shows
+// what GIE actually sent back.
+const ATTEMPTS = [
+  { label: "type=ne&country=gb", query: "type=ne&country=gb" },
+  { label: "country=gb", query: "country=gb" },
+  { label: "country=GB", query: "country=GB" },
+  { label: "type=ne (UK child)", query: "type=ne", child: true },
+];
+
+const isUk = o => o && /^gb\*?$/i.test(String(o.code || o.url || "")) || /united kingdom/i.test(String(o && o.name || ""));
+const usable = r => r && r.gasDayStart && r.status !== "N" && num(r.gasInStorage) !== null;
+
+// In an aggregate (type=ne) response each day's row lists its countries under
+// `children`; pull out the UK entry and keep the day.
+function ukFromChildren(row) {
+  const stack = [...(row.children || [])];
+  while (stack.length) {
+    const c = stack.shift();
+    if (isUk(c)) return { ...c, gasDayStart: c.gasDayStart || row.gasDayStart };
+    if (Array.isArray(c.children)) stack.push(...c.children);
+  }
+  return null;
+}
+
+async function fetchAttempt(key, attempt) {
   const rows = [];
   const from = isoDate(daysAgo(HISTORY_DAYS));
   const to = isoDate(new Date());
   for (let page = 1; page <= MAX_PAGES; page++) {
-    const url = `https://agsi.gie.eu/api?country=GB&from=${from}&to=${to}&size=${PAGE_SIZE}&page=${page}`;
+    const url = `https://agsi.gie.eu/api?${attempt.query}&from=${from}&to=${to}&size=${PAGE_SIZE}&page=${page}`;
     const json = await fetchJson(url, { headers: { "x-key": key } });
-    rows.push(...(json.data || []));
+    const data = Array.isArray(json.data) ? json.data : [];
+    if (page === 1) {
+      const first = data[0] || {};
+      console.log(`AGSI ${attempt.label}: ${data.length} rows on page 1, last_page ${json.last_page}, dataset ${JSON.stringify(json.dataset)}; ` +
+        `first row ${JSON.stringify({ name: first.name, code: first.code, gasDayStart: first.gasDayStart, status: first.status, gasInStorage: first.gasInStorage, full: first.full, children: Array.isArray(first.children) ? first.children.length : undefined })}` +
+        (json.message || json.error ? `; message ${JSON.stringify(json.message || json.error)}` : ""));
+    }
+    rows.push(...(attempt.child ? data.map(ukFromChildren).filter(Boolean) : data));
     if (!json.last_page || page >= Number(json.last_page)) break;
   }
   return rows;
 }
 
-function toPayload(rows) {
-  const usable = rows
-    .filter(r => r.gasDayStart && r.status !== "N" && num(r.gasInStorage) !== null)
+async function fetchRows(key) {
+  const recent = isoDate(daysAgo(10));
+  for (const attempt of ATTEMPTS) {
+    try {
+      const rows = await fetchAttempt(key, attempt);
+      const good = rows.filter(usable);
+      if (good.some(r => String(r.gasDayStart) >= recent)) {
+        console.log(`Using AGSI ${attempt.label}: ${good.length} usable rows.`);
+        return { rows, used: attempt.label };
+      }
+      console.log(`AGSI ${attempt.label}: ${good.length} usable rows, none in the last 10 days.`);
+    } catch (err) {
+      console.log(`AGSI ${attempt.label} failed: ${err.message}`);
+    }
+  }
+  return { rows: [], used: null };
+}
+
+function toPayload(rows, used) {
+  const good = rows
+    .filter(usable)
     .sort((a, b) => String(a.gasDayStart).localeCompare(String(b.gasDayStart)));
-  if (!usable.length) return null;
-  const last = usable[usable.length - 1];
+  if (!good.length) return null;
+  const last = good[good.length - 1];
   return {
     country: "GB",
     gasDay: last.gasDayStart,
@@ -55,8 +107,8 @@ function toPayload(rows) {
     injectionGWhPerDay: round(num(last.injection), 1),
     withdrawalGWhPerDay: round(num(last.withdrawal), 1),
     // Oldest first: d = gas day, twh = gas in storage, full = % of working gas volume.
-    history: usable.map(r => ({ d: r.gasDayStart, twh: round(num(r.gasInStorage), 3), full: round(num(r.full), 2) })),
-    source: "Gas Infrastructure Europe AGSI (country GB)",
+    history: good.map(r => ({ d: r.gasDayStart, twh: round(num(r.gasInStorage), 3), full: round(num(r.full), 2) })),
+    source: `Gas Infrastructure Europe AGSI, United Kingdom (${used})`,
   };
 }
 
@@ -67,9 +119,10 @@ export default async () => {
     return new Response("No API key", { status: 500 });
   }
   try {
-    const payload = toPayload(await fetchRows(key));
+    const { rows, used } = await fetchRows(key);
+    const payload = toPayload(rows, used);
     if (!payload) {
-      console.error("AGSI returned no usable GB rows.");
+      console.error("AGSI returned no recent usable UK rows from any query (see lines above).");
       return new Response("No data", { status: 500 });
     }
     console.log(`AGSI GB gas day ${payload.gasDay} (${payload.status}): ${payload.gasInStorageTWh} TWh, ${payload.fullPercent}% full, ${payload.history.length} days of history`);

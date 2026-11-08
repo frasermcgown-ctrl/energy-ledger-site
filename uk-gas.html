@@ -39,24 +39,91 @@
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
- "@type": "Dataset",
- "name": "Live UK gas supply, demand and storage",
- "description": "Live UK gas supply by terminal, including Norwegian pipeline imports, North Sea production and LNG from Milford Haven and Isle of Grain, gas demand by category, linepack and storage flows, from National Gas Transmission's open data.",
- "url": "https://www.theenergyledger.co.uk/uk-gas.html",
- "creator": {
-  "@type": "Organization",
-  "name": "The Energy Ledger",
-  "url": "https://www.theenergyledger.co.uk/"
- },
- "isAccessibleForFree": true,
- "spatialCoverage": "United Kingdom",
- "keywords": [
-  "UK gas supply",
-  "gas demand",
-  "gas storage",
-  "LNG imports",
-  "Norway gas",
-  "linepack"
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "https://www.theenergyledger.co.uk/uk-gas.html#webpage",
+   "url": "https://www.theenergyledger.co.uk/uk-gas.html",
+   "name": "Live UK gas supply, demand and storage",
+   "description": "Live UK gas supply by terminal, demand by sector, linepack and storage flows.",
+   "inLanguage": "en-GB",
+   "isPartOf": {
+    "@id": "https://www.theenergyledger.co.uk/#website"
+   },
+   "publisher": {
+    "@id": "https://www.theenergyledger.co.uk/#org"
+   },
+   "breadcrumb": {
+    "@id": "https://www.theenergyledger.co.uk/uk-gas.html#breadcrumb"
+   },
+   "mainEntity": {
+    "@id": "https://www.theenergyledger.co.uk/uk-gas.html#dataset"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://www.theenergyledger.co.uk/uk-gas.html#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://www.theenergyledger.co.uk/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "UK gas supply",
+     "item": "https://www.theenergyledger.co.uk/uk-gas.html"
+    }
+   ]
+  },
+  {
+   "@type": "Dataset",
+   "@id": "https://www.theenergyledger.co.uk/uk-gas.html#dataset",
+   "name": "Live UK gas supply, demand and storage flows",
+   "description": "Live UK gas supply by terminal, including Norwegian pipeline imports, North Sea production and LNG from Milford Haven and Isle of Grain, gas demand by category, linepack and storage flows, from National Gas Transmission's open data.",
+   "url": "https://www.theenergyledger.co.uk/uk-gas.html",
+   "mainEntityOfPage": {
+    "@id": "https://www.theenergyledger.co.uk/uk-gas.html#webpage"
+   },
+   "creator": {
+    "@id": "https://www.theenergyledger.co.uk/#org"
+   },
+   "publisher": {
+    "@id": "https://www.theenergyledger.co.uk/#org"
+   },
+   "isAccessibleForFree": true,
+   "spatialCoverage": {
+    "@type": "Place",
+    "name": "United Kingdom"
+   },
+   "keywords": [
+    "UK gas supply",
+    "gas demand",
+    "gas storage",
+    "LNG imports",
+    "Norway gas",
+    "linepack"
+   ],
+   "isBasedOn": [
+    "https://data.nationalgas.com"
+   ],
+   "creditText": "National Gas Transmission",
+   "distribution": [
+    {
+     "@type": "DataDownload",
+     "encodingFormat": "application/json",
+     "contentUrl": "https://raw.githubusercontent.com/frasermcgown-ctrl/energy-ledger-site/main/content/uk-gas-data.json"
+    }
+   ],
+   "variableMeasured": [
+    "Gas flow by terminal (mcm/d)",
+    "Gas demand by category (mcm/d)",
+    "Linepack (mcm)",
+    "Storage withdrawal and injection (mcm/d)"
+   ]
+  }
  ]
 }
 </script>

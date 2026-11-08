@@ -39,24 +39,105 @@
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
- "@type": "Dataset",
- "name": "Great Britain electricity generation mix and carbon intensity",
- "description": "Live Great Britain electricity generation mix, carbon intensity (gCO2/kWh) and national demand, wind, solar and demand forecasts, the pipeline of renewables and storage projects by planning stage, and long-run UK electricity generation by source.",
- "url": "https://www.theenergyledger.co.uk/generation.html",
- "creator": {
-  "@type": "Organization",
-  "name": "The Energy Ledger",
-  "url": "https://www.theenergyledger.co.uk/"
- },
- "isAccessibleForFree": true,
- "spatialCoverage": "United Kingdom",
- "keywords": [
-  "GB generation mix",
-  "carbon intensity",
-  "wind power",
-  "solar power",
-  "electricity demand",
-  "renewables pipeline"
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "https://www.theenergyledger.co.uk/generation.html#webpage",
+   "url": "https://www.theenergyledger.co.uk/generation.html",
+   "name": "Live GB generation and carbon intensity",
+   "description": "Live Great Britain electricity generation mix, carbon intensity, wind and solar forecasts and national demand.",
+   "inLanguage": "en-GB",
+   "isPartOf": {
+    "@id": "https://www.theenergyledger.co.uk/#website"
+   },
+   "publisher": {
+    "@id": "https://www.theenergyledger.co.uk/#org"
+   },
+   "breadcrumb": {
+    "@id": "https://www.theenergyledger.co.uk/generation.html#breadcrumb"
+   },
+   "mainEntity": {
+    "@id": "https://www.theenergyledger.co.uk/generation.html#dataset"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://www.theenergyledger.co.uk/generation.html#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://www.theenergyledger.co.uk/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "GB generation",
+     "item": "https://www.theenergyledger.co.uk/generation.html"
+    }
+   ]
+  },
+  {
+   "@type": "Dataset",
+   "@id": "https://www.theenergyledger.co.uk/generation.html#dataset",
+   "name": "Great Britain electricity generation mix and carbon intensity",
+   "description": "Live Great Britain electricity generation mix, carbon intensity (gCO2/kWh) and national demand, wind, solar and demand forecasts, the pipeline of renewables and storage projects by planning stage, and long-run UK electricity generation by source.",
+   "url": "https://www.theenergyledger.co.uk/generation.html",
+   "mainEntityOfPage": {
+    "@id": "https://www.theenergyledger.co.uk/generation.html#webpage"
+   },
+   "creator": {
+    "@id": "https://www.theenergyledger.co.uk/#org"
+   },
+   "publisher": {
+    "@id": "https://www.theenergyledger.co.uk/#org"
+   },
+   "isAccessibleForFree": true,
+   "spatialCoverage": {
+    "@type": "Place",
+    "name": "Great Britain"
+   },
+   "keywords": [
+    "GB generation mix",
+    "carbon intensity",
+    "wind power",
+    "solar power",
+    "electricity demand",
+    "renewables pipeline"
+   ],
+   "isBasedOn": [
+    "https://carbonintensity.org.uk",
+    "https://bmrs.elexon.co.uk",
+    "https://www.neso.energy/data-portal",
+    "https://ember-energy.org",
+    "https://www.gov.uk/government/publications/renewable-energy-planning-database-quarterly-extract"
+   ],
+   "creditText": "NESO Carbon Intensity API, Elexon, NESO, Ember, DESNZ",
+   "distribution": [
+    {
+     "@type": "DataDownload",
+     "encodingFormat": "application/json",
+     "contentUrl": "https://raw.githubusercontent.com/frasermcgown-ctrl/energy-ledger-site/main/content/outlook.json"
+    },
+    {
+     "@type": "DataDownload",
+     "encodingFormat": "application/json",
+     "contentUrl": "https://raw.githubusercontent.com/frasermcgown-ctrl/energy-ledger-site/main/content/ember-uk.json"
+    },
+    {
+     "@type": "DataDownload",
+     "encodingFormat": "application/json",
+     "contentUrl": "https://raw.githubusercontent.com/frasermcgown-ctrl/energy-ledger-site/main/content/repd-pipeline.json"
+    }
+   ],
+   "variableMeasured": [
+    "Carbon intensity (gCO2/kWh)",
+    "Generation mix (%)",
+    "Wind and solar forecast (MW)",
+    "National demand forecast (MW)"
+   ]
+  }
  ]
 }
 </script>

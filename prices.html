@@ -39,24 +39,116 @@
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
- "@type": "Dataset",
- "name": "UK gas and power prices, price cap and balancing costs",
- "description": "Daily NBP gas System Average Price (pence per therm) and GB power market index (£/MWh) with up to a year of history, the Ofgem default tariff price cap, monthly grid balancing costs, Contracts for Difference payments, European day-ahead power prices and the UK carbon auction calendar, compiled from official open data.",
- "url": "https://www.theenergyledger.co.uk/prices.html",
- "creator": {
-  "@type": "Organization",
-  "name": "The Energy Ledger",
-  "url": "https://www.theenergyledger.co.uk/"
- },
- "isAccessibleForFree": true,
- "spatialCoverage": "United Kingdom",
- "keywords": [
-  "NBP gas price",
-  "UK power price",
-  "Ofgem price cap",
-  "balancing costs",
-  "Contracts for Difference",
-  "UK ETS"
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "https://www.theenergyledger.co.uk/prices.html#webpage",
+   "url": "https://www.theenergyledger.co.uk/prices.html",
+   "name": "UK gas and power prices, price cap and balancing costs",
+   "description": "Daily NBP gas and GB power prices with history, the Ofgem price cap, grid balancing costs, CfD payments, European power prices and UK carbon auctions.",
+   "inLanguage": "en-GB",
+   "isPartOf": {
+    "@id": "https://www.theenergyledger.co.uk/#website"
+   },
+   "publisher": {
+    "@id": "https://www.theenergyledger.co.uk/#org"
+   },
+   "breadcrumb": {
+    "@id": "https://www.theenergyledger.co.uk/prices.html#breadcrumb"
+   },
+   "mainEntity": {
+    "@id": "https://www.theenergyledger.co.uk/prices.html#dataset"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://www.theenergyledger.co.uk/prices.html#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://www.theenergyledger.co.uk/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Prices & costs",
+     "item": "https://www.theenergyledger.co.uk/prices.html"
+    }
+   ]
+  },
+  {
+   "@type": "Dataset",
+   "@id": "https://www.theenergyledger.co.uk/prices.html#dataset",
+   "name": "UK gas and power prices, price cap and balancing costs",
+   "description": "Daily NBP gas System Average Price (pence per therm) and GB power market index (£/MWh) with up to a year of history, the Ofgem default tariff price cap, monthly grid balancing costs, Contracts for Difference payments, European day-ahead power prices and the UK carbon auction calendar, compiled from official open data.",
+   "url": "https://www.theenergyledger.co.uk/prices.html",
+   "mainEntityOfPage": {
+    "@id": "https://www.theenergyledger.co.uk/prices.html#webpage"
+   },
+   "creator": {
+    "@id": "https://www.theenergyledger.co.uk/#org"
+   },
+   "publisher": {
+    "@id": "https://www.theenergyledger.co.uk/#org"
+   },
+   "isAccessibleForFree": true,
+   "spatialCoverage": {
+    "@type": "Place",
+    "name": "United Kingdom"
+   },
+   "keywords": [
+    "NBP gas price",
+    "UK power price",
+    "Ofgem price cap",
+    "balancing costs",
+    "Contracts for Difference",
+    "UK ETS"
+   ],
+   "isBasedOn": [
+    "https://data.nationalgas.com",
+    "https://bmrs.elexon.co.uk",
+    "https://www.neso.energy/data-portal",
+    "https://www.ofgem.gov.uk/energy-price-cap",
+    "https://dp.lowcarboncontracts.uk",
+    "https://ember-energy.org"
+   ],
+   "creditText": "National Gas Transmission, Elexon, NESO, Ofgem, Low Carbon Contracts Company, Ember",
+   "distribution": [
+    {
+     "@type": "DataDownload",
+     "encodingFormat": "application/json",
+     "contentUrl": "https://raw.githubusercontent.com/frasermcgown-ctrl/energy-ledger-site/main/content/market-prices.json"
+    },
+    {
+     "@type": "DataDownload",
+     "encodingFormat": "application/json",
+     "contentUrl": "https://raw.githubusercontent.com/frasermcgown-ctrl/energy-ledger-site/main/content/price-history.json"
+    },
+    {
+     "@type": "DataDownload",
+     "encodingFormat": "application/json",
+     "contentUrl": "https://raw.githubusercontent.com/frasermcgown-ctrl/energy-ledger-site/main/content/balancing-costs.json"
+    },
+    {
+     "@type": "DataDownload",
+     "encodingFormat": "application/json",
+     "contentUrl": "https://raw.githubusercontent.com/frasermcgown-ctrl/energy-ledger-site/main/content/cfd.json"
+    },
+    {
+     "@type": "DataDownload",
+     "encodingFormat": "application/json",
+     "contentUrl": "https://raw.githubusercontent.com/frasermcgown-ctrl/energy-ledger-site/main/content/eu-power-prices.json"
+    }
+   ],
+   "variableMeasured": [
+    "NBP System Average Price (p/therm)",
+    "GB market index price (£/MWh)",
+    "Balancing costs (£)",
+    "CfD payments (£)"
+   ]
+  }
  ]
 }
 </script>

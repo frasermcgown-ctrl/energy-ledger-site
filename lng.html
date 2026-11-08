@@ -39,24 +39,96 @@
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
- "@type": "Dataset",
- "name": "UK and European LNG terminal data",
- "description": "Live send-out from Britain's LNG import terminals at Milford Haven and Isle of Grain, alongside EU-wide LNG terminal inventory, send-out and capacity from Gas Infrastructure Europe's ALSI platform.",
- "url": "https://www.theenergyledger.co.uk/lng.html",
- "creator": {
-  "@type": "Organization",
-  "name": "The Energy Ledger",
-  "url": "https://www.theenergyledger.co.uk/"
- },
- "isAccessibleForFree": true,
- "spatialCoverage": "United Kingdom",
- "keywords": [
-  "LNG",
-  "liquefied natural gas",
-  "Isle of Grain",
-  "Milford Haven",
-  "South Hook",
-  "European LNG"
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "https://www.theenergyledger.co.uk/lng.html#webpage",
+   "url": "https://www.theenergyledger.co.uk/lng.html",
+   "name": "UK and European LNG terminal data",
+   "description": "Live send-out from Britain's LNG terminals and EU-wide LNG terminal inventory and send-out.",
+   "inLanguage": "en-GB",
+   "isPartOf": {
+    "@id": "https://www.theenergyledger.co.uk/#website"
+   },
+   "publisher": {
+    "@id": "https://www.theenergyledger.co.uk/#org"
+   },
+   "breadcrumb": {
+    "@id": "https://www.theenergyledger.co.uk/lng.html#breadcrumb"
+   },
+   "mainEntity": {
+    "@id": "https://www.theenergyledger.co.uk/lng.html#dataset"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://www.theenergyledger.co.uk/lng.html#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://www.theenergyledger.co.uk/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "LNG",
+     "item": "https://www.theenergyledger.co.uk/lng.html"
+    }
+   ]
+  },
+  {
+   "@type": "Dataset",
+   "@id": "https://www.theenergyledger.co.uk/lng.html#dataset",
+   "name": "UK and European LNG terminal data",
+   "description": "Live send-out from Britain's LNG import terminals at Milford Haven and Isle of Grain, alongside EU-wide LNG terminal inventory, send-out and capacity from Gas Infrastructure Europe's ALSI platform.",
+   "url": "https://www.theenergyledger.co.uk/lng.html",
+   "mainEntityOfPage": {
+    "@id": "https://www.theenergyledger.co.uk/lng.html#webpage"
+   },
+   "creator": {
+    "@id": "https://www.theenergyledger.co.uk/#org"
+   },
+   "publisher": {
+    "@id": "https://www.theenergyledger.co.uk/#org"
+   },
+   "isAccessibleForFree": true,
+   "spatialCoverage": {
+    "@type": "Place",
+    "name": "United Kingdom and European Union"
+   },
+   "keywords": [
+    "LNG",
+    "liquefied natural gas",
+    "Isle of Grain",
+    "Milford Haven",
+    "South Hook",
+    "European LNG"
+   ],
+   "isBasedOn": [
+    "https://alsi.gie.eu",
+    "https://data.nationalgas.com"
+   ],
+   "creditText": "Gas Infrastructure Europe (ALSI), National Gas Transmission",
+   "distribution": [
+    {
+     "@type": "DataDownload",
+     "encodingFormat": "application/json",
+     "contentUrl": "https://raw.githubusercontent.com/frasermcgown-ctrl/energy-ledger-site/main/content/lng-data.json"
+    },
+    {
+     "@type": "DataDownload",
+     "encodingFormat": "application/json",
+     "contentUrl": "https://raw.githubusercontent.com/frasermcgown-ctrl/energy-ledger-site/main/content/uk-gas-data.json"
+    }
+   ],
+   "variableMeasured": [
+    "LNG send-out (GWh/d)",
+    "LNG inventory (thousand m3)",
+    "Terminal fill (%)"
+   ]
+  }
  ]
 }
 </script>

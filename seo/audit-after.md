@@ -119,3 +119,4 @@ Re-run of the home page (mobile) after frasermcgown-ctrl/energy-ledger-site#48, 
 - No longer flagged: non-composited animations and forced reflow.
 - Still listed: "Reduce unused JavaScript (74 KiB)". This is Analytics, which still loads, just after the page draws; it's now a diagnostic rather than a failing audit.
 - Still listed: render-blocking requests (site.css and site.js). The estimate varied between runs (150 ms, then 760 ms). site.js must run before the page scripts, so it stays.
+- Analytics confirmed working after the change: a phone visit to the home page showed in Google Analytics Realtime within a minute (8 Nov 2026), under the new page title.

@@ -1,131 +1,106 @@
-// Runs on a schedule (see the `config` export below). AGSI (Aggregated Gas
-// Storage Inventory, run by Gas Infrastructure Europe) publishes how much gas
-// is held in each country's underground storage once per gas day. This fetches
-// the United Kingdom (listed by GIE as "Non-EU – United Kingdom" from
-// 2020-12-31; see ATTEMPTS below for how it is requested) and commits the
-// latest day plus about a year of history to content/uk-storage-levels.json. uk-gas-storage.html reads that
-// file, so the API key never reaches the browser. Uses the same GIE_API_KEY as
-// fetch-lng.mjs.
+// Runs on a schedule (see the `config` export below). National Gas publishes
+// UK storage stock levels once a day (around 16:00, for the previous gas day),
+// in GWh, aggregated by storage type (short, medium and long range; in
+// practice only medium-range sites hold gas today). This fetches about a
+// year of those daily stocks and commits them to content/uk-storage-levels.json,
+// which uk-gas-storage.html reads.
 //
-// AGSI fields per gas day (GIE API documentation v013): gasDayStart, status
-// (E estimated / C confirmed / N no data), gasInStorage and workingGasVolume
-// in TWh, full in %, trend in % change on the day, injection and withdrawal
-// in GWh/d. Values arrive as strings.
+// Same public API and method as fetch-price-history.mjs: find the data items in
+// the National Gas publications catalogue by name, then request their gas-day
+// values. No API key is needed.
+//
+// GIE AGSI was tried first, but it lists the UK with no data ("N") for every
+// day since Brexit, so it can't be used for UK stocks.
 
 import { writeJsonIfChanged, fetchJson, isoDate, daysAgo } from "../lib/github.mjs";
 
 const PATH = "content/uk-storage-levels.json";
-const PAGE_SIZE = 300;
-const MAX_PAGES = 3;      // ~400 days of history needs two pages
 const HISTORY_DAYS = 400;
+const NG_API = "https://api.nationalgas.com/operationaldata/v1/publications";
 
-const num = v => {
-  const n = parseFloat(v);
-  return Number.isFinite(n) ? n : null;
-};
-const round = (v, dp) => (v === null ? null : Math.round(v * 10 ** dp) / 10 ** dp);
-
-// GIE splits the UK into a pre-Brexit series (EU, until 2020-12-30) and a
-// post-Brexit one (Non-EU, from 2020-12-31), but the documentation doesn't say
-// which query returns which. Try the likely requests in order and use the first
-// that returns recent usable rows. Each attempt is logged so a failed run shows
-// what GIE actually sent back.
-const ATTEMPTS = [
-  { label: "type=ne&country=gb", query: "type=ne&country=gb" },
-  { label: "country=gb", query: "country=gb" },
-  { label: "country=GB", query: "country=GB" },
-  { label: "type=ne (UK child)", query: "type=ne", child: true },
-];
-
-const isUk = o => o && /^gb\*?$/i.test(String(o.code || o.url || "")) || /united kingdom/i.test(String(o && o.name || ""));
-const usable = r => r && r.gasDayStart && r.status !== "N" && num(r.gasInStorage) !== null;
-
-// In an aggregate (type=ne) response each day's row lists its countries under
-// `children`; pull out the UK entry and keep the day.
-function ukFromChildren(row) {
-  const stack = [...(row.children || [])];
-  while (stack.length) {
-    const c = stack.shift();
-    if (isUk(c)) return { ...c, gasDayStart: c.gasDayStart || row.gasDayStart };
-    if (Array.isArray(c.children)) stack.push(...c.children);
+function catalogueEntries(node, out = []) {
+  if (Array.isArray(node)) {
+    node.forEach(n => catalogueEntries(n, out));
+  } else if (node && typeof node === "object") {
+    if (node.publicationId && node.name) out.push({ id: node.publicationId, name: node.name });
+    Object.values(node).forEach(v => { if (v && typeof v === "object") catalogueEntries(v, out); });
   }
-  return null;
+  return out;
 }
 
-async function fetchAttempt(key, attempt) {
-  const rows = [];
-  const from = isoDate(daysAgo(HISTORY_DAYS));
-  const to = isoDate(new Date());
-  for (let page = 1; page <= MAX_PAGES; page++) {
-    const url = `https://agsi.gie.eu/api?${attempt.query}&from=${from}&to=${to}&size=${PAGE_SIZE}&page=${page}`;
-    const json = await fetchJson(url, { headers: { "x-key": key } });
-    const data = Array.isArray(json.data) ? json.data : [];
-    if (page === 1) {
-      const first = data[0] || {};
-      console.log(`AGSI ${attempt.label}: ${data.length} rows on page 1, last_page ${json.last_page}, dataset ${JSON.stringify(json.dataset)}; ` +
-        `first row ${JSON.stringify({ name: first.name, code: first.code, gasDayStart: first.gasDayStart, status: first.status, gasInStorage: first.gasInStorage, full: first.full, children: Array.isArray(first.children) ? first.children.length : undefined })}` +
-        (json.message || json.error ? `; message ${JSON.stringify(json.message || json.error)}` : ""));
-    }
-    rows.push(...(attempt.child ? data.map(ukFromChildren).filter(Boolean) : data));
-    if (!json.last_page || page >= Number(json.last_page)) break;
-  }
-  return rows;
+// Aggregate stock level items, one per storage range. Excludes forecasts,
+// LNG stocks, monitors/safety levels and capacity items.
+function findStockItems(entries) {
+  const seen = new Set();
+  return entries.filter(e => {
+    const n = e.name;
+    const ok = /stock/i.test(n) && /storage/i.test(n) && /\b(short|medium|long)\b/i.test(n) &&
+      !/lng|forecast|monitor|safety|capacity|deliverability|space|injectab|withdraw|%|percent/i.test(n);
+    if (!ok || seen.has(e.id)) return false;
+    seen.add(e.id);
+    return true;
+  });
 }
 
-async function fetchRows(key) {
-  const recent = isoDate(daysAgo(10));
-  for (const attempt of ATTEMPTS) {
-    try {
-      const rows = await fetchAttempt(key, attempt);
-      const good = rows.filter(usable);
-      if (good.some(r => String(r.gasDayStart) >= recent)) {
-        console.log(`Using AGSI ${attempt.label}: ${good.length} usable rows.`);
-        return { rows, used: attempt.label };
-      }
-      console.log(`AGSI ${attempt.label}: ${good.length} usable rows, none in the last 10 days.`);
-    } catch (err) {
-      console.log(`AGSI ${attempt.label} failed: ${err.message}`);
-    }
-  }
-  return { rows: [], used: null };
-}
+const rangeOf = name => (name.match(/\b(short|medium|long)\b/i) || [])[1].toLowerCase();
 
-function toPayload(rows, used) {
-  const good = rows
-    .filter(usable)
-    .sort((a, b) => String(a.gasDayStart).localeCompare(String(b.gasDayStart)));
-  if (!good.length) return null;
-  const last = good[good.length - 1];
-  return {
-    country: "GB",
-    gasDay: last.gasDayStart,
-    status: last.status,
-    gasInStorageTWh: round(num(last.gasInStorage), 3),
-    workingGasVolumeTWh: round(num(last.workingGasVolume), 3),
-    fullPercent: round(num(last.full), 2),
-    trendPercent: round(num(last.trend), 2),
-    injectionGWhPerDay: round(num(last.injection), 1),
-    withdrawalGWhPerDay: round(num(last.withdrawal), 1),
-    // Oldest first: d = gas day, twh = gas in storage, full = % of working gas volume.
-    history: good.map(r => ({ d: r.gasDayStart, twh: round(num(r.gasInStorage), 3), full: round(num(r.full), 2) })),
-    source: `Gas Infrastructure Europe AGSI, United Kingdom (${used})`,
-  };
+async function fetchItemHistory(ids) {
+  const data = await fetchJson(`${NG_API}/gasday`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      fromDate: isoDate(daysAgo(HISTORY_DAYS)),
+      toDate: isoDate(new Date()),
+      publicationIds: ids,
+      latestValue: "Y",
+    }),
+  });
+  return Array.isArray(data) ? data : [data];
 }
 
 export default async () => {
-  const key = process.env.GIE_API_KEY;
-  if (!key) {
-    console.error("GIE_API_KEY not set — skipping this run.");
-    return new Response("No API key", { status: 500 });
-  }
   try {
-    const { rows, used } = await fetchRows(key);
-    const payload = toPayload(rows, used);
-    if (!payload) {
-      console.error("AGSI returned no recent usable UK rows from any query (see lines above).");
+    const entries = catalogueEntries(await fetchJson(`${NG_API}/catalogue`));
+    const items = findStockItems(entries);
+    if (!items.length) {
+      const hints = entries.filter(e => /stock/i.test(e.name)).slice(0, 40).map(e => `${e.id} ${e.name}`);
+      console.error(`No storage stock items found in the National Gas catalogue (${entries.length} entries). Items mentioning 'stock': ${JSON.stringify(hints)}`);
+      return new Response("No stock items", { status: 500 });
+    }
+    console.log(`Storage stock items: ${items.map(i => `${i.id} "${i.name}"`).join("; ")}`);
+
+    const results = await fetchItemHistory(items.map(i => i.id));
+    // day -> { short, medium, long } in GWh
+    const byDay = {};
+    results.forEach((res, idx) => {
+      const item = items.find(i => i.id === res.publicationId || i.name === res.publicationObjectName) || items[idx];
+      if (!item) return;
+      const range = rangeOf(item.name);
+      (res.publications || []).forEach(r => {
+        const v = parseFloat(r.value);
+        if (!r.applicableFor || !Number.isFinite(v) || v < 0) return;
+        const day = (byDay[r.applicableFor] = byDay[r.applicableFor] || {});
+        day[range] = Math.round(v);
+      });
+    });
+
+    const days = Object.keys(byDay).sort();
+    if (!days.length) {
+      console.error(`Storage stock items returned no values: ${JSON.stringify(results.map(r => ({ id: r.publicationId, name: r.publicationObjectName, n: (r.publications || []).length })))}`);
       return new Response("No data", { status: 500 });
     }
-    console.log(`AGSI GB gas day ${payload.gasDay} (${payload.status}): ${payload.gasInStorageTWh} TWh, ${payload.fullPercent}% full, ${payload.history.length} days of history`);
+    const total = d => Object.values(byDay[d]).reduce((a, v) => a + v, 0);
+    const last = days[days.length - 1];
+    const payload = {
+      gasDay: last,
+      stockGWh: total(last),
+      byRangeGWh: byDay[last],
+      // Oldest first: d = gas day, gwh = total stock across all ranges.
+      history: days.map(d => ({ d, gwh: total(d) })),
+      source: "National Gas Transmission (storage stock levels, published on behalf of storage operators)",
+      items: items.map(i => i.name),
+    };
+    console.log(`UK storage stock, gas day ${payload.gasDay}: ${payload.stockGWh} GWh ${JSON.stringify(payload.byRangeGWh)}, ${payload.history.length} days of history`);
     await writeJsonIfChanged(PATH, payload, "Automated UK gas storage levels update");
     return new Response(JSON.stringify({ ...payload, history: payload.history.length }), { headers: { "Content-Type": "application/json" } });
   } catch (err) {
@@ -134,9 +109,10 @@ export default async () => {
   }
 };
 
-// AGSI publishes at 19:30 and 23:00 CET (18:30 and 22:00 UTC in winter,
-// 17:30 and 21:00 in summer). Running at 19:53 and 23:53 UTC catches both
-// publications all year. Minute 53 is not used by any other function.
+// National Gas publishes stock levels around 16:00 UK time for the previous
+// gas day. Running at 16:53 and 19:53 UTC picks them up in winter and summer,
+// with a second chance if publication is late. Minute 53 is not used by any
+// other function.
 export const config = {
-  schedule: "53 19,23 * * *",
+  schedule: "53 16,19 * * *",
 };

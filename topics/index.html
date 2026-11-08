@@ -21,14 +21,21 @@
 <meta name="twitter:title" content="Topics: UK Energy Market Analysis — The Energy Ledger">
 <meta name="twitter:description" content="Past issues of The Energy Ledger grouped by theme: Hormuz and the Middle East, UK gas storage, the price cap, grid costs and power prices.">
 <meta name="twitter:image" content="https://www.theenergyledger.co.uk/og-image.png?v=2">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5XJN5KMJVN"></script>
+<!-- Google tag (gtag.js). The queue is set up now, so the page view is
+     recorded with its real start time; the library itself loads after the
+     page has finished loading, so it doesn't delay first paint. -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-5XJN5KMJVN');
+  window.addEventListener('load', function () {
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-5XJN5KMJVN';
+    document.head.appendChild(s);
+  });
 </script>
 <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="alternate" type="application/rss+xml" title="The Energy Ledger newsletter" href="https://home.theenergyledger.co.uk/feed">

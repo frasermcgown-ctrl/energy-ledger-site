@@ -4,16 +4,23 @@
 <meta charset="UTF-8">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://identity.netlify.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com; connect-src 'self' https://raw.githubusercontent.com https://api.carbonintensity.org.uk https://data.elexon.co.uk https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://identity.netlify.com; frame-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Live European LNG Terminal Data — The Energy Ledger</title>
-<meta name="description" content="Live European LNG terminal inventory, send-out and capacity data, updated automatically from Gas Infrastructure Europe's ALSI platform.">
+<title>UK &amp; European LNG Terminal Data, Live — The Energy Ledger</title>
+<meta name="description" content="Live LNG send-out from Milford Haven and Isle of Grain, plus European LNG terminal stocks and send-out from GIE ALSI. Updated automatically.">
+<link rel="canonical" href="https://www.theenergyledger.co.uk/lng">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="The Energy Ledger">
-<meta property="og:title" content="Live European LNG Terminal Data — The Energy Ledger">
-<meta property="og:description" content="Live European LNG terminal inventory, send-out and capacity data, updated automatically from Gas Infrastructure Europe's ALSI platform.">
-<meta property="og:url" content="https://www.theenergyledger.co.uk/lng.html">
-<link rel="canonical" href="https://www.theenergyledger.co.uk/lng.html">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="UK &amp; European LNG Terminal Data, Live — The Energy Ledger">
+<meta property="og:description" content="Live LNG send-out from Milford Haven and Isle of Grain, plus European LNG terminal stocks and send-out from GIE ALSI. Updated automatically.">
+<meta property="og:url" content="https://www.theenergyledger.co.uk/lng">
 <meta property="og:image" content="https://www.theenergyledger.co.uk/og-image.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Energy Ledger: UK gas, power, carbon and LNG markets">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="UK &amp; European LNG Terminal Data, Live — The Energy Ledger">
+<meta name="twitter:description" content="Live LNG send-out from Milford Haven and Isle of Grain, plus European LNG terminal stocks and send-out from GIE ALSI. Updated automatically.">
+<meta name="twitter:image" content="https://www.theenergyledger.co.uk/og-image.png?v=2">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5XJN5KMJVN"></script>
 <script>
@@ -23,32 +30,105 @@
 
   gtag('config', 'G-5XJN5KMJVN');
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="icon" type="image/svg+xml" href="icon-mark.svg">
+<link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="alternate" type="application/rss+xml" title="The Energy Ledger newsletter" href="https://home.theenergyledger.co.uk/feed">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/icon-mark.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/assets/site.css">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
- "@type": "Dataset",
- "name": "UK and European LNG terminal data",
- "description": "Live send-out from Britain's LNG import terminals at Milford Haven and Isle of Grain, alongside EU-wide LNG terminal inventory, send-out and capacity from Gas Infrastructure Europe's ALSI platform.",
- "url": "https://www.theenergyledger.co.uk/lng.html",
- "creator": {
-  "@type": "Organization",
-  "name": "The Energy Ledger",
-  "url": "https://www.theenergyledger.co.uk/"
- },
- "isAccessibleForFree": true,
- "spatialCoverage": "United Kingdom",
- "keywords": [
-  "LNG",
-  "liquefied natural gas",
-  "Isle of Grain",
-  "Milford Haven",
-  "South Hook",
-  "European LNG"
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "https://www.theenergyledger.co.uk/lng#webpage",
+   "url": "https://www.theenergyledger.co.uk/lng",
+   "name": "UK and European LNG terminal data",
+   "description": "Live send-out from Britain's LNG terminals and EU-wide LNG terminal inventory and send-out.",
+   "inLanguage": "en-GB",
+   "isPartOf": {
+    "@id": "https://www.theenergyledger.co.uk/#website"
+   },
+   "publisher": {
+    "@id": "https://www.theenergyledger.co.uk/#org"
+   },
+   "breadcrumb": {
+    "@id": "https://www.theenergyledger.co.uk/lng#breadcrumb"
+   },
+   "mainEntity": {
+    "@id": "https://www.theenergyledger.co.uk/lng#dataset"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://www.theenergyledger.co.uk/lng#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://www.theenergyledger.co.uk/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "LNG",
+     "item": "https://www.theenergyledger.co.uk/lng"
+    }
+   ]
+  },
+  {
+   "@type": "Dataset",
+   "@id": "https://www.theenergyledger.co.uk/lng#dataset",
+   "name": "UK and European LNG terminal data",
+   "description": "Live send-out from Britain's LNG import terminals at Milford Haven and Isle of Grain, alongside EU-wide LNG terminal inventory, send-out and capacity from Gas Infrastructure Europe's ALSI platform.",
+   "url": "https://www.theenergyledger.co.uk/lng",
+   "mainEntityOfPage": {
+    "@id": "https://www.theenergyledger.co.uk/lng#webpage"
+   },
+   "creator": {
+    "@id": "https://www.theenergyledger.co.uk/#org"
+   },
+   "publisher": {
+    "@id": "https://www.theenergyledger.co.uk/#org"
+   },
+   "isAccessibleForFree": true,
+   "spatialCoverage": {
+    "@type": "Place",
+    "name": "United Kingdom and European Union"
+   },
+   "keywords": [
+    "LNG",
+    "liquefied natural gas",
+    "Isle of Grain",
+    "Milford Haven",
+    "South Hook",
+    "European LNG"
+   ],
+   "isBasedOn": [
+    "https://alsi.gie.eu",
+    "https://data.nationalgas.com"
+   ],
+   "creditText": "Gas Infrastructure Europe (ALSI), National Gas Transmission",
+   "distribution": [
+    {
+     "@type": "DataDownload",
+     "encodingFormat": "application/json",
+     "contentUrl": "https://raw.githubusercontent.com/frasermcgown-ctrl/energy-ledger-site/main/content/lng-data.json"
+    },
+    {
+     "@type": "DataDownload",
+     "encodingFormat": "application/json",
+     "contentUrl": "https://raw.githubusercontent.com/frasermcgown-ctrl/energy-ledger-site/main/content/uk-gas-data.json"
+    }
+   ],
+   "variableMeasured": [
+    "LNG send-out (GWh/d)",
+    "LNG inventory (thousand m3)",
+    "Terminal fill (%)"
+   ]
+  }
  ]
 }
 </script>
@@ -73,11 +153,11 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
     <nav class="links" id="site-links">
-      <a href="/prices.html">Prices</a>
-      <a href="/generation.html">GB generation</a>
-      <a href="/uk-gas.html">UK gas</a>
-      <a href="/lng.html" aria-current="page">LNG</a>
-      <a href="/news.html">News</a>
+      <a href="/prices">Prices</a>
+      <a href="/generation">GB generation</a>
+      <a href="/uk-gas">UK gas</a>
+      <a href="/lng" aria-current="page">LNG</a>
+      <a href="/news">News</a>
       <a class="btn primary sm" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe free</a>
     </nav>
   </div>
@@ -101,7 +181,7 @@
             <h2>UK LNG terminals right now</h2>
             <p id="uk-lng-desc">Regasified LNG flowing into the national grid, mcm/d.</p>
           </div>
-          <a class="link" href="/uk-gas.html">All UK gas supply <span aria-hidden="true">→</span></a>
+          <a class="link" href="/uk-gas">All UK gas supply <span aria-hidden="true">→</span></a>
         </div>
         <div class="bars" id="uk-lng-list"><p class="loading">Loading UK terminal data…</p></div>
         <p class="stat-foot" id="uk-lng-note" style="margin-top:10px;"></p>
@@ -160,6 +240,17 @@
         </div>
       </div>
 
+      <div class="related">
+        <h2>Related live data</h2>
+        <div class="related-grid"><a href="/uk-gas">UK gas supply and demand<small>Flows by terminal and sector</small></a><a href="/uk-gas-storage">UK gas storage today<small>How full it is, and flows by site</small></a><a href="/nbp-gas-price">NBP gas price today<small>UK wholesale gas, p/therm</small></a></div>
+      </div>
+
+      <div class="related" data-issues-wrap hidden>
+        <h2>From the newsletter</h2>
+        <div class="issue-links" data-issues="LNG|cargo|qatar hormuz" data-limit="3"></div>
+        <div class="topic-chips"><a href="/topics/hormuz">Hormuz and the Middle East</a><a href="/topics/gas-storage">UK gas storage</a><a href="/topics/">All topics</a></div>
+      </div>
+
       <p class="source-note">Data: <a href="https://alsi.gie.eu" target="_blank" rel="noopener">Gas Infrastructure Europe — ALSI (Aggregated LNG Storage Inventory)</a>. Figures are aggregated across all EU27 large-scale LNG terminals reporting to GIE, updated once per gas day. UK terminal flows: <a href="https://data.nationalgas.com" target="_blank" rel="noopener">National Gas Transmission Data Portal</a>, instantaneous rates. Provided for information only, not for trading.</p>
     </div>
   </section>
@@ -169,7 +260,7 @@
       <div class="card" style="padding:32px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; background:linear-gradient(120deg,#fff 0%, var(--brand-soft) 100%);">
         <div style="max-width:600px;">
           <h2 style="font-size:22px;">Want the read-through, not just the numbers?</h2>
-          <p style="margin-top:8px; color:var(--ink-3);">The Energy Ledger turns this data into a weekly view on UK gas, power, carbon and LNG — free on Substack.</p>
+          <p style="margin-top:8px; color:var(--ink-3);">The Energy Ledger turns this data into a twice-weekly view on UK gas, power, carbon and LNG — free on Substack.</p>
         </div>
         <a class="btn brand" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe free <span class="arrow" aria-hidden="true">→</span></a>
       </div>
@@ -196,23 +287,28 @@
         <p>The Energy Ledger is an independent read on UK energy markets.</p>
       </div>
       <div class="foot-col">
-        <h4>Newsletter</h4>
+        <h2 class="foot-h">Newsletter</h2>
         <a href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe</a>
         <a href="https://home.theenergyledger.co.uk/archive" target="_blank" rel="noopener">Archive</a>
         <a href="/#coverage">Coverage</a>
+        <a href="/topics/">Topics</a>
         <a href="/#about">About</a>
       </div>
       <div class="foot-col">
-        <h4>Live data</h4>
-        <a href="/prices.html">Prices &amp; costs</a>
-        <a href="/generation.html">GB generation</a>
-        <a href="/uk-gas.html">UK gas supply</a>
-        <a href="/lng.html">LNG</a>
-        <a href="/news.html">News</a>
-        <a href="/sources.html">Data sources</a>
+        <h2 class="foot-h">Live data</h2>
+        <a href="/prices">Prices &amp; costs</a>
+        <a href="/generation">GB generation</a>
+        <a href="/uk-gas">UK gas supply</a>
+        <a href="/lng">LNG</a>
+        <a href="/news">News</a>
+        <a href="/nbp-gas-price">NBP gas price</a>
+        <a href="/uk-power-prices">UK power price</a>
+        <a href="/uk-gas-storage">UK gas storage</a>
+        <a href="/uk-carbon-intensity">Carbon intensity</a>
+        <a href="/sources">Data sources</a>
       </div>
       <div class="foot-col">
-        <h4>Follow</h4>
+        <h2 class="foot-h">Follow</h2>
         <div class="socials" data-socials><a class="social" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener me" aria-label="The Energy Ledger on Substack" title="Substack"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a></div>
       </div>
     </div>

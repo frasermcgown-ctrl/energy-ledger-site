@@ -116,3 +116,51 @@ if (document.querySelector('[data-key], [data-socials]')) {
 }
 
 document.querySelectorAll('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
+
+// ---------- Newsletter issues by topic (content/substack-posts.json) ----------
+// Topics are matched on each issue's title and subtitle. Used by the topic
+// pages (/topics/) and the "From the newsletter" blocks on the live data pages.
+const EL_TOPICS = {
+  'hormuz': { name: 'Hormuz and the Middle East', re: /hormuz|iran|gulf|middle east|war risk/i },
+  'gas-storage': { name: 'UK gas storage', re: /storage|gas store|cupboard|reserves/i },
+  'price-cap': { name: 'Price cap and business bills', re: /price cap|\bbills?\b|budget/i },
+  'grid': { name: 'Grid and balancing costs', re: /\bgrid\b|balanc|transmission/i },
+  'power-prices': { name: 'Power prices', re: /\bpower\b|electricity|\bwind\b/i },
+};
+
+// Substack text arrives with HTML entities (e.g. &#163;); decode before escaping.
+function decodeEntities(s) {
+  const t = document.createElement('textarea');
+  t.innerHTML = String(s == null ? '' : s);
+  return t.value;
+}
+
+let elPostsPromise = null;
+function elPosts() {
+  if (!elPostsPromise) {
+    elPostsPromise = fetch('/content/substack-posts.json').then(r => r.json())
+      .then(d => (d.posts || []).filter(p => /^https:\/\/home\.theenergyledger\.co\.uk\/p\//.test(p.url)));
+  }
+  return elPostsPromise;
+}
+
+function issueLinkHtml(p) {
+  const date = new Date(p.published).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+  return `<a class="issue-link" href="${escapeHtml(p.url)}" target="_blank" rel="noopener">` +
+    `<span class="date">${escapeHtml(date)}</span><span class="title">${escapeHtml(decodeEntities(p.title))}</span>` +
+    (p.subtitle ? `<span class="sub">${escapeHtml(decodeEntities(p.subtitle))}</span>` : '') + `</a>`;
+}
+
+// <div data-issues="hormuz gas-storage" data-limit="3"> → matching issues, newest first.
+// A wrapper with [data-issues-wrap] stays hidden until there is something to show.
+document.querySelectorAll('[data-issues]').forEach(el => {
+  const res = el.dataset.issues.split(/\s+/).map(k => (EL_TOPICS[k] || { re: new RegExp(k, 'i') }).re);
+  const limit = Number(el.dataset.limit) || Infinity;
+  elPosts().then(posts => {
+    const hits = posts.filter(p => res.some(re => re.test(decodeEntities(p.title + ' ' + p.subtitle)))).slice(0, limit);
+    if (!hits.length) return;
+    el.innerHTML = hits.map(issueLinkHtml).join('');
+    const wrap = el.closest('[data-issues-wrap]');
+    if (wrap) wrap.hidden = false;
+  }).catch(() => {});
+});

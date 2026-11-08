@@ -2,44 +2,70 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.theenergyledger.co.uk/</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-11-08</lastmod>
   </url>
   <url>
-    <loc>https://www.theenergyledger.co.uk/prices.html</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <loc>https://www.theenergyledger.co.uk/lng</loc>
+    <lastmod>2026-11-08</lastmod>
   </url>
   <url>
-    <loc>https://www.theenergyledger.co.uk/generation.html</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.theenergyledger.co.uk/news</loc>
+    <lastmod>2026-11-08</lastmod>
   </url>
   <url>
-    <loc>https://www.theenergyledger.co.uk/uk-gas.html</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.theenergyledger.co.uk/prices</loc>
+    <lastmod>2026-11-08</lastmod>
   </url>
   <url>
-    <loc>https://www.theenergyledger.co.uk/lng.html</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.theenergyledger.co.uk/uk-gas</loc>
+    <lastmod>2026-11-08</lastmod>
   </url>
   <url>
-    <loc>https://www.theenergyledger.co.uk/news.html</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.theenergyledger.co.uk/sources</loc>
+    <lastmod>2026-11-08</lastmod>
   </url>
   <url>
-    <loc>https://www.theenergyledger.co.uk/sources.html</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
+    <loc>https://www.theenergyledger.co.uk/topics/</loc>
+    <lastmod>2026-11-08</lastmod>
+  </url>
+  <url>
+    <loc>https://www.theenergyledger.co.uk/generation</loc>
+    <lastmod>2026-11-08</lastmod>
+  </url>
+  <url>
+    <loc>https://www.theenergyledger.co.uk/topics/grid</loc>
+    <lastmod>2026-11-08</lastmod>
+  </url>
+  <url>
+    <loc>https://www.theenergyledger.co.uk/nbp-gas-price</loc>
+    <lastmod>2026-11-08</lastmod>
+  </url>
+  <url>
+    <loc>https://www.theenergyledger.co.uk/topics/hormuz</loc>
+    <lastmod>2026-11-08</lastmod>
+  </url>
+  <url>
+    <loc>https://www.theenergyledger.co.uk/uk-gas-storage</loc>
+    <lastmod>2026-11-08</lastmod>
+  </url>
+  <url>
+    <loc>https://www.theenergyledger.co.uk/uk-power-prices</loc>
+    <lastmod>2026-11-08</lastmod>
+  </url>
+  <url>
+    <loc>https://www.theenergyledger.co.uk/topics/price-cap</loc>
+    <lastmod>2026-11-08</lastmod>
+  </url>
+  <url>
+    <loc>https://www.theenergyledger.co.uk/topics/gas-storage</loc>
+    <lastmod>2026-11-08</lastmod>
+  </url>
+  <url>
+    <loc>https://www.theenergyledger.co.uk/topics/power-prices</loc>
+    <lastmod>2026-11-08</lastmod>
+  </url>
+  <url>
+    <loc>https://www.theenergyledger.co.uk/uk-carbon-intensity</loc>
+    <lastmod>2026-11-08</lastmod>
   </url>
 </urlset>

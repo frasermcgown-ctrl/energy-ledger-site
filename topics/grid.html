@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://identity.netlify.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com; connect-src 'self' https://raw.githubusercontent.com https://api.carbonintensity.org.uk https://data.elexon.co.uk https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://identity.netlify.com; frame-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grid and Balancing Costs: Analysis — The Energy Ledger</title>
+<meta name="description" content="Network constraints, NESO balancing costs and the transmission build-out, and who pays for them: every Energy Ledger issue on the topic.">
+<link rel="canonical" href="https://www.theenergyledger.co.uk/topics/grid">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Energy Ledger">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="Grid and Balancing Costs: Analysis — The Energy Ledger">
+<meta property="og:description" content="Network constraints, NESO balancing costs and the transmission build-out, and who pays for them: every Energy Ledger issue on the topic.">
+<meta property="og:url" content="https://www.theenergyledger.co.uk/topics/grid">
+<meta property="og:image" content="https://www.theenergyledger.co.uk/og-image.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Energy Ledger: UK gas, power, carbon and LNG markets">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Grid and Balancing Costs: Analysis — The Energy Ledger">
+<meta name="twitter:description" content="Network constraints, NESO balancing costs and the transmission build-out, and who pays for them: every Energy Ledger issue on the topic.">
+<meta name="twitter:image" content="https://www.theenergyledger.co.uk/og-image.png?v=2">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5XJN5KMJVN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5XJN5KMJVN');
+</script>
+<link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="alternate" type="application/rss+xml" title="The Energy Ledger newsletter" href="https://home.theenergyledger.co.uk/feed">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/icon-mark.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "CollectionPage",
+   "@id": "https://www.theenergyledger.co.uk/topics/grid#webpage",
+   "url": "https://www.theenergyledger.co.uk/topics/grid",
+   "name": "Grid and balancing costs",
+   "description": "Network constraints, NESO balancing costs and the transmission build-out, and who pays for them: every Energy Ledger issue on the topic.",
+   "inLanguage": "en-GB",
+   "isPartOf": {
+    "@id": "https://www.theenergyledger.co.uk/#website"
+   },
+   "publisher": {
+    "@id": "https://www.theenergyledger.co.uk/#org"
+   },
+   "breadcrumb": {
+    "@id": "https://www.theenergyledger.co.uk/topics/grid#breadcrumb"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://www.theenergyledger.co.uk/topics/grid#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://www.theenergyledger.co.uk/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Topics",
+     "item": "https://www.theenergyledger.co.uk/topics/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Grid and balancing costs",
+     "item": "https://www.theenergyledger.co.uk/topics/grid"
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav">
+    <a class="wordmark" href="/" aria-label="The Energy Ledger — home">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <rect x="0" y="0" width="120" height="120" rx="28" fill="#0f172a"/>
+        <line x1="21" y1="30" x2="21" y2="90" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+        <line x1="34" y1="44" x2="80" y2="44" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="62" x2="92" y2="62" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="80" x2="66" y2="80" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <polyline points="80,44 96,27 103,32" fill="none" stroke="#f97316" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="103" cy="32" r="4.5" fill="#f97316"/>
+      </svg>
+      <b style="font-weight:inherit">The Energy <span>Ledger</span></b>
+    </a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-links">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="links" id="site-links">
+      <a href="/prices">Prices</a>
+      <a href="/generation">GB generation</a>
+      <a href="/uk-gas">UK gas</a>
+      <a href="/lng">LNG</a>
+      <a href="/news">News</a>
+      <a class="btn primary sm" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe free</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="crumbs"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/topics/">Topics</a><span aria-hidden="true">/</span><span>Grid and balancing costs</span></div>
+      <h1>Grid and balancing costs</h1>
+      <p class="lede">Network constraints, balancing costs and the transmission build-out, and who pays for them.</p>
+    </div>
+  </div>
+
+  <section class="tight">
+    <div class="wrap">
+      <p style="max-width:720px; color:var(--ink-2); font-size:17px; line-height:1.65;">When wind farms in Scotland are switched off and gas plants in the south paid to run, the cost lands on bills through balancing charges. These issues follow NESO's balancing costs and the grid upgrades meant to bring them down.</p>
+      <div class="related">
+        <h2>Issues on this topic</h2>
+        <div class="issue-links" data-issues="grid"><a class="issue-link" href="https://home.theenergyledger.co.uk/p/britain-paid-a-record-505m-to-balance" target="_blank" rel="noopener"><span class="date">23 Oct 2026</span><span class="title">Britain paid a record £505m to balance its grid in September. Business bills will feel it</span><span class="sub">Wind farms in the north are being switched off while gas plants in the south are paid to run, and the government&#x27;s new Great British Grid is meant to fix it.</span></a><a class="issue-link" href="https://home.theenergyledger.co.uk/p/the-grid-is-now-britains-real-energy" target="_blank" rel="noopener"><span class="date">14 Sep 2026</span><span class="title">The Grid Is Now Britain&#x27;s Real Energy Bottleneck!</span><span class="sub">A National Audit Office report says the £70bn transmission upgrade Britain needs is &quot;very challenging&quot; to deliver, and the bill for waiting is already landing on customers.</span></a><a class="issue-link" href="https://home.theenergyledger.co.uk/p/britains-energy-bills-are-being-set" target="_blank" rel="noopener"><span class="date">2 Sep 2026</span><span class="title">Britain’s Energy Bills Are Being Set in the Strait of Hormuz</span><span class="sub">Why an October price cap rise to £1,723 has less to do with the National Grid than with a 33-kilometre shipping lane 3,500 miles away</span></a></div>
+      </div>
+      <div class="related">
+        <h2>Live data</h2>
+        <div class="related-grid"><a href="/prices">Grid balancing costs</a><a href="/generation">Live GB generation</a><a href="/uk-carbon-intensity">UK carbon intensity today</a></div>
+      </div>
+      <div class="related">
+        <h2>Other topics</h2>
+        <div class="topic-chips"><a href="/topics/hormuz">Hormuz and the Middle East</a><a href="/topics/gas-storage">UK gas storage</a><a href="/topics/price-cap">Price cap and business bills</a><a href="/topics/power-prices">Power prices</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight" style="padding-top:0;">
+    <div class="wrap">
+      <div class="card" style="padding:32px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; background:linear-gradient(120deg,#fff 0%, var(--brand-soft) 100%);">
+        <div style="max-width:600px;">
+          <h2 style="font-size:22px;">Want the read-through, not just the numbers?</h2>
+          <p style="margin-top:8px; color:var(--ink-3);">The Energy Ledger turns this data into a twice-weekly view on UK gas, power, carbon and LNG — free on Substack.</p>
+        </div>
+        <a class="btn brand" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe free <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="wordmark" href="/">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+        <rect x="0" y="0" width="120" height="120" rx="28" fill="#0f172a"/>
+        <line x1="21" y1="30" x2="21" y2="90" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+        <line x1="34" y1="44" x2="80" y2="44" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="62" x2="92" y2="62" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="80" x2="66" y2="80" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <polyline points="80,44 96,27 103,32" fill="none" stroke="#f97316" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="103" cy="32" r="4.5" fill="#f97316"/>
+      </svg>
+          <b style="font-weight:inherit">The Energy <span>Ledger</span></b>
+        </a>
+        <p>The Energy Ledger is an independent read on UK energy markets.</p>
+      </div>
+      <div class="foot-col">
+        <h2 class="foot-h">Newsletter</h2>
+        <a href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe</a>
+        <a href="https://home.theenergyledger.co.uk/archive" target="_blank" rel="noopener">Archive</a>
+        <a href="/#coverage">Coverage</a>
+        <a href="/topics/">Topics</a>
+        <a href="/#about">About</a>
+      </div>
+      <div class="foot-col">
+        <h2 class="foot-h">Live data</h2>
+        <a href="/prices">Prices &amp; costs</a>
+        <a href="/generation">GB generation</a>
+        <a href="/uk-gas">UK gas supply</a>
+        <a href="/lng">LNG</a>
+        <a href="/news">News</a>
+        <a href="/nbp-gas-price">NBP gas price</a>
+        <a href="/uk-power-prices">UK power price</a>
+        <a href="/uk-gas-storage">UK gas storage</a>
+        <a href="/uk-carbon-intensity">Carbon intensity</a>
+        <a href="/sources">Data sources</a>
+      </div>
+      <div class="foot-col">
+        <h2 class="foot-h">Follow</h2>
+        <div class="socials" data-socials><a class="social" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener me" aria-label="The Energy Ledger on Substack" title="Substack"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a></div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span data-year>2026</span> The Energy Ledger. All rights reserved.</span>
+      <span>Data provided for information only, not for trading.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+
+</body>
+</html>

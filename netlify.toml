@@ -17,3 +17,14 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
     Strict-Transport-Security = "max-age=31536000"
+
+# Old or guessed blog links go to the newsletter archive on Substack.
+[[redirects]]
+  from = "/blog"
+  to = "https://home.theenergyledger.co.uk/archive"
+  status = 301
+
+[[redirects]]
+  from = "/blog/*"
+  to = "https://home.theenergyledger.co.uk/archive"
+  status = 301

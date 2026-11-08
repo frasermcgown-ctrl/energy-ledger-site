@@ -40,7 +40,9 @@
   .chip-btn[aria-pressed="true"]{ background:var(--ink); border-color:var(--ink); color:#fff; }
   .chip-btn:focus-visible{ outline:3px solid #fdba74; outline-offset:2px; }
   .filters select{ font:500 14px 'Inter',sans-serif; padding:8px 10px; border:1px solid var(--line); border-radius:10px; background:#fff; color:var(--ink-2); margin-left:auto; }
-  .count{ font-size:14px; color:var(--ink-3); margin:12px 0 4px; }
+  .count{ font-size:14px; color:var(--ink-3); margin:12px 0 4px; min-height:1.5em; }
+  /* Hold space while the feed loads so the note below doesn't jump. */
+  #news-list:has(> .loading:only-child){ min-height:80vh; }
   .news-item{ display:grid; grid-template-columns:1fr auto; gap:6px 20px; padding:20px 4px; border-bottom:1px solid var(--line); text-decoration:none; color:inherit; }
   .news-item .meta{ grid-column:1 / -1; font-size:13px; color:var(--ink-3); display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
   .news-item .meta b{ font-weight:600; color:var(--ink-2); }
@@ -153,7 +155,7 @@
 
   <section class="tight">
     <div class="wrap" style="max-width:880px;">
-      <div class="filters" role="group" aria-label="Filter by topic" id="topics"></div>
+      <div class="filters" role="group" aria-label="Filter by topic" id="topics"><button type="button" class="chip-btn" data-topic="">All</button><button type="button" class="chip-btn" data-topic="gas">Gas</button><button type="button" class="chip-btn" data-topic="power">Power</button><button type="button" class="chip-btn" data-topic="carbon">Carbon</button><button type="button" class="chip-btn" data-topic="lng">LNG</button><button type="button" class="chip-btn" data-topic="renewables">Renewables</button><button type="button" class="chip-btn" data-topic="policy">Policy</button></div>
       <div class="filters"><select id="source" aria-label="Filter by source"><option value="">All sources</option></select></div>
       <p class="count" id="count" aria-live="polite"></p>
       <h2 class="sr-only">Latest headlines</h2>

@@ -865,17 +865,24 @@
       document.getElementById('news-list').innerHTML = '<p class="loading">Unable to load right now.</p>';
     });
 </script>
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script>
-  // If someone lands here via an invite/recovery link, send them into the login flow automatically.
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
+  // CMS invite, password-recovery, email-confirmation and sign-in links land on
+  // this page with a token in the URL hash. Load the Netlify Identity widget only
+  // then, so ordinary visitors don't download it. The token patterns match the
+  // ones the widget itself looks for. Once the person logs in, send them to /admin/.
+  if (/(confirmation|invite|recovery|email_change)_token=|access_token=|error=access_denied/.test(location.hash)) {
+    const s = document.createElement('script');
+    s.src = 'https://identity.netlify.com/v1/netlify-identity-widget.js';
+    s.onload = () => {
+      const id = window.netlifyIdentity;
+      if (!id) return;
+      const wire = user => { if (!user) id.on('login', () => { document.location.href = '/admin/'; }); };
+      // The widget initialises at DOMContentLoaded, or straight away if the page
+      // has already finished parsing (in which case 'init' has already fired).
+      if (document.readyState === 'loading') id.on('init', wire);
+      else wire(id.currentUser());
+    };
+    document.body.appendChild(s);
   }
 </script>
 </body>

@@ -81,7 +81,7 @@ Read through the Netlify connector after the main work:
 
 ## Production baseline: PageSpeed Insights (8 Nov 2026, 17:49 GMT)
 
-First measurement of the live site, home page, mobile (emulated Moto G Power, slow 4G, Lighthouse 13.6). This is the production reference for future comparisons; there is no production "before" run.
+First measurement of the live site, home page. Mobile figures are from an emulated Moto G Power on slow 4G (Lighthouse 13.6). This is the production reference for future comparisons; there is no production "before" run.
 
 | Performance | Accessibility | Best practices | SEO |
 |---|---|---|---|
@@ -90,6 +90,8 @@ First measurement of the live site, home page, mobile (emulated Moto G Power, sl
 | FCP | LCP | TBT | CLS | Speed Index |
 |---|---|---|---|---|
 | 2.7 s | 2.7 s | 100 ms | 0 | 4.8 s |
+
+Desktop, same run: Performance 99, Accessibility 100, Best practices 100, SEO 100. The mobile performance gap comes from the slow 4G / mid-range phone emulation, not a layout or content problem.
 
 Accessibility and SEO match the local after-run. Best practices is 100 live, against 96 locally, where Analytics was blocked. Performance is lower than the local 100 because PageSpeed throttles to slow 4G.
 

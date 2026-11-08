@@ -18,6 +18,13 @@
     Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
     Strict-Transport-Security = "max-age=31536000"
 
+# The font file never changes in place (a new version would get a new
+# filename), so browsers can keep it for a year without re-checking.
+[[headers]]
+  for = "/assets/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
 # Old or guessed blog links go to the newsletter archive on Substack.
 [[redirects]]
   from = "/blog"

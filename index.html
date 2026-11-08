@@ -633,6 +633,7 @@
         <a href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe</a>
         <a href="https://home.theenergyledger.co.uk/archive" target="_blank" rel="noopener">Archive</a>
         <a href="/#coverage">Coverage</a>
+        <a href="/topics/">Topics</a>
         <a href="/#about">About</a>
       </div>
       <div class="foot-col">
@@ -790,14 +791,14 @@
         <a class="card issue${featured ? ' featured' : ''}" href="${escapeHtml(p.url)}" target="_blank" rel="noopener">
           ${featured ? '<span class="tag-new">Latest issue</span>' : ''}
           <span class="meta"><span class="no">No. ${total - i}</span><span>·</span><span>${escapeHtml(fmt(p.published))}</span></span>
-          <h3>${escapeHtml(p.title)}</h3>
-          ${p.subtitle ? `<p>${escapeHtml(p.subtitle)}</p>` : ''}
+          <h3>${escapeHtml(decodeEntities(p.title))}</h3>
+          ${p.subtitle ? `<p>${escapeHtml(decodeEntities(p.subtitle))}</p>` : ''}
           <span class="go">Read issue <span aria-hidden="true">→</span></span>
         </a>`;
       const row = (p, i) => `
         <a class="past-item" href="${escapeHtml(p.url)}" target="_blank" rel="noopener">
           <span class="date">${escapeHtml(fmt(p.published))}</span>
-          <span class="title">${escapeHtml(p.title)}</span>
+          <span class="title">${escapeHtml(decodeEntities(p.title))}</span>
           <span class="go" aria-hidden="true">→</span>
         </a>`;
 
@@ -813,6 +814,7 @@
         <div class="issues-actions">
           <button class="btn sm" id="past-more">Show all ${total} issues</button>
           <a class="link" href="https://home.theenergyledger.co.uk/archive" target="_blank" rel="noopener">Browse on Substack <span aria-hidden="true">→</span></a>
+          <a class="link" href="/topics/">Browse by topic <span aria-hidden="true">→</span></a>
         </div>` : ''}`;
       if (!rest.length) return;
       const list = document.getElementById('past-list'), more = document.getElementById('past-more');

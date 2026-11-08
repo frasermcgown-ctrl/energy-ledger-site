@@ -1,10 +1,10 @@
 {
-  "updated": "2026-11-08T00:00:51.802Z",
+  "updated": "2026-11-08T12:00:48.748Z",
   "gas": {
     "label": "NBP system average price (SAP)",
-    "pencePerTherm": 216.39,
-    "pencePerKwh": 7.3837,
-    "gasDay": "2026-11-06",
+    "pencePerTherm": 215.64,
+    "pencePerKwh": 7.3578,
+    "gasDay": "2026-11-07",
     "source": "National Gas Transmission",
     "sourceItem": "PUBOB603 SAP, Actual Day"
   },

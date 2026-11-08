@@ -259,7 +259,7 @@
         <div class="explainer-grid">
           <div>
             <h3>Where is Britain’s gas stored?</h3>
-            <p>Rough, a depleted gas field off the Yorkshire coast, is the largest site. The others connected to the national grid, including Aldbrough, Hornsea, Hill Top Farm, Hole House Farm, Holford and Stublach, are smaller salt caverns that can fill and empty quickly.</p>
+            <p>Rough, a depleted gas field off the Yorkshire coast, has by far the most capacity, though it has stored much less gas since 2017 (see the site breakdown above). The rest are smaller medium-range sites: salt caverns at Aldbrough, Hornsea, Holford, Stublach, Hill Top Farm and Hole House Farm, and depleted fields at Hatfield Moor and Humbly Grove. They can fill and empty quickly.</p>
           </div>
           <div>
             <h3>Where do the stock figures come from?</h3>
@@ -291,7 +291,7 @@
         <div class="related-grid"><a href="/uk-gas">UK gas supply and demand<small>Flows by terminal and sector</small></a><a href="/nbp-gas-price">NBP gas price today<small>UK wholesale gas, p/therm</small></a><a href="/lng">LNG terminals<small>UK send-out and European stocks</small></a><a href="/prices">All prices and costs<small>Price cap, balancing costs, CfDs</small></a></div>
       </div>
 
-      <p class="source-note">Stock levels and flows: <a href="https://data.nationalgas.com" target="_blank" rel="noopener">National Gas Transmission Data Portal</a> (stock levels published daily on behalf of storage operators), published under their Gas System Operator licence obligation for open data. Figures are instantaneous flow rates refreshed through the day, not daily totals or stock levels. Indicative only, not for trading. See all <a href="/sources">data sources</a>.</p>
+      <p class="source-note">Stock levels and flows: <a href="https://data.nationalgas.com" target="_blank" rel="noopener">National Gas Transmission Data Portal</a>, published under their Gas System Operator licence obligation for open data. Stock levels are end-of-day figures published daily on behalf of storage operators; flows are instantaneous rates refreshed through the day. Indicative only, not for trading. See all <a href="/sources">data sources</a>.</p>
     </div>
   </section>
 
@@ -393,8 +393,10 @@
     }
     // Older files stored per-site stocks in kWh (National Gas's unit for these
     // items); convert anything implausibly large for GWh.
+    // Use the same site names as the flows panel below.
+    const SITE_NAMES = { 'Hill Top': 'Hill Top Farm', 'Holehouse Farm': 'Hole House Farm' };
     const sites = (d.sites || []).filter(x => Number.isFinite(x.gwh))
-      .map(x => ({ ...x, gwh: x.gwh > 1e6 ? Math.round(x.gwh / 1e6) : x.gwh }));
+      .map(x => ({ ...x, site: SITE_NAMES[x.site] || x.site, gwh: x.gwh > 1e6 ? Math.round(x.gwh / 1e6) : x.gwh }));
     if (sites.length) {
       const max = Math.max(1, ...sites.map(x => x.gwh));
       document.getElementById('lv-sites').innerHTML = sites.map(x => `

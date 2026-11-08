@@ -82,7 +82,7 @@
   .snapshot-head{ display:flex; align-items:center; justify-content:space-between; padding:14px 16px 12px; }
   .snapshot-head h2{ font-size:16px; letter-spacing:-0.01em; }
   .snapshot-head .tag{ font-size:11.5px; }
-  .snap-grid{ display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  .snap-grid{ display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:8px; }
   .snap{
     background:var(--bg-soft); border:1px solid var(--line); border-radius:12px;
     padding:14px 16px;
@@ -160,7 +160,7 @@
   .delta.up{ color:#b91c1c; } .delta.down{ color:#047857; } .delta.flat{ color:var(--ink-3); }
   .week-head .tag{ white-space:nowrap; }
   @media (max-width: 1100px){ .data-grid{ grid-template-columns:repeat(2, 1fr); } }
-  @media (max-width: 560px){ .week-grid{ grid-template-columns:repeat(2, 1fr); } }
+  @media (max-width: 560px){ .week-grid{ grid-template-columns:repeat(2, minmax(0, 1fr)); } }
   .data-card{ padding:24px; display:flex; flex-direction:column; }
   .data-card .top{ display:flex; align-items:center; justify-content:space-between; }
   .data-card .live-tag{ font-size:12.5px; font-weight:600; color:#15803d; display:inline-flex; align-items:center; gap:8px; }
@@ -251,7 +251,7 @@
   .sub-card .small a{ color:var(--ink-2); }
 
   @media (max-width: 1000px){
-    .hero .wrap{ grid-template-columns:1fr; gap:48px; }
+    .hero .wrap{ grid-template-columns:minmax(0, 1fr); gap:48px; }
     .coverage-grid{ grid-template-columns:1fr 1fr; }
     .who-grid{ grid-template-columns:1fr 1fr; }
     .who:nth-child(2){ border-right:none; }
@@ -357,9 +357,9 @@
   <section class="hero">
     <div class="wrap">
       <div>
-        <span class="pill"><span class="dot"></span><span data-key="hero_eyebrow">Weekly · Gas · Power · Carbon · LNG</span></span>
+        <span class="pill"><span class="dot"></span><span data-key="hero_eyebrow">Twice weekly · Gas · Power · Carbon · LNG</span></span>
         <h1><span data-key="hero_title_line1">Welcome to</span> <span data-key="hero_title_line2">the Energy</span> <span class="hl" data-key="hero_title_line3">Ledger.</span></h1>
-        <p class="hero-sub" data-key="hero_subhead">An independent, weekly read on UK gas, power, carbon and LNG markets — for the people who trade them and anyone who wants to understand them.</p>
+        <p class="hero-sub" data-key="hero_subhead">An independent, twice-weekly read on UK gas, power, carbon and LNG markets — for the people who trade them and anyone who wants to understand them.</p>
         <div class="hero-cta">
           <a class="btn brand" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe on Substack <span class="arrow" aria-hidden="true">→</span></a>
           <a class="btn" href="#issues">Read past issues</a>
@@ -423,7 +423,7 @@
       <div class="section-head">
         <span class="kicker" data-key="coverage_tag">Coverage</span>
         <h2 class="section-title" data-key="coverage_title">What's in every issue</h2>
-        <p class="section-desc" data-key="coverage_desc">Four beats, covered every week, always tied back to what it means for procurement.</p>
+        <p class="section-desc" data-key="coverage_desc">Four areas are covered in every issue, always tied back to what it means for procurement.</p>
       </div>
       <div class="coverage-grid">
         <article class="card cov">
@@ -479,7 +479,7 @@
         </div>
         <div class="who">
           <h3 data-key="who_4_role">Curious readers</h3>
-          <p data-key="who_4_desc">Want to know why energy prices move? A clear weekly guide to UK gas, power, carbon and LNG.</p>
+          <p data-key="who_4_desc">Want to know why energy prices move? A clear twice-weekly guide to UK gas, power, carbon and LNG.</p>
         </div>
       </div>
     </div>
@@ -598,10 +598,10 @@
       <div class="subscribe">
         <div>
           <span class="kicker">Subscribe</span>
-          <h2 data-key="footer_title">Get it in your inbox, every week.</h2>
+          <h2 data-key="footer_title">Get it in your inbox, twice a week.</h2>
           <p class="foot-sub" data-key="footer_sub">Free to read. No spam, no noise — just the week's UK gas, power, carbon and LNG markets, and what to watch next.</p>
           <ul>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>One email a week, before the desk opens</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Tuesdays and Fridays, before the desk opens</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Gas, power, carbon and LNG in one read</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Free, unsubscribe any time</li>
           </ul>

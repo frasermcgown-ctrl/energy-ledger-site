@@ -321,6 +321,7 @@ a.card:hover{ border-color:var(--line-strong); box-shadow:var(--shadow); transfo
 .delta.up{ color:#b91c1c; }
 .delta.down{ color:#047857; }
 .delta.flat{ color:var(--ink-3); }
+.stat-value .delta{ font-size:inherit; font-weight:inherit; }
 .panel + .panel{ margin-top:16px; }
 .two-col > .panel + .panel{ margin-top:0; }
 .two-col{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
@@ -403,3 +404,11 @@ footer.site{
 .explainer-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:20px 32px; }
 .explainer h3{ font-size:17px; margin-bottom:6px; }
 .explainer p{ color:var(--ink-2); font-size:15px; line-height:1.65; margin:0; }
+
+/* Related links block on the live data pages */
+.related{ margin-top:40px; }
+.related h2{ font-size:22px; margin-bottom:16px; }
+.related-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:12px; }
+.related-grid a{ display:block; padding:16px 18px; border:1px solid var(--line); border-radius:14px; background:#fff; color:var(--ink); font-weight:600; text-decoration:none; }
+.related-grid a:hover{ border-color:var(--ink-4); box-shadow:var(--shadow-sm); }
+.related-grid a small{ display:block; margin-top:4px; font-size:13.5px; font-weight:400; color:var(--ink-3); }

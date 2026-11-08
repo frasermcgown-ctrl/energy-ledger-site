@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://identity.netlify.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com; connect-src 'self' https://raw.githubusercontent.com https://api.carbonintensity.org.uk https://data.elexon.co.uk https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://identity.netlify.com; frame-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NBP Gas Price Today (p/therm) — The Energy Ledger</title>
+<meta name="description" content="Today&#x27;s UK NBP gas price (System Average Price) in pence per therm and p/kWh, with 7-day and 30-day change and a year of daily history.">
+<link rel="canonical" href="https://www.theenergyledger.co.uk/nbp-gas-price.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Energy Ledger">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="NBP Gas Price Today (p/therm) — The Energy Ledger">
+<meta property="og:description" content="Today&#x27;s UK NBP gas price (System Average Price) in pence per therm and p/kWh, with 7-day and 30-day change and a year of daily history.">
+<meta property="og:url" content="https://www.theenergyledger.co.uk/nbp-gas-price.html">
+<meta property="og:image" content="https://www.theenergyledger.co.uk/og-image.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Energy Ledger: UK gas, power, carbon and LNG markets">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NBP Gas Price Today (p/therm) — The Energy Ledger">
+<meta name="twitter:description" content="Today&#x27;s UK NBP gas price (System Average Price) in pence per therm and p/kWh, with 7-day and 30-day change and a year of daily history.">
+<meta name="twitter:image" content="https://www.theenergyledger.co.uk/og-image.png?v=2">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5XJN5KMJVN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5XJN5KMJVN');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="The Energy Ledger newsletter" href="https://home.theenergyledger.co.uk/feed">
+<link rel="icon" type="image/svg+xml" href="/icon-mark.svg">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "https://www.theenergyledger.co.uk/nbp-gas-price.html#webpage",
+   "url": "https://www.theenergyledger.co.uk/nbp-gas-price.html",
+   "name": "NBP gas price today",
+   "description": "The latest UK NBP gas System Average Price with a year of daily history.",
+   "inLanguage": "en-GB",
+   "isPartOf": {
+    "@id": "https://www.theenergyledger.co.uk/#website"
+   },
+   "publisher": {
+    "@id": "https://www.theenergyledger.co.uk/#org"
+   },
+   "breadcrumb": {
+    "@id": "https://www.theenergyledger.co.uk/nbp-gas-price.html#breadcrumb"
+   },
+   "mainEntity": {
+    "@id": "https://www.theenergyledger.co.uk/nbp-gas-price.html#dataset"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://www.theenergyledger.co.uk/nbp-gas-price.html#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://www.theenergyledger.co.uk/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "NBP gas price",
+     "item": "https://www.theenergyledger.co.uk/nbp-gas-price.html"
+    }
+   ]
+  },
+  {
+   "@type": "Dataset",
+   "@id": "https://www.theenergyledger.co.uk/nbp-gas-price.html#dataset",
+   "name": "NBP gas System Average Price, daily",
+   "description": "Daily National Balancing Point (NBP) gas System Average Price in pence per therm for Great Britain, with up to a year of history, from National Gas Transmission.",
+   "url": "https://www.theenergyledger.co.uk/nbp-gas-price.html",
+   "mainEntityOfPage": {
+    "@id": "https://www.theenergyledger.co.uk/nbp-gas-price.html#webpage"
+   },
+   "creator": {
+    "@id": "https://www.theenergyledger.co.uk/#org"
+   },
+   "publisher": {
+    "@id": "https://www.theenergyledger.co.uk/#org"
+   },
+   "isAccessibleForFree": true,
+   "spatialCoverage": {
+    "@type": "Place",
+    "name": "United Kingdom"
+   },
+   "keywords": [
+    "NBP gas price",
+    "UK gas price today",
+    "System Average Price",
+    "pence per therm",
+    "UK wholesale gas"
+   ],
+   "isBasedOn": [
+    "https://data.nationalgas.com"
+   ],
+   "creditText": "National Gas Transmission",
+   "distribution": [
+    {
+     "@type": "DataDownload",
+     "encodingFormat": "application/json",
+     "contentUrl": "https://raw.githubusercontent.com/frasermcgown-ctrl/energy-ledger-site/main/content/market-prices.json"
+    },
+    {
+     "@type": "DataDownload",
+     "encodingFormat": "application/json",
+     "contentUrl": "https://raw.githubusercontent.com/frasermcgown-ctrl/energy-ledger-site/main/content/price-history.json"
+    }
+   ],
+   "variableMeasured": [
+    "NBP System Average Price (p/therm)"
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav">
+    <a class="wordmark" href="/" aria-label="The Energy Ledger — home">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <rect x="0" y="0" width="120" height="120" rx="28" fill="#0f172a"/>
+        <line x1="21" y1="30" x2="21" y2="90" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+        <line x1="34" y1="44" x2="80" y2="44" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="62" x2="92" y2="62" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="80" x2="66" y2="80" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <polyline points="80,44 96,27 103,32" fill="none" stroke="#f97316" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="103" cy="32" r="4.5" fill="#f97316"/>
+      </svg>
+      <b style="font-weight:inherit">The Energy <span>Ledger</span></b>
+    </a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-links">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="links" id="site-links">
+      <a href="/prices.html">Prices</a>
+      <a href="/generation.html">GB generation</a>
+      <a href="/uk-gas.html">UK gas</a>
+      <a href="/lng.html">LNG</a>
+      <a href="/news.html">News</a>
+      <a class="btn primary sm" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe free</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="crumbs"><a href="/">Home</a><span aria-hidden="true">/</span><span>Live data</span><span aria-hidden="true">/</span><span>NBP gas price</span></div>
+      <h1>NBP gas price today</h1>
+      <p class="lede">The latest UK wholesale gas price at the National Balancing Point (NBP), from National Gas Transmission's daily System Average Price, with a year of history.</p>
+      <div class="status"><span class="live-dot"></span><span id="updated-note">Loading live data…</span></div>
+    </div>
+  </div>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="stat-grid four">
+        <div class="card stat">
+          <div class="stat-label">NBP System Average Price</div>
+          <div class="stat-value" id="s-now">—</div>
+          <div class="stat-foot" id="s-now-foot">Latest published value.</div>
+        </div>
+        <div class="card stat">
+          <div class="stat-label">Per kWh</div>
+          <div class="stat-value" id="s-kwh">—</div>
+          <div class="stat-foot">The same price in pence per kilowatt hour.</div>
+        </div>
+        <div class="card stat">
+          <div class="stat-label">Change over 7 days</div>
+          <div class="stat-value" id="s-7d">—</div>
+          <div class="stat-foot">Latest value against a week earlier.</div>
+        </div>
+        <div class="card stat">
+          <div class="stat-label">Change over 30 days</div>
+          <div class="stat-value" id="s-30d">—</div>
+          <div class="stat-foot">Latest value against a month earlier.</div>
+        </div>
+      </div>
+
+      <div class="card panel" style="margin-top:16px;">
+        <div class="panel-head">
+          <div>
+            <h2>NBP gas price history</h2>
+            <p>System Average Price (SAP) for each gas day, pence per therm.</p>
+          </div>
+          <div class="seg" role="group" aria-label="Chart range" data-range>
+            <button type="button" data-days="30">30D</button><button type="button" data-days="90">90D</button><button type="button" data-days="365" aria-pressed="true">1Y</button>
+          </div>
+        </div>
+        <div id="c-hist"><p class="loading">Loading price history…</p></div>
+        <p class="stat-foot" id="range-note" style="margin-top:10px;"></p>
+      </div>
+
+      <div class="explainer">
+        <h2>Understanding the NBP gas price</h2>
+        <div class="explainer-grid">
+          <div>
+            <h3>What is the NBP gas price?</h3>
+            <p>The National Balancing Point is the virtual trading hub for natural gas in Great Britain. Gas bought and sold anywhere on the national transmission system is treated as traded at the NBP, so its price is the benchmark for UK wholesale gas.</p>
+          </div>
+          <div>
+            <h3>What is the System Average Price?</h3>
+            <p>SAP is the volume-weighted average price of gas traded on the on-the-day market for each gas day (6am to 6am). It is a published cash price, not a forward contract, so it can differ from the day-ahead, month-ahead and seasonal prices quoted by brokers.</p>
+          </div>
+          <div>
+            <h3>How do I convert pence per therm to p/kWh?</h3>
+            <p>One therm is 29.3071 kWh, so divide the price in pence per therm by 29.3071. For example, 100p/therm is about 3.41p/kWh. Business and household unit rates are higher because they include network, policy and supplier costs.</p>
+          </div>
+          <div>
+            <h3>What moves UK gas prices?</h3>
+            <p>Norwegian pipeline flows, LNG cargoes, North Sea output, storage levels, weather and wind all matter. UK gas also trades closely with the Dutch TTF hub, so European supply news and geopolitical risk feed straight into NBP.</p>
+          </div>
+          <div>
+            <h3>Why does the gas price matter for electricity?</h3>
+            <p>Gas power stations often set the GB wholesale electricity price, so a rise in NBP usually pushes power prices up too, especially on low-wind days.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="related">
+        <h2>Related live data</h2>
+        <div class="related-grid"><a href="/uk-power-prices.html">UK power price today<small>GB wholesale electricity, £/MWh</small></a><a href="/uk-gas-storage.html">UK gas storage today<small>Withdrawals and injections by site</small></a><a href="/uk-gas.html">UK gas supply and demand<small>Flows by terminal and sector</small></a><a href="/prices.html">All prices and costs<small>Price cap, balancing costs, CfDs</small></a></div>
+      </div>
+
+      <p class="source-note">Data: <a href="https://data.nationalgas.com" target="_blank" rel="noopener">National Gas Transmission Data Portal</a> (System Average Price, actual day), published under their Gas System Operator licence obligation for open data. Updated once a day after each gas day. Indicative only, not for trading. See all <a href="/sources.html">data sources</a>.</p>
+    </div>
+  </section>
+
+  <section class="tight" style="padding-top:0;">
+    <div class="wrap">
+      <div class="card" style="padding:32px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; background:linear-gradient(120deg,#fff 0%, var(--brand-soft) 100%);">
+        <div style="max-width:600px;">
+          <h2 style="font-size:22px;">Want the read-through, not just the numbers?</h2>
+          <p style="margin-top:8px; color:var(--ink-3);">The Energy Ledger turns this data into a twice-weekly view on UK gas, power, carbon and LNG — free on Substack.</p>
+        </div>
+        <a class="btn brand" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe free <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="wordmark" href="/">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+        <rect x="0" y="0" width="120" height="120" rx="28" fill="#0f172a"/>
+        <line x1="21" y1="30" x2="21" y2="90" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+        <line x1="34" y1="44" x2="80" y2="44" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="62" x2="92" y2="62" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="80" x2="66" y2="80" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <polyline points="80,44 96,27 103,32" fill="none" stroke="#f97316" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="103" cy="32" r="4.5" fill="#f97316"/>
+      </svg>
+          <b style="font-weight:inherit">The Energy <span>Ledger</span></b>
+        </a>
+        <p>The Energy Ledger is an independent read on UK energy markets.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Newsletter</h4>
+        <a href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe</a>
+        <a href="https://home.theenergyledger.co.uk/archive" target="_blank" rel="noopener">Archive</a>
+        <a href="/#coverage">Coverage</a>
+        <a href="/#about">About</a>
+      </div>
+      <div class="foot-col">
+        <h4>Live data</h4>
+        <a href="/prices.html">Prices &amp; costs</a>
+        <a href="/generation.html">GB generation</a>
+        <a href="/uk-gas.html">UK gas supply</a>
+        <a href="/lng.html">LNG</a>
+        <a href="/news.html">News</a>
+        <a href="/nbp-gas-price.html">NBP gas price</a>
+        <a href="/uk-power-prices.html">UK power price</a>
+        <a href="/uk-gas-storage.html">UK gas storage</a>
+        <a href="/uk-carbon-intensity.html">Carbon intensity</a>
+        <a href="/sources.html">Data sources</a>
+      </div>
+      <div class="foot-col">
+        <h4>Follow</h4>
+        <div class="socials" data-socials><a class="social" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener me" aria-label="The Energy Ledger on Substack" title="Substack"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a></div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span data-year>2026</span> The Energy Ledger. All rights reserved.</span>
+      <span>Data provided for information only, not for trading.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+<script src="/assets/charts.js"></script>
+<script>
+  const CFG = { key: 'gas', field: 'pencePerTherm', name: 'NBP gas price', color: '#2563eb', fmt: v => `${fmtNumber(v, 2)}p/th`, tick: v => `${v}p`,
+    big: v => `${fmtNumber(v, 2)}<span class="unit">p/th</span>`, toKwh: v => v / 29.3071, dayLabel: l => `Gas day ${fmtDay(l.gasDay)}.` };
+  const fmtDay = iso => new Date(iso + 'T12:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+  function change(series, days) {
+    if (!series || series.length < 2) return null;
+    const last = series[series.length - 1];
+    const target = new Date(last.d + 'T12:00:00Z'); target.setUTCDate(target.getUTCDate() - days);
+    const prev = [...series].reverse().find(p => new Date(p.d + 'T12:00:00Z') <= target);
+    return prev ? (last.v - prev.v) / prev.v * 100 : null;
+  }
+  function deltaHtml(pct) {
+    if (pct === null) return '—';
+    const cls = Math.abs(pct) < 0.5 ? 'flat' : pct > 0 ? 'up' : 'down';
+    return `<span class="delta ${cls}">${pct > 0 ? '+' : ''}${pct.toFixed(1)}%</span>`;
+  }
+  let series = [];
+  function draw(days) {
+    const el = document.getElementById('c-hist');
+    if (!series.length) { el.innerHTML = '<p class="loading">Price history unavailable right now.</p>'; return; }
+    const cutoff = new Date(series[series.length - 1].d + 'T12:00:00Z'); cutoff.setUTCDate(cutoff.getUTCDate() - days);
+    const pts = series.filter(p => new Date(p.d + 'T12:00:00Z') >= cutoff).map(p => ({ x: new Date(p.d + 'T12:00:00Z'), y: p.v }));
+    ELCharts.lineChart(el, [{ name: CFG.name, color: CFG.color, points: pts }], {
+      yFormat: CFG.fmt, yTick: CFG.tick, height: 280,
+      label: `${CFG.name}, last ${days} days, latest ${CFG.fmt(pts[pts.length - 1].y)}`,
+    });
+  }
+  document.querySelector('[data-range]').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    e.currentTarget.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b ? 'true' : 'false'));
+    draw(Number(b.dataset.days));
+  });
+  Promise.all([
+    fetch('/content/market-prices.json').then(r => r.json()).catch(() => ({})),
+    fetch('/content/price-history.json').then(r => r.ok ? r.json() : null).catch(() => null),
+  ]).then(([latest, hist]) => {
+    series = (hist && hist[CFG.key]) || [];
+    const l = latest[CFG.key];
+    if (l) {
+      const v = l[CFG.field];
+      document.getElementById('s-now').innerHTML = CFG.big(v);
+      document.getElementById('s-now-foot').textContent = CFG.dayLabel(l);
+      document.getElementById('s-kwh').innerHTML = `${fmtNumber(CFG.toKwh(v), 2)}<span class="unit">p/kWh</span>`;
+    }
+    if (latest.updated) document.getElementById('updated-note').textContent = 'Last updated ' + fmtDateTime(latest.updated);
+    else document.getElementById('updated-note').textContent = 'Live data not available right now.';
+    document.getElementById('s-7d').innerHTML = deltaHtml(change(series, 7));
+    document.getElementById('s-30d').innerHTML = deltaHtml(change(series, 30));
+    if (series.length) {
+      const year = series.slice(-365), vals = year.map(p => p.v);
+      const hi = year[vals.indexOf(Math.max(...vals))], lo = year[vals.indexOf(Math.min(...vals))];
+      document.getElementById('range-note').textContent =
+        `Over the period shown (${fmtDay(year[0].d)} to ${fmtDay(year[year.length - 1].d)}) the high was ${CFG.fmt(hi.v)} on ${fmtDay(hi.d)} and the low ${CFG.fmt(lo.v)} on ${fmtDay(lo.d)}.`;
+    }
+    draw(365);
+  });
+
+</script>
+
+</body>
+</html>

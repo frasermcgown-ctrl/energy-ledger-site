@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://identity.netlify.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com; connect-src 'self' https://raw.githubusercontent.com https://api.carbonintensity.org.uk https://data.elexon.co.uk https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://identity.netlify.com; frame-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UK Carbon Intensity Today — The Energy Ledger</title>
+<meta name="description" content="Great Britain&#x27;s electricity carbon intensity right now in gCO2/kWh, the low-carbon share, and the forecast for the next 48 hours, from NESO.">
+<link rel="canonical" href="https://www.theenergyledger.co.uk/uk-carbon-intensity.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Energy Ledger">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="UK Carbon Intensity Today — The Energy Ledger">
+<meta property="og:description" content="Great Britain&#x27;s electricity carbon intensity right now in gCO2/kWh, the low-carbon share, and the forecast for the next 48 hours, from NESO.">
+<meta property="og:url" content="https://www.theenergyledger.co.uk/uk-carbon-intensity.html">
+<meta property="og:image" content="https://www.theenergyledger.co.uk/og-image.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Energy Ledger: UK gas, power, carbon and LNG markets">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="UK Carbon Intensity Today — The Energy Ledger">
+<meta name="twitter:description" content="Great Britain&#x27;s electricity carbon intensity right now in gCO2/kWh, the low-carbon share, and the forecast for the next 48 hours, from NESO.">
+<meta name="twitter:image" content="https://www.theenergyledger.co.uk/og-image.png?v=2">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5XJN5KMJVN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5XJN5KMJVN');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="The Energy Ledger newsletter" href="https://home.theenergyledger.co.uk/feed">
+<link rel="icon" type="image/svg+xml" href="/icon-mark.svg">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "https://www.theenergyledger.co.uk/uk-carbon-intensity.html#webpage",
+   "url": "https://www.theenergyledger.co.uk/uk-carbon-intensity.html",
+   "name": "UK carbon intensity today",
+   "description": "Great Britain's electricity carbon intensity now and forecast for the next 48 hours.",
+   "inLanguage": "en-GB",
+   "isPartOf": {
+    "@id": "https://www.theenergyledger.co.uk/#website"
+   },
+   "publisher": {
+    "@id": "https://www.theenergyledger.co.uk/#org"
+   },
+   "breadcrumb": {
+    "@id": "https://www.theenergyledger.co.uk/uk-carbon-intensity.html#breadcrumb"
+   },
+   "mainEntity": {
+    "@id": "https://www.theenergyledger.co.uk/uk-carbon-intensity.html#dataset"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://www.theenergyledger.co.uk/uk-carbon-intensity.html#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://www.theenergyledger.co.uk/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Carbon intensity",
+     "item": "https://www.theenergyledger.co.uk/uk-carbon-intensity.html"
+    }
+   ]
+  },
+  {
+   "@type": "Dataset",
+   "@id": "https://www.theenergyledger.co.uk/uk-carbon-intensity.html#dataset",
+   "name": "Great Britain electricity carbon intensity, live and 48-hour forecast",
+   "description": "Current half-hourly carbon intensity of Great Britain's electricity in gCO2/kWh, the low-carbon share of generation, and the 48-hour forecast, from the NESO Carbon Intensity API.",
+   "url": "https://www.theenergyledger.co.uk/uk-carbon-intensity.html",
+   "mainEntityOfPage": {
+    "@id": "https://www.theenergyledger.co.uk/uk-carbon-intensity.html#webpage"
+   },
+   "creator": {
+    "@id": "https://www.theenergyledger.co.uk/#org"
+   },
+   "publisher": {
+    "@id": "https://www.theenergyledger.co.uk/#org"
+   },
+   "isAccessibleForFree": true,
+   "spatialCoverage": {
+    "@type": "Place",
+    "name": "Great Britain"
+   },
+   "keywords": [
+    "UK carbon intensity today",
+    "grid carbon intensity",
+    "gCO2/kWh",
+    "low-carbon electricity",
+    "carbon intensity forecast"
+   ],
+   "isBasedOn": [
+    "https://carbonintensity.org.uk"
+   ],
+   "creditText": "National Energy System Operator Carbon Intensity API (CC BY 4.0)",
+   "variableMeasured": [
+    "Carbon intensity (gCO2/kWh)",
+    "Low-carbon share of generation (%)"
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav">
+    <a class="wordmark" href="/" aria-label="The Energy Ledger — home">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <rect x="0" y="0" width="120" height="120" rx="28" fill="#0f172a"/>
+        <line x1="21" y1="30" x2="21" y2="90" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+        <line x1="34" y1="44" x2="80" y2="44" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="62" x2="92" y2="62" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="80" x2="66" y2="80" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <polyline points="80,44 96,27 103,32" fill="none" stroke="#f97316" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="103" cy="32" r="4.5" fill="#f97316"/>
+      </svg>
+      <b style="font-weight:inherit">The Energy <span>Ledger</span></b>
+    </a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-links">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="links" id="site-links">
+      <a href="/prices.html">Prices</a>
+      <a href="/generation.html">GB generation</a>
+      <a href="/uk-gas.html">UK gas</a>
+      <a href="/lng.html">LNG</a>
+      <a href="/news.html">News</a>
+      <a class="btn primary sm" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe free</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="crumbs"><a href="/">Home</a><span aria-hidden="true">/</span><span>Live data</span><span aria-hidden="true">/</span><span>Carbon intensity</span></div>
+      <h1>UK carbon intensity today</h1>
+      <p class="lede">How much CO₂ Great Britain's electricity is emitting right now, the share from low-carbon sources, and the forecast for the next 48 hours.</p>
+      <div class="status"><span class="live-dot"></span><span id="updated-note">Loading live data…</span></div>
+    </div>
+  </div>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="stat-grid four">
+        <div class="card stat">
+          <div class="stat-label">Carbon intensity now <span class="badge" id="ci-badge" hidden></span></div>
+          <div class="stat-value" id="ci-now">—<span class="unit">gCO₂/kWh</span></div>
+          <div class="stat-foot" id="ci-now-foot">Current half hour, Great Britain.</div>
+        </div>
+        <div class="card stat">
+          <div class="stat-label">Low-carbon share</div>
+          <div class="stat-value" id="ci-low">—<span class="unit">%</span></div>
+          <div class="stat-foot">Wind, solar, nuclear, hydro and biomass.</div>
+        </div>
+        <div class="card stat">
+          <div class="stat-label">Cleanest time, next 48 hours</div>
+          <div class="stat-value" id="ci-min" style="font-size:24px;">—</div>
+          <div class="stat-foot" id="ci-min-foot">Lowest forecast half hour.</div>
+        </div>
+        <div class="card stat">
+          <div class="stat-label">Dirtiest time, next 48 hours</div>
+          <div class="stat-value" id="ci-max" style="font-size:24px;">—</div>
+          <div class="stat-foot" id="ci-max-foot">Highest forecast half hour.</div>
+        </div>
+      </div>
+
+      <div class="card panel" style="margin-top:16px;">
+        <div class="panel-head">
+          <div>
+            <h2>Carbon intensity forecast, next 48 hours</h2>
+            <p>Forecast grams of CO₂ per kWh for each half hour, Great Britain.</p>
+          </div>
+        </div>
+        <div id="c-ci"><p class="loading">Loading forecast…</p></div>
+      </div>
+
+      <div class="explainer">
+        <h2>Understanding carbon intensity</h2>
+        <div class="explainer-grid">
+          <div>
+            <h3>What is carbon intensity?</h3>
+            <p>Carbon intensity is how many grams of CO₂ are emitted for each kilowatt hour of electricity used, in gCO₂/kWh. It falls when wind, solar and nuclear make up more of the mix, and rises when more gas is burned.</p>
+          </div>
+          <div>
+            <h3>What do very low, low, moderate and high mean?</h3>
+            <p>They are bands set by the Carbon Intensity API to make the number easier to read at a glance. The bands are fixed, so the same number always gets the same label.</p>
+          </div>
+          <div>
+            <h3>When is electricity cleanest?</h3>
+            <p>Usually overnight and on windy or sunny afternoons when demand is low. Shifting flexible use, such as EV charging, heat pumps or batteries, into the cleanest half hours cuts emissions.</p>
+          </div>
+          <div>
+            <h3>Can I use these figures for carbon reporting?</h3>
+            <p>Live figures are for operational decisions. Annual carbon reporting, such as Streamlined Energy and Carbon Reporting, normally uses the government's published greenhouse gas conversion factors instead.</p>
+          </div>
+          <div>
+            <h3>Why Great Britain, not the UK?</h3>
+            <p>The data covers the GB transmission system. Northern Ireland is part of the all-island electricity market with Ireland and is not included.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="related">
+        <h2>Related live data</h2>
+        <div class="related-grid"><a href="/generation.html">Live GB generation<small>Generation mix, demand and forecasts</small></a><a href="/uk-power-prices.html">UK power price today<small>GB wholesale electricity, £/MWh</small></a><a href="/prices.html">UK carbon auctions<small>UK ETS auction calendar and reserve price</small></a><a href="/news.html">Carbon news<small>Latest UK carbon and power headlines</small></a></div>
+      </div>
+
+      <p class="source-note">Data: <a href="https://carbonintensity.org.uk" target="_blank" rel="noopener">National Energy System Operator Carbon Intensity API</a> (CC BY 4.0), read live when the page loads. Forecasts are forecasts and will change. See all <a href="/sources.html">data sources</a>.</p>
+    </div>
+  </section>
+
+  <section class="tight" style="padding-top:0;">
+    <div class="wrap">
+      <div class="card" style="padding:32px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; background:linear-gradient(120deg,#fff 0%, var(--brand-soft) 100%);">
+        <div style="max-width:600px;">
+          <h2 style="font-size:22px;">Want the read-through, not just the numbers?</h2>
+          <p style="margin-top:8px; color:var(--ink-3);">The Energy Ledger turns this data into a twice-weekly view on UK gas, power, carbon and LNG — free on Substack.</p>
+        </div>
+        <a class="btn brand" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe free <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="wordmark" href="/">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+        <rect x="0" y="0" width="120" height="120" rx="28" fill="#0f172a"/>
+        <line x1="21" y1="30" x2="21" y2="90" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+        <line x1="34" y1="44" x2="80" y2="44" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="62" x2="92" y2="62" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="80" x2="66" y2="80" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <polyline points="80,44 96,27 103,32" fill="none" stroke="#f97316" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="103" cy="32" r="4.5" fill="#f97316"/>
+      </svg>
+          <b style="font-weight:inherit">The Energy <span>Ledger</span></b>
+        </a>
+        <p>The Energy Ledger is an independent read on UK energy markets.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Newsletter</h4>
+        <a href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe</a>
+        <a href="https://home.theenergyledger.co.uk/archive" target="_blank" rel="noopener">Archive</a>
+        <a href="/#coverage">Coverage</a>
+        <a href="/#about">About</a>
+      </div>
+      <div class="foot-col">
+        <h4>Live data</h4>
+        <a href="/prices.html">Prices &amp; costs</a>
+        <a href="/generation.html">GB generation</a>
+        <a href="/uk-gas.html">UK gas supply</a>
+        <a href="/lng.html">LNG</a>
+        <a href="/news.html">News</a>
+        <a href="/nbp-gas-price.html">NBP gas price</a>
+        <a href="/uk-power-prices.html">UK power price</a>
+        <a href="/uk-gas-storage.html">UK gas storage</a>
+        <a href="/uk-carbon-intensity.html">Carbon intensity</a>
+        <a href="/sources.html">Data sources</a>
+      </div>
+      <div class="foot-col">
+        <h4>Follow</h4>
+        <div class="socials" data-socials><a class="social" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener me" aria-label="The Energy Ledger on Substack" title="Substack"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a></div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span data-year>2026</span> The Energy Ledger. All rights reserved.</span>
+      <span>Data provided for information only, not for trading.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+<script src="/assets/charts.js"></script>
+<script>
+
+  const API = 'https://api.carbonintensity.org.uk';
+  const LOW = ['wind', 'solar', 'nuclear', 'hydro', 'biomass'];
+  const when = iso => new Date(iso).toLocaleString('en-GB', { weekday: 'short', hour: '2-digit', minute: '2-digit' });
+  function badgeClass(index) {
+    const i = (index || '').toLowerCase();
+    return i === 'very low' || i === 'low' ? 'badge-low' : i === 'moderate' ? 'badge-moderate' : 'badge-high';
+  }
+  fetch(API + '/intensity').then(r => r.json()).then(data => {
+    const p = data.data[0], d = p.intensity;
+    const val = d.actual !== null ? d.actual : d.forecast;
+    document.getElementById('ci-now').innerHTML = `${val}<span class="unit">gCO₂/kWh</span>`;
+    const badge = document.getElementById('ci-badge');
+    badge.textContent = d.index; badge.className = 'badge ' + badgeClass(d.index); badge.hidden = false;
+    const t = s => new Date(s).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+    document.getElementById('ci-now-foot').textContent = `${d.actual !== null ? 'Estimated actual' : 'Forecast'} for ${t(p.from)} to ${t(p.to)}.`;
+    document.getElementById('updated-note').textContent = 'Last updated ' + fmtDateTime(p.from) + ' (current half hour)';
+  }).catch(() => {
+    document.getElementById('updated-note').textContent = 'Live data not available right now. Check back shortly.';
+  });
+  fetch(API + '/generation').then(r => r.json()).then(data => {
+    const low = data.data.generationmix.filter(m => LOW.includes(m.fuel)).reduce((a, m) => a + m.perc, 0);
+    document.getElementById('ci-low').innerHTML = `${fmtNumber(low, 1)}<span class="unit">%</span>`;
+  }).catch(() => {});
+  fetch(`${API}/intensity/${new Date().toISOString().slice(0, 16)}Z/fw48h`).then(r => r.json()).then(d => {
+    const rows = (d.data || []).filter(p => p.intensity && Number.isFinite(p.intensity.forecast));
+    if (!rows.length) throw new Error('no forecast');
+    const min = rows.reduce((a, b) => b.intensity.forecast < a.intensity.forecast ? b : a);
+    const max = rows.reduce((a, b) => b.intensity.forecast > a.intensity.forecast ? b : a);
+    document.getElementById('ci-min').textContent = when(min.from);
+    document.getElementById('ci-min-foot').textContent = `Forecast ${min.intensity.forecast} gCO₂/kWh.`;
+    document.getElementById('ci-max').textContent = when(max.from);
+    document.getElementById('ci-max-foot').textContent = `Forecast ${max.intensity.forecast} gCO₂/kWh.`;
+    const hourFmt = x => x.toLocaleString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+    ELCharts.lineChart(document.getElementById('c-ci'), [{ name: 'Carbon intensity', color: '#059669', points: rows.map(p => ({ x: new Date(p.from), y: p.intensity.forecast })) }], {
+      zero: true, height: 260, yFormat: v => `${Math.round(v)} gCO₂/kWh`, tipDate: hourFmt, xStep: 12 * 3600e3,
+      xFormat: x => x.toLocaleString('en-GB', { weekday: 'short', hour: '2-digit', minute: '2-digit' }), label: 'Carbon intensity forecast, next 48 hours' });
+  }).catch(() => {
+    document.getElementById('c-ci').innerHTML = '<p class="loading">Unable to load the forecast right now.</p>';
+  });
+
+</script>
+
+</body>
+</html>

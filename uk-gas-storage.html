@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://identity.netlify.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com; connect-src 'self' https://raw.githubusercontent.com https://api.carbonintensity.org.uk https://data.elexon.co.uk https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://identity.netlify.com; frame-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UK Gas Storage Today: Flows by Site — The Energy Ledger</title>
+<meta name="description" content="Live UK gas storage withdrawals by site, including Rough, plus total injections and net storage flow, from National Gas Transmission data.">
+<link rel="canonical" href="https://www.theenergyledger.co.uk/uk-gas-storage.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Energy Ledger">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="UK Gas Storage Today: Flows by Site — The Energy Ledger">
+<meta property="og:description" content="Live UK gas storage withdrawals by site, including Rough, plus total injections and net storage flow, from National Gas Transmission data.">
+<meta property="og:url" content="https://www.theenergyledger.co.uk/uk-gas-storage.html">
+<meta property="og:image" content="https://www.theenergyledger.co.uk/og-image.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Energy Ledger: UK gas, power, carbon and LNG markets">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="UK Gas Storage Today: Flows by Site — The Energy Ledger">
+<meta name="twitter:description" content="Live UK gas storage withdrawals by site, including Rough, plus total injections and net storage flow, from National Gas Transmission data.">
+<meta name="twitter:image" content="https://www.theenergyledger.co.uk/og-image.png?v=2">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5XJN5KMJVN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5XJN5KMJVN');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="The Energy Ledger newsletter" href="https://home.theenergyledger.co.uk/feed">
+<link rel="icon" type="image/svg+xml" href="/icon-mark.svg">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "https://www.theenergyledger.co.uk/uk-gas-storage.html#webpage",
+   "url": "https://www.theenergyledger.co.uk/uk-gas-storage.html",
+   "name": "UK gas storage today",
+   "description": "Live UK gas storage withdrawals by site, total injections and net storage flow.",
+   "inLanguage": "en-GB",
+   "isPartOf": {
+    "@id": "https://www.theenergyledger.co.uk/#website"
+   },
+   "publisher": {
+    "@id": "https://www.theenergyledger.co.uk/#org"
+   },
+   "breadcrumb": {
+    "@id": "https://www.theenergyledger.co.uk/uk-gas-storage.html#breadcrumb"
+   },
+   "mainEntity": {
+    "@id": "https://www.theenergyledger.co.uk/uk-gas-storage.html#dataset"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://www.theenergyledger.co.uk/uk-gas-storage.html#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://www.theenergyledger.co.uk/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "UK gas storage",
+     "item": "https://www.theenergyledger.co.uk/uk-gas-storage.html"
+    }
+   ]
+  },
+  {
+   "@type": "Dataset",
+   "@id": "https://www.theenergyledger.co.uk/uk-gas-storage.html#dataset",
+   "name": "UK gas storage flows by site, live",
+   "description": "Instantaneous gas withdrawal rates from each UK storage site connected to the national transmission system, total storage injection and net storage flow, in mcm/d, from National Gas Transmission.",
+   "url": "https://www.theenergyledger.co.uk/uk-gas-storage.html",
+   "mainEntityOfPage": {
+    "@id": "https://www.theenergyledger.co.uk/uk-gas-storage.html#webpage"
+   },
+   "creator": {
+    "@id": "https://www.theenergyledger.co.uk/#org"
+   },
+   "publisher": {
+    "@id": "https://www.theenergyledger.co.uk/#org"
+   },
+   "isAccessibleForFree": true,
+   "spatialCoverage": {
+    "@type": "Place",
+    "name": "United Kingdom"
+   },
+   "keywords": [
+    "UK gas storage",
+    "Rough gas storage",
+    "gas storage withdrawals",
+    "gas storage injections",
+    "UK gas storage today"
+   ],
+   "isBasedOn": [
+    "https://data.nationalgas.com"
+   ],
+   "creditText": "National Gas Transmission",
+   "distribution": [
+    {
+     "@type": "DataDownload",
+     "encodingFormat": "application/json",
+     "contentUrl": "https://raw.githubusercontent.com/frasermcgown-ctrl/energy-ledger-site/main/content/uk-gas-data.json"
+    }
+   ],
+   "variableMeasured": [
+    "Storage withdrawal by site (mcm/d)",
+    "Total storage injection (mcm/d)",
+    "Net storage flow (mcm/d)"
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav">
+    <a class="wordmark" href="/" aria-label="The Energy Ledger — home">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <rect x="0" y="0" width="120" height="120" rx="28" fill="#0f172a"/>
+        <line x1="21" y1="30" x2="21" y2="90" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+        <line x1="34" y1="44" x2="80" y2="44" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="62" x2="92" y2="62" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="80" x2="66" y2="80" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <polyline points="80,44 96,27 103,32" fill="none" stroke="#f97316" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="103" cy="32" r="4.5" fill="#f97316"/>
+      </svg>
+      <b style="font-weight:inherit">The Energy <span>Ledger</span></b>
+    </a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-links">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="links" id="site-links">
+      <a href="/prices.html">Prices</a>
+      <a href="/generation.html">GB generation</a>
+      <a href="/uk-gas.html">UK gas</a>
+      <a href="/lng.html">LNG</a>
+      <a href="/news.html">News</a>
+      <a class="btn primary sm" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe free</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="crumbs"><a href="/">Home</a><span aria-hidden="true">/</span><span>Live data</span><span aria-hidden="true">/</span><span>UK gas storage</span></div>
+      <h1>UK gas storage today</h1>
+      <p class="lede">Whether Britain's gas storage sites are drawing gas out or putting it in right now, site by site, from National Gas Transmission's live flow data.</p>
+      <div class="status"><span class="live-dot"></span><span id="updated-note">Loading live data…</span></div>
+    </div>
+  </div>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="stat-grid four">
+        <div class="card stat">
+          <div class="stat-label">Withdrawals</div>
+          <div class="stat-value" id="st-out">—<span class="unit">mcm/d</span></div>
+          <div class="stat-foot">Gas coming out of storage into the grid.</div>
+        </div>
+        <div class="card stat">
+          <div class="stat-label">Injections</div>
+          <div class="stat-value" id="st-in">—<span class="unit">mcm/d</span></div>
+          <div class="stat-foot">Gas going into storage from the grid.</div>
+        </div>
+        <div class="card stat">
+          <div class="stat-label">Net storage flow</div>
+          <div class="stat-value" id="st-net">—<span class="unit">mcm/d</span></div>
+          <div class="stat-foot" id="st-net-foot">Withdrawals minus injections.</div>
+        </div>
+        <div class="card stat">
+          <div class="stat-label">Storage share of supply</div>
+          <div class="stat-value" id="st-share">—<span class="unit">%</span></div>
+          <div class="stat-foot">Withdrawals as a share of total supply.</div>
+        </div>
+      </div>
+
+      <div class="card panel" style="margin-top:16px;">
+        <div class="panel-head">
+          <div>
+            <h2>Withdrawals by storage site</h2>
+            <p id="st-desc">Instantaneous flow from each site into the national grid, mcm/d.</p>
+          </div>
+        </div>
+        <div class="bars" id="st-list"><p class="loading">Loading storage data…</p></div>
+        <p class="stat-foot" style="margin-top:12px;">This page shows how fast gas is moving in and out of storage, not how full the sites are. National Gas publishes withdrawals for each site but injections only as a national total.</p>
+      </div>
+
+      <div class="explainer">
+        <h2>Understanding UK gas storage</h2>
+        <div class="explainer-grid">
+          <div>
+            <h3>Where is Britain’s gas stored?</h3>
+            <p>Rough, a depleted gas field off the Yorkshire coast, is the largest site. The others connected to the national grid, including Aldbrough, Hornsea, Hill Top Farm, Hole House Farm, Holford and Stublach, are smaller salt caverns that can fill and empty quickly.</p>
+          </div>
+          <div>
+            <h3>Why does the UK have so little storage?</h3>
+            <p>Britain long relied on North Sea production and flexible imports instead of large seasonal stocks. Rough stopped storing gas in 2017 and has only partly returned since, so the UK holds far less storage relative to demand than countries such as Germany or Italy.</p>
+          </div>
+          <div>
+            <h3>What do withdrawals and injections tell you?</h3>
+            <p>Sites withdraw when gas is needed or prices are high, usually on cold days, and inject when gas is cheap or plentiful. A large net withdrawal in mild weather can signal tight supply elsewhere.</p>
+          </div>
+          <div>
+            <h3>How does storage affect prices?</h3>
+            <p>With little storage, Britain leans on LNG and Norwegian pipeline gas to cover cold snaps. Low stocks or fast drawdowns can push the NBP price and the winter forward curve higher.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="related">
+        <h2>Related live data</h2>
+        <div class="related-grid"><a href="/uk-gas.html">UK gas supply and demand<small>Flows by terminal and sector</small></a><a href="/nbp-gas-price.html">NBP gas price today<small>UK wholesale gas, p/therm</small></a><a href="/lng.html">LNG terminals<small>UK send-out and European stocks</small></a><a href="/prices.html">All prices and costs<small>Price cap, balancing costs, CfDs</small></a></div>
+      </div>
+
+      <p class="source-note">Data: <a href="https://data.nationalgas.com" target="_blank" rel="noopener">National Gas Transmission Data Portal</a>, published under their Gas System Operator licence obligation for open data. Figures are instantaneous flow rates refreshed through the day, not daily totals or stock levels. Indicative only, not for trading. See all <a href="/sources.html">data sources</a>.</p>
+    </div>
+  </section>
+
+  <section class="tight" style="padding-top:0;">
+    <div class="wrap">
+      <div class="card" style="padding:32px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; background:linear-gradient(120deg,#fff 0%, var(--brand-soft) 100%);">
+        <div style="max-width:600px;">
+          <h2 style="font-size:22px;">Want the read-through, not just the numbers?</h2>
+          <p style="margin-top:8px; color:var(--ink-3);">The Energy Ledger turns this data into a twice-weekly view on UK gas, power, carbon and LNG — free on Substack.</p>
+        </div>
+        <a class="btn brand" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe free <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="wordmark" href="/">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+        <rect x="0" y="0" width="120" height="120" rx="28" fill="#0f172a"/>
+        <line x1="21" y1="30" x2="21" y2="90" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+        <line x1="34" y1="44" x2="80" y2="44" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="62" x2="92" y2="62" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="80" x2="66" y2="80" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <polyline points="80,44 96,27 103,32" fill="none" stroke="#f97316" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="103" cy="32" r="4.5" fill="#f97316"/>
+      </svg>
+          <b style="font-weight:inherit">The Energy <span>Ledger</span></b>
+        </a>
+        <p>The Energy Ledger is an independent read on UK energy markets.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Newsletter</h4>
+        <a href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe</a>
+        <a href="https://home.theenergyledger.co.uk/archive" target="_blank" rel="noopener">Archive</a>
+        <a href="/#coverage">Coverage</a>
+        <a href="/#about">About</a>
+      </div>
+      <div class="foot-col">
+        <h4>Live data</h4>
+        <a href="/prices.html">Prices &amp; costs</a>
+        <a href="/generation.html">GB generation</a>
+        <a href="/uk-gas.html">UK gas supply</a>
+        <a href="/lng.html">LNG</a>
+        <a href="/news.html">News</a>
+        <a href="/nbp-gas-price.html">NBP gas price</a>
+        <a href="/uk-power-prices.html">UK power price</a>
+        <a href="/uk-gas-storage.html">UK gas storage</a>
+        <a href="/uk-carbon-intensity.html">Carbon intensity</a>
+        <a href="/sources.html">Data sources</a>
+      </div>
+      <div class="foot-col">
+        <h4>Follow</h4>
+        <div class="socials" data-socials><a class="social" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener me" aria-label="The Energy Ledger on Substack" title="Substack"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a></div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span data-year>2026</span> The Energy Ledger. All rights reserved.</span>
+      <span>Data provided for information only, not for trading.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+<script>
+
+  const NAMES = { 'EASINGTON ROUGH ST': 'Rough', 'HILLTOP': 'Hill Top Farm' };
+  const titleCase = s => String(s || '').toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
+  const one = (g, name) => ((g || { sites: [] }).sites.find(s => s.name === name) || {}).flow;
+  fetch('/content/uk-gas-data.json').then(r => r.json()).then(data => {
+    if (!data.groups) throw new Error('no data');
+    const G = d => data.groups.find(g => g.description.toLowerCase() === d.toLowerCase());
+    document.getElementById('updated-note').textContent = 'Last updated ' + fmtDateTime(data.publishedTime || data.updated);
+    const sites = (data.sites || []).filter(s => Number.isFinite(s.flowRate))
+      .map(s => ({ label: NAMES[s.name] || titleCase(s.name), value: Math.max(0, s.flowRate) }))
+      .sort((a, b) => b.value - a.value || a.label.localeCompare(b.label));
+    const out = sites.reduce((a, s) => a + s.value, 0);
+    const inj = one(G('Demand by category'), 'Storage Demand Flow') || 0;
+    const supply = one(G('Total Supply'), 'TOTAL SUPPLY');
+    const net = out - inj;
+    document.getElementById('st-out').innerHTML = `${fmtNumber(out, 1)}<span class="unit">mcm/d</span>`;
+    document.getElementById('st-in').innerHTML = `${fmtNumber(inj, 1)}<span class="unit">mcm/d</span>`;
+    document.getElementById('st-net').innerHTML = `${net > 0 ? '+' : ''}${fmtNumber(net, 1)}<span class="unit">mcm/d</span>`;
+    document.getElementById('st-net-foot').textContent = Math.abs(net) < 0.5 ? 'Storage is broadly neutral right now.'
+      : net > 0 ? 'Storage is a net source of supply right now.' : 'Storage is net filling right now.';
+    if (Number.isFinite(supply) && supply > 0) document.getElementById('st-share').innerHTML = `${fmtNumber(out / supply * 100, 1)}<span class="unit">%</span>`;
+    if (data.currentGasDay) document.getElementById('st-desc').textContent = `Instantaneous flow from each site into the national grid, mcm/d · gas day ${data.currentGasDay}.`;
+    const max = Math.max(1, ...sites.map(s => s.value));
+    document.getElementById('st-list').innerHTML = sites.map(s => `
+      <div class="bar-row" title="${escapeHtml(s.label)}: ${fmtNumber(s.value, 2)} mcm/d">
+        <span class="bar-label">${escapeHtml(s.label)}</span>
+        <div class="bar-track"><div class="bar-fill" style="width:${Math.max(s.value / max * 100, 0.8)}%; background:var(--withdraw);"></div></div>
+        <span class="bar-value">${fmtNumber(s.value, 1)}</span>
+      </div>`).join('');
+  }).catch(() => {
+    document.getElementById('updated-note').textContent = 'Live data not available right now. Check back shortly.';
+    document.getElementById('st-list').innerHTML = '<p class="loading">Unable to load data right now.</p>';
+  });
+
+</script>
+
+</body>
+</html>

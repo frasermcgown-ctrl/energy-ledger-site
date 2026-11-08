@@ -67,7 +67,7 @@ No change needed. `netlify.toml` already skips the build when a commit only touc
 
 1. **Load the Netlify Identity widget only when needed.** Applied later at your request. The home page now loads the widget only when the URL carries an identity token (invite, recovery, confirmation, email change or sign-in), the same tokens the widget itself looks for. Tested in a browser with the widget's published build and a mocked identity API: a normal visit makes no request to identity.netlify.com; an invite link loads the widget, accepts a password and redirects to /admin/. The /admin page itself is unchanged.
 2. **Long cache for the font file.** Applied later at your request: `/assets/fonts/*` is served with `Cache-Control: public, max-age=31536000, immutable`, so repeat visits skip the revalidation request. If the font is ever replaced, give the file a new name.
-3. **UK gas storage stock levels.** The storage page shows flow rates only, because no current feed has stock levels ("how full"). A new scheduled function would be needed, for example from GIE AGSI+, which uses the same GIE API key, if it covers the GB sites. This means touching the scheduled functions, so it's out of scope here.
+3. **UK gas storage stock levels.** Applied later at your request: a new scheduled function, `netlify/functions/fetch-uk-storage.mjs`, reads GIE AGSI for the United Kingdom (country GB, covered as non-EU since 31 Dec 2020) twice each evening, using the existing `GIE_API_KEY`, and writes `content/uk-storage-levels.json`. The storage page shows % full, TWh in storage, the daily change, the same day last year and a year's chart, and stays hidden until the first run. Existing functions are unchanged.
 
 ## Follow-up from Netlify traffic logs (7 days to 8 Nov)
 

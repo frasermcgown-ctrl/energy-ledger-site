@@ -4,22 +4,22 @@
 <meta charset="UTF-8">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://identity.netlify.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com; connect-src 'self' https://raw.githubusercontent.com https://api.carbonintensity.org.uk https://data.elexon.co.uk https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://identity.netlify.com; frame-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UK Gas Storage Today: Flows by Site — The Energy Ledger</title>
-<meta name="description" content="Live UK gas storage withdrawals by site, including Rough, plus total injections and net storage flow, from National Gas Transmission data.">
+<title>UK Gas Storage Levels Today — The Energy Ledger</title>
+<meta name="description" content="How full UK gas storage is today, with a year of daily levels from GIE AGSI, plus live withdrawals and injections by site from National Gas.">
 <link rel="canonical" href="https://www.theenergyledger.co.uk/uk-gas-storage">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="The Energy Ledger">
 <meta property="og:locale" content="en_GB">
-<meta property="og:title" content="UK Gas Storage Today: Flows by Site — The Energy Ledger">
-<meta property="og:description" content="Live UK gas storage withdrawals by site, including Rough, plus total injections and net storage flow, from National Gas Transmission data.">
+<meta property="og:title" content="UK Gas Storage Levels Today — The Energy Ledger">
+<meta property="og:description" content="How full UK gas storage is today, with a year of daily levels from GIE AGSI, plus live withdrawals and injections by site from National Gas.">
 <meta property="og:url" content="https://www.theenergyledger.co.uk/uk-gas-storage">
 <meta property="og:image" content="https://www.theenergyledger.co.uk/og-image.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="The Energy Ledger: UK gas, power, carbon and LNG markets">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="UK Gas Storage Today: Flows by Site — The Energy Ledger">
-<meta name="twitter:description" content="Live UK gas storage withdrawals by site, including Rough, plus total injections and net storage flow, from National Gas Transmission data.">
+<meta name="twitter:title" content="UK Gas Storage Levels Today — The Energy Ledger">
+<meta name="twitter:description" content="How full UK gas storage is today, with a year of daily levels from GIE AGSI, plus live withdrawals and injections by site from National Gas.">
 <meta name="twitter:image" content="https://www.theenergyledger.co.uk/og-image.png?v=2">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5XJN5KMJVN"></script>
@@ -44,8 +44,8 @@
    "@type": "WebPage",
    "@id": "https://www.theenergyledger.co.uk/uk-gas-storage#webpage",
    "url": "https://www.theenergyledger.co.uk/uk-gas-storage",
-   "name": "UK gas storage today",
-   "description": "Live UK gas storage withdrawals by site, total injections and net storage flow.",
+   "name": "UK gas storage levels today",
+   "description": "How full UK gas storage is, with a year of daily levels, plus live storage withdrawals and injections by site.",
    "inLanguage": "en-GB",
    "isPartOf": {
     "@id": "https://www.theenergyledger.co.uk/#website"
@@ -81,8 +81,8 @@
   {
    "@type": "Dataset",
    "@id": "https://www.theenergyledger.co.uk/uk-gas-storage#dataset",
-   "name": "UK gas storage flows by site, live",
-   "description": "Instantaneous gas withdrawal rates from each UK storage site connected to the national transmission system, total storage injection and net storage flow, in mcm/d, from National Gas Transmission.",
+   "name": "UK gas storage levels and flows",
+   "description": "Daily UK gas in storage (TWh) and fill level (% of working gas volume) with about a year of history from Gas Infrastructure Europe's AGSI platform, plus instantaneous storage withdrawal rates by site, total injection and net storage flow from National Gas Transmission.",
    "url": "https://www.theenergyledger.co.uk/uk-gas-storage",
    "mainEntityOfPage": {
     "@id": "https://www.theenergyledger.co.uk/uk-gas-storage#webpage"
@@ -99,17 +99,23 @@
     "name": "United Kingdom"
    },
    "keywords": [
-    "UK gas storage",
+    "UK gas storage levels",
+    "how full is UK gas storage",
+    "UK gas storage today",
     "Rough gas storage",
-    "gas storage withdrawals",
-    "gas storage injections",
-    "UK gas storage today"
+    "gas storage withdrawals"
    ],
    "isBasedOn": [
+    "https://agsi.gie.eu",
     "https://data.nationalgas.com"
    ],
-   "creditText": "National Gas Transmission",
+   "creditText": "Gas Infrastructure Europe (AGSI), National Gas Transmission",
    "distribution": [
+    {
+     "@type": "DataDownload",
+     "encodingFormat": "application/json",
+     "contentUrl": "https://raw.githubusercontent.com/frasermcgown-ctrl/energy-ledger-site/main/content/uk-storage-levels.json"
+    },
     {
      "@type": "DataDownload",
      "encodingFormat": "application/json",
@@ -117,9 +123,10 @@
     }
    ],
    "variableMeasured": [
+    "Gas in storage (TWh)",
+    "Storage fill level (% of working gas volume)",
     "Storage withdrawal by site (mcm/d)",
-    "Total storage injection (mcm/d)",
-    "Net storage flow (mcm/d)"
+    "Total storage injection (mcm/d)"
    ]
   }
  ]
@@ -160,14 +167,51 @@
   <div class="page-hero">
     <div class="wrap">
       <div class="crumbs"><a href="/">Home</a><span aria-hidden="true">/</span><span>Live data</span><span aria-hidden="true">/</span><span>UK gas storage</span></div>
-      <h1>UK gas storage today</h1>
-      <p class="lede">Whether Britain's gas storage sites are drawing gas out or putting it in right now, site by site, from National Gas Transmission's live flow data.</p>
+      <h1>UK gas storage levels today</h1>
+      <p class="lede">How full Britain's gas storage is, from Gas Infrastructure Europe's daily AGSI figures, and whether each site is drawing gas out or putting it in right now, from National Gas Transmission's live flows.</p>
       <div class="status"><span class="live-dot"></span><span id="updated-note">Loading live data…</span></div>
     </div>
   </div>
 
   <section class="tight">
     <div class="wrap">
+      <div id="levels" hidden>
+        <div class="stat-grid four">
+          <div class="card stat">
+            <div class="stat-label">Storage full</div>
+            <div class="stat-value" id="lv-full">—<span class="unit">%</span></div>
+            <div class="stat-foot" id="lv-full-foot">Share of working gas capacity.</div>
+          </div>
+          <div class="card stat">
+            <div class="stat-label">Gas in storage</div>
+            <div class="stat-value" id="lv-twh">—<span class="unit">TWh</span></div>
+            <div class="stat-foot" id="lv-twh-foot">Energy held across UK sites.</div>
+          </div>
+          <div class="card stat">
+            <div class="stat-label">Change on the day</div>
+            <div class="stat-value" id="lv-trend">—</div>
+            <div class="stat-foot" id="lv-trend-foot">Percentage points of capacity.</div>
+          </div>
+          <div class="card stat">
+            <div class="stat-label">Same day last year</div>
+            <div class="stat-value" id="lv-ly">—</div>
+            <div class="stat-foot" id="lv-ly-foot">Fill level a year earlier.</div>
+          </div>
+        </div>
+
+        <div class="card panel" style="margin-top:16px;">
+          <div class="panel-head">
+            <div>
+              <h2>UK gas storage level, past year</h2>
+              <p id="lv-desc">Gas in storage as a share of working gas capacity, each gas day.</p>
+            </div>
+          </div>
+          <div id="c-levels"></div>
+        </div>
+
+        <h2 style="font-size:22px; margin:40px 0 16px;">Storage flows right now</h2>
+      </div>
+
       <div class="stat-grid four">
         <div class="card stat">
           <div class="stat-label">Withdrawals</div>
@@ -199,7 +243,7 @@
           </div>
         </div>
         <div class="bars" id="st-list"><p class="loading">Loading storage data…</p></div>
-        <p class="stat-foot" style="margin-top:12px;">This page shows how fast gas is moving in and out of storage, not how full the sites are. National Gas publishes withdrawals for each site but injections only as a national total.</p>
+        <p class="stat-foot" style="margin-top:12px;">These are instantaneous flow rates; the stock level above is a once-a-day figure. National Gas publishes withdrawals for each site but injections only as a national total.</p>
       </div>
 
       <div class="explainer">
@@ -208,6 +252,10 @@
           <div>
             <h3>Where is Britain’s gas stored?</h3>
             <p>Rough, a depleted gas field off the Yorkshire coast, is the largest site. The others connected to the national grid, including Aldbrough, Hornsea, Hill Top Farm, Hole House Farm, Holford and Stublach, are smaller salt caverns that can fill and empty quickly.</p>
+          </div>
+          <div>
+            <h3>Where do the stock figures come from?</h3>
+            <p>Storage operators report how much gas they hold each gas day to Gas Infrastructure Europe's AGSI platform, which publishes them in the evening. The percentage is gas in storage against the sites' working gas capacity. Figures can be revised for a day or two.</p>
           </div>
           <div>
             <h3>Why does the UK have so little storage?</h3>
@@ -235,7 +283,7 @@
         <div class="related-grid"><a href="/uk-gas">UK gas supply and demand<small>Flows by terminal and sector</small></a><a href="/nbp-gas-price">NBP gas price today<small>UK wholesale gas, p/therm</small></a><a href="/lng">LNG terminals<small>UK send-out and European stocks</small></a><a href="/prices">All prices and costs<small>Price cap, balancing costs, CfDs</small></a></div>
       </div>
 
-      <p class="source-note">Data: <a href="https://data.nationalgas.com" target="_blank" rel="noopener">National Gas Transmission Data Portal</a>, published under their Gas System Operator licence obligation for open data. Figures are instantaneous flow rates refreshed through the day, not daily totals or stock levels. Indicative only, not for trading. See all <a href="/sources">data sources</a>.</p>
+      <p class="source-note">Stock levels: <a href="https://agsi.gie.eu" target="_blank" rel="noopener">Gas Infrastructure Europe AGSI</a> (United Kingdom), published daily under the GIE transparency platform terms. Flows: <a href="https://data.nationalgas.com" target="_blank" rel="noopener">National Gas Transmission Data Portal</a>, published under their Gas System Operator licence obligation for open data. Figures are instantaneous flow rates refreshed through the day, not daily totals or stock levels. Indicative only, not for trading. See all <a href="/sources">data sources</a>.</p>
     </div>
   </section>
 
@@ -304,6 +352,42 @@
 </footer>
 
 <script src="/assets/site.js"></script>
+<script src="/assets/charts.js"></script>
+<script>
+  // Daily stock levels from AGSI (content/uk-storage-levels.json, see
+  // netlify/functions/fetch-uk-storage.mjs). Hidden until the feed has data.
+  fetch('/content/uk-storage-levels.json').then(r => r.ok ? r.json() : Promise.reject()).then(d => {
+    if (!d.gasDay || d.fullPercent === null || d.fullPercent === undefined) return;
+    const fmtDay = iso => new Date(iso + 'T12:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+    const hist = d.history || [];
+    document.getElementById('levels').hidden = false;
+    document.getElementById('lv-full').innerHTML = `${fmtNumber(d.fullPercent, 1)}<span class="unit">%</span>`;
+    document.getElementById('lv-full-foot').textContent = `Gas day ${fmtDay(d.gasDay)}${d.status === 'E' ? ' (estimate)' : ''}.`;
+    document.getElementById('lv-twh').innerHTML = `${fmtNumber(d.gasInStorageTWh, 2)}<span class="unit">TWh</span>`;
+    if (d.workingGasVolumeTWh) document.getElementById('lv-twh-foot').textContent = `Of ${fmtNumber(d.workingGasVolumeTWh, 2)} TWh working capacity.`;
+    const prev = hist.length > 1 ? hist[hist.length - 2] : null;
+    if (prev && prev.full !== null) {
+      const pp = d.fullPercent - prev.full;
+      document.getElementById('lv-trend').innerHTML = `<span class="delta ${Math.abs(pp) < 0.05 ? 'flat' : pp > 0 ? 'down' : 'up'}">${pp > 0 ? '+' : ''}${fmtNumber(pp, 2)}</span><span class="unit">pts</span>`;
+      document.getElementById('lv-trend-foot').textContent = pp > 0.05 ? 'Storage is filling.' : pp < -0.05 ? 'Storage is being drawn down.' : 'Broadly unchanged.';
+    }
+    const target = new Date(d.gasDay + 'T12:00:00Z'); target.setUTCFullYear(target.getUTCFullYear() - 1);
+    const ly = [...hist].reverse().find(p => new Date(p.d + 'T12:00:00Z') <= target);
+    if (ly && ly.full !== null && (target - new Date(ly.d + 'T12:00:00Z')) < 7 * 864e5) {
+      document.getElementById('lv-ly').innerHTML = `${fmtNumber(ly.full, 1)}<span class="unit">%</span>`;
+      const diff = d.fullPercent - ly.full;
+      document.getElementById('lv-ly-foot').textContent = `${fmtDay(ly.d)}: now ${fmtNumber(Math.abs(diff), 1)} points ${diff >= 0 ? 'higher' : 'lower'}.`;
+    } else {
+      document.getElementById('lv-ly-foot').textContent = 'Not enough history yet.';
+    }
+    const pts = hist.filter(p => p.full !== null).map(p => ({ x: new Date(p.d + 'T12:00:00Z'), y: p.full }));
+    if (pts.length > 1) {
+      ELCharts.lineChart(document.getElementById('c-levels'), [{ name: 'UK storage full', color: '#0f766e', points: pts }], {
+        zero: true, height: 260, yFormat: v => `${fmtNumber(v, 1)}%`, yTick: v => `${v}%`, area: true,
+        label: `UK gas storage level, latest ${fmtNumber(d.fullPercent, 1)}% full` });
+    }
+  }).catch(() => {});
+</script>
 <script>
 
   const NAMES = { 'EASINGTON ROUGH ST': 'Rough', 'HILLTOP': 'Hill Top Farm' };

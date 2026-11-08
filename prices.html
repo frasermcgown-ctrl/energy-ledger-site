@@ -110,7 +110,7 @@
     "https://data.nationalgas.com",
     "https://bmrs.elexon.co.uk",
     "https://www.neso.energy/data-portal",
-    "https://www.ofgem.gov.uk/energy-price-cap",
+    "https://www.ofgem.gov.uk/your-energy-supply/your-energy-bill/energy-price-cap-and-standing-charges-explained",
     "https://dp.lowcarboncontracts.uk",
     "https://ember-energy.org"
    ],
@@ -340,7 +340,7 @@
       <p class="source-note">Data: <a href="https://data.nationalgas.com" target="_blank" rel="noopener">National Gas Transmission</a> (SAP);
       Contains BMRS data © Elexon Limited copyright and database right 2026 (market index);
       <a href="https://www.neso.energy/data-portal" target="_blank" rel="noopener">NESO Data Portal</a> (balancing costs, NESO Open Data Licence);
-      <a href="https://www.ofgem.gov.uk/energy-price-cap" target="_blank" rel="noopener">Ofgem</a> (price cap);
+      <a href="https://www.ofgem.gov.uk/your-energy-supply/your-energy-bill/energy-price-cap-and-standing-charges-explained" target="_blank" rel="noopener">Ofgem</a> (price cap);
       <a href="https://dp.lowcarboncontracts.uk" target="_blank" rel="noopener">Low Carbon Contracts Company</a> (CfD, Open Government Licence);
       <a href="https://www.ice.com/emissions/auctions/uk-emission-allowances" target="_blank" rel="noopener">ICE Futures Europe</a> and <a href="https://www.gov.uk/government/publications/taking-part-in-the-uk-emissions-trading-scheme-markets" target="_blank" rel="noopener">DESNZ</a> (UKA auction calendar and reserve price)<span id="eu-credit" hidden>; <a href="https://ember-energy.org/data/european-wholesale-electricity-price-data/" target="_blank" rel="noopener">Ember</a> European wholesale electricity price data (CC BY 4.0)</span>.
       Indicative only, not for trading. See all <a href="/sources">data sources</a>.</p>
@@ -508,7 +508,7 @@
     document.getElementById('cap-kv').innerHTML = rows.map(([k, v, u]) => `<dt>${escapeHtml(k)}</dt><dd>${escapeHtml(String(v))}${u ? ' ' + u : ''}</dd>`).join('');
     if (c.next_announcement) {
       const d = new Date(c.next_announcement + 'T12:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
-      document.getElementById('cap-next').innerHTML = `Next cap (${escapeHtml(c.next_period || 'next period')}) announced <b>${escapeHtml(d)}</b>. <a class="link" href="${escapeHtml(cur.source_url || 'https://www.ofgem.gov.uk/energy-price-cap')}" target="_blank" rel="noopener">Ofgem →</a>`;
+      document.getElementById('cap-next').innerHTML = `Next cap (${escapeHtml(c.next_period || 'next period')}) announced <b>${escapeHtml(d)}</b>. <a class="link" href="${escapeHtml(cur.source_url || 'https://www.ofgem.gov.uk/your-energy-supply/your-energy-bill/energy-price-cap-and-standing-charges-explained')}" target="_blank" rel="noopener">Ofgem →</a>`;
     }
   }).catch(() => { document.getElementById('cap-kv').innerHTML = '<dt>Price cap data unavailable.</dt><dd></dd>'; });
 

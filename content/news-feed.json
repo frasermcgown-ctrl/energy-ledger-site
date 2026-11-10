@@ -1,6 +1,54 @@
 {
-  "updated": "2026-11-10T12:35:16.056Z",
+  "updated": "2026-11-10T18:35:17.041Z",
   "items": [
+    {
+      "title": "Taking part in the UK Emissions Trading Scheme markets",
+      "link": "https://www.gov.uk/government/publications/taking-part-in-the-uk-emissions-trading-scheme-markets",
+      "summary": "This guidance explains the operation of the UK ETS markets and how to take part in auctions and in trading on the secondary market.",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "carbon",
+      "published": "2026-11-10T18:11:44+00:00"
+    },
+    {
+      "title": "Renewables obligation: certificates and generation - July 2026",
+      "link": "https://www.gov.uk/government/statistics/announcements/renewables-obligation-certificates-and-generation-july-2026",
+      "summary": "Monthly data on the number of certificates issued for generation under the Renewables Obligation.",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "renewables",
+      "published": "2026-11-10T17:08:24+00:00"
+    },
+    {
+      "title": "UK, Japan sign offshore wind cooperation agreement",
+      "link": "https://renewablesnow.com/news/uk-japan-sign-offshore-wind-cooperation-agreement-1304711?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss-source/",
+      "summary": "",
+      "source": "Renewables Now",
+      "topic": "renewables",
+      "published": "2026-11-10T15:37:43.000Z"
+    },
+    {
+      "title": "From the frontline to power lines",
+      "link": "https://www.energylivenews.com/2026/11/10/from-the-frontline-to-power-lines/",
+      "summary": "Military veterans have secured full-time roles in the energy industry after completing a pioneering work experience programme\nThe post From the frontline to power lines appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "power",
+      "published": "2026-11-10T15:00:00.000Z"
+    },
+    {
+      "title": "Bulgaria sets world record for energy storage",
+      "link": "https://www.energylivenews.com/2026/11/10/bulgaria-sets-world-record-for-energy-storage/",
+      "summary": "The country holds 6.23GW of operating power as of last month\nThe post Bulgaria sets world record for energy storage appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "gas",
+      "published": "2026-11-10T14:00:00.000Z"
+    },
+    {
+      "title": "Oil and gas prices aren’t the problem, operational costs are – survey finds",
+      "link": "https://www.energylivenews.com/2026/11/10/oil-and-gas-prices-arent-the-problem-operational-costs-are-survey-finds/",
+      "summary": "A survey of UK industry leaders finds rising costs are the biggest operational pressure\nThe post Oil and gas prices aren’t the problem, operational costs are – survey finds appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "gas",
+      "published": "2026-11-10T13:00:00.000Z"
+    },
     {
       "title": "On-site power boosts climate benefits of biomass hydrogen",
       "link": "https://www.energylivenews.com/2026/11/10/on-site-power-boosts-climate-benefits-of-biomass-hydrogen/",
@@ -58,38 +106,6 @@
       "published": "2026-11-10T08:00:01+00:00"
     },
     {
-      "title": "World’s potential largest offshore wind farm gets power exports approved",
-      "link": "https://www.energylivenews.com/2026/11/10/worlds-potential-largest-offshore-wind-farm-gets-power-exports-approved/",
-      "summary": "Berwick bank C, based in Scottish borders, has been approved for the Cambois Connection\nThe post World’s potential largest offshore wind farm gets power exports approved appeared first on Energy Live News.\n",
-      "source": "Energy Live News",
-      "topic": "renewables",
-      "published": "2026-11-10T07:00:00.000Z"
-    },
-    {
-      "title": "Hydrogen energy market shifts focus to grid stability",
-      "link": "https://www.energylivenews.com/2026/11/09/hydrogen-energy-market-shifts-focus-to-grid-stability/",
-      "summary": "The focus is on covering extended renewable shortfalls and securing critical backup infrastructure\nThe post Hydrogen energy market shifts focus to grid stability appeared first on Energy Live News.\n",
-      "source": "Energy Live News",
-      "topic": "renewables",
-      "published": "2026-11-09T17:00:00.000Z"
-    },
-    {
-      "title": "Europe looks to hydrogen to feed hungry data centres",
-      "link": "https://www.energylivenews.com/2026/11/09/europe-looks-to-hydrogen-to-feed-hungry-data-centers/",
-      "summary": "A new guide calls for hydrogen infrastructure and data centre growth to be planned together, creating local energy microgrids\nThe post Europe looks to hydrogen to feed hungry data centres appeared first on Energy Live Ne",
-      "source": "Energy Live News",
-      "topic": "renewables",
-      "published": "2026-11-09T16:00:00.000Z"
-    },
-    {
-      "title": "The Smarta Weekly Market Update – 9th November 2026",
-      "link": "https://www.energylivenews.com/2026/11/09/the-smarta-weekly-market-update-9th-november-2026/",
-      "summary": "Stay ahead of UK energy markets with Smarta Energy’s weekly update, covering key price movements, market drivers, risks and what they mean for businesses\nThe post The Smarta Weekly Market Update – 9th November 2026 appea",
-      "source": "Energy Live News",
-      "topic": "policy",
-      "published": "2026-11-09T15:54:17.000Z"
-    },
-    {
       "title": "The Balancing Act Part 2: Outturn",
       "link": "https://www.neso.energy/news/balancing-act-part-2-outturn",
       "summary": "Continuing our short series on balancing costs, this blog looks at the 2025/26 outturns.",
@@ -104,14 +120,6 @@
       "source": "RenewableUK",
       "topic": "renewables",
       "published": "2026-11-09T12:00:00.000Z"
-    },
-    {
-      "title": "Oil and gas: offshore environmental legislation",
-      "link": "https://www.gov.uk/guidance/oil-and-gas-offshore-environmental-legislation",
-      "summary": "Environmental regulations and guidance on offshore oil and gas exploration and production offshore gas unloading and storage and offshore carbon dioxide storage activities",
-      "source": "Dept for Energy Security & Net Zero",
-      "topic": "gas",
-      "published": "2026-11-09T11:31:25+00:00"
     },
     {
       "title": "UK offshore wind software firm Kinewell secures funds for growth",
@@ -312,14 +320,6 @@
       "source": "NESO",
       "topic": "power",
       "published": "2026-04-14T12:00:00.000Z"
-    },
-    {
-      "title": "Strategic Energy Planning changes: a first for Great Britain",
-      "link": "https://www.neso.energy/news/strategic-energy-planning-changes-first-great-britain",
-      "summary": "Great Britain’s energy system is going through its biggest transformation in a century. The UK Government wants clean power for GB by 2030, and net zero carbon emissions by 2050.",
-      "source": "NESO",
-      "topic": "carbon",
-      "published": "2026-02-13T12:00:00.000Z"
     }
   ]
 }

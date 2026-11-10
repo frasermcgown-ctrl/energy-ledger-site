@@ -1,19 +1,6 @@
 {
-  "updated": "2026-10-31T16:42:23.050Z",
+  "updated": "2026-11-10T00:49:11.787Z",
   "months": [
-    {
-      "month": "2025-10",
-      "days": 31,
-      "total": 264983645,
-      "categories": {
-        "Energy Imbalance": 742285,
-        "Frequency Control": 2028909,
-        "Positive Reserve": 13579424,
-        "Constraints": 240760143,
-        "Negative Reserve": 1632277,
-        "Other": 6240607
-      }
-    },
     {
       "month": "2025-11",
       "days": 30,
@@ -159,15 +146,28 @@
     },
     {
       "month": "2026-10",
-      "days": 27,
-      "total": 561603675,
+      "days": 31,
+      "total": 678020001,
       "categories": {
-        "Energy Imbalance": 20292673,
-        "Frequency Control": 2028326,
-        "Positive Reserve": 14399202,
-        "Constraints": 519616397,
-        "Negative Reserve": 2131661,
-        "Other": 3135416
+        "Energy Imbalance": 19731517,
+        "Frequency Control": 2285011,
+        "Positive Reserve": 16361320,
+        "Constraints": 633569316,
+        "Negative Reserve": 2197189,
+        "Other": 3875648
+      }
+    },
+    {
+      "month": "2026-11",
+      "days": 4,
+      "total": 14926277,
+      "categories": {
+        "Energy Imbalance": 903504,
+        "Frequency Control": 24437,
+        "Positive Reserve": 5480314,
+        "Constraints": 8212232,
+        "Negative Reserve": -48292,
+        "Other": 354082
       }
     }
   ],

@@ -1,6 +1,14 @@
 {
-  "updated": "2026-11-11T00:35:14.061Z",
+  "updated": "2026-11-11T06:35:18.535Z",
   "items": [
+    {
+      "title": "Prime Minister hails major investment in UK renewables",
+      "link": "https://www.gov.uk/government/news/prime-minister-hails-major-investment-in-uk-renewables",
+      "summary": "Thousands of jobs will be supported as two major offshore wind projects mark progress towards delivering clean homegrown energy for millions of homes, ahead of the Prime Minister’s travel to the COP31 Leaders’ Summit in ",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "renewables",
+      "published": "2026-11-11T06:10:18+00:00"
+    },
     {
       "title": "Taking part in the UK Emissions Trading Scheme markets",
       "link": "https://www.gov.uk/government/publications/taking-part-in-the-uk-emissions-trading-scheme-markets",
@@ -312,14 +320,6 @@
       "source": "NESO",
       "topic": "power",
       "published": "2026-04-30T12:00:00.000Z"
-    },
-    {
-      "title": "NESO publishes Summer Outlook",
-      "link": "https://www.neso.energy/news/neso-publishes-summer-outlook",
-      "summary": "NESO has published its annual Summer Outlook today, setting out how Great Britain’s electricity system is expected to operate over the warmer months this year.",
-      "source": "NESO",
-      "topic": "power",
-      "published": "2026-04-14T12:00:00.000Z"
     }
   ]
 }

@@ -1,6 +1,54 @@
 {
-  "updated": "2026-11-12T06:35:16.697Z",
+  "updated": "2026-11-12T12:35:17.641Z",
   "items": [
+    {
+      "title": "COP31: “Speeches do not cool our planet” – but early warning systems can help manage it",
+      "link": "https://www.energylivenews.com/2026/11/12/cop31-speeches-do-not-cool-our-planet-but-early-warning-systems-can-help-manage-it/",
+      "summary": "World leaders at COP31 back AI-powered early warning systems\nThe post COP31: “Speeches do not cool our planet” – but early warning systems can help manage it appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "power",
+      "published": "2026-11-12T12:00:00.000Z"
+    },
+    {
+      "title": "Asda exceeds carbon reduction target",
+      "link": "https://www.energylivenews.com/2026/11/12/asda-exceeds-carbon-reduction-target/",
+      "summary": "The supermarket increased global fresh produce sourced from farms with Biodiversity Improvement Plans\nThe post Asda exceeds carbon reduction target appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "policy",
+      "published": "2026-11-12T11:00:00.000Z"
+    },
+    {
+      "title": "Energy Trends: UK renewables",
+      "link": "https://www.gov.uk/government/statistics/energy-trends-section-6-renewables",
+      "summary": "Data on the UK’s renewables sector, including capacity, electricity generation and liquid biofuels consumption.",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "renewables",
+      "published": "2026-11-12T09:30:14+00:00"
+    },
+    {
+      "title": "Balancing costs rise 16% as turning wind farms down proves costly",
+      "link": "https://www.energylivenews.com/2026/11/12/balancing-costs-rise-16-as-turning-wind-farms-down-proves-costly/",
+      "summary": "Thermal constraints and keeping voltage steady remain the largest cost contributors \nThe post Balancing costs rise 16% as turning wind farms down proves costly appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "renewables",
+      "published": "2026-11-12T08:00:00.000Z"
+    },
+    {
+      "title": "Voluntary carbon and nature markets: raising integrity",
+      "link": "https://www.gov.uk/government/consultations/voluntary-carbon-and-nature-markets-raising-integrity",
+      "summary": "We're seeking views on the implementation of the UK government’s principles for voluntary carbon and nature market integrity.",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "policy",
+      "published": "2026-11-12T07:00:03+00:00"
+    },
+    {
+      "title": "UK clean electrification roadmap",
+      "link": "https://www.gov.uk/government/publications/uk-clean-electrification-roadmap",
+      "summary": "The UK clean electrification roadmap sets out current plans and policies to accelerate clean electrification across buildings, transport and industry.",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "policy",
+      "published": "2026-11-12T07:00:03+00:00"
+    },
     {
       "title": "Finance firms are twice as likely to skip net zero targets",
       "link": "https://www.energylivenews.com/2026/11/11/finance-firms-are-twice-as-likely-to-skip-net-zero-targets/",
@@ -66,28 +114,12 @@
       "published": "2026-11-11T12:00:00.000Z"
     },
     {
-      "title": "UK welcomes 2.8GW offshore wind capacity in £12 billion investment",
-      "link": "https://www.energylivenews.com/2026/11/11/uk-welcomes-2-8gw-offshore-wind-capacity-in-12-billion-investment/",
-      "summary": "Two projects should be fully commissioned in 2030 and capable of powering three million homes\nThe post UK welcomes 2.8GW offshore wind capacity in £12 billion investment appeared first on Energy Live News.\n",
-      "source": "Energy Live News",
-      "topic": "renewables",
-      "published": "2026-11-11T11:00:00.000Z"
-    },
-    {
       "title": "National Energy Efficiency Data-framework statistics - Gas Safe Register data: privacy notice",
       "link": "https://www.gov.uk/government/publications/national-energy-efficiency-data-framework-statistics-gas-safe-register-data-privacy-notice",
       "summary": "This notice sets out how we will use your personal data, and your rights.",
       "source": "Dept for Energy Security & Net Zero",
       "topic": "gas",
       "published": "2026-11-11T09:49:53+00:00"
-    },
-    {
-      "title": "Russia’s threat beneath the waves meets a new £90m digital army",
-      "link": "https://www.energylivenews.com/2026/11/11/russias-threat-beneath-the-waves-meets-a-new-90m-digital-army/",
-      "summary": "UK Government invests £90m in drones, sensors and AI for the Royal Navy to protect undersea infrastructure \nThe post Russia’s threat beneath the waves meets a new £90m digital army appeared first on Energy Live News.\n",
-      "source": "Energy Live News",
-      "topic": "policy",
-      "published": "2026-11-11T09:00:00.000Z"
     },
     {
       "title": "Cadeler signs exclusive deal for UK offshore wind installation",
@@ -112,22 +144,6 @@
       "source": "Dept for Energy Security & Net Zero",
       "topic": "renewables",
       "published": "2026-11-11T06:10:18+00:00"
-    },
-    {
-      "title": "Taking part in the UK Emissions Trading Scheme markets",
-      "link": "https://www.gov.uk/government/publications/taking-part-in-the-uk-emissions-trading-scheme-markets",
-      "summary": "This guidance explains the operation of the UK ETS markets and how to take part in auctions and in trading on the secondary market.",
-      "source": "Dept for Energy Security & Net Zero",
-      "topic": "carbon",
-      "published": "2026-11-10T18:11:44+00:00"
-    },
-    {
-      "title": "Renewables obligation: certificates and generation - July 2026",
-      "link": "https://www.gov.uk/government/statistics/announcements/renewables-obligation-certificates-and-generation-july-2026",
-      "summary": "Monthly data on the number of certificates issued for generation under the Renewables Obligation.",
-      "source": "Dept for Energy Security & Net Zero",
-      "topic": "renewables",
-      "published": "2026-11-10T17:08:24+00:00"
     },
     {
       "title": "UK, Japan sign offshore wind cooperation agreement",
@@ -304,22 +320,6 @@
       "source": "Ofgem",
       "topic": "power",
       "published": "2026-07-29T12:00:00.000Z"
-    },
-    {
-      "title": "Positive progress on skip rates and next steps",
-      "link": "https://www.neso.energy/news/positive-progress-skip-rates-and-next-steps",
-      "summary": "Skip rates have become one of the most talked about metrics in electricity system operation over the last couple of years and rightly so.",
-      "source": "NESO",
-      "topic": "power",
-      "published": "2026-07-07T12:00:00.000Z"
-    },
-    {
-      "title": "Ofgem boosts long duration storage to secure more homegrown energy for customers",
-      "link": "https://www.ofgem.gov.uk/press-release/ofgem-boosts-long-duration-storage-secure-more-homegrown-energy-customers",
-      "summary": "Energy regulator Ofgem gives provisional green light to a new generation of energy storage to reduce Great Britain’s reliance on energy imports",
-      "source": "Ofgem",
-      "topic": "gas",
-      "published": "2026-06-26T12:00:00.000Z"
     }
   ]
 }

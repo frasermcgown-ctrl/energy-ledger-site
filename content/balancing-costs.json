@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-10T00:49:11.787Z",
+  "updated": "2026-11-12T00:49:06.461Z",
   "months": [
     {
       "month": "2025-11",
@@ -159,15 +159,15 @@
     },
     {
       "month": "2026-11",
-      "days": 4,
-      "total": 14926277,
+      "days": 8,
+      "total": 62028199,
       "categories": {
-        "Energy Imbalance": 903504,
-        "Frequency Control": 24437,
-        "Positive Reserve": 5480314,
-        "Constraints": 8212232,
-        "Negative Reserve": -48292,
-        "Other": 354082
+        "Energy Imbalance": 2121823,
+        "Frequency Control": 237768,
+        "Positive Reserve": 32924952,
+        "Constraints": 24216496,
+        "Negative Reserve": -49776,
+        "Other": 2576936
       }
     }
   ],

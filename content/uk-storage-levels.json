@@ -1,68 +1,64 @@
 {
-  "updated": "2026-11-12T16:53:09.712Z",
-  "gasDay": "2026-11-12",
-  "stockGWh": 9780,
+  "updated": "2026-11-13T16:53:09.608Z",
+  "gasDay": "2026-11-13",
+  "stockGWh": 9734,
   "sites": [
     {
       "site": "Hornsea",
       "range": "medium",
-      "gasDay": "2026-11-12",
-      "gwh": 2633
+      "gasDay": "2026-11-13",
+      "gwh": 2613
     },
     {
       "site": "Stublach",
       "range": "medium",
-      "gasDay": "2026-11-12",
-      "gwh": 2138
+      "gasDay": "2026-11-13",
+      "gwh": 2150
     },
     {
       "site": "Holford",
       "range": "medium",
-      "gasDay": "2026-11-12",
-      "gwh": 1902
+      "gasDay": "2026-11-13",
+      "gwh": 1898
     },
     {
       "site": "Aldbrough",
       "range": "medium",
-      "gasDay": "2026-11-12",
-      "gwh": 1614
+      "gasDay": "2026-11-13",
+      "gwh": 1580
     },
     {
       "site": "Hatfield Moor",
       "range": "medium",
-      "gasDay": "2026-11-12",
+      "gasDay": "2026-11-13",
       "gwh": 623
     },
     {
       "site": "Humbly Grove",
       "range": "medium",
-      "gasDay": "2026-11-12",
+      "gasDay": "2026-11-13",
       "gwh": 528
     },
     {
       "site": "Hill Top",
       "range": "medium",
-      "gasDay": "2026-11-12",
+      "gasDay": "2026-11-13",
       "gwh": 175
     },
     {
       "site": "Holehouse Farm",
       "range": "medium",
-      "gasDay": "2026-11-12",
+      "gasDay": "2026-11-13",
       "gwh": 167
     },
     {
       "site": "Rough",
       "range": "long",
-      "gasDay": "2026-11-12",
+      "gasDay": "2026-11-13",
       "gwh": 0
     }
   ],
   "history": [
-    {
-      "d": "2025-10-08",
-      "gwh": 12353
-    },
     {
       "d": "2025-10-09",
       "gwh": 12526
@@ -1662,6 +1658,10 @@
     {
       "d": "2026-11-12",
       "gwh": 9780
+    },
+    {
+      "d": "2026-11-13",
+      "gwh": 9734
     }
   ],
   "source": "National Gas Transmission (storage stock levels, published on behalf of storage operators)",

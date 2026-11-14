@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://identity.netlify.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com; connect-src 'self' https://raw.githubusercontent.com https://api.carbonintensity.org.uk https://data.elexon.co.uk https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://identity.netlify.com; frame-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Renewables Weather Outlook: UK Wind and Solar This Week — The Energy Ledger</title>
+<meta name="description" content="Weekly outlook for UK offshore wind, onshore wind and solar output, day by day, with what it means for power prices and energy buyers. Updated every weekend.">
+<link rel="canonical" href="https://www.theenergyledger.co.uk/weather">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Energy Ledger">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="Renewables Weather Outlook: UK Wind and Solar This Week — The Energy Ledger">
+<meta property="og:description" content="Weekly outlook for UK offshore wind, onshore wind and solar output, day by day, with what it means for power prices and energy buyers. Updated every weekend.">
+<meta property="og:url" content="https://www.theenergyledger.co.uk/weather">
+<meta property="og:image" content="https://www.theenergyledger.co.uk/og-image.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Energy Ledger: UK gas, power, carbon and LNG markets">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Renewables Weather Outlook: UK Wind and Solar This Week — The Energy Ledger">
+<meta name="twitter:description" content="Weekly outlook for UK offshore wind, onshore wind and solar output, day by day, with what it means for power prices and energy buyers. Updated every weekend.">
+<meta name="twitter:image" content="https://www.theenergyledger.co.uk/og-image.png?v=2">
+<!-- Google tag (gtag.js). The queue is set up now, so the page view is
+     recorded with its real start time; the library itself loads after the
+     page has finished loading, so it doesn't delay first paint. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5XJN5KMJVN');
+  window.addEventListener('load', function () {
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-5XJN5KMJVN';
+    document.head.appendChild(s);
+  });
+</script>
+<link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="alternate" type="application/rss+xml" title="The Energy Ledger newsletter" href="https://home.theenergyledger.co.uk/feed">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/icon-mark.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "https://www.theenergyledger.co.uk/weather#webpage",
+   "url": "https://www.theenergyledger.co.uk/weather",
+   "name": "Renewables weather outlook",
+   "description": "Weekly outlook for UK offshore wind, onshore wind and solar output, day by day, with what it means for power prices and energy buyers. Updated every weekend.",
+   "inLanguage": "en-GB",
+   "isPartOf": {
+    "@id": "https://www.theenergyledger.co.uk/#website"
+   },
+   "publisher": {
+    "@id": "https://www.theenergyledger.co.uk/#org"
+   },
+   "breadcrumb": {
+    "@id": "https://www.theenergyledger.co.uk/weather#breadcrumb"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://www.theenergyledger.co.uk/weather#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://www.theenergyledger.co.uk/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Renewables weather",
+     "item": "https://www.theenergyledger.co.uk/weather"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<style>
+  .wx-headline{ padding:28px 28px 28px 24px; border-left:4px solid var(--brand); }
+  .wx-headline p{ font-size:18px; line-height:1.6; color:var(--ink-2); }
+  .wx-headline .wx-summary{ margin-top:12px; font-style:italic; color:var(--ink); font-weight:500; }
+  .wx-archived{ display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap; padding:14px 18px; margin-bottom:16px; background:var(--brand-soft); border:1px solid #fed7aa; border-radius:var(--radius); font-size:15px; color:var(--brand-ink); }
+  .wx-table-wrap{ margin:0 -8px; }
+  table.wx{ width:100%; border-collapse:collapse; font-size:14.5px; }
+  table.wx th{ text-align:left; font-size:12.5px; font-weight:600; text-transform:uppercase; letter-spacing:.04em; color:var(--ink-3); padding:8px; border-bottom:1px solid var(--line); }
+  table.wx td{ padding:12px 8px; border-bottom:1px solid var(--line); vertical-align:top; color:var(--ink-2); }
+  table.wx tr:last-child td{ border-bottom:0; }
+  table.wx td.wx-day{ font-weight:700; color:var(--ink); white-space:nowrap; }
+  table.wx td small{ display:block; margin-top:4px; font-size:12.5px; color:var(--ink-3); line-height:1.45; }
+  table.wx .wx-elx{ display:block; margin-top:6px; font-size:12px; font-weight:600; color:var(--ink-3); font-variant-numeric:tabular-nums; }
+  table.wx .wx-elx.actual{ color:var(--carbon); }
+  .rating{ display:inline-flex; align-items:center; gap:6px; font-size:12.5px; font-weight:600; padding:3px 10px; border-radius:999px; white-space:nowrap; }
+  .rating::before{ content:""; width:6px; height:6px; border-radius:50%; background:currentColor; }
+  .rating.strong{ background:#ecfdf3; color:#047857; }
+  .rating.moderate{ background:#fffbeb; color:#b45309; }
+  .rating.low{ background:#fef2f2; color:#b91c1c; }
+  .rating.unclear{ background:var(--bg-muted); color:var(--ink-3); }
+  .wx-key{ display:flex; gap:10px 16px; flex-wrap:wrap; align-items:center; font-size:13px; color:var(--ink-3); }
+  .wx-buyers{ display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:16px; }
+  .wx-buyers .card{ padding:22px; }
+  .wx-buyers h3{ font-size:16px; margin-bottom:8px; }
+  .wx-buyers p{ font-size:15px; color:var(--ink-2); line-height:1.6; }
+  .wx-list{ list-style:none; margin:0; padding:0; display:grid; gap:14px; }
+  .wx-list li{ display:grid; grid-template-columns:96px 1fr; gap:12px; font-size:15px; color:var(--ink-2); line-height:1.55; }
+  .wx-list li b{ color:var(--ink); font-size:14px; }
+  details.wx-areas summary{ cursor:pointer; font-weight:600; color:var(--ink); padding:2px 0; }
+  details.wx-areas summary:focus-visible{ outline:3px solid #fdba74; outline-offset:2px; border-radius:4px; }
+  details.wx-areas h3{ font-size:15.5px; margin:18px 0 4px; }
+  details.wx-areas p{ font-size:15px; color:var(--ink-2); line-height:1.6; }
+  .wx-review p{ font-size:15.5px; color:var(--ink-2); }
+  .wx-archive{ display:flex; flex-wrap:wrap; gap:8px; }
+  .wx-archive a{ font-size:14px; font-weight:600; padding:6px 12px; border:1px solid var(--line); border-radius:999px; background:#fff; color:var(--ink-2); text-decoration:none; }
+  .wx-archive a:hover{ border-color:var(--ink-4); }
+  .wx-archive a[aria-current="page"]{ background:var(--ink); border-color:var(--ink); color:#fff; }
+  .source-note ul{ margin:8px 0 0; padding-left:18px; }
+  @media (max-width: 760px){
+    table.wx thead{ display:none; }
+    table.wx, table.wx tbody, table.wx tr, table.wx td{ display:block; width:100%; }
+    table.wx tr{ padding:14px 8px; border-bottom:1px solid var(--line); display:grid; grid-template-columns:1fr 1fr; gap:10px 16px; }
+    table.wx tr:last-child{ border-bottom:0; }
+    table.wx td{ padding:0; border:0; }
+    table.wx td.wx-day, table.wx td.wx-outlook{ grid-column:1 / -1; }
+    table.wx td[data-label]::before{ content:attr(data-label); display:block; font-size:11.5px; font-weight:600; text-transform:uppercase; letter-spacing:.04em; color:var(--ink-3); margin-bottom:4px; }
+    .wx-list li{ grid-template-columns:1fr; gap:2px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav">
+    <a class="wordmark" href="/" aria-label="The Energy Ledger — home">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <rect x="0" y="0" width="120" height="120" rx="28" fill="#0f172a"/>
+        <line x1="21" y1="30" x2="21" y2="90" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+        <line x1="34" y1="44" x2="80" y2="44" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="62" x2="92" y2="62" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="80" x2="66" y2="80" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <polyline points="80,44 96,27 103,32" fill="none" stroke="#f97316" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="103" cy="32" r="4.5" fill="#f97316"/>
+      </svg>
+      <b style="font-weight:inherit">The Energy <span>Ledger</span></b>
+    </a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-links">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="links" id="site-links">
+      <a href="/prices">Prices</a>
+      <a href="/generation">GB generation</a>
+      <a href="/uk-gas">UK gas</a>
+      <a href="/lng">LNG</a>
+      <a href="/weather" aria-current="page">Weather</a>
+      <a href="/news">News</a>
+      <a class="btn primary sm" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe free</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="crumbs"><a href="/">Home</a><span aria-hidden="true">/</span><span>Live data</span><span aria-hidden="true">/</span><span>Renewables weather</span></div>
+      <h1>Renewables weather outlook</h1>
+      <p class="lede">How much wind and solar Britain can expect day by day this week, and what that means for power prices and energy buyers. Updated every weekend.</p>
+      <div class="status"><span class="live-dot"></span><span id="wx-week-note">Loading this week's outlook…</span></div>
+    </div>
+  </div>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="wx-archived" id="wx-archived" hidden>
+        <span>You're viewing an archived outlook.</span>
+        <a class="link" href="/weather">See this week's outlook <span aria-hidden="true">→</span></a>
+      </div>
+
+      <div class="card wx-headline" id="wx-headline">
+        <p class="loading">Loading…</p>
+      </div>
+
+      <div class="card panel" style="margin-top:16px;">
+        <div class="panel-head">
+          <div>
+            <h2>Week at a glance</h2>
+            <p id="wx-table-desc">Expected output from offshore wind, onshore wind and solar, with temperature.</p>
+          </div>
+          <div class="wx-key" aria-label="Rating key">
+            <span class="rating strong">Strong</span><span class="rating moderate">Moderate</span><span class="rating low">Low</span><span class="rating unclear">Unclear</span>
+          </div>
+        </div>
+        <div class="wx-table-wrap">
+          <table class="wx">
+            <thead><tr><th scope="col">Day</th><th scope="col">Offshore wind</th><th scope="col">Onshore wind</th><th scope="col">Solar</th><th scope="col">Temperature</th><th scope="col">Outlook</th></tr></thead>
+            <tbody id="wx-days"></tbody>
+          </table>
+        </div>
+        <p class="stat-foot" id="wx-table-note" style="margin-top:14px;"></p>
+        <p class="stat-foot" id="wx-elexon-note" hidden style="margin-top:6px;"></p>
+        <p style="margin-top:14px;"><a class="link" href="/generation">Live GB generation and wind forecast <span aria-hidden="true">→</span></a></p>
+      </div>
+
+      <div class="card panel wx-review" id="wx-review" hidden style="margin-top:16px;">
+        <div class="panel-head" style="margin-bottom:12px;">
+          <div>
+            <h2>Last week's outlook vs what happened</h2>
+            <p id="wx-review-desc">Our wind calls for last week against Elexon's metered wind and solar output.</p>
+          </div>
+          <a class="link" id="wx-review-link" href="/weather">Last week's outlook <span aria-hidden="true">→</span></a>
+        </div>
+        <p id="wx-review-text" hidden></p>
+        <div class="wx-table-wrap" id="wx-review-table-wrap" hidden style="margin-top:12px;">
+          <table class="wx">
+            <thead><tr><th scope="col">Day</th><th scope="col">Offshore call</th><th scope="col">Onshore call</th><th scope="col">Actual wind</th><th scope="col">Solar call</th><th scope="col">Actual solar</th></tr></thead>
+            <tbody id="wx-review-rows"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <h2 style="font-size:22px; margin:40px 0 16px;">What this means for buyers</h2>
+      <div class="wx-buyers" id="wx-buyers"></div>
+
+      <div class="two-col" style="margin-top:16px;">
+        <div class="card panel" id="wx-watch-card">
+          <div class="panel-head" style="margin-bottom:16px;"><div><h2>What to watch</h2></div></div>
+          <ul class="wx-list" id="wx-watch"></ul>
+        </div>
+        <div class="card panel" id="wx-areas-card">
+          <div class="panel-head" style="margin-bottom:16px;"><div><h2>Key generation areas</h2><p>Region-by-region detail behind the ratings.</p></div></div>
+          <details class="wx-areas"><summary>Show regional detail</summary><div id="wx-areas"></div></details>
+        </div>
+      </div>
+
+      <div class="explainer">
+        <h2>Understanding the outlook</h2>
+        <div class="explainer-grid">
+          <div>
+            <h3>Why does the weather move power prices?</h3>
+            <p>Wind and solar have almost no running cost, so on windy or sunny days they push more expensive gas-fired plants out of the market and wholesale prices tend to fall. On still, cold days gas sets the price more often, and day-ahead and evening-peak prices tend to firm.</p>
+          </div>
+          <div>
+            <h3>How are the ratings set?</h3>
+            <p>Each rating is a judgement from Met Office forecasts at coastal and inland sites near Britain's main wind and solar areas, checked against Elexon's national wind forecast where it covers the day. Coastal forecasts understate wind at turbine height, so treat them as a guide to the direction of output, not a megawatt figure.</p>
+          </div>
+          <div>
+            <h3>Who should use this?</h3>
+            <p>Businesses on flexible, index-linked or pass-through contracts feel day-to-day price swings most. Fixed-price customers are shielded in the short term, but a run of still weeks feeds into the forward prices their next contract is set from.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="related">
+        <h2>Past outlooks</h2>
+        <div class="wx-archive" id="wx-archive"></div>
+      </div>
+
+      <div class="related">
+        <h2>Related live data</h2>
+        <div class="related-grid"><a href="/generation">GB generation and carbon<small>Live mix and wind and solar forecast</small></a><a href="/uk-power-prices">UK power price today<small>Day-ahead and recent history</small></a><a href="/nbp-gas-price">NBP gas price today<small>UK wholesale gas, p/therm</small></a></div>
+      </div>
+
+      <div class="source-note" id="wx-sources"></div>
+    </div>
+  </section>
+  <section class="tight" style="padding-top:0;">
+    <div class="wrap">
+      <div class="card" style="padding:32px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; background:linear-gradient(120deg,#fff 0%, var(--brand-soft) 100%);">
+        <div style="max-width:600px;">
+          <h2 style="font-size:22px;">Want the read-through, not just the numbers?</h2>
+          <p style="margin-top:8px; color:var(--ink-3);">The Energy Ledger turns this data into a twice-weekly view on UK gas, power, carbon and LNG — free on Substack.</p>
+        </div>
+        <a class="btn brand" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe free <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="wordmark" href="/">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+        <rect x="0" y="0" width="120" height="120" rx="28" fill="#0f172a"/>
+        <line x1="21" y1="30" x2="21" y2="90" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+        <line x1="34" y1="44" x2="80" y2="44" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="62" x2="92" y2="62" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <line x1="34" y1="80" x2="66" y2="80" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+        <polyline points="80,44 96,27 103,32" fill="none" stroke="#f97316" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="103" cy="32" r="4.5" fill="#f97316"/>
+      </svg>
+          <b style="font-weight:inherit">The Energy <span>Ledger</span></b>
+        </a>
+        <p>The Energy Ledger is an independent read on UK energy markets.</p>
+      </div>
+      <div class="foot-col">
+        <h2 class="foot-h">Newsletter</h2>
+        <a href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener">Subscribe</a>
+        <a href="https://home.theenergyledger.co.uk/archive" target="_blank" rel="noopener">Archive</a>
+        <a href="/#coverage">Coverage</a>
+        <a href="/topics/">Topics</a>
+        <a href="/#about">About</a>
+      </div>
+      <div class="foot-col">
+        <h2 class="foot-h">Live data</h2>
+        <a href="/prices">Prices &amp; costs</a>
+        <a href="/generation">GB generation</a>
+        <a href="/uk-gas">UK gas supply</a>
+        <a href="/lng">LNG</a>
+        <a href="/weather">Renewables weather</a>
+        <a href="/news">News</a>
+        <a href="/nbp-gas-price">NBP gas price</a>
+        <a href="/uk-power-prices">UK power price</a>
+        <a href="/uk-gas-storage">UK gas storage</a>
+        <a href="/uk-carbon-intensity">Carbon intensity</a>
+        <a href="/sources">Data sources</a>
+      </div>
+      <div class="foot-col">
+        <h2 class="foot-h">Follow</h2>
+        <div class="socials" data-socials><a class="social" href="https://home.theenergyledger.co.uk" target="_blank" rel="noopener me" aria-label="The Energy Ledger on Substack" title="Substack"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a></div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span data-year>2026</span> The Energy Ledger. All rights reserved.</span>
+      <span>Data provided for information only, not for trading.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+<script>
+  // Renewables weather outlook. Weekly content comes from content/weather-outlook.json,
+  // edited in /admin ("Renewables Weather Outlook"); the newest week is shown unless
+  // ?week=YYYY-MM-DD picks an archived one. Elexon figures are added in the browser:
+  // the transmission wind forecast from content/outlook.json (see fetch-outlook.mjs)
+  // for days still ahead, and metered wind and solar outturn for days already past.
+  const RATINGS = ['strong', 'moderate', 'low', 'unclear'];
+  const $ = id => document.getElementById(id);
+
+  function ratingHtml(r) {
+    const k = String(r || 'Unclear').toLowerCase();
+    return `<span class="rating ${RATINGS.includes(k) ? k : 'unclear'}">${escapeHtml(r || 'Unclear')}</span>`;
+  }
+  function note(s) { return s ? `<small>${escapeHtml(s)}</small>` : ''; }
+  function safeUrl(u) { try { const x = new URL(u); return x.protocol === 'https:' ? x.href : null; } catch (e) { return null; } }
+
+  // Dates: weeks are keyed by their Monday (YYYY-MM-DD); day rows run Mon to Sun in order.
+  function addDays(iso, n) { const d = new Date(iso + 'T12:00:00Z'); d.setUTCDate(d.getUTCDate() + n); return d.toISOString().slice(0, 10); }
+  function londonDate(t) { return new Date(t).toLocaleDateString('en-CA', { timeZone: 'Europe/London' }); }
+  function longDate(iso, opts) { return new Date(iso + 'T12:00:00Z').toLocaleDateString('en-GB', Object.assign({ day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }, opts)).replace(',', ''); }
+  function gw(mw) { return fmtNumber(mw / 1000, 1) + ' GW'; }
+  const today = londonDate(Date.now());
+
+  // Elexon actual wind and solar generation (B1630), half-hourly MW by settlement date.
+  // Returns { 'YYYY-MM-DD': { wind: avgMW, solar: avgMW } } for days with most periods reported.
+  function elexonOutturn(from, to) {
+    const url = `https://data.elexon.co.uk/bmrs/api/v1/generation/actual/per-type/wind-and-solar?from=${from}&to=${to}&settlementPeriodFrom=1&settlementPeriodTo=50&format=json`;
+    return fetch(url).then(r => (r.ok ? r.json() : Promise.reject(new Error('Elexon ' + r.status)))).then(j => {
+      const cells = {};
+      (j.data || []).forEach(r => {
+        if (!r.settlementDate || !Number.isFinite(r.quantity)) return;
+        const kind = /solar/i.test(r.psrType) ? 'solar' : /wind/i.test(r.psrType) ? 'wind' : null;
+        if (!kind) return;
+        const day = String(r.settlementDate).slice(0, 10);
+        const c = (cells[day] = cells[day] || { wind: {}, solar: {} });
+        c[kind][r.settlementPeriod + '|' + r.psrType] = r.quantity;
+      });
+      const out = {};
+      Object.entries(cells).forEach(([day, c]) => {
+        const sum = obj => { const per = {}; Object.entries(obj).forEach(([k, v]) => { const p = k.split('|')[0]; per[p] = (per[p] || 0) + v; }); return Object.values(per); };
+        const w = sum(c.wind), s = sum(c.solar);
+        if (w.length < 40) return; // skip part-reported days
+        out[day] = { wind: w.reduce((a, b) => a + b, 0) / w.length, solar: s.length ? s.reduce((a, b) => a + b, 0) / s.length : null };
+      });
+      return out;
+    });
+  }
+
+  // Elexon transmission wind forecast from the hourly snapshot: daily mean MW, days with 12+ hours only.
+  function elexonForecast() {
+    return fetch('/content/outlook.json').then(r => r.json()).then(d => {
+      const by = {};
+      (d.wind || []).forEach(p => { const k = londonDate(p.t); (by[k] = by[k] || []).push(p.mw); });
+      const out = {};
+      Object.entries(by).forEach(([k, v]) => { if (v.length >= 12) out[k] = v.reduce((a, b) => a + b, 0) / v.length; });
+      return out;
+    });
+  }
+
+  function render(weeks, week) {
+    const wc = week.week_commencing;
+    const isLatest = week === weeks[0];
+    document.title = isLatest ? document.title : `Renewables weather outlook, w/c ${longDate(wc)} — The Energy Ledger`;
+    $('wx-archived').hidden = isLatest;
+    $('wx-week-note').textContent = `Week commencing ${longDate(wc, { weekday: 'short' })}` + (week.issued ? ` · issued ${longDate(week.issued, { weekday: 'short' })}` : '');
+
+    $('wx-headline').innerHTML = `<p>${escapeHtml(week.headline)}</p>` + (week.summary ? `<p class="wx-summary">${escapeHtml(week.summary)}</p>` : '');
+
+    const days = (week.days || []).map((d, i) => Object.assign({ date: addDays(wc, i) }, d));
+    $('wx-days').innerHTML = days.map(d => `
+      <tr data-date="${d.date}">
+        <td class="wx-day">${escapeHtml(d.day)}<span class="wx-elx" data-elx></span></td>
+        <td data-label="Offshore wind">${ratingHtml(d.offshore)}${note(d.offshore_note)}</td>
+        <td data-label="Onshore wind">${ratingHtml(d.onshore)}${note(d.onshore_note)}</td>
+        <td data-label="Solar">${ratingHtml(d.solar)}${note(d.solar_note)}</td>
+        <td data-label="Temperature">${escapeHtml(d.temperature || '')}</td>
+        <td class="wx-outlook" data-label="Outlook">${escapeHtml(d.outlook || '')}</td>
+      </tr>`).join('');
+    $('wx-table-note').textContent = week.table_note || '';
+
+    $('wx-buyers').innerHTML = (week.buyers || []).map(b => `<div class="card"><h3>${escapeHtml(b.label)}</h3><p>${escapeHtml(b.text)}</p></div>`).join('');
+
+    const watch = week.watch || [];
+    $('wx-watch-card').hidden = !watch.length;
+    $('wx-watch').innerHTML = watch.map(w => `<li><b>${escapeHtml(w.when)}</b><span>${escapeHtml(w.text)}</span></li>`).join('');
+    const areas = week.areas || [];
+    $('wx-areas-card').hidden = !areas.length;
+    $('wx-areas').innerHTML = areas.map(a => `<h3>${escapeHtml(a.title)}</h3><p>${escapeHtml(a.text)}</p>`).join('');
+
+    $('wx-archive').innerHTML = weeks.map(w =>
+      `<a href="/weather${w === weeks[0] ? '' : '?week=' + encodeURIComponent(w.week_commencing)}"${w === week ? ' aria-current="page"' : ''}>w/c ${escapeHtml(longDate(w.week_commencing))}</a>`).join('');
+
+    const srcs = (week.sources || []).map(s => { const u = safeUrl(s.url); return u ? `<li><a href="${escapeHtml(u)}" target="_blank" rel="noopener">${escapeHtml(s.label)}</a></li>` : `<li>${escapeHtml(s.label)}</li>`; }).join('');
+    const sub = safeUrl(week.substack_url);
+    $('wx-sources').innerHTML =
+      (srcs ? `<strong>Sources</strong><ul>${srcs}</ul>` : '') +
+      (week.caveats ? `<p style="margin-top:10px;"><strong>Data notes:</strong> ${escapeHtml(week.caveats)}</p>` : '') +
+      `<p style="margin-top:10px;">Elexon figures: contains BMRS data © Elexon Limited copyright and database right ${new Date().getFullYear()}. Forecasts are for transmission-connected wind; outturn is metered wind and solar, so neither includes all small embedded generation.` +
+      (sub ? ` <a href="${escapeHtml(sub)}" target="_blank" rel="noopener">Read this week's note on Substack</a>.` : '') +
+      ` This outlook is for information only and is not financial or procurement advice.</p>`;
+
+    addElexon(days);
+    renderReview(weeks, week);
+  }
+
+  // Per-day Elexon line under each day: outturn for past days, forecast for days ahead.
+  function addElexon(days) {
+    if (!days.length) return;
+    const past = days.filter(d => d.date < today), ahead = days.filter(d => d.date >= today);
+    const set = (date, html) => { const el = document.querySelector(`tr[data-date="${date}"] [data-elx]`); if (el) el.outerHTML = html; };
+    let shown = { actual: false, fcst: false };
+    const updateNote = () => {
+      const parts = [];
+      if (shown.fcst) parts.push('"Elexon fcst" is the daily average of Elexon\'s transmission wind forecast, refreshed hourly');
+      if (shown.actual) parts.push('"Actual" is the daily average of metered wind output reported to Elexon');
+      $('wx-elexon-note').hidden = !parts.length;
+      $('wx-elexon-note').textContent = parts.join('. ') + (parts.length ? '.' : '');
+    };
+    if (past.length) {
+      elexonOutturn(past[0].date, past[past.length - 1].date).then(out => {
+        past.forEach(d => { if (out[d.date]) { set(d.date, `<span class="wx-elx actual">Actual ${gw(out[d.date].wind)} wind</span>`); shown.actual = true; } });
+        updateNote();
+      }).catch(() => {});
+    }
+    if (ahead.length) {
+      elexonForecast().then(fc => {
+        ahead.forEach(d => { if (fc[d.date] != null) { set(d.date, `<span class="wx-elx">Elexon fcst ${gw(fc[d.date])} wind</span>`); shown.fcst = true; } });
+        updateNote();
+      }).catch(() => {});
+    }
+  }
+
+  // "Last week vs what happened": the week before the one shown, if it is in the archive.
+  function renderReview(weeks, week) {
+    const prev = weeks[weeks.indexOf(week) + 1];
+    if (!prev) return;
+    $('wx-review').hidden = false;
+    $('wx-review-link').href = '/weather?week=' + encodeURIComponent(prev.week_commencing);
+    $('wx-review-desc').textContent = `Our calls for the week commencing ${longDate(prev.week_commencing)} against Elexon's metered wind and solar output.`;
+    if (week.review) { $('wx-review-text').hidden = false; $('wx-review-text').textContent = week.review; }
+    const days = (prev.days || []).map((d, i) => Object.assign({ date: addDays(prev.week_commencing, i) }, d)).filter(d => d.date < today);
+    if (!days.length) return;
+    elexonOutturn(days[0].date, days[days.length - 1].date).then(out => {
+      const rows = days.filter(d => out[d.date]);
+      if (!rows.length) return;
+      $('wx-review-rows').innerHTML = rows.map(d => `
+        <tr>
+          <td class="wx-day">${escapeHtml(d.day)}</td>
+          <td data-label="Offshore call">${ratingHtml(d.offshore)}</td>
+          <td data-label="Onshore call">${ratingHtml(d.onshore)}</td>
+          <td data-label="Actual wind"><b class="num">${gw(out[d.date].wind)}</b></td>
+          <td data-label="Solar call">${ratingHtml(d.solar)}</td>
+          <td data-label="Actual solar"><b class="num">${out[d.date].solar == null ? 'n/a' : gw(out[d.date].solar)}</b></td>
+        </tr>`).join('');
+      $('wx-review-table-wrap').hidden = false;
+    }).catch(() => {});
+  }
+
+  fetch('/content/weather-outlook.json')
+    .then(r => r.json())
+    .then(data => {
+      const weeks = (data.weeks || []).filter(w => /^\d{4}-\d{2}-\d{2}/.test(w.week_commencing || ''))
+        .map(w => Object.assign({}, w, { week_commencing: w.week_commencing.slice(0, 10), issued: (w.issued || '').slice(0, 10) }))
+        .sort((a, b) => b.week_commencing.localeCompare(a.week_commencing));
+      if (!weeks.length) throw new Error('no weeks');
+      const want = new URLSearchParams(location.search).get('week');
+      render(weeks, weeks.find(w => w.week_commencing === want) || weeks[0]);
+    })
+    .catch(() => {
+      $('wx-week-note').textContent = 'Outlook not available right now — check back shortly.';
+      $('wx-headline').innerHTML = '<p class="loading">Unable to load this week\'s outlook.</p>';
+    });
+</script>
+
+</body>
+</html>

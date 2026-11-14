@@ -122,7 +122,6 @@
   .wx-archive a{ font-size:14px; font-weight:600; padding:6px 12px; border:1px solid var(--line); border-radius:999px; background:#fff; color:var(--ink-2); text-decoration:none; }
   .wx-archive a:hover{ border-color:var(--ink-4); }
   .wx-archive a[aria-current="page"]{ background:var(--ink); border-color:var(--ink); color:#fff; }
-  .source-note ul{ margin:8px 0 0; padding-left:18px; }
   @media (max-width: 760px){
     table.wx thead{ display:none; }
     table.wx, table.wx tbody, table.wx tr, table.wx td{ display:block; width:100%; }
@@ -429,12 +428,9 @@
     $('wx-archive').innerHTML = weeks.map(w =>
       `<a href="/weather${w === weeks[0] ? '' : '?week=' + encodeURIComponent(w.week_commencing)}"${w === week ? ' aria-current="page"' : ''}>w/c ${escapeHtml(longDate(w.week_commencing))}</a>`).join('');
 
-    const srcs = (week.sources || []).map(s => { const u = safeUrl(s.url); return u ? `<li><a href="${escapeHtml(u)}" target="_blank" rel="noopener">${escapeHtml(s.label)}</a></li>` : `<li>${escapeHtml(s.label)}</li>`; }).join('');
     const sub = safeUrl(week.substack_url);
     $('wx-sources').innerHTML =
-      (srcs ? `<strong>Sources</strong><ul>${srcs}</ul>` : '') +
-      (week.caveats ? `<p style="margin-top:10px;"><strong>Data notes:</strong> ${escapeHtml(week.caveats)}</p>` : '') +
-      `<p style="margin-top:10px;">Elexon figures: contains BMRS data © Elexon Limited copyright and database right ${new Date().getFullYear()}. Forecasts are for transmission-connected wind; outturn is metered wind and solar, so neither includes all small embedded generation.` +
+      `<p>Elexon figures: contains BMRS data © Elexon Limited copyright and database right ${new Date().getFullYear()}. Forecasts are for transmission-connected wind; outturn is metered wind and solar, so neither includes all small embedded generation.` +
       (sub ? ` <a href="${escapeHtml(sub)}" target="_blank" rel="noopener">Read this week's note on Substack</a>.` : '') +
       ` This outlook is for information only and is not financial or procurement advice.</p>`;
 

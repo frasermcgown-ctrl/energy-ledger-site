@@ -179,7 +179,7 @@ collections:
                 fields:
                   - { label: "When", name: "when", widget: "string", hint: "e.g. Fri 20 Nov" }
                   - { label: "Text", name: "text", widget: "text" }
-              - label: "Sources"
+              - label: "Sources (kept for the record, not shown on the page)"
                 name: "sources"
                 widget: "list"
                 required: false
@@ -187,5 +187,5 @@ collections:
                 fields:
                   - { label: "Label", name: "label", widget: "string" }
                   - { label: "Link", name: "url", widget: "string" }
-              - { label: "Data notes (stale or missing sources)", name: "caveats", widget: "text", required: false }
+              - { label: "Data notes (kept for the record, not shown on the page)", name: "caveats", widget: "text", required: false }
               - { label: "Substack post link", name: "substack_url", widget: "string", required: false, hint: "Optional. Link to this week's Substack note or email, if there is one." }

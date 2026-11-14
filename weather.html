@@ -430,7 +430,7 @@
 
     const sub = safeUrl(week.substack_url);
     $('wx-sources').innerHTML =
-      `<p>Elexon figures: contains BMRS data © Elexon Limited copyright and database right ${new Date().getFullYear()}. Forecasts are for transmission-connected wind; outturn is metered wind and solar, so neither includes all small embedded generation.` +
+      `<p>Forecast information from the Met Office; contains public sector information licensed under the Open Government Licence v3.0. The ratings are The Energy Ledger's own judgement and are not produced or endorsed by the Met Office. Elexon figures: contains BMRS data © Elexon Limited copyright and database right ${new Date().getFullYear()}. Forecasts are for transmission-connected wind; outturn is metered wind and solar, so neither includes all small embedded generation.` +
       (sub ? ` <a href="${escapeHtml(sub)}" target="_blank" rel="noopener">Read this week's note on Substack</a>.` : '') +
       ` This outlook is for information only and is not financial or procurement advice.</p>`;
 

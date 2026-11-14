@@ -121,3 +121,71 @@ collections:
             fields:
               - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
               - { label: "Volume (UKAs)", name: "volume", widget: "number", value_type: "int" }
+
+  - name: "weather"
+    label: "Renewables Weather Outlook"
+    files:
+      - name: "weather-outlook"
+        label: "Weekly outlooks (/weather page)"
+        file: "content/weather-outlook.json"
+        fields:
+          - label: "Weeks"
+            name: "weeks"
+            widget: "list"
+            add_to_top: true
+            summary: "w/c {{fields.week_commencing}}"
+            hint: "Newest week at the top. Click 'Add weeks' each weekend: the top entry is what /weather shows, and older weeks stay in the archive at /weather?week=YYYY-MM-DD. Publishing goes live within a minute or two, with no site rebuild."
+            fields:
+              - { label: "Week commencing (Monday)", name: "week_commencing", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+              - { label: "Issued", name: "issued", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+              - { label: "Headline", name: "headline", widget: "text", hint: "Two or three sentences." }
+              - { label: "One-line summary", name: "summary", widget: "string", required: false, hint: "e.g. A windy Tuesday, a still and frosty Friday, and a less certain weekend." }
+              - { label: "Last week's outlook vs what happened", name: "review", widget: "text", required: false, hint: "Optional one or two lines. The page also shows Elexon outturn for last week automatically." }
+              - label: "Week at a glance (Mon-Sun)"
+                name: "days"
+                widget: "list"
+                summary: "{{fields.day}}: offshore {{fields.offshore}}, onshore {{fields.onshore}}, solar {{fields.solar}}"
+                fields:
+                  - { label: "Day", name: "day", widget: "string", hint: "e.g. Mon 16" }
+                  - { label: "Offshore wind", name: "offshore", widget: "select", options: ["Strong", "Moderate", "Low", "Unclear"] }
+                  - { label: "Offshore detail", name: "offshore_note", widget: "string", required: false, hint: "e.g. Lowestoft 8-18 mph, gusts 43" }
+                  - { label: "Onshore wind", name: "onshore", widget: "select", options: ["Strong", "Moderate", "Low", "Unclear"] }
+                  - { label: "Onshore detail", name: "onshore_note", widget: "string", required: false }
+                  - { label: "Solar", name: "solar", widget: "select", options: ["Good", "Strong", "Moderate", "Low", "Unclear"] }
+                  - { label: "Solar detail", name: "solar_note", widget: "string", required: false }
+                  - { label: "Temperature (max / min)", name: "temperature", widget: "string", required: false, hint: "e.g. 6-9°C / 2-6°C" }
+                  - { label: "Outlook", name: "outlook", widget: "string", required: false }
+              - { label: "Table note (method and caveats)", name: "table_note", widget: "text", required: false }
+              - label: "What this means for buyers"
+                name: "buyers"
+                widget: "list"
+                summary: "{{fields.label}}"
+                fields:
+                  - { label: "Label", name: "label", widget: "string", hint: "e.g. Low-wind risk" }
+                  - { label: "Text", name: "text", widget: "text" }
+              - label: "Key generation areas (shown collapsed)"
+                name: "areas"
+                widget: "list"
+                required: false
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Area", name: "title", widget: "string" }
+                  - { label: "Text", name: "text", widget: "text" }
+              - label: "What to watch"
+                name: "watch"
+                widget: "list"
+                required: false
+                summary: "{{fields.when}}"
+                fields:
+                  - { label: "When", name: "when", widget: "string", hint: "e.g. Fri 20 Nov" }
+                  - { label: "Text", name: "text", widget: "text" }
+              - label: "Sources (kept for the record, not shown on the page)"
+                name: "sources"
+                widget: "list"
+                required: false
+                summary: "{{fields.label}}"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Link", name: "url", widget: "string" }
+              - { label: "Data notes (kept for the record, not shown on the page)", name: "caveats", widget: "text", required: false }
+              - { label: "Substack post link", name: "substack_url", widget: "string", required: false, hint: "Optional. Link to this week's Substack note or email, if there is one." }

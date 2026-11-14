@@ -347,7 +347,7 @@
   const $ = id => document.getElementById(id);
 
   function ratingHtml(r) {
-    const k = String(r || 'Unclear').toLowerCase();
+    const k = String(r || 'Unclear').toLowerCase() === 'good' ? 'strong' : String(r || 'Unclear').toLowerCase();
     return `<span class="rating ${RATINGS.includes(k) ? k : 'unclear'}">${escapeHtml(r || 'Unclear')}</span>`;
   }
   function note(s) { return s ? `<small>${escapeHtml(s)}</small>` : ''; }

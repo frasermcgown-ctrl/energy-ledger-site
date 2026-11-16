@@ -2,100 +2,191 @@
   "weeks": [
     {
       "week_commencing": "2026-11-16",
-      "issued": "2026-11-14",
-      "headline": "Wind should pick up on Tuesday 17 November as rain-bearing systems cross Britain, with gusts of 38-43 mph at the coastal sites we track. By Friday 20 November it falls light almost everywhere, with gusts of only 9-15 mph, so gas is likely to carry more of the load into a cold end to the week. Beyond Thursday, confidence drops.",
-      "summary": "A windy Tuesday, a still and frosty Friday, and a less certain weekend.",
+      "issued": "2026-11-16",
+      "headline": "A cold, fairly calm start gives way to a windy Tuesday, when Elexon's national forecast peaks at about 20.7 GW. Winds then ease through Wednesday and look light from Thursday to Saturday, with frost, before Atlantic fronts return on Sunday.",
+      "summary": "One strong wind day, then a likely three-day low-wind, cold spell. Confidence drops sharply after Thursday.",
       "review": "",
       "days": [
         {
           "day": "Mon 16",
-          "offshore": "Moderate", "offshore_note": "Bridlington 4-15 mph; Lowestoft 5-14 mph",
-          "onshore": "Moderate", "onshore_note": "Wick 7-11 mph, gusts 35",
-          "solar": "Low", "solar_note": "Cloudy",
-          "temperature": "5-7°C / 2-4°C",
-          "outlook": "Showery and cool, middling wind."
+          "offshore": "Moderate",
+          "offshore_note": "Elexon 4.0 to 14.3 GW, midday dip; Bridlington 3-10 mph",
+          "onshore": "Moderate",
+          "onshore_note": "Dunbar 6-9 mph",
+          "solar": "Moderate",
+          "solar_note": "Sunny at Cambridge",
+          "temperature": "2 to 7°C",
+          "outlook": "Cold, frosty start; wind weakest around midday, rising later with Irish Sea gale warnings."
         },
         {
           "day": "Tue 17",
-          "offshore": "Strong", "offshore_note": "Lowestoft 8-18 mph, gusts 43; Barrow 8-19 mph",
-          "onshore": "Moderate", "onshore_note": "Dunbar 9-18 mph, gusts 38",
-          "solar": "Low", "solar_note": "Rain",
-          "temperature": "6-9°C / 2-6°C",
-          "outlook": "Windiest day of the week; rain reaches the south."
+          "offshore": "Strong",
+          "offshore_note": "Elexon peak 20.7 GW; Bridlington 7-22 mph, gusts 45",
+          "onshore": "Strong",
+          "onshore_note": "Dunbar 11-18 mph, gusts 44",
+          "solar": "Low",
+          "solar_note": "Heavy rain",
+          "temperature": "5 to 11°C",
+          "outlook": "Windiest day. Heavy rain; snow on high ground in northern England and Scotland in the morning."
         },
         {
           "day": "Wed 18",
-          "offshore": "Moderate", "offshore_note": "Gusts 26-34 mph; hourly speeds not available",
-          "onshore": "Moderate", "onshore_note": "Wick gusts 34",
-          "solar": "Low", "solar_note": "",
-          "temperature": "6-8°C / -1 to 3°C",
-          "outlook": "Wind easing; frost in places overnight."
+          "offshore": "Moderate",
+          "offshore_note": "Elexon 8.6 to 11.8 GW; Bridlington 5-8 mph",
+          "onshore": "Low",
+          "onshore_note": "Barrow 7-9 mph",
+          "solar": "Moderate",
+          "solar_note": "Sunny intervals at Cambridge",
+          "temperature": "5 to 10°C",
+          "outlook": "Winds ease sharply after Tuesday's peak."
         },
         {
           "day": "Thu 19",
-          "offshore": "Moderate", "offshore_note": "Gusts 20-32 mph and fading",
-          "onshore": "Moderate", "onshore_note": "Wick gusts 32",
-          "solar": "Low", "solar_note": "Sleet showers at Cambridge",
-          "temperature": "7-9°C / -1 to 3°C",
-          "outlook": "Output fades as the wind drops; cold."
+          "offshore": "Low",
+          "offshore_note": "Gusts 23-28 mph on the east coast; no Elexon data",
+          "onshore": "Low",
+          "onshore_note": "Barrow gusts 27 mph",
+          "solar": "Low",
+          "solar_note": "Cloudy",
+          "temperature": "-2 to 9°C",
+          "outlook": "Start of a cold, light-wind spell."
         },
         {
           "day": "Fri 20",
-          "offshore": "Low", "offshore_note": "Gusts only 9-15 mph at every site",
-          "onshore": "Low", "onshore_note": "Dunbar gusts 10",
-          "solar": "Moderate", "solar_note": "Sunny intervals",
-          "temperature": "7-8°C / 1-4°C",
-          "outlook": "Stillest day; gas fills the gap."
+          "offshore": "Low",
+          "offshore_note": "Gusts 22-26 mph",
+          "onshore": "Low",
+          "onshore_note": "Barrow gusts 22 mph",
+          "solar": "Moderate",
+          "solar_note": "Sunny intervals",
+          "temperature": "-1 to 9°C",
+          "outlook": "Frosty and still; evening peak is the pinch point."
         },
         {
           "day": "Sat 21",
-          "offshore": "Unclear", "offshore_note": "No wind data",
-          "onshore": "Unclear", "onshore_note": "",
-          "solar": "Moderate", "solar_note": "Sunny intervals",
-          "temperature": "7-10°C / 5-7°C",
-          "outlook": "Low confidence; Atlantic lows may return."
+          "offshore": "Low",
+          "offshore_note": "Gusts 16-20 mph",
+          "onshore": "Low",
+          "onshore_note": "Gusts 16-20 mph",
+          "solar": "Moderate",
+          "solar_note": "Sunny intervals",
+          "temperature": "3 to 8°C",
+          "outlook": "Likely the stillest day of the week; weekend demand softens the effect."
         },
         {
           "day": "Sun 22",
-          "offshore": "Unclear", "offshore_note": "",
-          "onshore": "Unclear", "onshore_note": "",
-          "solar": "Unclear", "solar_note": "",
-          "temperature": "n/a",
-          "outlook": "Beyond the reliable range of the forecasts used."
+          "offshore": "Moderate",
+          "offshore_note": "Gusts 22-26 mph",
+          "onshore": "Moderate",
+          "onshore_note": "Barrow gusts 26 mph",
+          "solar": "Low",
+          "solar_note": "Light rain",
+          "temperature": "4 to 10°C",
+          "outlook": "Atlantic frontal systems return; low confidence."
         }
       ],
-      "table_note": "Ratings are based on Met Office coastal and town forecasts, which understate wind at turbine hub height. Roughly: under 10 mph low output, 10-20 mph moderate, over 20 mph strong. Confidence falls after Thursday; ranges for Wednesday to Saturday were not available for most sites, so those days rely on gusts.",
+      "table_note": "Ratings are based on coastal 10 m winds, which understate hub-height wind, plus Elexon national forecasts to Wednesday only. Thursday to Sunday ratings rest mainly on forecast gusts, as hourly wind speeds were not available. Mid Wales and Highland data were unavailable, so the onshore column uses Dunbar and Barrow as a guide.",
       "buyers": [
-        { "label": "High-wind periods", "text": "Tuesday is the likeliest day for stronger wind output, which tends to soften day-ahead prices. If output is concentrated in Scotland and the North Sea, transmission constraints and some curtailment are possible. The forecast gusts do not point to widespread storm cut-outs." },
-        { "label": "Low-wind risk", "text": "Friday looks the stillest, with gusts of 9-15 mph at every site. Gas is likely to fill the gap, which tends to firm day-ahead and evening-peak prices, especially if it is cold." },
-        { "label": "Demand", "text": "Overnight frost is possible on Wednesday and Thursday (Cambridge and Barrow forecast down to -1°C), with daytime highs of only 6-9°C. That supports heating demand just as wind falls away." },
-        { "label": "For buyers", "text": "Customers on flexible or index-linked contracts are more exposed to day-to-day swings than those on fixed prices. Forecasts beyond Thursday are less reliable, so treat the later part of the week as a range, not a call." }
+        {
+          "label": "High-wind periods",
+          "text": "Tuesday's wind peak of about 20.7 GW could weigh on day-ahead and overnight prices. Scottish transmission constraints and some curtailment are possible, though any price effect is likely to be short."
+        },
+        {
+          "label": "Low-wind risk",
+          "text": "Thursday to Saturday looks lighter and colder. Gas would fill the gap, which tends to firm day-ahead and evening-peak prices, especially on cold, dark evenings. Confidence is low this far out."
+        },
+        {
+          "label": "Demand",
+          "text": "Frost on Thursday and Friday (down to -2°C at Cambridge) would lift heating demand, while the Saturday weekend would offset part of that."
+        },
+        {
+          "label": "For buyers",
+          "text": "Day-to-day swings are mainly relevant to flexible and index-linked contracts. The Met Office outlook for 20-29 November points to Atlantic systems and possible strong winds, which could ease the later picture. Treat all of this as tendencies, not certainties."
+        }
       ],
       "areas": [
-        { "title": "Offshore wind (North Sea and Irish Sea)", "text": "The east coast sees its best winds on Tuesday: Bridlington (Hornsea and Dogger Bank) 7-17 mph with gusts of 39, and Lowestoft (East Anglia offshore) 8-18 mph with gusts of 43. Dunbar (Seagreen, Neart na Gaoithe) has 9-18 mph and gusts of 38. At Barrow-in-Furness (Walney, West of Duddon Sands) the Irish Sea is similar, at 8-19 mph. All of this is below the roughly 55 mph gust level where storm cut-outs become a concern. Winds ease from Wednesday and are light by Friday." },
-        { "title": "Scotland onshore wind and hydro", "text": "Wick (Moray Firth and Highlands) is moderate on Monday, with gusts of 30-35 mph through Wednesday. The shipping forecast had Cromarty, Forth and Tyne at force 4 to 6, occasionally 7, with gales further north. Only light rain is forecast in the Highlands, so no clear hydro boost." },
-        { "title": "Wales and northern England", "text": "The mid Wales forecast (Llandrindod Wells) was out of date, so there is no usable Welsh forecast this week. Barrow and Bridlington show the coastal pattern: Tuesday the windiest, then easing." },
-        { "title": "Solar (south and east England)", "text": "Cambridge is mostly cloudy early in the week, with light rain on Tuesday and sleet showers on Thursday. Winter solar is modest at best; Friday and Saturday bring sunny intervals, the best of the week." }
+        {
+          "title": "Offshore wind (North Sea and Irish Sea)",
+          "text": "Coastal winds near Hornsea and Dogger Bank (Bridlington) and the East Anglia zone (Lowestoft) reach 22 mph and 20 mph on Tuesday, with gusts of 45 and 44 mph. That is strong output but below the roughly 55 mph storm cut-out level. The Irish Sea (Walney, West of Duddon Sands) is the one to watch: the shipping forecast has southeasterly gale force 8 expected there, perhaps severe gale 9 later, so localised cut-outs are possible late Monday into Tuesday."
+        },
+        {
+          "title": "Scotland onshore wind and hydro",
+          "text": "Forth and Cromarty sea areas see force 4 to 6, occasionally 7, on Monday. Both Wick forecast pages were out of date, so there is no Moray Firth or Highlands read this week. Highland rainfall figures were not available, so there is no hydro view this week."
+        },
+        {
+          "title": "Wales and northern England",
+          "text": "The Llandrindod Wells page was stale, so Mid Wales has no direct read. Barrow-in-Furness shows 6-22 mph on Tuesday with 45 mph gusts, falling to 7-9 mph on Wednesday. Yellow snow warnings cover high ground in Yorkshire and Humber, the North East and the North West on Tuesday morning."
+        },
+        {
+          "title": "Solar (south and east England)",
+          "text": "Winter output is modest. Cambridge is sunny on Monday, wet on Tuesday and brighter on Wednesday, Friday and Saturday. Cloud on Thursday and rain on Sunday keep solar low."
+        }
       ],
       "watch": [
-        { "when": "Mon 16 Nov", "text": "Elexon's national wind forecast at the start of the week. Its peak forecasts for 14 and 15 November were about 15 GW, and the window to Tuesday is not yet covered." },
-        { "when": "Tue 17 Nov", "text": "The windiest day, with rain moving into the south and possible hill snow. Watch for any Met Office warnings; none were listed at the time of writing." },
-        { "when": "Fri 20 Nov", "text": "The lightest winds of the week. Watch the evening peak and gas-fired output." },
-        { "when": "18-27 Nov", "text": "The Met Office expects changeable weather with Atlantic lows: strong winds possible at times, milder air in the south and sharp frosts in the north." }
+        {
+          "when": "Mon 16 - Tue 17 Nov",
+          "text": "Irish Sea and Malin gale warnings, and any storm cut-outs in western offshore wind."
+        },
+        {
+          "when": "Tue 17 Nov",
+          "text": "Snow warning for high ground until midday, and the Elexon peak against the 20.7 GW forecast."
+        },
+        {
+          "when": "Thu 19 - Sat 21 Nov",
+          "text": "Wind output and evening-peak prices in the cold, light-wind spell."
+        },
+        {
+          "when": "Sun 22 Nov onward",
+          "text": "Whether Atlantic fronts bring stronger winds, as the long-range forecast suggests for 20-29 November."
+        }
       ],
       "sources": [
-        { "label": "Met Office 7-day forecast, Wick", "url": "https://weather.metoffice.gov.uk/forecast/gfmu3ws34" },
-        { "label": "Met Office 7-day forecast, Dunbar", "url": "https://weather.metoffice.gov.uk/forecast/gcynwfb7z" },
-        { "label": "Met Office 7-day forecast, Bridlington", "url": "https://weather.metoffice.gov.uk/forecast/gcxgetbkx" },
-        { "label": "Met Office 7-day forecast, Lowestoft", "url": "https://weather.metoffice.gov.uk/forecast/u134xcy4j" },
-        { "label": "Met Office 7-day forecast, Barrow-in-Furness", "url": "https://weather.metoffice.gov.uk/forecast/gcteyf1nd" },
-        { "label": "Met Office 7-day forecast, Cambridge", "url": "https://weather.metoffice.gov.uk/forecast/u1214b469" },
-        { "label": "Met Office shipping forecast", "url": "https://weather.metoffice.gov.uk/specialist-forecasts/coast-and-sea/shipping-forecast" },
-        { "label": "Met Office UK forecast and 10-day outlook", "url": "https://weather.metoffice.gov.uk/forecast/uk" },
-        { "label": "Met Office UK weather warnings", "url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-warnings" },
-        { "label": "Elexon peak wind generation forecast", "url": "https://data.elexon.co.uk/bmrs/api/v1/forecast/generation/wind/peak?format=json" }
+        {
+          "label": "Met Office forecast: Dunbar",
+          "url": "https://weather.metoffice.gov.uk/forecast/gcynwfb7z"
+        },
+        {
+          "label": "Met Office forecast: Bridlington",
+          "url": "https://weather.metoffice.gov.uk/forecast/gcxgetbkx"
+        },
+        {
+          "label": "Met Office forecast: Lowestoft",
+          "url": "https://weather.metoffice.gov.uk/forecast/u134xcy4j"
+        },
+        {
+          "label": "Met Office forecast: Barrow-in-Furness",
+          "url": "https://weather.metoffice.gov.uk/forecast/gcteyf1nd"
+        },
+        {
+          "label": "Met Office forecast: Cambridge",
+          "url": "https://weather.metoffice.gov.uk/forecast/u1214b469"
+        },
+        {
+          "label": "Met Office shipping forecast",
+          "url": "https://weather.metoffice.gov.uk/specialist-forecasts/coast-and-sea/shipping-forecast"
+        },
+        {
+          "label": "Met Office UK forecast and outlook",
+          "url": "https://weather.metoffice.gov.uk/forecast/uk"
+        },
+        {
+          "label": "Met Office long range forecast",
+          "url": "https://weather.metoffice.gov.uk/long-range-forecast"
+        },
+        {
+          "label": "Met Office UK warnings",
+          "url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-warnings"
+        },
+        {
+          "label": "Elexon national wind forecast",
+          "url": "https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFOR?format=json"
+        },
+        {
+          "label": "Elexon peak wind forecast",
+          "url": "https://data.elexon.co.uk/bmrs/api/v1/forecast/generation/wind/peak?format=json"
+        }
       ],
-      "caveats": "The Met Office page for Llandrindod Wells was stale (dates from October) and was discarded. The Elexon WINDFOR dataset was also stale (published 26 October) and was not used. The Met Office long-range forecast page could not be retrieved. The location forecasts were missing hourly wind speeds for Wednesday onwards, so gusts are used for those days. Forecasts were read on Saturday 14 November.",
+      "caveats": "Not used: Met Office Wick and Wick Airport pages (both showed out-of-date forecasts) and Llandrindod Wells (stale dates). No usable market commentary was found.",
       "substack_url": ""
     }
   ]

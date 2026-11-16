@@ -1,6 +1,30 @@
 {
-  "updated": "2026-11-16T12:35:16.340Z",
+  "updated": "2026-11-16T18:35:17.100Z",
   "items": [
+    {
+      "title": "Business electricity bills rose 12% this year – report says",
+      "link": "https://www.energylivenews.com/2026/11/16/business-electricity-bills-rose-12-this-year-report-says/",
+      "summary": "The costs are not expected to drop back to 2025 levels before 2031\nThe post Business electricity bills rose 12% this year – report says appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "power",
+      "published": "2026-11-16T15:00:00.000Z"
+    },
+    {
+      "title": "Jackdaw gas field gets switched on",
+      "link": "https://www.energylivenews.com/2026/11/16/jackdaw-gas-field-gets-switched-on/",
+      "summary": "The project was given approval by the Energy Minister last month after a lengthy wait\nThe post Jackdaw gas field gets switched on appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "gas",
+      "published": "2026-11-16T13:00:00.000Z"
+    },
+    {
+      "title": "NESO backs the next generation of energy leaders with renewed YEP Forum partnership",
+      "link": "https://www.neso.energy/news/neso-backs-next-generation-energy-leaders-renewed-yep-forum-partnership",
+      "summary": "The National Energy System Operator (NESO) is extending its sponsorship of the Young Energy Professionals (YEP) Forum into 2027, marking the third consecutive year of the partnership.",
+      "source": "NESO",
+      "topic": "power",
+      "published": "2026-11-16T12:00:00.000Z"
+    },
     {
       "title": "Subnational electricity consumption in Northern Ireland: 2009-2025",
       "link": "https://www.gov.uk/government/statistics/announcements/sub-national-electricity-consumption-in-northern-ireland-2009-2025",
@@ -50,36 +74,12 @@
       "published": "2026-11-16T09:17:56+00:00"
     },
     {
-      "title": "New electricity link gets planning approval",
+      "title": "New electricity link reaches application milestone",
       "link": "https://www.energylivenews.com/2026/11/16/new-electricity-link-gets-planning-approval/",
-      "summary": "The project includes around 90km of new 400kV overhead line\nThe post New electricity link gets planning approval appeared first on Energy Live News.\n",
+      "summary": "The project includes around 90km of new 400kV overhead line\nThe post New electricity link reaches application milestone appeared first on Energy Live News.\n",
       "source": "Energy Live News",
       "topic": "power",
       "published": "2026-11-16T09:00:00.000Z"
-    },
-    {
-      "title": "UK government endorses independent carbon credit ratings",
-      "link": "https://www.energylivenews.com/2026/11/16/uk-government-endorses-independent-carbon-credit-ratings/",
-      "summary": "UK carbon credit economy worth £1.2bn as government backs independent ratings\nThe post UK government endorses independent carbon credit ratings appeared first on Energy Live News.\n",
-      "source": "Energy Live News",
-      "topic": "policy",
-      "published": "2026-11-16T07:00:00.000Z"
-    },
-    {
-      "title": "Skills drive pays off as nuclear workforce gap narrows",
-      "link": "https://www.energylivenews.com/2026/11/13/skills-drive-pays-off-as-nuclear-workforce-gap-narrows/",
-      "summary": "The sector must still find more than 50,000 additional workers by 2043 aa new programmes ramp up\nThe post Skills drive pays off as nuclear workforce gap narrows appeared first on Energy Live News.\n",
-      "source": "Energy Live News",
-      "topic": "renewables",
-      "published": "2026-11-13T18:00:00.000Z"
-    },
-    {
-      "title": "COP31: Uninsured climate losses are piling up & cost of living is paying for it",
-      "link": "https://www.energylivenews.com/2026/11/13/cop31-uninsured-climate-losses-are-piling-up-cost-of-living-is-paying-for-it/",
-      "summary": "UNEP’s Principles for Sustainable Insurance Initiative sets out how insurers can help build resilience \nThe post COP31: Uninsured climate losses are piling up & cost of living is paying for it appeared first on Energy Li",
-      "source": "Energy Live News",
-      "topic": "policy",
-      "published": "2026-11-13T16:00:00.000Z"
     },
     {
       "title": "COP31: How Ed Miliband answered Carbon Brief readers’ questions",
@@ -168,14 +168,6 @@
       "source": "Renewables Now",
       "topic": "renewables",
       "published": "2026-11-05T11:56:50.000Z"
-    },
-    {
-      "title": "What 30 years in engineering has taught me about planning for the future",
-      "link": "https://www.neso.energy/news/what-30-years-engineering-has-taught-me-about-planning-future",
-      "summary": "Being elected a Fellow of the Royal Academy of Engineering is a great honour.",
-      "source": "NESO",
-      "topic": "policy",
-      "published": "2026-11-04T12:00:00.000Z"
     },
     {
       "title": "Energy Independence Bill is an opportunity to cut bills and boost energy security",
@@ -320,6 +312,14 @@
       "source": "NESO",
       "topic": "power",
       "published": "2026-06-24T12:00:00.000Z"
+    },
+    {
+      "title": "Energy explained: the costs of balancing Britain’s electricity system to keep you powered",
+      "link": "https://www.neso.energy/news/energy-explained-costs-balancing-britains-electricity-system-keep-you-powered",
+      "summary": "Ensuring electricity is always there when we need it is a delicate balancing act that NESO overseas every second of every day.",
+      "source": "NESO",
+      "topic": "power",
+      "published": "2026-04-30T12:00:00.000Z"
     }
   ]
 }

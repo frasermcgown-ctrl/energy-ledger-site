@@ -1,6 +1,46 @@
 {
-  "updated": "2026-11-17T12:35:14.520Z",
+  "updated": "2026-11-17T18:35:15.535Z",
   "items": [
+    {
+      "title": "Subnational electricity and gas consumption summary report 2025",
+      "link": "https://www.gov.uk/government/statistics/announcements/subnational-electricity-and-gas-consumption-summary-report-2025",
+      "summary": "Provides estimates of annual electricity and gas consumption below national level.",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "gas",
+      "published": "2026-11-17T15:19:25+00:00"
+    },
+    {
+      "title": "COP31: ‘35 by 35’ could actually worsen global warming",
+      "link": "https://www.energylivenews.com/2026/11/17/cop31-35-by-35-could-actually-worsen-global-warming/",
+      "summary": "Researchers say the target could drive up gas-fired generation unless clean electricity is explicitly prioritised\nThe post COP31: ‘35 by 35’ could actually worsen global warming appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "gas",
+      "published": "2026-11-17T14:00:00.000Z"
+    },
+    {
+      "title": "Electricity networks growth: social and environmental guidance to GEMA",
+      "link": "https://www.gov.uk/government/publications/electricity-networks-growth-social-and-environmental-guidance-to-gema",
+      "summary": "Guidance on delivering growth through electricity networks.",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "power",
+      "published": "2026-11-17T13:29:25+00:00"
+    },
+    {
+      "title": "Low Carbon plugs in 65 MW of BESS capacity in England",
+      "link": "https://renewablesnow.com/news/low-carbon-plugs-in-65-mw-of-bess-capacity-in-england-1305093?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss-source/",
+      "summary": "",
+      "source": "Renewables Now",
+      "topic": "policy",
+      "published": "2026-11-17T13:00:57.000Z"
+    },
+    {
+      "title": "Your team’s AI addiction could power 508 homes for a year",
+      "link": "https://www.energylivenews.com/2026/11/17/your-teams-ai-addiction-could-power-508-homes-for-a-year/",
+      "summary": "A new survey has highlighted the energy-intensive habits that involve AI\nThe post Your team’s AI addiction could power 508 homes for a year appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "power",
+      "published": "2026-11-17T13:00:00.000Z"
+    },
     {
       "title": "New plan could cut energy costs by £9.2bn over the next decade",
       "link": "https://www.energylivenews.com/2026/11/17/new-plan-could-cut-energy-costs-by-9-2bn-over-the-next-decade/",
@@ -74,22 +114,6 @@
       "published": "2026-11-17T11:41:11+00:00"
     },
     {
-      "title": "Subnational gas consumption at postcode level in 2025",
-      "link": "https://www.gov.uk/government/statistics/announcements/sub-national-gas-consumption-at-postcode-level-in-2025",
-      "summary": "Postcode level gas 2025 data",
-      "source": "Dept for Energy Security & Net Zero",
-      "topic": "gas",
-      "published": "2026-11-17T11:40:24+00:00"
-    },
-    {
-      "title": "Subnational gas consumption in Northern Ireland: 2015-2025",
-      "link": "https://www.gov.uk/government/statistics/announcements/sub-national-gas-consumption-in-northern-ireland-2015-2025",
-      "summary": "Consumption of gas in Northern Ireland at local council level from 2015 to 2025",
-      "source": "Dept for Energy Security & Net Zero",
-      "topic": "gas",
-      "published": "2026-11-17T11:39:28+00:00"
-    },
-    {
       "title": "Milk deliveries powered by veg oil",
       "link": "https://www.energylivenews.com/2026/11/17/milk-deliveries-powered-by-veg-oil/",
       "summary": "More than 200,000 litres of hydrotreated vegetable oil have replaced diesel across a century-old milk haulage business\nThe post Milk deliveries powered by veg oil appeared first on Energy Live News.\n",
@@ -104,14 +128,6 @@
       "source": "Energy Live News",
       "topic": "carbon",
       "published": "2026-11-17T08:00:00.000Z"
-    },
-    {
-      "title": "Business electricity bills rose 12% this year – report says",
-      "link": "https://www.energylivenews.com/2026/11/16/business-electricity-bills-rose-12-this-year-report-says/",
-      "summary": "The costs are not expected to drop back to 2025 levels before 2031\nThe post Business electricity bills rose 12% this year – report says appeared first on Energy Live News.\n",
-      "source": "Energy Live News",
-      "topic": "power",
-      "published": "2026-11-16T15:00:00.000Z"
     },
     {
       "title": "NESO backs the next generation of energy leaders with renewed YEP Forum partnership",
@@ -304,22 +320,6 @@
       "source": "Ofgem",
       "topic": "policy",
       "published": "2026-08-26T12:00:00.000Z"
-    },
-    {
-      "title": "Ofgem Energy Redress Scheme supports one million customers with record £250 million funding",
-      "link": "https://www.ofgem.gov.uk/press-release/ofgem-energy-redress-scheme-supports-one-million-customers-record-ps250-million-funding",
-      "summary": "Ofgem's Energy Redress Scheme has received £250 million in funding, helping one million customers.",
-      "source": "Ofgem",
-      "topic": "policy",
-      "published": "2026-08-06T12:00:00.000Z"
-    },
-    {
-      "title": "Ofgem acts to free up grid capacity by tackling speculative data centre projects",
-      "link": "https://www.ofgem.gov.uk/press-release/ofgem-acts-free-grid-capacity-tackling-speculative-data-centre-projects",
-      "summary": "Our consultation on plans to tackle speculative data centre projects in Britain's electricity connections queue.",
-      "source": "Ofgem",
-      "topic": "power",
-      "published": "2026-07-29T12:00:00.000Z"
     }
   ]
 }

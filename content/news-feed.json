@@ -1,6 +1,110 @@
 {
-  "updated": "2026-11-17T06:35:16.989Z",
+  "updated": "2026-11-17T12:35:14.520Z",
   "items": [
+    {
+      "title": "New plan could cut energy costs by £9.2bn over the next decade",
+      "link": "https://www.energylivenews.com/2026/11/17/new-plan-could-cut-energy-costs-by-9-2bn-over-the-next-decade/",
+      "summary": "The Fair Value Plan shows how Labour’s proposed Wholesale Contract for Difference could be reformed \nThe post New plan could cut energy costs by £9.2bn over the next decade appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "policy",
+      "published": "2026-11-17T12:00:00.000Z"
+    },
+    {
+      "title": "Subnational electricity consumption in 2025",
+      "link": "https://www.gov.uk/government/statistics/announcements/sub-national-electricity-consumption-in-2025",
+      "summary": "Consumption of electricity broken down by local authority in Great Britain in 2025",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "power",
+      "published": "2026-11-17T11:52:55+00:00"
+    },
+    {
+      "title": "Subnational gas consumption in 2025",
+      "link": "https://www.gov.uk/government/statistics/announcements/sub-national-gas-consumption-in-2025",
+      "summary": "Consumption of gas broken down by local authority in Great Britain in 2025",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "gas",
+      "published": "2026-11-17T11:52:19+00:00"
+    },
+    {
+      "title": "MSOA estimates of properties not connected to the gas network 2015-2025",
+      "link": "https://www.gov.uk/government/statistics/announcements/msoa-estimates-of-properties-not-connected-to-the-gas-network-2015-2025",
+      "summary": "Middle Super Output Area (MSOA) level estimates for the number of domestic properties without mains gas from 2015 to 2025",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "gas",
+      "published": "2026-11-17T11:48:38+00:00"
+    },
+    {
+      "title": "Parliamentary constituency estimates of properties not connected to the gas network 2015-2025",
+      "link": "https://www.gov.uk/government/statistics/announcements/parliamentary-constituency-estimates-of-properties-not-connected-to-the-gas-network-2015-2025",
+      "summary": "Parliamentary constituency level estimates for the number of domestic properties without mains gas from 2015 to 2025",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "gas",
+      "published": "2026-11-17T11:46:16+00:00"
+    },
+    {
+      "title": "LSOA estimates of properties not connected to the gas network 2015-2025",
+      "link": "https://www.gov.uk/government/statistics/announcements/lsoa-estimates-of-properties-not-connected-to-the-gas-network-2015-2025",
+      "summary": "Lower Super Output Area (LSOA) level estimates for the number of domestic properties without mains gas from 2015 to 2025",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "gas",
+      "published": "2026-11-17T11:45:48+00:00"
+    },
+    {
+      "title": "Subnational electricity consumption at LSOA, MSOA and IGZ level in 2025",
+      "link": "https://www.gov.uk/government/statistics/announcements/sub-national-electricity-consumption-at-lsoa-msoa-and-igz-level-in-2025",
+      "summary": "Lower Super Output Area (LSOA), Middle Super Output Area (MSOA) and Intermediate Geography Zone (IGZ) level electricity 2025 data",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "power",
+      "published": "2026-11-17T11:42:47+00:00"
+    },
+    {
+      "title": "Subnational estimates of properties not connected to the gas network 2015-2025",
+      "link": "https://www.gov.uk/government/statistics/announcements/sub-national-estimates-of-properties-not-connected-to-the-gas-network-2015-2025",
+      "summary": "Estimates of the number of domestic properties not connected to the gas grid, at region and local authority levels from 2015 to 2025",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "gas",
+      "published": "2026-11-17T11:42:06+00:00"
+    },
+    {
+      "title": "Subnational electricity consumption at postcode level in 2025",
+      "link": "https://www.gov.uk/government/statistics/announcements/sub-national-electricity-consumption-at-postcode-level-in-2025",
+      "summary": "Postcode level electricity 2025 data",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "power",
+      "published": "2026-11-17T11:41:11+00:00"
+    },
+    {
+      "title": "Subnational gas consumption at postcode level in 2025",
+      "link": "https://www.gov.uk/government/statistics/announcements/sub-national-gas-consumption-at-postcode-level-in-2025",
+      "summary": "Postcode level gas 2025 data",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "gas",
+      "published": "2026-11-17T11:40:24+00:00"
+    },
+    {
+      "title": "Subnational gas consumption in Northern Ireland: 2015-2025",
+      "link": "https://www.gov.uk/government/statistics/announcements/sub-national-gas-consumption-in-northern-ireland-2015-2025",
+      "summary": "Consumption of gas in Northern Ireland at local council level from 2015 to 2025",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "gas",
+      "published": "2026-11-17T11:39:28+00:00"
+    },
+    {
+      "title": "Milk deliveries powered by veg oil",
+      "link": "https://www.energylivenews.com/2026/11/17/milk-deliveries-powered-by-veg-oil/",
+      "summary": "More than 200,000 litres of hydrotreated vegetable oil have replaced diesel across a century-old milk haulage business\nThe post Milk deliveries powered by veg oil appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "power",
+      "published": "2026-11-17T10:00:00.000Z"
+    },
+    {
+      "title": "Cutting electricity bills will rebuild public confidence in net zero – MPs say",
+      "link": "https://www.energylivenews.com/2026/11/17/cutting-electricity-bills-will-rebuild-public-confidence-in-net-zero-mps-say/",
+      "summary": "A cross-party group says further action is needed to weaken gas’s influence on electricity prices \nThe post Cutting electricity bills will rebuild public confidence in net zero – MPs say appeared first on Energy Live New",
+      "source": "Energy Live News",
+      "topic": "carbon",
+      "published": "2026-11-17T08:00:00.000Z"
+    },
     {
       "title": "Business electricity bills rose 12% this year – report says",
       "link": "https://www.energylivenews.com/2026/11/16/business-electricity-bills-rose-12-this-year-report-says/",
@@ -10,76 +114,12 @@
       "published": "2026-11-16T15:00:00.000Z"
     },
     {
-      "title": "Jackdaw gas field gets switched on",
-      "link": "https://www.energylivenews.com/2026/11/16/jackdaw-gas-field-gets-switched-on/",
-      "summary": "The project was given approval by the Energy Minister last month after a lengthy wait\nThe post Jackdaw gas field gets switched on appeared first on Energy Live News.\n",
-      "source": "Energy Live News",
-      "topic": "gas",
-      "published": "2026-11-16T13:00:00.000Z"
-    },
-    {
       "title": "NESO backs the next generation of energy leaders with renewed YEP Forum partnership",
       "link": "https://www.neso.energy/news/neso-backs-next-generation-energy-leaders-renewed-yep-forum-partnership",
       "summary": "The National Energy System Operator (NESO) is extending its sponsorship of the Young Energy Professionals (YEP) Forum into 2027, marking the third consecutive year of the partnership.",
       "source": "NESO",
       "topic": "power",
       "published": "2026-11-16T12:00:00.000Z"
-    },
-    {
-      "title": "Subnational electricity consumption in Northern Ireland: 2009-2025",
-      "link": "https://www.gov.uk/government/statistics/announcements/sub-national-electricity-consumption-in-northern-ireland-2009-2025",
-      "summary": "Consumption of electricity in Northern Ireland at local council level from 2009 to 2025",
-      "source": "Dept for Energy Security & Net Zero",
-      "topic": "power",
-      "published": "2026-11-16T11:35:13+00:00"
-    },
-    {
-      "title": "Subnational gas consumption in Northern Ireland: 2015-2025",
-      "link": "https://www.gov.uk/government/statistics/announcements/sub-national-gas-consumption-in-northern-ireland-2015-2025",
-      "summary": "Consumption of gas in Northern Ireland at local council level from 2015 to 2025",
-      "source": "Dept for Energy Security & Net Zero",
-      "topic": "gas",
-      "published": "2026-11-16T11:34:58+00:00"
-    },
-    {
-      "title": "Oil and gas: offshore environmental legislation",
-      "link": "https://www.gov.uk/guidance/oil-and-gas-offshore-environmental-legislation",
-      "summary": "Environmental regulations and guidance on offshore oil and gas exploration and production offshore gas unloading and storage and offshore carbon dioxide storage activities",
-      "source": "Dept for Energy Security & Net Zero",
-      "topic": "gas",
-      "published": "2026-11-16T10:19:53+00:00"
-    },
-    {
-      "title": "Adding wind to solar and batteries cuts cost by nearly a fifth",
-      "link": "https://www.energylivenews.com/2026/11/16/adding-wind-to-solar-and-batteries-cuts-cost-by-nearly-a-fifth/",
-      "summary": "A new report states that adding wind to solar and batteries cuts the cost of meeting 90% of electricity demand by nearly a fifth globally\nThe post Adding wind to solar and batteries cuts cost by nearly a fifth appeared f",
-      "source": "Energy Live News",
-      "topic": "renewables",
-      "published": "2026-11-16T10:00:00.000Z"
-    },
-    {
-      "title": "National Energy Action Fishwick survey: privacy notice",
-      "link": "https://www.gov.uk/government/publications/national-energy-action-fishwick-survey-privacy-notice",
-      "summary": "This notice sets out how we will process and use the personal data collected from the National Energy Action Fishwick Survey, and the rights of the individuals whose data is collected.",
-      "source": "Dept for Energy Security & Net Zero",
-      "topic": "policy",
-      "published": "2026-11-16T09:53:20+00:00"
-    },
-    {
-      "title": "Red Diesel Replacement competition: successful projects",
-      "link": "https://www.gov.uk/government/publications/red-diesel-replacement-competition-successful-projects",
-      "summary": "Grant funding for projects to develop and demonstrate innovative low carbon technologies for use as alternatives to red diesel on construction, mining and quarrying sites.",
-      "source": "Dept for Energy Security & Net Zero",
-      "topic": "policy",
-      "published": "2026-11-16T09:17:56+00:00"
-    },
-    {
-      "title": "New electricity link reaches application milestone",
-      "link": "https://www.energylivenews.com/2026/11/16/new-electricity-link-gets-planning-approval/",
-      "summary": "The project includes around 90km of new 400kV overhead line\nThe post New electricity link reaches application milestone appeared first on Energy Live News.\n",
-      "source": "Energy Live News",
-      "topic": "power",
-      "published": "2026-11-16T09:00:00.000Z"
     },
     {
       "title": "COP31: How Ed Miliband answered Carbon Brief readers’ questions",
@@ -160,14 +200,6 @@
       "source": "RenewableUK",
       "topic": "renewables",
       "published": "2026-11-09T12:00:00.000Z"
-    },
-    {
-      "title": "UK offshore wind software firm Kinewell secures funds for growth",
-      "link": "https://renewablesnow.com/news/uk-offshore-wind-software-firm-kinewell-secures-funds-for-growth-1304405?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss-source/",
-      "summary": "",
-      "source": "Renewables Now",
-      "topic": "renewables",
-      "published": "2026-11-05T11:56:50.000Z"
     },
     {
       "title": "Energy Independence Bill is an opportunity to cut bills and boost energy security",
@@ -288,38 +320,6 @@
       "source": "Ofgem",
       "topic": "power",
       "published": "2026-07-29T12:00:00.000Z"
-    },
-    {
-      "title": "Positive progress on skip rates and next steps",
-      "link": "https://www.neso.energy/news/positive-progress-skip-rates-and-next-steps",
-      "summary": "Skip rates have become one of the most talked about metrics in electricity system operation over the last couple of years and rightly so.",
-      "source": "NESO",
-      "topic": "power",
-      "published": "2026-07-07T12:00:00.000Z"
-    },
-    {
-      "title": "Ofgem boosts long duration storage to secure more homegrown energy for customers",
-      "link": "https://www.ofgem.gov.uk/press-release/ofgem-boosts-long-duration-storage-secure-more-homegrown-energy-customers",
-      "summary": "Energy regulator Ofgem gives provisional green light to a new generation of energy storage to reduce Great Britain’s reliance on energy imports",
-      "source": "Ofgem",
-      "topic": "gas",
-      "published": "2026-06-26T12:00:00.000Z"
-    },
-    {
-      "title": "Energy explained blog: Electricity Margin Notice 24.06.26",
-      "link": "https://www.neso.energy/news/energy-explained-blog-electricity-margin-notice-240626",
-      "summary": "Yesterday, NESO issued an Electricity Margin Notice (EMN) to the electricity market.",
-      "source": "NESO",
-      "topic": "power",
-      "published": "2026-06-24T12:00:00.000Z"
-    },
-    {
-      "title": "Energy explained: the costs of balancing Britain’s electricity system to keep you powered",
-      "link": "https://www.neso.energy/news/energy-explained-costs-balancing-britains-electricity-system-keep-you-powered",
-      "summary": "Ensuring electricity is always there when we need it is a delicate balancing act that NESO overseas every second of every day.",
-      "source": "NESO",
-      "topic": "power",
-      "published": "2026-04-30T12:00:00.000Z"
     }
   ]
 }

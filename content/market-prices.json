@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-16T12:00:56.994Z",
+  "updated": "2026-11-17T00:00:55.893Z",
   "gas": {
     "label": "NBP system average price (SAP)",
     "pencePerTherm": 223.97,
@@ -10,8 +10,8 @@
   },
   "power": {
     "label": "GB power, market index (daily average)",
-    "poundsPerMwh": 212.59,
-    "settlementDate": "2026-11-15",
+    "poundsPerMwh": 197.44,
+    "settlementDate": "2026-11-16",
     "periods": 48,
     "source": "Elexon (APX market index)"
   }

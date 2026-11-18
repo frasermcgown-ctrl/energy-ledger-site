@@ -4,8 +4,14 @@
 # a rebuild isn't needed and each update costs no production-deploy credits.
 # Any change outside content/ (pages, styles, functions, images) still deploys.
 # Exit code 0 = skip the build; anything else (including git errors) = build.
+# Two checks must both find only content/ changes before a build is skipped:
+# against the last deployed commit ($CACHED_COMMIT_REF), and against this
+# commit's own parent. The second check stops a merged pull request being
+# skipped when Netlify's cached commit already holds the same code (this
+# happened to a squash-merge right after its deploy preview). If the parent
+# isn't available in the clone, only the first check applies.
 [build]
-  ignore = "git diff --quiet \"$CACHED_COMMIT_REF\" \"$COMMIT_REF\" -- . ':(exclude)content/'"
+  ignore = "git diff --quiet \"$CACHED_COMMIT_REF\" \"$COMMIT_REF\" -- . ':(exclude)content/' && { ! git rev-parse --verify -q \"$COMMIT_REF^\" >/dev/null || git diff --quiet \"$COMMIT_REF^\" \"$COMMIT_REF\" -- . ':(exclude)content/'; }"
 
 # Security headers for every page. The content security policy itself is a
 # <meta> tag on each public page (not /admin, whose editor needs more freedom).

@@ -440,7 +440,7 @@ footer.site{
 /* ---------- Market strip (injected by site.js above the header) ---------- */
 .mkt-strip{ background:var(--primary); color:#cbd5e1; font-size:13px; min-height:38px; }
 .mkt-strip[hidden]{ display:none; }
-.mkt-in{ max-width:var(--max); margin:0 auto; padding:9px 24px; display:flex; flex-wrap:wrap; align-items:center; gap:4px 24px; }
+.mkt-in{ max-width:var(--max); margin:0 auto; padding:9px 24px; display:flex; flex-wrap:wrap; align-items:center; gap:4px 20px; }
 .mkt-item{ display:inline-flex; align-items:center; gap:6px; white-space:nowrap; }
 .mkt-item strong{ color:#fff; font-weight:700; font-variant-numeric:tabular-nums; }
 .mkt-item small{ font-size:12px; color:#94a3b8; }

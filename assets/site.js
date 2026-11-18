@@ -164,3 +164,65 @@ document.querySelectorAll('[data-issues]').forEach(el => {
     if (wrap) wrap.hidden = false;
   }).catch(() => {});
 });
+
+// ---------- Market strip ----------
+// A slim bar above the header on every public page: latest NBP gas, GB power
+// and carbon intensity. A price whose day is more than 2 days old is flagged
+// "Last reading". If carbon intensity can't be fetched, the last value seen in
+// this browser is shown as "Last reading". If nothing is available the bar stays hidden.
+function elDateStale(isoDate) {
+  const t = new Date(isoDate + 'T12:00:00Z').getTime();
+  return !isFinite(t) || (Date.now() - t) / 864e5 > 2.5;
+}
+
+(function () {
+  const header = document.querySelector('header.site');
+  if (!header) return;
+  const strip = document.createElement('div');
+  strip.className = 'mkt-strip';
+  strip.setAttribute('role', 'region');
+  strip.setAttribute('aria-label', 'Latest market readings');
+  strip.hidden = true;
+  strip.innerHTML = '<div class="mkt-in"></div>';
+  header.parentNode.insertBefore(strip, header);
+  const inner = strip.firstChild;
+
+  const day = iso => new Date(iso + 'T12:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+  const stale = '<span class="stale-tag">Last reading</span>';
+  const parts = { gas: '', power: '', carbon: '' };
+  function render() {
+    const html = [parts.gas, parts.power, parts.carbon].filter(Boolean).join('');
+    if (!html) return;
+    inner.innerHTML = html + '<a class="mkt-src" href="/sources">Sources</a>';
+    strip.hidden = false;
+  }
+
+  const prices = fetch('/content/market-prices.json').then(r => r.json()).then(d => {
+    if (d.gas && Number.isFinite(d.gas.pencePerTherm)) {
+      parts.gas = '<span class="mkt-item">NBP gas <strong>' + escapeHtml(fmtNumber(d.gas.pencePerTherm, 2)) + '</strong> p/th <small>gas day ' +
+        escapeHtml(day(d.gas.gasDay)) + '</small>' + (elDateStale(d.gas.gasDay) ? stale : '') + '</span>';
+    }
+    if (d.power && Number.isFinite(d.power.poundsPerMwh)) {
+      parts.power = '<span class="mkt-item">GB power <strong>£' + escapeHtml(fmtNumber(d.power.poundsPerMwh, 2)) + '</strong>/MWh <small>' +
+        escapeHtml(day(d.power.settlementDate)) + ' avg</small>' + (elDateStale(d.power.settlementDate) ? stale : '') + '</span>';
+    }
+  }).catch(() => {});
+
+  const carbon = fetch('https://api.carbonintensity.org.uk/intensity').then(r => r.json()).then(data => {
+    const i = data.data[0].intensity;
+    const val = i.actual !== null ? i.actual : i.forecast;
+    if (!Number.isFinite(val)) throw new Error('no value');
+    try { localStorage.setItem('el-carbon', JSON.stringify({ val: val, t: Date.now() })); } catch (e) {}
+    parts.carbon = '<span class="mkt-item"><span class="live-dot"></span>Carbon intensity <strong>' + escapeHtml(val) + '</strong> gCO₂/kWh</span>';
+  }).catch(() => {
+    try {
+      const c = JSON.parse(localStorage.getItem('el-carbon') || 'null');
+      if (c && Number.isFinite(c.val)) {
+        const when = new Date(c.t).toLocaleString('en-GB', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+        parts.carbon = '<span class="mkt-item">Carbon intensity <strong>' + escapeHtml(c.val) + '</strong> gCO₂/kWh <small>' + escapeHtml(when) + '</small>' + stale + '</span>';
+      }
+    } catch (e) {}
+  });
+
+  Promise.all([prices, carbon]).then(render);
+})();

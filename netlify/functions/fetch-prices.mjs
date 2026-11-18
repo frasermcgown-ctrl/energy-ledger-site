@@ -14,6 +14,7 @@
 
 const KWH_PER_THERM = 29.3071;
 const NG_API = "https://api.nationalgas.com/operationaldata/v1/publications";
+const MIN_PARTIAL_PERIODS = 8; // four hours of half-hourly prices
 const ELEXON_MID = "https://data.elexon.co.uk/bmrs/api/v1/datasets/MID";
 
 function isoDate(d) {
@@ -106,12 +107,30 @@ async function fetchPowerMid() {
   const volume = dayRows.reduce((s, r) => s + r.volume, 0);
   const avg = dayRows.reduce((s, r) => s + r.price * r.volume, 0) / volume;
 
+  // The day after the latest complete one, if Elexon has published enough of
+  // it, gives a clearly partial "today so far" average. It carries the number
+  // of half-hours it covers, so the site can say so, and it is dropped when
+  // fewer than MIN_PARTIAL_PERIODS are in.
+  const later = days.filter(d => d > day).pop();
+  let partial = null;
+  if (later && byDay[later].length >= MIN_PARTIAL_PERIODS) {
+    const laterRows = byDay[later];
+    const laterVolume = laterRows.reduce((s, r) => s + r.volume, 0);
+    partial = {
+      poundsPerMwh: Math.round((laterRows.reduce((s, r) => s + r.price * r.volume, 0) / laterVolume) * 100) / 100,
+      settlementDate: later,
+      periods: laterRows.length,
+      lastPeriod: Math.max(...laterRows.map(r => r.settlementPeriod)),
+    };
+  }
+
   return {
     label: "GB power, market index (daily average)",
     poundsPerMwh: Math.round(avg * 100) / 100,
     settlementDate: day,
     periods: dayRows.length,
     source: "Elexon (APX market index)",
+    partial,
   };
 }
 
@@ -146,9 +165,16 @@ async function commitToGitHub(payload) {
     console.log("No existing file found, will create new.");
   }
 
-  // Keep the last good value for a source that failed this run.
-  const merged = { gas: payload.gas || existing.gas || null, power: payload.power || existing.power || null };
-  if (JSON.stringify({ gas: existing.gas || null, power: existing.power || null }) === JSON.stringify(merged)) {
+  // Keep the last good value for a source that failed this run. powerToday is
+  // only replaced when the power fetch itself worked (null then means "not
+  // enough of today yet"), so a stale partial figure never outlives its day.
+  const merged = {
+    gas: payload.gas || existing.gas || null,
+    power: payload.power || existing.power || null,
+    powerToday: payload.power ? payload.powerToday || null : existing.powerToday || null,
+  };
+  const before = { gas: existing.gas || null, power: existing.power || null, powerToday: existing.powerToday || null };
+  if (JSON.stringify(before) === JSON.stringify(merged)) {
     console.log("Prices unchanged — skipping commit.");
     return;
   }
@@ -171,15 +197,23 @@ async function commitToGitHub(payload) {
 }
 
 export default async () => {
-  const [gas, power] = await Promise.all([
+  const [gas, powerFull] = await Promise.all([
     fetchGasSap().catch(err => { console.error(`SAP fetch failed: ${err.message}`); return null; }),
     fetchPowerMid().catch(err => { console.error(`MID fetch failed: ${err.message}`); return null; }),
   ]);
-  console.log(`Gas: ${gas ? `${gas.pencePerTherm}p/th for ${gas.gasDay}` : "unavailable"}. Power: ${power ? `£${power.poundsPerMwh}/MWh for ${power.settlementDate}` : "unavailable"}.`);
+  // Split the partial "today so far" figure from the complete-day one.
+  let power = null;
+  let powerToday = null;
+  if (powerFull) {
+    const { partial, ...rest } = powerFull;
+    power = rest;
+    powerToday = partial;
+  }
+  console.log(`Gas: ${gas ? `${gas.pencePerTherm}p/th for ${gas.gasDay}` : "unavailable"}. Power: ${power ? `£${power.poundsPerMwh}/MWh for ${power.settlementDate}` : "unavailable"}${powerToday ? `; today so far £${powerToday.poundsPerMwh}/MWh over ${powerToday.periods} half-hours` : ""}.`);
 
-  if (gas || power) await commitToGitHub({ gas, power });
+  if (gas || power) await commitToGitHub({ gas, power, powerToday });
 
-  return new Response(JSON.stringify({ gas, power }), {
+  return new Response(JSON.stringify({ gas, power, powerToday }), {
     headers: { "Content-Type": "application/json" },
   });
 };

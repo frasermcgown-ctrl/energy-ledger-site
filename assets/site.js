@@ -166,8 +166,8 @@ document.querySelectorAll('[data-issues]').forEach(el => {
 });
 
 // ---------- Market strip ----------
-// A slim bar above the header on every public page: latest NBP gas, GB power
-// and carbon intensity. A price whose day is more than 2 days old is flagged
+// A slim bar above the header on every public page: latest NBP gas, GB power,
+// EU gas storage and carbon intensity. A price whose day is more than 2 days old is flagged
 // "Last reading". If carbon intensity can't be fetched, the last value seen in
 // this browser is shown as "Last reading". If nothing is available the bar stays hidden.
 function elDateStale(isoDate) {
@@ -189,9 +189,9 @@ function elDateStale(isoDate) {
 
   const day = iso => new Date(iso + 'T12:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
   const stale = '<span class="stale-tag">Last reading</span>';
-  const parts = { gas: '', power: '', carbon: '' };
+  const parts = { gas: '', power: '', storage: '', carbon: '' };
   function render() {
-    const html = [parts.gas, parts.power, parts.carbon].filter(Boolean).join('');
+    const html = [parts.gas, parts.power, parts.storage, parts.carbon].filter(Boolean).join('');
     if (!html) return;
     inner.innerHTML = html + '<a class="mkt-src" href="/sources">Sources</a>';
     strip.hidden = false;
@@ -206,6 +206,14 @@ function elDateStale(isoDate) {
       parts.power = '<span class="mkt-item">GB power <strong>£' + escapeHtml(fmtNumber(d.power.poundsPerMwh, 2)) + '</strong>/MWh <small>' +
         escapeHtml(day(d.power.settlementDate)) + ' avg</small>' + (elDateStale(d.power.settlementDate) ? stale : '') + '</span>';
     }
+  }).catch(() => {});
+
+  // EU gas storage (GIE AGSI+), written by netlify/functions/fetch-eu-storage.mjs.
+  // Until that file exists the fetch fails and the item is simply left out.
+  const storage = fetch('/content/eu-storage.json').then(r => r.json()).then(d => {
+    if (!Number.isFinite(d.fullPercent) || !d.gasDay) return;
+    parts.storage = '<span class="mkt-item">EU gas storage <strong>' + escapeHtml(fmtNumber(d.fullPercent, 1)) + '</strong>% full <small>gas day ' +
+      escapeHtml(day(d.gasDay)) + '</small>' + (elDateStale(d.gasDay) ? stale : '') + '</span>';
   }).catch(() => {});
 
   const carbon = fetch('https://api.carbonintensity.org.uk/intensity').then(r => r.json()).then(data => {
@@ -224,5 +232,5 @@ function elDateStale(isoDate) {
     } catch (e) {}
   });
 
-  Promise.all([prices, carbon]).then(render);
+  Promise.all([prices, storage, carbon]).then(render);
 })();

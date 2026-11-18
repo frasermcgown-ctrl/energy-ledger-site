@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17T04:49:06.568Z",
+  "updated": "2026-11-18T04:49:07.289Z",
   "months": [
     {
       "month": "2025-11",
@@ -171,23 +171,23 @@
       "days": 30,
       "lastDay": "2026-04-30",
       "generationTWh": 3.11,
-      "paymentsGBP": 245200799,
+      "paymentsGBP": 245201970,
       "byTechnology": {
         "Offshore Wind": {
           "generationTWh": 2.08,
-          "paymentsGBP": 180486750
+          "paymentsGBP": 180487516
         },
         "Biomass Conversion": {
           "generationTWh": 0.67,
-          "paymentsGBP": 49213563
+          "paymentsGBP": 49213935
         },
         "Onshore Wind": {
           "generationTWh": 0.14,
-          "paymentsGBP": 7611819
+          "paymentsGBP": 7611766
         },
         "Solar PV": {
           "generationTWh": 0.13,
-          "paymentsGBP": -867267
+          "paymentsGBP": -867176
         },
         "Dedicated Biomass": {
           "generationTWh": 0.08,
@@ -195,7 +195,7 @@
         },
         "Energy from Waste": {
           "generationTWh": 0.01,
-          "paymentsGBP": 638071
+          "paymentsGBP": 638065
         }
       }
     },
@@ -270,27 +270,27 @@
       "days": 31,
       "lastDay": "2026-07-31",
       "generationTWh": 2.16,
-      "paymentsGBP": 130587505,
+      "paymentsGBP": 130585149,
       "byTechnology": {
         "Offshore Wind": {
           "generationTWh": 1.42,
-          "paymentsGBP": 92819789
+          "paymentsGBP": 92819755
         },
         "Biomass Conversion": {
           "generationTWh": 0.25,
-          "paymentsGBP": 19426942
+          "paymentsGBP": 19426918
         },
         "Solar PV": {
           "generationTWh": 0.19,
-          "paymentsGBP": -4184269
+          "paymentsGBP": -4184293
         },
         "Dedicated Biomass": {
           "generationTWh": 0.18,
-          "paymentsGBP": 19667449
+          "paymentsGBP": 19667424
         },
         "Onshore Wind": {
           "generationTWh": 0.11,
-          "paymentsGBP": 2289598
+          "paymentsGBP": 2287350
         },
         "Energy from Waste": {
           "generationTWh": 0.01,
@@ -336,23 +336,23 @@
       "days": 30,
       "lastDay": "2026-09-30",
       "generationTWh": 3.12,
-      "paymentsGBP": 153450942,
+      "paymentsGBP": 153402680,
       "byTechnology": {
         "Offshore Wind": {
           "generationTWh": 2.11,
-          "paymentsGBP": 98755728
+          "paymentsGBP": 98703890
         },
         "Biomass Conversion": {
           "generationTWh": 0.64,
-          "paymentsGBP": 47097893
+          "paymentsGBP": 47075911
         },
         "Onshore Wind": {
           "generationTWh": 0.14,
-          "paymentsGBP": 446402
+          "paymentsGBP": 473383
         },
         "Solar PV": {
           "generationTWh": 0.12,
-          "paymentsGBP": -4350310
+          "paymentsGBP": -4351757
         },
         "Dedicated Biomass": {
           "generationTWh": 0.11,
@@ -360,7 +360,7 @@
         },
         "Energy from Waste": {
           "generationTWh": 0,
-          "paymentsGBP": 41298
+          "paymentsGBP": 41321
         }
       }
     },
@@ -369,27 +369,27 @@
       "days": 31,
       "lastDay": "2026-10-31",
       "generationTWh": 3.39,
-      "paymentsGBP": 106314971,
+      "paymentsGBP": 106220765,
       "byTechnology": {
         "Offshore Wind": {
           "generationTWh": 2.36,
-          "paymentsGBP": 79350587
+          "paymentsGBP": 79328724
         },
         "Biomass Conversion": {
           "generationTWh": 0.62,
-          "paymentsGBP": 21485565
+          "paymentsGBP": 21452510
         },
         "Dedicated Biomass": {
           "generationTWh": 0.18,
-          "paymentsGBP": 12334187
+          "paymentsGBP": 12314554
         },
         "Onshore Wind": {
           "generationTWh": 0.13,
-          "paymentsGBP": -1117181
+          "paymentsGBP": -1128457
         },
         "Solar PV": {
           "generationTWh": 0.1,
-          "paymentsGBP": -5739847
+          "paymentsGBP": -5748225
         },
         "Energy from Waste": {
           "generationTWh": 0,
@@ -399,30 +399,30 @@
     },
     {
       "month": "2026-11",
-      "days": 5,
-      "lastDay": "2026-11-05",
-      "generationTWh": 0.55,
-      "paymentsGBP": -17474217,
+      "days": 8,
+      "lastDay": "2026-11-08",
+      "generationTWh": 0.69,
+      "paymentsGBP": -17102550,
       "byTechnology": {
         "Offshore Wind": {
-          "generationTWh": 0.39,
-          "paymentsGBP": -21685587
+          "generationTWh": 0.44,
+          "paymentsGBP": -24126348
         },
         "Biomass Conversion": {
-          "generationTWh": 0.11,
-          "paymentsGBP": 3906248
+          "generationTWh": 0.19,
+          "paymentsGBP": 6442035
         },
         "Dedicated Biomass": {
-          "generationTWh": 0.03,
-          "paymentsGBP": 2193231
-        },
-        "Onshore Wind": {
-          "generationTWh": 0.01,
-          "paymentsGBP": -878860
+          "generationTWh": 0.05,
+          "paymentsGBP": 3129761
         },
         "Solar PV": {
           "generationTWh": 0.01,
-          "paymentsGBP": -1009249
+          "paymentsGBP": -1523538
+        },
+        "Onshore Wind": {
+          "generationTWh": 0.01,
+          "paymentsGBP": -1024460
         },
         "Energy from Waste": {
           "generationTWh": 0,
@@ -431,7 +431,7 @@
       }
     }
   ],
-  "dataTo": "2026-11-05",
+  "dataTo": "2026-11-08",
   "units": {
     "generation": "TWh",
     "payments": "£ (nominal)"

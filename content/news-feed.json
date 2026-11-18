@@ -1,6 +1,54 @@
 {
-  "updated": "2026-11-18T12:35:15.861Z",
+  "updated": "2026-11-18T18:35:17.055Z",
   "items": [
+    {
+      "title": "Social Housing Decarbonisation Fund statistics: November 2027",
+      "link": "https://www.gov.uk/government/statistics/announcements/social-housing-decarbonisation-fund-statistics-november-2027",
+      "summary": "Data to monitor the installation of energy efficiency measures in domestic properties via the Social Housing Decarbonisation Fund (SHDF) scheme in England.",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "policy",
+      "published": "2026-11-18T16:41:47+00:00"
+    },
+    {
+      "title": "Social Housing Decarbonisation Fund statistics: August 2027",
+      "link": "https://www.gov.uk/government/statistics/announcements/social-housing-decarbonisation-fund-statistics-august-2027",
+      "summary": "Data to monitor the installation of energy efficiency measures in domestic properties via the Social Housing Decarbonisation Fund (SHDF) scheme in England.",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "policy",
+      "published": "2026-11-18T16:41:45+00:00"
+    },
+    {
+      "title": "Social Housing Decarbonisation Fund statistics: May 2027",
+      "link": "https://www.gov.uk/government/statistics/announcements/social-housing-decarbonisation-fund-statistics-may-2027",
+      "summary": "Data to monitor the installation of energy efficiency measures in domestic properties via the Social Housing Decarbonisation Fund (SHDF) scheme in England.",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "policy",
+      "published": "2026-11-18T16:41:42+00:00"
+    },
+    {
+      "title": "Social Housing Decarbonisation Fund statistics: February 2027",
+      "link": "https://www.gov.uk/government/statistics/announcements/social-housing-decarbonisation-fund-statistics-february-2027",
+      "summary": "Data to monitor the installation of energy efficiency measures in domestic properties via the Social Housing Decarbonisation Fund (SHDF) scheme in England.",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "policy",
+      "published": "2026-11-18T16:41:39+00:00"
+    },
+    {
+      "title": "Oil and gas: offshore environmental legislation",
+      "link": "https://www.gov.uk/guidance/oil-and-gas-offshore-environmental-legislation",
+      "summary": "Environmental regulations and guidance on offshore oil and gas exploration and production offshore gas unloading and storage and offshore carbon dioxide storage activities",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "gas",
+      "published": "2026-11-18T14:11:12+00:00"
+    },
+    {
+      "title": "Gas supplies to remain secure into late 2030s",
+      "link": "https://www.energylivenews.com/2026/11/18/gas-supplies-to-remain-secure-into-late-2030s/",
+      "summary": "NESO says supply is expected to be sufficient through the winter when all sources are available\nThe post Gas supplies to remain secure into late 2030s appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "gas",
+      "published": "2026-11-18T13:30:00.000Z"
+    },
     {
       "title": "Long term mitigations key to managing risk to gas supplies in 2030s",
       "link": "https://www.neso.energy/news/long-term-mitigations-key-managing-risk-gas-supplies-2030s",
@@ -34,14 +82,6 @@
       "published": "2026-11-17T13:29:25+00:00"
     },
     {
-      "title": "Low Carbon plugs in 65 MW of BESS capacity in England",
-      "link": "https://renewablesnow.com/news/low-carbon-plugs-in-65-mw-of-bess-capacity-in-england-1305093?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss-source/",
-      "summary": "",
-      "source": "Renewables Now",
-      "topic": "policy",
-      "published": "2026-11-17T13:00:57.000Z"
-    },
-    {
       "title": "Subnational electricity consumption in 2025",
       "link": "https://www.gov.uk/government/statistics/announcements/sub-national-electricity-consumption-in-2025",
       "summary": "Consumption of electricity broken down by local authority in Great Britain in 2025",
@@ -56,46 +96,6 @@
       "source": "Dept for Energy Security & Net Zero",
       "topic": "gas",
       "published": "2026-11-17T11:52:19+00:00"
-    },
-    {
-      "title": "MSOA estimates of properties not connected to the gas network 2015-2025",
-      "link": "https://www.gov.uk/government/statistics/announcements/msoa-estimates-of-properties-not-connected-to-the-gas-network-2015-2025",
-      "summary": "Middle Super Output Area (MSOA) level estimates for the number of domestic properties without mains gas from 2015 to 2025",
-      "source": "Dept for Energy Security & Net Zero",
-      "topic": "gas",
-      "published": "2026-11-17T11:48:38+00:00"
-    },
-    {
-      "title": "Parliamentary constituency estimates of properties not connected to the gas network 2015-2025",
-      "link": "https://www.gov.uk/government/statistics/announcements/parliamentary-constituency-estimates-of-properties-not-connected-to-the-gas-network-2015-2025",
-      "summary": "Parliamentary constituency level estimates for the number of domestic properties without mains gas from 2015 to 2025",
-      "source": "Dept for Energy Security & Net Zero",
-      "topic": "gas",
-      "published": "2026-11-17T11:46:16+00:00"
-    },
-    {
-      "title": "LSOA estimates of properties not connected to the gas network 2015-2025",
-      "link": "https://www.gov.uk/government/statistics/announcements/lsoa-estimates-of-properties-not-connected-to-the-gas-network-2015-2025",
-      "summary": "Lower Super Output Area (LSOA) level estimates for the number of domestic properties without mains gas from 2015 to 2025",
-      "source": "Dept for Energy Security & Net Zero",
-      "topic": "gas",
-      "published": "2026-11-17T11:45:48+00:00"
-    },
-    {
-      "title": "Subnational electricity consumption at LSOA, MSOA and IGZ level in 2025",
-      "link": "https://www.gov.uk/government/statistics/announcements/sub-national-electricity-consumption-at-lsoa-msoa-and-igz-level-in-2025",
-      "summary": "Lower Super Output Area (LSOA), Middle Super Output Area (MSOA) and Intermediate Geography Zone (IGZ) level electricity 2025 data",
-      "source": "Dept for Energy Security & Net Zero",
-      "topic": "power",
-      "published": "2026-11-17T11:42:47+00:00"
-    },
-    {
-      "title": "Subnational estimates of properties not connected to the gas network 2015-2025",
-      "link": "https://www.gov.uk/government/statistics/announcements/sub-national-estimates-of-properties-not-connected-to-the-gas-network-2015-2025",
-      "summary": "Estimates of the number of domestic properties not connected to the gas grid, at region and local authority levels from 2015 to 2025",
-      "source": "Dept for Energy Security & Net Zero",
-      "topic": "gas",
-      "published": "2026-11-17T11:42:06+00:00"
     },
     {
       "title": "NESO backs the next generation of energy leaders with renewed YEP Forum partnership",

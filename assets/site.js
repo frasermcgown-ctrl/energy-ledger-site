@@ -197,6 +197,16 @@ function elDateStale(isoDate) {
     strip.hidden = false;
   }
 
+  // Partial-day power average from the latest, unfinished settlement day, with
+  // the number of half-hours it covers. Only shown when it is newer than the
+  // complete-day figure and not itself stale.
+  function todaySoFar(d) {
+    const t = d.powerToday;
+    if (!t || !Number.isFinite(t.poundsPerMwh) || !Number.isFinite(t.periods) || !t.settlementDate) return '';
+    if (t.settlementDate <= d.power.settlementDate || elDateStale(t.settlementDate)) return '';
+    return ' <small class="mkt-today" title="Average so far today, over ' + escapeHtml(t.periods) + ' of 48 half-hours">today £' + escapeHtml(t.poundsPerMwh.toFixed(2)) + ' (' + escapeHtml(t.periods) + '/48)</small>';
+  }
+
   const prices = fetch('/content/market-prices.json').then(r => r.json()).then(d => {
     if (d.gas && Number.isFinite(d.gas.pencePerTherm)) {
       parts.gas = '<span class="mkt-item">NBP gas <strong>' + escapeHtml(fmtNumber(d.gas.pencePerTherm, 2)) + '</strong> p/th <small>' +
@@ -204,7 +214,7 @@ function elDateStale(isoDate) {
     }
     if (d.power && Number.isFinite(d.power.poundsPerMwh)) {
       parts.power = '<span class="mkt-item">GB power <strong>£' + escapeHtml(fmtNumber(d.power.poundsPerMwh, 2)) + '</strong>/MWh <small>' +
-        escapeHtml(day(d.power.settlementDate)) + ' avg</small>' + (elDateStale(d.power.settlementDate) ? stale : '') + '</span>';
+        escapeHtml(day(d.power.settlementDate)) + ' avg</small>' + (elDateStale(d.power.settlementDate) ? stale : '') + todaySoFar(d) + '</span>';
     }
   }).catch(() => {});
 
@@ -212,16 +222,16 @@ function elDateStale(isoDate) {
   // Stock in GWh only: there is no UK capacity figure, so no % full.
   const ukStorage = fetch('/content/uk-storage-levels.json').then(r => r.json()).then(d => {
     if (!Number.isFinite(d.stockGWh) || !d.gasDay) return;
-    parts.ukStorage = '<span class="mkt-item">UK storage <strong>' + escapeHtml(fmtNumber(d.stockGWh, 0)) + '</strong> GWh <small>' +
-      escapeHtml(day(d.gasDay)) + '</small>' + (elDateStale(d.gasDay) ? stale : '') + '</span>';
+    parts.ukStorage = '<span class="mkt-item" title="Gas day ' + escapeHtml(day(d.gasDay)) + '">UK storage <strong>' +
+      escapeHtml(fmtNumber(d.stockGWh, 0)) + '</strong> GWh' + (elDateStale(d.gasDay) ? stale : '') + '</span>';
   }).catch(() => {});
 
   // EU gas storage (GIE AGSI+), written by netlify/functions/fetch-eu-storage.mjs.
   // Until that file exists the fetch fails and the item is simply left out.
   const storage = fetch('/content/eu-storage.json').then(r => r.json()).then(d => {
     if (!Number.isFinite(d.fullPercent) || !d.gasDay) return;
-    parts.storage = '<span class="mkt-item">EU storage <strong>' + escapeHtml(fmtNumber(d.fullPercent, 1)) + '</strong>% full <small>' +
-      escapeHtml(day(d.gasDay)) + '</small>' + (elDateStale(d.gasDay) ? stale : '') + '</span>';
+    parts.storage = '<span class="mkt-item" title="Gas day ' + escapeHtml(day(d.gasDay)) + ', % full">EU storage <strong>' +
+      escapeHtml(fmtNumber(d.fullPercent, 1)) + '%</strong> full' + (elDateStale(d.gasDay) ? stale : '') + '</span>';
   }).catch(() => {});
 
   const carbon = fetch('https://api.carbonintensity.org.uk/intensity').then(r => r.json()).then(data => {

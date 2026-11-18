@@ -661,6 +661,10 @@
 
 <footer class="site">
   <div class="wrap">
+    <div class="foot-indep">
+      <h2 class="foot-indep-h">Independent. Not advice.</h2>
+      <p>The Energy Ledger is independent market commentary and data. It carries no sponsors and is not trading, procurement or investment advice. Figures are indicative and drawn from public sources. Check prices with your own supplier or broker before you act. <a href="/sources#methodology">Sources &amp; methodology <span aria-hidden="true">→</span></a></p>
+    </div>
     <div class="foot-grid">
       <div>
         <a class="wordmark" href="/">
@@ -716,11 +720,11 @@
       const day = iso => new Date(iso + 'T12:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
       if (d.gas && Number.isFinite(d.gas.pencePerTherm)) {
         document.getElementById('px-gas').textContent = `${fmtNumber(d.gas.pencePerTherm, 2)}p/th`;
-        document.getElementById('px-gas-src').innerHTML = `<span class="auto">Auto</span> · gas day ${escapeHtml(day(d.gas.gasDay))} · National Gas`;
+        document.getElementById('px-gas-src').innerHTML = `<span class="auto">Auto</span> · gas day ${escapeHtml(day(d.gas.gasDay))} · National Gas${elDateStale(d.gas.gasDay) ? ' <span class="stale-tag">Last reading</span>' : ''}`;
       }
       if (d.power && Number.isFinite(d.power.poundsPerMwh)) {
         document.getElementById('px-power').textContent = `£${fmtNumber(d.power.poundsPerMwh, 2)}/MWh`;
-        document.getElementById('px-power-src').innerHTML = `<span class="auto">Auto</span> · ${escapeHtml(day(d.power.settlementDate))} daily avg · Elexon`;
+        document.getElementById('px-power-src').innerHTML = `<span class="auto">Auto</span> · ${escapeHtml(day(d.power.settlementDate))} daily avg · Elexon${elDateStale(d.power.settlementDate) ? ' <span class="stale-tag">Last reading</span>' : ''}`;
       }
     })
     .catch(() => {});

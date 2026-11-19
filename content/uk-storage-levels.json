@@ -1,68 +1,64 @@
 {
-  "updated": "2026-11-18T16:53:10.772Z",
-  "gasDay": "2026-11-18",
-  "stockGWh": 10218,
+  "updated": "2026-11-19T16:53:08.843Z",
+  "gasDay": "2026-11-19",
+  "stockGWh": 10506,
   "sites": [
-    {
-      "site": "Hornsea",
-      "range": "medium",
-      "gasDay": "2026-11-18",
-      "gwh": 2623
-    },
     {
       "site": "Stublach",
       "range": "medium",
-      "gasDay": "2026-11-18",
-      "gwh": 2523
+      "gasDay": "2026-11-19",
+      "gwh": 2656
+    },
+    {
+      "site": "Hornsea",
+      "range": "medium",
+      "gasDay": "2026-11-19",
+      "gwh": 2630
     },
     {
       "site": "Holford",
       "range": "medium",
-      "gasDay": "2026-11-18",
+      "gasDay": "2026-11-19",
       "gwh": 1893
     },
     {
       "site": "Aldbrough",
       "range": "medium",
-      "gasDay": "2026-11-18",
-      "gwh": 1701
+      "gasDay": "2026-11-19",
+      "gwh": 1784
     },
     {
       "site": "Hatfield Moor",
       "range": "medium",
-      "gasDay": "2026-11-18",
+      "gasDay": "2026-11-19",
       "gwh": 604
     },
     {
       "site": "Humbly Grove",
       "range": "medium",
-      "gasDay": "2026-11-18",
+      "gasDay": "2026-11-19",
       "gwh": 456
     },
     {
       "site": "Hill Top",
       "range": "medium",
-      "gasDay": "2026-11-18",
-      "gwh": 251
+      "gasDay": "2026-11-19",
+      "gwh": 317
     },
     {
       "site": "Holehouse Farm",
       "range": "medium",
-      "gasDay": "2026-11-18",
+      "gasDay": "2026-11-19",
       "gwh": 167
     },
     {
       "site": "Rough",
       "range": "long",
-      "gasDay": "2026-11-18",
+      "gasDay": "2026-11-19",
       "gwh": 0
     }
   ],
   "history": [
-    {
-      "d": "2025-10-14",
-      "gwh": 12968
-    },
     {
       "d": "2025-10-15",
       "gwh": 12833
@@ -1662,6 +1658,10 @@
     {
       "d": "2026-11-18",
       "gwh": 10218
+    },
+    {
+      "d": "2026-11-19",
+      "gwh": 10506
     }
   ],
   "source": "National Gas Transmission (storage stock levels, published on behalf of storage operators)",

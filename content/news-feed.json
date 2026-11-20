@@ -1,6 +1,70 @@
 {
-  "updated": "2026-11-20T12:35:16.384Z",
+  "updated": "2026-11-20T18:35:17.856Z",
   "items": [
+    {
+      "title": "Tinsley Viaduct Gas Pipeline Diversion (Cadent Gas Ltd): environmental determination",
+      "link": "https://www.gov.uk/government/publications/tinsley-viaduct-gas-pipeline-diversion-cadent-gas-ltd-environmental-determination",
+      "summary": "Environmental determination by the Secretary of State.",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "gas",
+      "published": "2026-11-20T15:26:55+00:00"
+    },
+    {
+      "title": "Taking part in the UK Emissions Trading Scheme markets",
+      "link": "https://www.gov.uk/government/publications/taking-part-in-the-uk-emissions-trading-scheme-markets",
+      "summary": "This guidance explains the operation of the UK ETS markets and how to take part in auctions and in trading on the secondary market.",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "carbon",
+      "published": "2026-11-20T14:22:20+00:00"
+    },
+    {
+      "title": "Participating in the UK Emissions Trading Scheme (UK ETS)",
+      "link": "https://www.gov.uk/government/publications/participating-in-the-uk-ets",
+      "summary": "This page provides an overview of the UK Emissions Trading Scheme (UK ETS), who it applies to, and the first steps for participants looking to engage with the scheme.",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "carbon",
+      "published": "2026-11-20T14:21:53+00:00"
+    },
+    {
+      "title": "UK Emissions Trading Scheme (UK ETS): technical guidance and tools",
+      "link": "https://www.gov.uk/government/collections/uk-emissions-trading-scheme-uk-ets-technical-guidance-and-tools",
+      "summary": "Technical guidance, emission factors, and reporting templates to help installations and aircraft operators understand and comply with their obligations under the scheme.",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "carbon",
+      "published": "2026-11-20T14:21:30+00:00"
+    },
+    {
+      "title": "UK Emissions Trading Scheme (UK ETS): policy overview",
+      "link": "https://www.gov.uk/government/publications/uk-emissions-trading-scheme-uk-ets-policy-overview",
+      "summary": "The role of the UK Emissions Trading Scheme in UK decarbonisation and how the UK ETS Authority is developing the scheme.",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "carbon",
+      "published": "2026-11-20T14:21:10+00:00"
+    },
+    {
+      "title": "Speed up GB Energy-Nuclear investment – says ESNZ Committee",
+      "link": "https://www.energylivenews.com/2026/11/20/speed-up-gb-energy-nuclear-investment-says-esnz-committee/",
+      "summary": "The group is calling for Labour to publish a new “nuclear roadmap” that sets out deployment targets\nThe post Speed up GB Energy-Nuclear investment – says ESNZ Committee appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "renewables",
+      "published": "2026-11-20T14:00:00.000Z"
+    },
+    {
+      "title": "UK-EU ETS linking agreement: explainer",
+      "link": "https://www.gov.uk/government/publications/uk-eu-linking-agreement-explainer",
+      "summary": "This is an overview of the UK-EU Emissions Trading Scheme (ETS) linking agreement.",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "carbon",
+      "published": "2026-11-20T13:56:00+00:00"
+    },
+    {
+      "title": "COP31: Spain pledges to achieve 100% renewables by 2040",
+      "link": "https://www.energylivenews.com/2026/11/20/cop31-spain-pledges-to-achieve-100-renewables-by-2040/",
+      "summary": "Spain sets out roadmap for 100% renewable electricity by 2040 and a fully decarbonised economy by 2050\nThe post COP31: Spain pledges to achieve 100% renewables by 2040 appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "renewables",
+      "published": "2026-11-20T13:00:00.000Z"
+    },
     {
       "title": "Industry reacts to Labour’s fresh approach to renewables auction",
       "link": "https://www.energylivenews.com/2026/11/20/industry-reacts-to-labours-fresh-approach-to-renewables-auction/",
@@ -10,12 +74,20 @@
       "published": "2026-11-20T12:00:00.000Z"
     },
     {
+      "title": "RenewableUK welcomes landmark agreement to link UK and EU carbon markets",
+      "link": "https://www.renewableuk.com/news-and-resources/press-releases/renewableuk-welcomes-landmark-agreement-to-link-uk-and-eu-carbon-markets/",
+      "summary": "",
+      "source": "RenewableUK",
+      "topic": "renewables",
+      "published": "2026-11-20T12:00:00.000Z"
+    },
+    {
       "title": "Sports stadiums and supermarkets drive 2026 solar revolution",
       "link": "https://www.gov.uk/government/news/sports-stadiums-and-supermarkets-drive-2026-solar-revolution",
       "summary": "New data from MCS confirms 2026 has broken the record for the most solar panels installed in a single year in British history.",
       "source": "Dept for Energy Security & Net Zero",
       "topic": "renewables",
-      "published": "2026-11-20T11:59:16+00:00"
+      "published": "2026-11-20T11:59:00+00:00"
     },
     {
       "title": "Grid queue chaos continues admits Ofgem",
@@ -58,44 +130,12 @@
       "published": "2026-11-20T09:00:00.000Z"
     },
     {
-      "title": "Government announces new approach to renewables auction",
-      "link": "https://www.energylivenews.com/2026/11/20/government-announces-new-approach-to-renewables-auction/",
-      "summary": "Initial budgets have been set at £1 due to Labour now having visibility over all bids\nThe post Government announces new approach to renewables auction appeared first on Energy Live News.\n",
-      "source": "Energy Live News",
-      "topic": "renewables",
-      "published": "2026-11-20T08:00:00.000Z"
-    },
-    {
-      "title": "World-first compressed air energy storage has been switched on",
-      "link": "https://www.energylivenews.com/2026/11/19/world-first-compressed-air-energy-storage-has-been-switched-on/",
-      "summary": "The underground caverns will store enough compressed air to generate 1.8 million kilowatt-hours of electricity\nThe post World-first compressed air energy storage has been switched on appeared first on Energy Live News.\n",
-      "source": "Energy Live News",
-      "topic": "gas",
-      "published": "2026-11-19T17:00:00.000Z"
-    },
-    {
       "title": "UK govt sets minimal initial AR8 budgets, wants to see bids first",
       "link": "https://renewablesnow.com/news/uk-govt-sets-minimal-initial-ar8-budgets-wants-to-see-bids-first-1305297?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss-source/",
       "summary": "",
       "source": "Renewables Now",
       "topic": "policy",
       "published": "2026-11-19T15:40:17.000Z"
-    },
-    {
-      "title": "Off-grid solar set to power millions more people by 2031",
-      "link": "https://www.energylivenews.com/2026/11/19/off-grid-solar-set-to-power-millions-more-people-by-2031/",
-      "summary": "The IEA expects 60% more renewable capacity to be added worldwide over the next five years\nThe post Off-grid solar set to power millions more people by 2031 appeared first on Energy Live News.\n",
-      "source": "Energy Live News",
-      "topic": "renewables",
-      "published": "2026-11-19T14:00:00.000Z"
-    },
-    {
-      "title": "Protium’s 70-MW Teesside hydrogen project advances in UK funding round",
-      "link": "https://renewablesnow.com/news/protiums-70-mw-teesside-hydrogen-project-advances-in-uk-funding-round-1305274?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss-source/",
-      "summary": "",
-      "source": "Renewables Now",
-      "topic": "renewables",
-      "published": "2026-11-19T13:47:29.000Z"
     },
     {
       "title": "RenewableUK comment on budget announcement for clean energy projects competing in Allocation Round 8",
@@ -226,14 +266,6 @@
       "published": "2026-10-21T12:00:00.000Z"
     },
     {
-      "title": "RenewableUK statement on Jackdaw gas field approval",
-      "link": "https://www.renewableuk.com/news-and-resources/press-releases/renewableuk-statement-on-jackdaw-gas-field-approval/",
-      "summary": "",
-      "source": "RenewableUK",
-      "topic": "gas",
-      "published": "2026-10-21T12:00:00.000Z"
-    },
-    {
       "title": "Ofgem unlocks funding for major electricity grid upgrade while delivering over £60 million of consumer savings",
       "link": "https://www.ofgem.gov.uk/press-release/ofgem-unlocks-funding-major-electricity-grid-upgrade-while-delivering-over-ps60-million-consumer-savings",
       "summary": "Ofgem has greenlit a £642.1 million funding package for National Grid Electricity Transmission’s Bramford to Twinstead project in East Anglia",
@@ -288,38 +320,6 @@
       "source": "Ofgem",
       "topic": "power",
       "published": "2026-07-29T12:00:00.000Z"
-    },
-    {
-      "title": "Positive progress on skip rates and next steps",
-      "link": "https://www.neso.energy/news/positive-progress-skip-rates-and-next-steps",
-      "summary": "Skip rates have become one of the most talked about metrics in electricity system operation over the last couple of years and rightly so.",
-      "source": "NESO",
-      "topic": "power",
-      "published": "2026-07-07T12:00:00.000Z"
-    },
-    {
-      "title": "Ofgem boosts long duration storage to secure more homegrown energy for customers",
-      "link": "https://www.ofgem.gov.uk/press-release/ofgem-boosts-long-duration-storage-secure-more-homegrown-energy-customers",
-      "summary": "Energy regulator Ofgem gives provisional green light to a new generation of energy storage to reduce Great Britain’s reliance on energy imports",
-      "source": "Ofgem",
-      "topic": "gas",
-      "published": "2026-06-26T12:00:00.000Z"
-    },
-    {
-      "title": "Energy explained blog: Electricity Margin Notice 24.06.26",
-      "link": "https://www.neso.energy/news/energy-explained-blog-electricity-margin-notice-240626",
-      "summary": "Yesterday, NESO issued an Electricity Margin Notice (EMN) to the electricity market.",
-      "source": "NESO",
-      "topic": "power",
-      "published": "2026-06-24T12:00:00.000Z"
-    },
-    {
-      "title": "Energy explained: the costs of balancing Britain’s electricity system to keep you powered",
-      "link": "https://www.neso.energy/news/energy-explained-costs-balancing-britains-electricity-system-keep-you-powered",
-      "summary": "Ensuring electricity is always there when we need it is a delicate balancing act that NESO overseas every second of every day.",
-      "source": "NESO",
-      "topic": "power",
-      "published": "2026-04-30T12:00:00.000Z"
     }
   ]
 }

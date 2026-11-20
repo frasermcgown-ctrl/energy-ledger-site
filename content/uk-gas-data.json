@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-20T06:21:07.191Z",
-  "publishedTime": "2026-11-20T06:11:28+00:00",
+  "updated": "2026-11-20T09:21:06.686Z",
+  "publishedTime": "2026-11-20T09:11:25+00:00",
   "currentGasDay": "2026-11-20",
   "sites": [
     {
@@ -9,7 +9,7 @@
     },
     {
       "name": "EASINGTON ROUGH ST",
-      "flowRate": 4.27
+      "flowRate": 0
     },
     {
       "name": "HILLTOP",
@@ -29,7 +29,7 @@
     },
     {
       "name": "STUBLACH",
-      "flowRate": 25.536
+      "flowRate": 26.102
     }
   ],
   "groups": [
@@ -50,27 +50,27 @@
         },
         {
           "name": "BACTON PERENCO",
-          "flow": 7.597
+          "flow": 6.093
         },
         {
           "name": "BACTON SEAL",
-          "flow": 4.483
+          "flow": 4.664
         },
         {
           "name": "BACTON SHELL",
-          "flow": 2.976
+          "flow": 2.893
         },
         {
           "name": "EASINGTON DIMLINGTON",
-          "flow": 3.547
+          "flow": 3.323
         },
         {
           "name": "EASINGTON LANGELED",
-          "flow": 66.84
+          "flow": 67.09
         },
         {
           "name": "EASINGTON ROUGH ST",
-          "flow": 4.27
+          "flow": 0
         },
         {
           "name": "GRAIN NTS 1",
@@ -78,7 +78,7 @@
         },
         {
           "name": "GRAIN NTS 2",
-          "flow": 8.962
+          "flow": 8.629
         },
         {
           "name": "HILLTOP",
@@ -98,35 +98,35 @@
         },
         {
           "name": "MILFORD HAVEN - DRAGON",
-          "flow": 18.847
+          "flow": 18.595
         },
         {
           "name": "MILFORD HAVEN - SOUTH HOOK",
-          "flow": 41.884
+          "flow": 42.094
         },
         {
           "name": "ST FERGUS MOBIL",
-          "flow": 7.122
+          "flow": 7.167
         },
         {
           "name": "ST FERGUS NSMP",
-          "flow": 30.629
+          "flow": 30.624
         },
         {
           "name": "ST FERGUS SHELL",
-          "flow": 22.138
+          "flow": 22.259
         },
         {
           "name": "STUBLACH",
-          "flow": 25.536
+          "flow": 26.102
         },
         {
           "name": "TEESSIDE CATS",
-          "flow": 13.81
+          "flow": 13.248
         },
         {
           "name": "TEESSIDE PX",
-          "flow": 7.815
+          "flow": 6.342
         },
         {
           "name": "THEDDLETHORPE",
@@ -143,31 +143,31 @@
         },
         {
           "name": "BACTON UKCS Terminal",
-          "flow": 15.056
+          "flow": 13.65
         },
         {
           "name": "BARROW TERMINAL",
-          "flow": 2.978
+          "flow": 3.052
         },
         {
           "name": "EASINGTON TERMINAL",
-          "flow": 74.656
+          "flow": 70.413
         },
         {
           "name": "ISLE OF GRAIN TERMINAL",
-          "flow": 11.401
+          "flow": 11.677
         },
         {
           "name": "MILFORD HAVEN TERMINAL",
-          "flow": 60.94
+          "flow": 60.82
         },
         {
           "name": "ST FERGUS TERMINAL",
-          "flow": 59.889
+          "flow": 60.05
         },
         {
           "name": "TEESSIDE TERMINAL",
-          "flow": 21.624
+          "flow": 19.59
         },
         {
           "name": "THEDDLETHORPE TERMINAL",
@@ -180,7 +180,7 @@
       "sites": [
         {
           "name": "TOTAL SUPPLY",
-          "flow": 274.04
+          "flow": 267.132
         }
       ]
     },
@@ -189,19 +189,19 @@
       "sites": [
         {
           "name": "Industrial Demand Flow",
-          "flow": 3.317
+          "flow": 4.448
         },
         {
           "name": "Interconnector Export Demand Flow",
-          "flow": 21.36
+          "flow": 33.6
         },
         {
           "name": "LDZ Offtake Flow",
-          "flow": 175.721
+          "flow": 191.725
         },
         {
           "name": "Power Station Demand Flow",
-          "flow": 57.874
+          "flow": 77.198
         },
         {
           "name": "Storage Demand Flow",
@@ -222,7 +222,7 @@
         },
         {
           "name": "Moffat Export",
-          "flow": 21.36
+          "flow": 33.6
         }
       ]
     },
@@ -231,7 +231,7 @@
       "sites": [
         {
           "name": "NTS Demand Flow",
-          "flow": 258.669
+          "flow": 307.856
         }
       ]
     },
@@ -240,7 +240,7 @@
       "sites": [
         {
           "name": "NTS Actual Linepack",
-          "flow": 364.822
+          "flow": 360.651
         }
       ]
     }

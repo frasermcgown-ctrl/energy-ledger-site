@@ -1,10 +1,10 @@
 {
-  "updated": "2026-11-19T18:42:09.702Z",
-  "gasDay": "2026-11-18",
+  "updated": "2026-11-20T18:42:15.849Z",
+  "gasDay": "2026-11-19",
   "status": "E",
-  "lngInventoryThousandM3": 5042.83,
-  "sendOutGWhPerDay": 4054.4,
+  "lngInventoryThousandM3": 4851.77,
+  "sendOutGWhPerDay": 3850.7,
   "maxInventoryThousandM3": 9673.62,
-  "maxSendOutGWhPerDay": 8218.6,
-  "fillPercent": 52.1
+  "maxSendOutGWhPerDay": 8218.7,
+  "fillPercent": 50.2
 }

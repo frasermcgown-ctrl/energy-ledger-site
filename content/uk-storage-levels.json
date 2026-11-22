@@ -1,68 +1,64 @@
 {
-  "updated": "2026-11-21T16:53:10.739Z",
-  "gasDay": "2026-11-21",
-  "stockGWh": 10446,
+  "updated": "2026-11-22T16:53:09.884Z",
+  "gasDay": "2026-11-22",
+  "stockGWh": 10214,
   "sites": [
-    {
-      "site": "Stublach",
-      "range": "medium",
-      "gasDay": "2026-11-21",
-      "gwh": 2656
-    },
     {
       "site": "Hornsea",
       "range": "medium",
-      "gasDay": "2026-11-21",
-      "gwh": 2573
+      "gasDay": "2026-11-22",
+      "gwh": 2528
+    },
+    {
+      "site": "Stublach",
+      "range": "medium",
+      "gasDay": "2026-11-22",
+      "gwh": 2417
     },
     {
       "site": "Holford",
       "range": "medium",
-      "gasDay": "2026-11-21",
+      "gasDay": "2026-11-22",
       "gwh": 1893
     },
     {
       "site": "Aldbrough",
       "range": "medium",
-      "gasDay": "2026-11-21",
-      "gwh": 1781
+      "gasDay": "2026-11-22",
+      "gwh": 1828
     },
     {
       "site": "Hatfield Moor",
       "range": "medium",
-      "gasDay": "2026-11-21",
+      "gasDay": "2026-11-22",
       "gwh": 604
     },
     {
       "site": "Humbly Grove",
       "range": "medium",
-      "gasDay": "2026-11-21",
-      "gwh": 456
+      "gasDay": "2026-11-22",
+      "gwh": 419
     },
     {
       "site": "Hill Top",
       "range": "medium",
-      "gasDay": "2026-11-21",
-      "gwh": 317
+      "gasDay": "2026-11-22",
+      "gwh": 358
     },
     {
       "site": "Holehouse Farm",
       "range": "medium",
-      "gasDay": "2026-11-21",
+      "gasDay": "2026-11-22",
       "gwh": 167
     },
     {
       "site": "Rough",
       "range": "long",
-      "gasDay": "2026-11-21",
+      "gasDay": "2026-11-22",
       "gwh": 0
     }
   ],
   "history": [
-    {
-      "d": "2025-10-17",
-      "gwh": 12577
-    },
     {
       "d": "2025-10-18",
       "gwh": 12552
@@ -1661,7 +1657,11 @@
     },
     {
       "d": "2026-11-21",
-      "gwh": 10446
+      "gwh": 10166
+    },
+    {
+      "d": "2026-11-22",
+      "gwh": 10214
     }
   ],
   "source": "National Gas Transmission (storage stock levels, published on behalf of storage operators)",

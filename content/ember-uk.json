@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-31T17:31:02.234Z",
+  "updated": "2026-11-22T01:56:07.126Z",
   "years": [
     {
       "year": 2010,
@@ -161,7 +161,6 @@
         "Net imports": 14.2,
         "Nuclear": 50.2,
         "Other fossil": 8.8,
-        "Other renewables": 0,
         "Solar": 12.6,
         "Wind": 75.6
       }
@@ -176,7 +175,6 @@
         "Net imports": 17.7,
         "Nuclear": 46.1,
         "Other fossil": 9.7,
-        "Other renewables": 0,
         "Solar": 12.1,
         "Wind": 64.9
       }
@@ -191,7 +189,6 @@
         "Net imports": 1.1,
         "Nuclear": 47.4,
         "Other fossil": 11.1,
-        "Other renewables": 0,
         "Solar": 13.3,
         "Wind": 80.2
       }
@@ -206,7 +203,6 @@
         "Net imports": 15.8,
         "Nuclear": 40.6,
         "Other fossil": 10.8,
-        "Other renewables": 0,
         "Solar": 13.9,
         "Wind": 82.8
       }
@@ -221,7 +217,6 @@
         "Net imports": 22.3,
         "Nuclear": 40.6,
         "Other fossil": 11.5,
-        "Other renewables": 0,
         "Solar": 14.8,
         "Wind": 83.6
       }
@@ -236,7 +231,6 @@
         "Net imports": 17.9,
         "Nuclear": 36.4,
         "Other fossil": 12.8,
-        "Other renewables": 0,
         "Solar": 19.4,
         "Wind": 86.4
       }

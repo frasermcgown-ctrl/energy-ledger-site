@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-23T00:35:15.757Z",
+  "updated": "2026-11-23T06:35:17.752Z",
   "items": [
     {
       "title": "Tinsley Viaduct Gas Pipeline Diversion (Cadent Gas Ltd): environmental determination",
@@ -112,14 +112,6 @@
       "source": "Energy Live News",
       "topic": "gas",
       "published": "2026-11-20T10:00:00.000Z"
-    },
-    {
-      "title": "National Wealth Fund invests in major battery storage projects",
-      "link": "https://www.energylivenews.com/2026/11/20/national-wealth-fund-invests-in-major-battery-storage-projects/",
-      "summary": "A new partnership is expected to create more than 200 jobs in Scotland \nThe post National Wealth Fund invests in major battery storage projects appeared first on Energy Live News.\n",
-      "source": "Energy Live News",
-      "topic": "gas",
-      "published": "2026-11-20T09:00:00.000Z"
     },
     {
       "title": "UK govt sets minimal initial AR8 budgets, wants to see bids first",
@@ -320,6 +312,14 @@
       "source": "NESO",
       "topic": "power",
       "published": "2026-07-07T12:00:00.000Z"
+    },
+    {
+      "title": "Ofgem boosts long duration storage to secure more homegrown energy for customers",
+      "link": "https://www.ofgem.gov.uk/press-release/ofgem-boosts-long-duration-storage-secure-more-homegrown-energy-customers",
+      "summary": "Energy regulator Ofgem gives provisional green light to a new generation of energy storage to reduce Great Britain’s reliance on energy imports",
+      "source": "Ofgem",
+      "topic": "gas",
+      "published": "2026-06-26T12:00:00.000Z"
     }
   ]
 }

@@ -1,6 +1,199 @@
 {
   "weeks": [
     {
+      "week_commencing": "2026-11-23",
+      "issued": "2026-11-23",
+      "headline": "Wind output builds sharply from tonight and peaks on Tuesday, when Elexon's national forecast reaches about 19.9 GW around midday, before easing to roughly 13 GW by Wednesday evening. From Thursday the picture is patchier, with breezy conditions in the north and light winds in the south and east, and the weekend looks light and overcast. Confidence falls beyond about Thursday.",
+      "summary": "A windy Tuesday opens the week, then high pressure keeps things cold, cloudy and only moderately breezy.",
+      "review": "",
+      "days": [
+        {
+          "day": "Mon 23",
+          "offshore": "Low",
+          "offshore_note": "Building; Elexon c.4.5 GW early, c.12.5 GW by midnight",
+          "onshore": "Low",
+          "onshore_note": "Llandrindod Wells 1-2 mph; Wick 10-18 mph",
+          "solar": "Good",
+          "solar_note": "Long sunny spells after fog (modest in winter)",
+          "temperature": "-1 to 8°C",
+          "outlook": "Calm, chilly day; south-easterlies freshen overnight, gales in Irish Sea and Hebrides waters."
+        },
+        {
+          "day": "Tue 24",
+          "offshore": "Strong",
+          "offshore_note": "Bridlington 10-21 mph; Elexon peak c.19.9 GW",
+          "onshore": "Moderate",
+          "onshore_note": "Wick 19-26 mph, gusts to 48 mph; Wales 2-7 mph",
+          "solar": "Low",
+          "solar_note": "Cloudy; rain band stalls over the west",
+          "temperature": "0 to 9°C",
+          "outlook": "Windiest day of the week."
+        },
+        {
+          "day": "Wed 25",
+          "offshore": "Moderate",
+          "offshore_note": "Lowestoft 13-17 mph; Elexon c.13-18 GW",
+          "onshore": "Moderate",
+          "onshore_note": "Wick 15-24 mph; Wales 2-5 mph",
+          "solar": "Moderate",
+          "solar_note": "Mostly dry and fine outside Scotland",
+          "temperature": "-1 to 7°C",
+          "outlook": "Wind eases through the day; rain and hill snow over Scotland."
+        },
+        {
+          "day": "Thu 26",
+          "offshore": "Moderate",
+          "offshore_note": "Barrow 7-16 mph; Bridlington 9-11 mph",
+          "onshore": "Moderate",
+          "onshore_note": "North only; Wick 15-27 mph; Wales 2-5 mph",
+          "solar": "Low",
+          "solar_note": "Cloudy in the south and east",
+          "temperature": "-1 to 7°C",
+          "outlook": "Breezy north, light south and east. Frost in places."
+        },
+        {
+          "day": "Fri 27",
+          "offshore": "Moderate",
+          "offshore_note": "Barrow 9-18 mph; Bridlington 9-14 mph",
+          "onshore": "Moderate",
+          "onshore_note": "North only; Wick 15-28 mph, gusts to 50 mph",
+          "solar": "Low",
+          "solar_note": "Overcast",
+          "temperature": "1 to 7°C",
+          "outlook": "Rain from Northern Ireland moves east; firmer winds in the north and west."
+        },
+        {
+          "day": "Sat 28",
+          "offshore": "Low",
+          "offshore_note": "Wick 11-16 mph; elsewhere 8-11 mph",
+          "onshore": "Low",
+          "onshore_note": "Wales 3-7 mph",
+          "solar": "Low",
+          "solar_note": "Overcast",
+          "temperature": "2 to 7°C",
+          "outlook": "Light winds, grey and cold. Lower confidence."
+        },
+        {
+          "day": "Sun 29",
+          "offshore": "Low",
+          "offshore_note": "Wick 14-18 mph; elsewhere 9-13 mph",
+          "onshore": "Low",
+          "onshore_note": "Wales 3-8 mph",
+          "solar": "Low",
+          "solar_note": "Overcast",
+          "temperature": "2 to 8°C",
+          "outlook": "Light winds, mostly cloudy. Lower confidence."
+        }
+      ],
+      "table_note": "Wind speeds are Met Office coastal and inland 10 m forecasts for the named towns, which understate hub-height wind. Monday figures cover 07:00 onwards. Elexon figures are national wind forecasts and run to Wednesday evening only.",
+      "buyers": [
+        {
+          "label": "High-wind periods",
+          "text": "Late Monday into Wednesday is the most likely window for softer day-ahead and overnight prices, with curtailment and Scottish transmission constraints possible at the Tuesday peak. Output at that level can also pull evening-peak prices down, though demand and gas prices will still matter."
+        },
+        {
+          "label": "Low-wind risk",
+          "text": "Monday morning starts with national wind output near 4.5 GW, and Saturday and Sunday look light and overcast. Gas is likely to fill the gap in those periods, which tends to firm prices, especially at the evening peak. Weekend demand is lower, which may soften the effect."
+        },
+        {
+          "label": "Demand",
+          "text": "Temperatures of roughly 0 to 9°C and frost midweek support heating demand. The Met Office long-range outlook for late November and early December has high pressure from the north-east, temperatures often below average and a greater than normal chance of snow to lower levels."
+        },
+        {
+          "label": "For buyers",
+          "text": "Those on flexible or day-ahead-linked contracts carry the most exposure to a swing from a windy Tuesday to a lighter weekend. These are likely tendencies based on the forecast, not certainties or advice."
+        }
+      ],
+      "areas": [
+        {
+          "title": "Offshore wind (North Sea and Irish Sea)",
+          "text": "Moray Firth (Beatrice, Moray East) is the windiest zone all week: Wick forecasts 19-26 mph on Tuesday, 15-27 mph on Thursday and 15-28 mph on Friday, with gusts of 48 to 50 mph. That stays below the roughly 55 mph storm cut-out level, so no cut-out risk is flagged. In the Irish Sea (Walney, West of Duddon Sands), the shipping forecast has a gale warning for southeasterly force 8 later on Monday."
+        },
+        {
+          "title": "Scotland onshore wind and hydro",
+          "text": "Wick is the strongest of the onshore proxies. Tuesday is the peak, and Wednesday to Friday stay moderate. Rain and hill snow linger over Scotland on Wednesday, and a band of rain stalls over western Scotland on Tuesday, which should help hydro inflows, although precipitation falling as snow on higher ground is held back until a thaw."
+        },
+        {
+          "title": "Wales and northern England",
+          "text": "Mid Wales onshore wind looks very weak, with Llandrindod Wells at 1-8 mph all week and a top gust of 27 mph on Tuesday. Northern England fares better, with Barrow and Bridlington reaching moderate levels on Tuesday and again on Friday. Frost is likely in Wales and parts of the east on Monday and Wednesday."
+        },
+        {
+          "title": "Solar (south and east England)",
+          "text": "Cambridge has sunny spells on Monday after morning fog, and sunny intervals on Tuesday and Wednesday. Thursday to Sunday is cloudy or overcast, with maximums of 4 to 6°C. Winter solar output is modest at best, so this adds little to the picture on any day."
+        }
+      ],
+      "watch": [
+        {
+          "when": "Mon 23 Nov",
+          "text": "Gale-force south-easterlies in the Irish Sea, Malin and Hebrides sea areas, and Elexon's forecast climbing to about 12.5 GW by midnight."
+        },
+        {
+          "when": "Tue 24 Nov",
+          "text": "Elexon's peak of about 19.9 GW around 11:00 UTC, and the rain band stalling from south-west England to western Scotland."
+        },
+        {
+          "when": "Wed 25 Nov",
+          "text": "Wind easing towards 13 GW, frost in Wales and the east, and rain and hill snow over Scotland."
+        },
+        {
+          "when": "Fri 27 Nov",
+          "text": "Further rain arriving from Northern Ireland and moving east, with Wick gusts up to 50 mph. Forecasts for Saturday and Sunday carry less confidence and may change."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Met Office forecast: Wick",
+          "url": "https://weather.metoffice.gov.uk/forecast/gfmu3ws34"
+        },
+        {
+          "label": "Met Office forecast: Dunbar",
+          "url": "https://weather.metoffice.gov.uk/forecast/gcynwfb7z"
+        },
+        {
+          "label": "Met Office forecast: Bridlington",
+          "url": "https://weather.metoffice.gov.uk/forecast/gcxgetbkx"
+        },
+        {
+          "label": "Met Office forecast: Lowestoft",
+          "url": "https://weather.metoffice.gov.uk/forecast/u134xcy4j"
+        },
+        {
+          "label": "Met Office forecast: Barrow-in-Furness",
+          "url": "https://weather.metoffice.gov.uk/forecast/gcteyf1nd"
+        },
+        {
+          "label": "Met Office forecast: Llandrindod Wells",
+          "url": "https://weather.metoffice.gov.uk/forecast/gcm95nm2h"
+        },
+        {
+          "label": "Met Office forecast: Cambridge",
+          "url": "https://weather.metoffice.gov.uk/forecast/u1214b469"
+        },
+        {
+          "label": "Met Office shipping forecast and gale warnings",
+          "url": "https://weather.metoffice.gov.uk/specialist-forecasts/coast-and-sea/shipping-forecast"
+        },
+        {
+          "label": "Met Office UK forecast, 10-day and long-range outlook",
+          "url": "https://weather.metoffice.gov.uk/forecast/uk"
+        },
+        {
+          "label": "Met Office UK weather warnings",
+          "url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-warnings"
+        },
+        {
+          "label": "Elexon national wind forecast (WINDFOR)",
+          "url": "https://data.elexon.co.uk/bmrs/api/v1/datasets/WINDFOR?format=json"
+        },
+        {
+          "label": "Elexon wind peak forecast",
+          "url": "https://data.elexon.co.uk/bmrs/api/v1/forecast/generation/wind/peak?format=json"
+        }
+      ],
+      "caveats": "All seven location pages were current (first date 23 November). The Met Office warnings page carried a notice that warnings may be out of date, so the \"no warnings\" reading is unconfirmed. A search for reputable market commentary returned nothing usable and none is cited.",
+      "substack_url": ""
+    },
+    {
       "week_commencing": "2026-11-16",
       "issued": "2026-11-16",
       "headline": "A cold, fairly calm start gives way to a windy Tuesday, when Elexon's national forecast peaks at about 20.7 GW. Winds then ease through Wednesday and look light from Thursday to Saturday, with frost, before Atlantic fronts return on Sunday.",

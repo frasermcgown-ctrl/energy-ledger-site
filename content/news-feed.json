@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22T18:35:18.750Z",
+  "updated": "2026-11-23T00:35:15.757Z",
   "items": [
     {
       "title": "Tinsley Viaduct Gas Pipeline Diversion (Cadent Gas Ltd): environmental determination",
@@ -96,14 +96,6 @@
       "source": "Energy Live News",
       "topic": "power",
       "published": "2026-11-20T11:00:00.000Z"
-    },
-    {
-      "title": "Energy trends, UK submission for JODI: November 2026 (Energy Trends Tables 3.16 and 4.5)",
-      "link": "https://www.gov.uk/government/statistics/announcements/energy-trends-uk-submission-for-jodi-november-2026",
-      "summary": "Monthly data on oil and gas production, trade and stock levels, as reported to the Joint Organisations Data Initiative (JODI), and published as part of the suite of Energy Trends products as 3.16 (oil) and 4.5 (gas). The",
-      "source": "Dept for Energy Security & Net Zero",
-      "topic": "gas",
-      "published": "2026-11-20T10:44:49+00:00"
     },
     {
       "title": "Can Natural Ventilation Help Businesses Reduce Their Reliance on Air Conditioning?",
@@ -320,6 +312,14 @@
       "source": "Ofgem",
       "topic": "power",
       "published": "2026-07-29T12:00:00.000Z"
+    },
+    {
+      "title": "Positive progress on skip rates and next steps",
+      "link": "https://www.neso.energy/news/positive-progress-skip-rates-and-next-steps",
+      "summary": "Skip rates have become one of the most talked about metrics in electricity system operation over the last couple of years and rightly so.",
+      "source": "NESO",
+      "topic": "power",
+      "published": "2026-07-07T12:00:00.000Z"
     }
   ]
 }

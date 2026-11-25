@@ -1,6 +1,22 @@
 {
-  "updated": "2026-11-24T18:35:17.428Z",
+  "updated": "2026-11-25T00:35:17.674Z",
   "items": [
+    {
+      "title": "Designated standards: Professional refrigerated storage cabinets",
+      "link": "https://www.gov.uk/government/publications/designated-standards-professional-refrigerated-storage-cabinets",
+      "summary": "Notices of publication and consolidated list for designated standards for professional refrigerated storage cabinets relating to ecodesign and energy labelling.",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "gas",
+      "published": "2026-11-25T00:01:04+00:00"
+    },
+    {
+      "title": "20 million households to receive £100 payment",
+      "link": "https://www.gov.uk/government/news/20-million-households-to-receive-100-payment",
+      "summary": "New guidance sets out how £100 Household Energy Payments will reach up to 20 million households alongside funding to help vulnerable households who might miss out",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "policy",
+      "published": "2026-11-24T21:44:18+00:00"
+    },
     {
       "title": "Floating turbines are coming to Scottish waters at a huge scale",
       "link": "https://www.energylivenews.com/2026/11/24/floating-turbines-are-coming-to-scottish-waters-at-a-huge-scale/",
@@ -42,36 +58,12 @@
       "published": "2026-11-24T12:00:00.000Z"
     },
     {
-      "title": "Nuclear Regulatory Review: joint ministerial letter to industry",
-      "link": "https://www.gov.uk/government/publications/nuclear-regulatory-review-joint-ministerial-letter-to-industry",
-      "summary": "Joint DESNZ, MOD and HM Treasury letter to nuclear CEOs and dutyholders on progress and next steps for the Nuclear Regulatory Review.",
-      "source": "Dept for Energy Security & Net Zero",
-      "topic": "renewables",
-      "published": "2026-11-24T11:10:54+00:00"
-    },
-    {
-      "title": "Electricity transmission licence exemption: Neart na Gaoithe Wind Farm",
-      "link": "https://www.gov.uk/government/publications/electricity-transmission-licence-exemption-neart-na-gaoithe-wind-farm",
-      "summary": "A proposal to provide an exemption from the requirement to hold a transmission licence.",
-      "source": "Dept for Energy Security & Net Zero",
-      "topic": "renewables",
-      "published": "2026-11-24T09:30:07+00:00"
-    },
-    {
       "title": "Britain’s electricity balancing bill hits £2bn",
       "link": "https://www.energylivenews.com/2026/11/24/britains-electricity-balancing-bill-hits-2bn/",
       "summary": "Electricity balancing costs have hit £2bn this year, with NESO warning they could reach £8bn a year by 2030\nThe post Britain’s electricity balancing bill hits £2bn appeared first on Energy Live News.\n",
       "source": "Energy Live News",
       "topic": "power",
       "published": "2026-11-24T08:00:00.000Z"
-    },
-    {
-      "title": "UK Emissions Trading Scheme (UK ETS): policy overview",
-      "link": "https://www.gov.uk/government/publications/uk-emissions-trading-scheme-uk-ets-policy-overview",
-      "summary": "The role of the UK Emissions Trading Scheme in UK decarbonisation and how the UK ETS Authority is developing the scheme.",
-      "source": "Dept for Energy Security & Net Zero",
-      "topic": "carbon",
-      "published": "2026-11-23T17:05:03+00:00"
     },
     {
       "title": "Green Cat Hydrogen gains planning nod for Scottish project",
@@ -320,6 +312,14 @@
       "source": "NESO",
       "topic": "power",
       "published": "2026-01-14T12:00:00.000Z"
+    },
+    {
+      "title": "NESO’s 2026 priorities: a more secure, affordable, sustainable energy future",
+      "link": "https://www.neso.energy/news/nesos-2026-priorities-more-secure-affordable-sustainable-energy-future",
+      "summary": "2026 will bring new challenges – but our focus at NESO is unchanged. Building an energy system in Great Britain (GB) that works for people, society and our economy.",
+      "source": "NESO",
+      "topic": "policy",
+      "published": "2026-01-05T12:00:00.000Z"
     }
   ]
 }

@@ -1,68 +1,64 @@
 {
-  "updated": "2026-11-24T16:53:09.784Z",
-  "gasDay": "2026-11-24",
-  "stockGWh": 10011,
+  "updated": "2026-11-25T16:53:09.698Z",
+  "gasDay": "2026-11-25",
+  "stockGWh": 9612,
   "sites": [
-    {
-      "site": "Stublach",
-      "range": "medium",
-      "gasDay": "2026-11-24",
-      "gwh": 2453
-    },
     {
       "site": "Hornsea",
       "range": "medium",
-      "gasDay": "2026-11-24",
-      "gwh": 2402
+      "gasDay": "2026-11-25",
+      "gwh": 2356
+    },
+    {
+      "site": "Stublach",
+      "range": "medium",
+      "gasDay": "2026-11-25",
+      "gwh": 2342
     },
     {
       "site": "Holford",
       "range": "medium",
-      "gasDay": "2026-11-24",
-      "gwh": 1852
+      "gasDay": "2026-11-25",
+      "gwh": 1733
     },
     {
       "site": "Aldbrough",
       "range": "medium",
-      "gasDay": "2026-11-24",
-      "gwh": 1731
+      "gasDay": "2026-11-25",
+      "gwh": 1650
     },
     {
       "site": "Hatfield Moor",
       "range": "medium",
-      "gasDay": "2026-11-24",
-      "gwh": 596
+      "gasDay": "2026-11-25",
+      "gwh": 588
     },
     {
       "site": "Hill Top",
       "range": "medium",
-      "gasDay": "2026-11-24",
-      "gwh": 427
+      "gasDay": "2026-11-25",
+      "gwh": 406
     },
     {
       "site": "Humbly Grove",
       "range": "medium",
-      "gasDay": "2026-11-24",
-      "gwh": 383
+      "gasDay": "2026-11-25",
+      "gwh": 369
     },
     {
       "site": "Holehouse Farm",
       "range": "medium",
-      "gasDay": "2026-11-24",
+      "gasDay": "2026-11-25",
       "gwh": 167
     },
     {
       "site": "Rough",
       "range": "long",
-      "gasDay": "2026-11-24",
+      "gasDay": "2026-11-25",
       "gwh": 0
     }
   ],
   "history": [
-    {
-      "d": "2025-10-20",
-      "gwh": 13484
-    },
     {
       "d": "2025-10-21",
       "gwh": 13603
@@ -1662,6 +1658,10 @@
     {
       "d": "2026-11-24",
       "gwh": 10011
+    },
+    {
+      "d": "2026-11-25",
+      "gwh": 9612
     }
   ],
   "source": "National Gas Transmission (storage stock levels, published on behalf of storage operators)",

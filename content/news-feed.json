@@ -1,6 +1,22 @@
 {
-  "updated": "2026-11-26T06:35:17.435Z",
+  "updated": "2026-11-26T12:35:19.039Z",
   "items": [
+    {
+      "title": "NHS Trust installs rooftop solar on hospitals and office buildings",
+      "link": "https://www.energylivenews.com/2026/11/26/nhs-trust-installs-rooftop-solar-on-hospitals-and-office-buildings/",
+      "summary": "The technology is forecast to significantly reduce the Trust’s grid electricity use and cut carbon emissions \nThe post NHS Trust installs rooftop solar on hospitals and office buildings appeared first on Energy Live News",
+      "source": "Energy Live News",
+      "topic": "carbon",
+      "published": "2026-11-26T11:00:00.000Z"
+    },
+    {
+      "title": "Oil and gas: offshore environmental legislation",
+      "link": "https://www.gov.uk/guidance/oil-and-gas-offshore-environmental-legislation",
+      "summary": "Environmental regulations and guidance on offshore oil and gas exploration and production offshore gas unloading and storage and offshore carbon dioxide storage activities",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "gas",
+      "published": "2026-11-26T10:39:54+00:00"
+    },
     {
       "title": "Batteries made from natural gas – without burning a drop",
       "link": "https://www.energylivenews.com/2026/11/25/batteries-made-from-natural-gas-without-burning-a-drop/",
@@ -8,38 +24,6 @@
       "source": "Energy Live News",
       "topic": "gas",
       "published": "2026-11-25T16:30:00.000Z"
-    },
-    {
-      "title": "UK residual fuel consumption at regional and local authority level, 2005 to 2025",
-      "link": "https://www.gov.uk/government/statistics/announcements/uk-residual-fuel-consumption-at-regional-and-local-authority-level-2005-to-2025",
-      "summary": "Residual fuel is defined as non-gas, non-electricity and non-road transport fuels, and covers consumption of coal, petroleum, manufactured solid fuels and bioenergy and wastes not used for electricity generation or road ",
-      "source": "Dept for Energy Security & Net Zero",
-      "topic": "gas",
-      "published": "2026-11-25T15:44:23+00:00"
-    },
-    {
-      "title": "Local authority greenhouse gas emissions: 2025 estimates",
-      "link": "https://www.gov.uk/government/statistics/announcements/local-authority-greenhouse-gas-emissions-2025-estimates",
-      "summary": "UK local authority and regional estimates of greenhouse gas emissions from 2005.",
-      "source": "Dept for Energy Security & Net Zero",
-      "topic": "carbon",
-      "published": "2026-11-25T15:43:48+00:00"
-    },
-    {
-      "title": "UK greenhouse gas emissions: 2026 provisional figures",
-      "link": "https://www.gov.uk/government/statistics/announcements/uk-greenhouse-gas-emissions-2026-provisional-figures",
-      "summary": "Provisional estimates of UK territorial greenhouse gas emissions based on provisional inland energy consumption statistics, which are published in the quarterly Energy Trends statistical publication.",
-      "source": "Dept for Energy Security & Net Zero",
-      "topic": "carbon",
-      "published": "2026-11-25T15:43:30+00:00"
-    },
-    {
-      "title": "UK greenhouse gas emissions: 2025 final figures",
-      "link": "https://www.gov.uk/government/statistics/announcements/uk-greenhouse-gas-emissions-2025-final-figures",
-      "summary": "This publication provides the final estimates of UK territorial greenhouse gas emissions going back to 1990. Estimates are presented by source in February of each year. They are updated in March of each year to include e",
-      "source": "Dept for Energy Security & Net Zero",
-      "topic": "carbon",
-      "published": "2026-11-25T15:42:56+00:00"
     },
     {
       "title": "Global energy intensity to improve by nearly 3% this year",
@@ -64,30 +48,6 @@
       "source": "RenewableUK",
       "topic": "renewables",
       "published": "2026-11-25T12:00:00.000Z"
-    },
-    {
-      "title": "Flagship Energy’s Mike Stafford Energy Markets Update – 25th November",
-      "link": "https://www.energylivenews.com/2026/11/25/flagship-energys-mike-stafford-energy-markets-update-25th-november/",
-      "summary": "Mike Stafford, Senior Risk Trader at Flagship Energy provides a market update\nThe post Flagship Energy’s Mike Stafford Energy Markets Update – 25th November appeared first on Energy Live News.\n",
-      "source": "Energy Live News",
-      "topic": "policy",
-      "published": "2026-11-25T11:32:41.000Z"
-    },
-    {
-      "title": "Green hydrogen plant on former nuclear power station approved",
-      "link": "https://www.energylivenews.com/2026/11/25/green-hydrogen-plant-on-former-nuclear-power-station-approved/",
-      "summary": "The project is predicted to deliver 50 “highly skilled” jobs once it is operational \nThe post Green hydrogen plant on former nuclear power station approved appeared first on Energy Live News.\n",
-      "source": "Energy Live News",
-      "topic": "renewables",
-      "published": "2026-11-25T11:30:00.000Z"
-    },
-    {
-      "title": "Energy trends and prices: September - November 2026",
-      "link": "https://www.gov.uk/government/statistics/announcements/energy-trends-and-prices-september-2026",
-      "summary": "Monthly production, trade, electricity generation and consumption of coal, electricity, gas, oil and total energy; retail price and EU comparative price data, and petrol &amp; diesel price data.",
-      "source": "Dept for Energy Security & Net Zero",
-      "topic": "gas",
-      "published": "2026-11-25T10:00:53+00:00"
     },
     {
       "title": "Green Volt’s turbine deal and port investment announcement is a major step forward for UK’s floating offshore wind industry",
@@ -320,6 +280,46 @@
       "source": "NESO",
       "topic": "power",
       "published": "2026-01-14T12:00:00.000Z"
+    },
+    {
+      "title": "NESO’s 2026 priorities: a more secure, affordable, sustainable energy future",
+      "link": "https://www.neso.energy/news/nesos-2026-priorities-more-secure-affordable-sustainable-energy-future",
+      "summary": "2026 will bring new challenges – but our focus at NESO is unchanged. Building an energy system in Great Britain (GB) that works for people, society and our economy.",
+      "source": "NESO",
+      "topic": "policy",
+      "published": "2026-01-05T12:00:00.000Z"
+    },
+    {
+      "title": "Forget a white Christmas – 2025 could be the greenest ever",
+      "link": "https://www.neso.energy/news/forget-white-christmas-2025-could-be-greenest-ever",
+      "summary": "While many of us will be hoping for snow across Great Britain on Christmas Day to complete the pe",
+      "source": "NESO",
+      "topic": "policy",
+      "published": "2025-12-20T12:00:00.000Z"
+    },
+    {
+      "title": "Energy Explained: How inertia keeps the lights on",
+      "link": "https://www.neso.energy/news/energy-explained-how-inertia-keeps-lights",
+      "summary": "Resisting change isn’t always considered a good thing in life. But in the world of physics, it’s vital.",
+      "source": "NESO",
+      "topic": "policy",
+      "published": "2025-12-18T12:00:00.000Z"
+    },
+    {
+      "title": "Taking an economic lens to our Future Energy Scenarios",
+      "link": "https://www.neso.energy/news/taking-economic-lens-our-future-energy-scenarios",
+      "summary": "Great Britain’s energy system is in the middle of a major energy transformation.",
+      "source": "NESO",
+      "topic": "policy",
+      "published": "2025-12-11T12:00:00.000Z"
+    },
+    {
+      "title": "Energy Explained: What happens when the clocks go back?",
+      "link": "https://www.neso.energy/news/energy-explained-what-happens-when-clocks-go-back",
+      "summary": "Craig Dyke, Director of System Operations at the National Energy System Operator, sets out how managing the impact of the autumn clock change is all in a (25 hour) day’s work for his team of engineers.",
+      "source": "NESO",
+      "topic": "policy",
+      "published": "2025-10-23T12:00:00.000Z"
     }
   ]
 }

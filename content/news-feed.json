@@ -1,6 +1,46 @@
 {
-  "updated": "2026-11-26T12:35:19.039Z",
+  "updated": "2026-11-26T18:35:17.030Z",
   "items": [
+    {
+      "title": "British Gas launches new plug in solar technology",
+      "link": "https://www.energylivenews.com/2026/11/26/british-gas-launches-new-plug-in-solar-technology/",
+      "summary": "The company says the domestic infrastructure should save customers hundreds each year\nThe post British Gas launches new plug in solar technology appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "gas",
+      "published": "2026-11-26T17:00:00.000Z"
+    },
+    {
+      "title": "Investment in hydrogen storage starts to stall",
+      "link": "https://www.energylivenews.com/2026/11/26/investment-in-hydrogen-storage-starts-to-stall/",
+      "summary": "New data shows that hydrogen storage patent filings slowed 9% year on year as the US overtakes South Korea\nThe post Investment in hydrogen storage starts to stall appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "gas",
+      "published": "2026-11-26T16:00:00.000Z"
+    },
+    {
+      "title": "Sewage treatment works gets £2.6m upgrade to improve water quality",
+      "link": "https://www.energylivenews.com/2026/11/26/sewage-treatment-works-gets-2-6m-upgrade-to-improve-water-quality/",
+      "summary": "The investment will see a new 800m² acerated rush bed constructed adjacent to the existing facility\nThe post Sewage treatment works gets £2.6m upgrade to improve water quality appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "policy",
+      "published": "2026-11-26T15:00:00.000Z"
+    },
+    {
+      "title": "Scotland’s grid gets a £12.5m power-up",
+      "link": "https://www.energylivenews.com/2026/11/26/scotlands-grid-gets-a-12-5m-power-up/",
+      "summary": "Four new 400kV switchgear bays and a 200MVAr shunt reactor strengthen the transmission network across Ayrshire\nThe post Scotland’s grid gets a £12.5m power-up appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "power",
+      "published": "2026-11-26T14:00:00.000Z"
+    },
+    {
+      "title": "Which London council uses the most power?",
+      "link": "https://www.energylivenews.com/2026/11/26/which-london-borough-council-uses-the-most-power/",
+      "summary": "Harrow leads London councils for renewable electricity in its administrative buildings at 11.50%\nThe post Which London council uses the most power? appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "renewables",
+      "published": "2026-11-26T13:00:00.000Z"
+    },
     {
       "title": "NHS Trust installs rooftop solar on hospitals and office buildings",
       "link": "https://www.energylivenews.com/2026/11/26/nhs-trust-installs-rooftop-solar-on-hospitals-and-office-buildings/",
@@ -16,22 +56,6 @@
       "source": "Dept for Energy Security & Net Zero",
       "topic": "gas",
       "published": "2026-11-26T10:39:54+00:00"
-    },
-    {
-      "title": "Batteries made from natural gas – without burning a drop",
-      "link": "https://www.energylivenews.com/2026/11/25/batteries-made-from-natural-gas-without-burning-a-drop/",
-      "summary": "Molten’s California demonstration plant converts natural gas into battery-grade graphite and hydrogen without combustion\nThe post Batteries made from natural gas – without burning a drop appeared first on Energy Live New",
-      "source": "Energy Live News",
-      "topic": "gas",
-      "published": "2026-11-25T16:30:00.000Z"
-    },
-    {
-      "title": "Global energy intensity to improve by nearly 3% this year",
-      "link": "https://www.energylivenews.com/2026/11/25/global-energy-intensity-to-improve-by-nearly-3-this-year/",
-      "summary": "More than 60 governments have brought in energy-saving measures as electricity demand keeps climbing\nThe post Global energy intensity to improve by nearly 3% this year appeared first on Energy Live News.\n",
-      "source": "Energy Live News",
-      "topic": "power",
-      "published": "2026-11-25T15:30:00.000Z"
     },
     {
       "title": "Energy price cap to rise by 26% from January 2027",
@@ -296,30 +320,6 @@
       "source": "NESO",
       "topic": "policy",
       "published": "2025-12-20T12:00:00.000Z"
-    },
-    {
-      "title": "Energy Explained: How inertia keeps the lights on",
-      "link": "https://www.neso.energy/news/energy-explained-how-inertia-keeps-lights",
-      "summary": "Resisting change isn’t always considered a good thing in life. But in the world of physics, it’s vital.",
-      "source": "NESO",
-      "topic": "policy",
-      "published": "2025-12-18T12:00:00.000Z"
-    },
-    {
-      "title": "Taking an economic lens to our Future Energy Scenarios",
-      "link": "https://www.neso.energy/news/taking-economic-lens-our-future-energy-scenarios",
-      "summary": "Great Britain’s energy system is in the middle of a major energy transformation.",
-      "source": "NESO",
-      "topic": "policy",
-      "published": "2025-12-11T12:00:00.000Z"
-    },
-    {
-      "title": "Energy Explained: What happens when the clocks go back?",
-      "link": "https://www.neso.energy/news/energy-explained-what-happens-when-clocks-go-back",
-      "summary": "Craig Dyke, Director of System Operations at the National Energy System Operator, sets out how managing the impact of the autumn clock change is all in a (25 hour) day’s work for his team of engineers.",
-      "source": "NESO",
-      "topic": "policy",
-      "published": "2025-10-23T12:00:00.000Z"
     }
   ]
 }

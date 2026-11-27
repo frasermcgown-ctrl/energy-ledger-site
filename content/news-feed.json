@@ -1,6 +1,38 @@
 {
-  "updated": "2026-11-27T12:35:17.821Z",
+  "updated": "2026-11-27T18:35:18.437Z",
   "items": [
+    {
+      "title": "Determinations of the UK ETS carbon price",
+      "link": "https://www.gov.uk/government/publications/determinations-of-the-uk-ets-carbon-price",
+      "summary": "Determinations made by the UK ETS Authority under article 46 of the Greenhouse Gas Emission Trading Scheme Order 2020.",
+      "source": "Dept for Energy Security & Net Zero",
+      "topic": "carbon",
+      "published": "2026-11-27T17:15:00+00:00"
+    },
+    {
+      "title": "Britain’s heat pump rush gets a 100,000 sq ft boost",
+      "link": "https://www.energylivenews.com/2026/11/27/britains-heat-pump-rush-gets-a-100000-sq-ft-boost/",
+      "summary": "New Darlington facility to support UK heat pump and large-scale renewables rollout\nThe post Britain’s heat pump rush gets a 100,000 sq ft boost appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "renewables",
+      "published": "2026-11-27T17:00:00.000Z"
+    },
+    {
+      "title": "TELCA award – Most Trusted Consultancy SME",
+      "link": "https://www.energylivenews.com/2026/11/27/telca-award-most-trusted-consultancy-sme/",
+      "summary": "A huge well done to Carbonxgen, crowned winner of Most Trusted SME (sponsored by Yorkshire Gas & Power) at TELCA awards 2026. Carbonxgen is a specialist energy and carbon management consultancy, helping businesses reduce",
+      "source": "Energy Live News",
+      "topic": "gas",
+      "published": "2026-11-27T16:30:00.000Z"
+    },
+    {
+      "title": "Australia digs up a brighter future at former coal mine",
+      "link": "https://www.energylivenews.com/2026/11/27/australia-digs-up-a-brighter-future-at-former-coal-mine/",
+      "summary": "The former coal site is expected to connect to the grid by 2028, creating up to 200 jobs during construction\nThe post Australia digs up a brighter future at former coal mine appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "power",
+      "published": "2026-11-27T16:00:00.000Z"
+    },
     {
       "title": "Australia and Singapore seal cross-border CO2 storage deal",
       "link": "https://www.energylivenews.com/2026/11/27/australia-and-singapore-seal-cross-border-co2-storage-deal/",
@@ -18,52 +50,12 @@
       "published": "2026-11-27T11:40:07.000Z"
     },
     {
-      "title": "Ransomware gangs hit industry harder than ever – wind and gas are in the firing line",
-      "link": "https://www.energylivenews.com/2026/11/27/ransomware-gangs-hit-industry-harder-than-ever-wind-and-gas-are-in-the-firing-line/",
-      "summary": "Ransomware incidents hitting industrial organisations rose 11% in Q3 with energy sectors still heavily targeted\nThe post Ransomware gangs hit industry harder than ever – wind and gas are in the firing line appeared first",
-      "source": "Energy Live News",
-      "topic": "gas",
-      "published": "2026-11-27T11:00:00.000Z"
-    },
-    {
       "title": "UK's Pathfinder gets green light for 49-MW solar project with BESS",
       "link": "https://renewablesnow.com/news/uks-pathfinder-gets-green-light-for-49-mw-solar-project-with-bess-1305767?utm_source=rss&amp;utm_medium=feed&amp;utm_campaign=rss-source/",
       "summary": "",
       "source": "Renewables Now",
       "topic": "renewables",
       "published": "2026-11-27T09:06:18.000Z"
-    },
-    {
-      "title": "2026 sets record for Electricity Margin Notices with 11 issued",
-      "link": "https://www.energylivenews.com/2026/11/27/2026-sets-record-for-electricity-margin-notices-with-11-issued/",
-      "summary": "NESO has now issued 11 margin notices this year, more than the previous five years combined\nThe post 2026 sets record for Electricity Margin Notices with 11 issued appeared first on Energy Live News.\n",
-      "source": "Energy Live News",
-      "topic": "power",
-      "published": "2026-11-27T08:00:00.000Z"
-    },
-    {
-      "title": "British Gas launches new plug in solar technology",
-      "link": "https://www.energylivenews.com/2026/11/26/british-gas-launches-new-plug-in-solar-technology/",
-      "summary": "The company says the domestic infrastructure should save customers hundreds each year\nThe post British Gas launches new plug in solar technology appeared first on Energy Live News.\n",
-      "source": "Energy Live News",
-      "topic": "gas",
-      "published": "2026-11-26T17:00:00.000Z"
-    },
-    {
-      "title": "Investment in hydrogen storage starts to stall",
-      "link": "https://www.energylivenews.com/2026/11/26/investment-in-hydrogen-storage-starts-to-stall/",
-      "summary": "New data shows that hydrogen storage patent filings slowed 9% year on year as the US overtakes South Korea\nThe post Investment in hydrogen storage starts to stall appeared first on Energy Live News.\n",
-      "source": "Energy Live News",
-      "topic": "gas",
-      "published": "2026-11-26T16:00:00.000Z"
-    },
-    {
-      "title": "Sewage treatment works gets £2.6m upgrade to improve water quality",
-      "link": "https://www.energylivenews.com/2026/11/26/sewage-treatment-works-gets-2-6m-upgrade-to-improve-water-quality/",
-      "summary": "The investment will see a new 800m² acerated rush bed constructed adjacent to the existing facility\nThe post Sewage treatment works gets £2.6m upgrade to improve water quality appeared first on Energy Live News.\n",
-      "source": "Energy Live News",
-      "topic": "policy",
-      "published": "2026-11-26T15:00:00.000Z"
     },
     {
       "title": "Oil and gas: offshore environmental legislation",
@@ -320,6 +312,14 @@
       "source": "NESO",
       "topic": "policy",
       "published": "2026-01-05T12:00:00.000Z"
+    },
+    {
+      "title": "Forget a white Christmas – 2025 could be the greenest ever",
+      "link": "https://www.neso.energy/news/forget-white-christmas-2025-could-be-greenest-ever",
+      "summary": "While many of us will be hoping for snow across Great Britain on Christmas Day to complete the pe",
+      "source": "NESO",
+      "topic": "policy",
+      "published": "2025-12-20T12:00:00.000Z"
     }
   ]
 }

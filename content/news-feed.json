@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-28T00:35:18.987Z",
+  "updated": "2026-11-28T06:35:16.397Z",
   "items": [
     {
       "title": "Determinations of the UK ETS carbon price",
@@ -8,6 +8,46 @@
       "source": "Dept for Energy Security & Net Zero",
       "topic": "carbon",
       "published": "2026-11-27T17:15:00+00:00"
+    },
+    {
+      "title": "Britain’s heat pump rush gets a 100,000 sq ft boost",
+      "link": "https://www.energylivenews.com/2026/11/27/britains-heat-pump-rush-gets-a-100000-sq-ft-boost/",
+      "summary": "New Darlington facility to support UK heat pump and large-scale renewables rollout\nThe post Britain’s heat pump rush gets a 100,000 sq ft boost appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "renewables",
+      "published": "2026-11-27T17:00:00.000Z"
+    },
+    {
+      "title": "TELCA award – Most Trusted Consultancy SME",
+      "link": "https://www.energylivenews.com/2026/11/27/telca-award-most-trusted-consultancy-sme/",
+      "summary": "A huge well done to Carbonxgen, crowned winner of Most Trusted SME (sponsored by Yorkshire Gas & Power) at TELCA awards 2026. Carbonxgen is a specialist energy and carbon management consultancy, helping businesses reduce",
+      "source": "Energy Live News",
+      "topic": "gas",
+      "published": "2026-11-27T16:30:00.000Z"
+    },
+    {
+      "title": "Australia digs up a brighter future at former coal mine",
+      "link": "https://www.energylivenews.com/2026/11/27/australia-digs-up-a-brighter-future-at-former-coal-mine/",
+      "summary": "The former coal site is expected to connect to the grid by 2028, creating up to 200 jobs during construction\nThe post Australia digs up a brighter future at former coal mine appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "power",
+      "published": "2026-11-27T16:00:00.000Z"
+    },
+    {
+      "title": "Australia and Singapore seal cross-border CO2 storage deal",
+      "link": "https://www.energylivenews.com/2026/11/27/australia-and-singapore-seal-cross-border-co2-storage-deal/",
+      "summary": "The paperwork sets out how the captured gas could be shipped to another continent for permanent storage \nThe post Australia and Singapore seal cross-border CO2 storage deal appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "gas",
+      "published": "2026-11-27T12:30:00.000Z"
+    },
+    {
+      "title": "Home batteries can now earn from the grid. The provider you choose decides what you keep",
+      "link": "https://www.energylivenews.com/2026/11/27/home-batteries-can-now-earn-from-the-grid-the-provider-you-choose-decides-what-you-keep/",
+      "summary": "Britain's grid is asking more of households\nThe post Home batteries can now earn from the grid. The provider you choose decides what you keep appeared first on Energy Live News.\n",
+      "source": "Energy Live News",
+      "topic": "power",
+      "published": "2026-11-27T11:40:07.000Z"
     },
     {
       "title": "UK's Pathfinder gets green light for 49-MW solar project with BESS",
@@ -280,46 +320,6 @@
       "source": "NESO",
       "topic": "policy",
       "published": "2025-12-20T12:00:00.000Z"
-    },
-    {
-      "title": "Energy Explained: How inertia keeps the lights on",
-      "link": "https://www.neso.energy/news/energy-explained-how-inertia-keeps-lights",
-      "summary": "Resisting change isn’t always considered a good thing in life. But in the world of physics, it’s vital.",
-      "source": "NESO",
-      "topic": "policy",
-      "published": "2025-12-18T12:00:00.000Z"
-    },
-    {
-      "title": "Taking an economic lens to our Future Energy Scenarios",
-      "link": "https://www.neso.energy/news/taking-economic-lens-our-future-energy-scenarios",
-      "summary": "Great Britain’s energy system is in the middle of a major energy transformation.",
-      "source": "NESO",
-      "topic": "policy",
-      "published": "2025-12-11T12:00:00.000Z"
-    },
-    {
-      "title": "Energy Explained: What happens when the clocks go back?",
-      "link": "https://www.neso.energy/news/energy-explained-what-happens-when-clocks-go-back",
-      "summary": "Craig Dyke, Director of System Operations at the National Energy System Operator, sets out how managing the impact of the autumn clock change is all in a (25 hour) day’s work for his team of engineers.",
-      "source": "NESO",
-      "topic": "policy",
-      "published": "2025-10-23T12:00:00.000Z"
-    },
-    {
-      "title": "Connections Reform: The key to unlocking GB growth",
-      "link": "https://www.neso.energy/news/connections-reform-key-unlocking-gb-growth",
-      "summary": "Connections reform underpins a once-in-a-generation opportunity to modernise Great Britain’s (GB’s) energy grid, creating a fairer, more efficient system that boosts economic growth, strengthens energy security, and acce",
-      "source": "NESO",
-      "topic": "power",
-      "published": "2025-10-16T12:00:00.000Z"
-    },
-    {
-      "title": "Winter Outlook: Complacency isn't an option",
-      "link": "https://www.neso.energy/news/winter-outlook-complacency-isnt-option",
-      "summary": "Whilst the Winter Outlook gives the best margins on the electricity system in six years, Director of Resilience and Emergency Management, Dr Deborah Petterson warns of importance of maintaining vigilance.",
-      "source": "NESO",
-      "topic": "power",
-      "published": "2025-10-08T12:00:00.000Z"
     }
   ]
 }
